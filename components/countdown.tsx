@@ -47,11 +47,11 @@ export function Countdown() {
         const minutes = Math.floor((difference / 1000 / 60) % 60)
         const seconds = Math.floor((difference / 1000) % 60)
 
-        // Calculate progress percentages - inverted logic
-        const secondsProgress = (((60 - seconds) % 60) / 60) * 100
-        const minutesProgress = (((60 - minutes) % 60) / 60) * 100
-        const hoursProgress = (((24 - hours) % 24) / 24) * 100
-        const daysProgress = totalDays > 0 ? (days / totalDays) * 100 : 0
+        // Calculate progress percentages - direct calculation for growing border
+        const secondsProgress = (seconds / 60) * 100
+        const minutesProgress = (minutes / 60) * 100
+        const hoursProgress = (hours / 24) * 100
+        const daysProgress = totalDays > 0 ? ((totalDays - days) / totalDays) * 100 : 0
 
         setTimeLeft({ days, hours, minutes, seconds })
         setProgress({
@@ -83,31 +83,33 @@ export function Countdown() {
 }
 
 function CountdownItem({ value, label, progress }: { value: number; label: string; progress: number }) {
-  // Create a conic gradient that grows clockwise - inverted logic
-  const conicGradient = `conic-gradient(transparent ${100 - progress}%, white ${100 - progress}%)`
+  // The SVG path for the hexagon with rounded corners
+  const hexPath =
+    "M0 66.6727V141.197C0 151.701 5.625 161.417 14.7708 166.669L79.5417 203.931C88.6875 209.183 99.9375 209.183 109.062 203.931L173.833 166.669C182.979 161.417 188.604 151.701 188.604 141.197V66.6727C188.604 56.1687 182.979 46.4535 173.833 41.2015L109.062 3.93925C99.9167 -1.31276 88.6667 -1.31276 79.5417 3.93925L14.7708 41.2015C5.625 46.4535 0 56.1687 0 66.6727Z"
+
+  // Calculate the perimeter of the path (approximate)
+  const pathLength = 600
 
   return (
     <div className="relative w-28 h-28 md:w-36 md:h-36">
-      {/* Background hexagon */}
-      <div
-        className="absolute inset-0 bg-[#64B33D] rounded-[10px]"
-        style={{ clipPath: "polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%)" }}
-      ></div>
+      {/* SVG container */}
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 189 208" preserveAspectRatio="none">
+        {/* Green background */}
+        <path d={hexPath} fill="#64B33D" />
 
-      {/* Progress border */}
-      <div
-        className="absolute inset-0 rounded-[10px] transition-all duration-300"
-        style={{
-          background: conicGradient,
-          clipPath: "polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%)",
-          padding: "2px",
-        }}
-      >
-        <div
-          className="w-full h-full bg-[#64B33D] rounded-[8px]"
-          style={{ clipPath: "polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%)" }}
-        ></div>
-      </div>
+        {/* Animated white border that grows clockwise */}
+        <path
+          d={hexPath}
+          fill="none"
+          stroke="white"
+          strokeWidth="3"
+          strokeDasharray={pathLength}
+          strokeDashoffset={pathLength - (pathLength * progress) / 100}
+          className="transition-all duration-300"
+          // Rotate to start from the top
+          transform="rotate(-90, 94.302, 104)"
+        />
+      </svg>
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
