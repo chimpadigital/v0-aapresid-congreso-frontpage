@@ -1,17 +1,74 @@
+"use client"
+
 import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Linkedin, Instagram, Facebook, Twitter, Youtube } from "lucide-react"
+import { useEffect, useRef } from "react"
 
 export function Footer() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Ensure video plays on iOS and other mobile devices
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    // Function to attempt playing the video
+    const attemptPlay = () => {
+      video.play().catch((error) => {
+        console.log("Auto-play was prevented:", error)
+        // We'll try again when user interacts with the page
+        document.addEventListener("touchstart", handleUserInteraction, { once: true })
+        document.addEventListener("click", handleUserInteraction, { once: true })
+      })
+    }
+
+    // Handle user interaction to play video
+    const handleUserInteraction = () => {
+      video.play().catch((error) => console.log("Still couldn't play video:", error))
+    }
+
+    // Try to play immediately
+    attemptPlay()
+
+    // Clean up event listeners
+    return () => {
+      document.removeEventListener("touchstart", handleUserInteraction)
+      document.removeEventListener("click", handleUserInteraction)
+    }
+  }, [])
+
   return (
     <footer className="relative m-[30px] rounded-[20px] overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline preload="auto" className="absolute inset-0 w-full h-full object-cover">
+        {/* Fallback image that shows while video loads or if video fails */}
+        <div className="absolute inset-0 bg-[#2D3D34]">
+          <Image src="/images/trama-background.png" alt="" fill className="object-cover opacity-30" priority />
+        </div>
+
+        {/* Video element with multiple sources for better compatibility */}
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/images/trama-background.png"
+        >
+          {/* Local source */}
           <source src="/videos/video-footer.mp4" type="video/mp4" />
-          Tu navegador no soporta videos HTML5.
+
+          {/* External CDN source as backup */}
+          <source
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/video-footer-GWevhFIRBjrSUaUN9tzNZJvdMX3aEN.mp4"
+            type="video/mp4"
+          />
         </video>
+
         <div className="absolute inset-0 bg-[#2D3D34]/70" />
       </div>
 

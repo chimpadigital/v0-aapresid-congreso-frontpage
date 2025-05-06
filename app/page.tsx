@@ -13,6 +13,11 @@ export default function Home() {
       {/* Header section with video background */}
       <header className="min-h-screen relative m-[30px] rounded-[20px] overflow-hidden">
         <div className="absolute inset-0 z-0">
+          {/* Fallback image while video loads */}
+          <div className="absolute inset-0">
+            <img src="/images/congreso-background.png" alt="Background" className="w-full h-full object-cover" />
+          </div>
+
           <video
             autoPlay
             loop

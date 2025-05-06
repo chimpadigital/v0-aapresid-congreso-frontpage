@@ -9,6 +9,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
     domains: ['v0.blob.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'v0.blob.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
   // Increase the asset size limit for videos
   experimental: {
