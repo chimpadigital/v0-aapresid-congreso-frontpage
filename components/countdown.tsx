@@ -102,12 +102,10 @@ function CountdownItem({ value, label, progress }: { value: number; label: strin
           d={hexPath}
           fill="none"
           stroke="white"
-          strokeWidth="3"
+          strokeWidth="4"
           strokeDasharray={pathLength}
           strokeDashoffset={pathLength - (pathLength * progress) / 100}
           className="transition-all duration-300"
-          // Rotate to start from the top
-          transform="rotate(-90, 94.302, 104)"
         />
       </svg>
 
