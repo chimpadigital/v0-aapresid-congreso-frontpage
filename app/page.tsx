@@ -5,6 +5,7 @@ import { InscriptionsSection } from "@/components/inscriptions-section"
 import { AboutSection } from "@/components/about-section"
 import { ThemesSection } from "@/components/themes-section"
 import { FaqSection } from "@/components/faq-section"
+import { SponsorsSection } from "@/components/sponsors-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -57,6 +58,9 @@ export default function Home() {
 
       {/* FAQ section */}
       <FaqSection />
+
+      {/* Sponsors section */}
+      <SponsorsSection />
 
       {/* Footer */}
       <Footer />
