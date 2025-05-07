@@ -1,22 +1,26 @@
-import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
-import { Countdown } from "@/components/countdown"
-import { InscriptionsSection } from "@/components/inscriptions-section"
-import { AboutSection } from "@/components/about-section"
-import { ThemesSection } from "@/components/themes-section"
-import { FaqSection } from "@/components/faq-section"
-import { SponsorsSection } from "@/components/sponsors-section"
-import { Footer } from "@/components/footer"
+import { Navbar } from "@/components/navbar";
+import { Hero } from "@/components/hero";
+import { Countdown } from "@/components/countdown";
+import { InscriptionsSection } from "@/components/inscriptions-section";
+import { AboutSection } from "@/components/about-section";
+import { ThemesSection } from "@/components/themes-section";
+import { FaqSection } from "@/components/faq-section";
+import { SponsorsSection } from "@/components/sponsors-section";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
     <main>
       {/* Header section with video background */}
-      <header className="min-h-screen relative m-[30px] rounded-[20px] overflow-hidden">
+      <header className="relative mx-[30px] mt-[30px] min-h-screen overflow-hidden rounded-[20px]">
         <div className="absolute inset-0 z-0">
           {/* Fallback image while video loads */}
           <div className="absolute inset-0">
-            <img src="/images/congreso-background.png" alt="Background" className="w-full h-full object-cover" />
+            <img
+              src="/images/congreso-background.png"
+              alt="Background"
+              className="h-full w-full object-cover"
+            />
           </div>
 
           <video
@@ -25,7 +29,7 @@ export default function Home() {
             muted
             playsInline
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
             poster="/images/congreso-background.png" // Fallback image while video loads
           >
             <source src="/videos/congreso-background.mp4" type="video/mp4" />
@@ -46,9 +50,7 @@ export default function Home() {
       </header>
 
       {/* Inscriptions section */}
-      <div className="py-8">
-        <InscriptionsSection />
-      </div>
+      <InscriptionsSection />
 
       {/* About section */}
       <AboutSection />
@@ -65,5 +67,5 @@ export default function Home() {
       {/* Footer */}
       <Footer />
     </main>
-  )
+  );
 }
