@@ -236,7 +236,7 @@ export function Navbar() {
                   onClick={closeMenu}
                 />
 
-                <MobileNavItem label="ES" onClick={closeMenu}>
+                <MobileNavItem label="ES">
                   <MobileSubItem
                     label="Español"
                     href="/es"
@@ -280,6 +280,12 @@ function NavItem({
         {label}
         {hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
       </button>
+      {hasDropdown && label === "ES" && (
+        <div className="absolute left-0 top-full min-w-[120px] rounded-lg bg-white py-2 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-50">
+          <Link href="/es" className="block px-4 py-2 text-[#2D3D34] hover:bg-[#64B33D]/10 hover:text-[#64B33D] transition-colors">Español</Link>
+          <Link href="/en" className="block px-4 py-2 text-[#2D3D34] hover:bg-[#64B33D]/10 hover:text-[#64B33D] transition-colors">English</Link>
+        </div>
+      )}
     </div>
   );
 }
