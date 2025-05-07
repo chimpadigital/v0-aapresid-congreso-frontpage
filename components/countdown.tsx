@@ -147,7 +147,7 @@ const angle = label === "Días" ? ((100 - progress) / 100) * 360 : (progress / 1
         <path d={hexPath} fill="#64B33D" />
       </svg>
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4" style={{ zIndex: 3 }}>
+      <div className="absolute inset-0 flex flex-col items-center justify-center md:gap-4" style={{ zIndex: 3 }}>
         <span className="text-4xl font-bold text-white md:text-[80px]">
           {value}
         </span>
