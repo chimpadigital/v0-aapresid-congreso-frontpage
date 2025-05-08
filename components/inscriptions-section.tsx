@@ -26,7 +26,7 @@ export function InscriptionsSection() {
         </div>
 
         {/* Right side - Light green */}
-        <div className="flex w-full flex-col items-center justify-center rounded-[30px] bg-[#64B33D] px-8 py-16 md:z-10 md:-ml-[40px] md:w-[calc(50%+20px)] md:px-16 md:py-20 -top-6 md:top-auto relative">
+        <div className="flex w-full flex-col items-center justify-center rounded-[30px] bg-[#64B33D] px-8 py-16  md:-ml-[40px] md:w-[calc(50%+20px)] md:px-16 md:py-20 -top-6 md:top-auto relative">
           <h3 className="mb-6 text-center text-2xl font-light text-white md:text-3xl lg:text-4xl">
             ¿Sos socio Aapresid?
           </h3>
