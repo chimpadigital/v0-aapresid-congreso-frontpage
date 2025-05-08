@@ -3,15 +3,40 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, Eye } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
+import SwiperCore from "swiper";
+import { useRef } from "react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-creative";
+import "swiper/css/navigation";
 
 import "../styles/swiper.css";
 import { ejesTematicos } from "@/data/ejesTematicos";
 
 export function ThemesSection() {
+  // Referencias para ambos Swipers
+  const swiperRef = useRef<SwiperCore | null>(null);
+  const textoSwiperRef = useRef<SwiperCore | null>(null);
+
+  // Sincronizar ambos sliders
+  const handleSlideChange = (swiper: SwiperCore) => {
+    if (
+      textoSwiperRef.current &&
+      textoSwiperRef.current.activeIndex !== swiper.activeIndex
+    ) {
+      textoSwiperRef.current.slideTo(swiper.activeIndex);
+    }
+  };
+  const handleTextoSlideChange = (swiper: SwiperCore) => {
+    if (
+      swiperRef.current &&
+      swiperRef.current.activeIndex !== swiper.activeIndex
+    ) {
+      swiperRef.current.slideTo(swiper.activeIndex);
+    }
+  };
+
   return (
     <section className="relative m-[30px] overflow-hidden rounded-[20px]">
       {/* Background image */}
@@ -59,6 +84,10 @@ export function ThemesSection() {
             }}
             modules={[EffectCreative]}
             className="ejes-tematicos-swiper"
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            onSlideChange={handleSlideChange}
+            slidesPerView={1}
+            spaceBetween={20}
           >
             {ejesTematicos.map((ejesTematico) => (
               <SwiperSlide key={ejesTematico.titulo}>
@@ -66,7 +95,6 @@ export function ThemesSection() {
                   <h3 className="text-2xl font-bold text-white">
                     {ejesTematico.titulo}
                   </h3>
-                  {/* <p className="text-white text-xl">{ejesTematico.descripcion}</p> */}
                 </div>
               </SwiperSlide>
             ))}
@@ -74,10 +102,22 @@ export function ThemesSection() {
 
           {/* Navigation buttons */}
           <div className="mt-8 flex gap-4">
-            <button className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white/10">
+            <button
+              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white/10"
+              onClick={() => {
+                swiperRef.current?.slidePrev();
+              }}
+              aria-label="Anterior"
+            >
               <ArrowLeft className="h-5 w-5" />
             </button>
-            <button className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white/10">
+            <button
+              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white/10"
+              onClick={() => {
+                swiperRef.current?.slideNext();
+              }}
+              aria-label="Siguiente"
+            >
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>
@@ -91,15 +131,22 @@ export function ThemesSection() {
           <p className="mb-8 text-xl text-white">
             Conocé los ejes temáticos de esta edición
           </p>
-          <p className="text-white">
-            Una sinergia entre la ciencia, los organismos de investigación y los
-            productores, quienes participan activamente de los ensayos llevados
-            a cabo en escenarios reales.
-          </p>
-          <p className="mt-4 text-white">
-            Pensado para dar respuestas a las demandas del productor a través
-            del desarrollo de tecnologías sustentables.
-          </p>
+          <Swiper
+            grabCursor={true}
+            className="ejes-tematicos-texto-swiper"
+            onSwiper={(swiper) => (textoSwiperRef.current = swiper)}
+            onSlideChange={handleTextoSlideChange}
+            slidesPerView={1}
+            spaceBetween={20}
+          >
+            {ejesTematicos.map((ejesTematico) => (
+              <SwiperSlide key={ejesTematico.titulo + "-texto"}>
+                <p className="max-w-[400px] text-xl text-white">
+                  {ejesTematico.descripcion}
+                </p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
