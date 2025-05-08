@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function AboutSection() {
   return (
-    <section className="relative mx-4 overflow-hidden rounded-[20px] md:m-[30px]">
+    <section className="relative mx-4 overflow-hidden rounded-[20px] md:mx-[30px] mt-8 md:mt-20">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image

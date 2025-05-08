@@ -14,10 +14,10 @@ export function Hero() {
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-32">
       <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight ">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-tight ">
           <span className="inline-block">
             <span
-              className="inline-block transform transition-all duration-700 ease-out font-light"
+              className="inline-block transform transition-all duration-700 ease-out font-normal"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(40px)",

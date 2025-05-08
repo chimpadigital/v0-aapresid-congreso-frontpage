@@ -14,7 +14,7 @@ const config: Config = {
         primary: "#2D3D34",
         accent: "#64B33D",
         secondary: "#ED7F00",
-        background: "#F0F0F1",
+        background: "#fff",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
@@ -79,6 +79,9 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        sans: ['Owners', 'Arial', 'Helvetica', 'sans-serif'],
       },
     },
   },
