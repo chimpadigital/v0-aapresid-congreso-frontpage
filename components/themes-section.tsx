@@ -13,6 +13,14 @@ import "swiper/css/navigation";
 
 import "../styles/swiper.css";
 import { ejesTematicos } from "@/data/ejesTematicos";
+import Eje1Aprender from "./icons/Eje1Aprender";
+import ArrowThin from "./icons/ArrowThin";
+import Eje2Desafios from "./icons/Eje2Desafios";
+import Eje3Innovacion from "./icons/Eje3Innovacion";
+import Eje4Manejo from "./icons/Eje4Manejo";
+import Eje5Sistemas from "./icons/Eje5Sistemas";
+import Eje6SistemasSustentables from "./icons/Eje6SistemasSustentables";
+import Eje7Prospectiva from "./icons/Eje7Prospectiva";
 
 export function ThemesSection() {
   // Referencias para ambos Swipers
@@ -37,116 +45,129 @@ export function ThemesSection() {
     }
   };
 
+  const iconosEjesTematicos = [
+    {
+      icon: <Eje1Aprender />,
+    },
+    {
+      icon: <Eje2Desafios />,
+    },
+    {
+      icon: <Eje3Innovacion />,
+    },
+    {
+      icon: <Eje4Manejo />,
+    },
+    {
+      icon: <Eje5Sistemas />,
+    },
+    {
+      icon: <Eje6SistemasSustentables />,
+    },
+    {
+      icon: <Eje7Prospectiva />,
+    },
+  ];
+
   return (
-    <section className="relative m-[30px] overflow-hidden rounded-[20px]">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/trama-background.png"
-          alt=""
-          fill
-          className="object-cover"
-        />
-      </div>
-
+    <section className="relative m-4 md:m-[30px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.webp')] bg-cover bg-center p-8 xl:px-[94px] xl:py-[84px]">
       {/* Decorative hexagons */}
-      <div className="absolute right-0 top-0 z-0">
+      <div className="absolute right-0 top-4 z-0">
         <Image
-          src="/images/vector1.svg"
+          src="/images/vector-ejes.svg"
           alt=""
-          width={97}
+          width={200}
           height={108}
-          className="opacity-40"
         />
       </div>
-      <div className="absolute bottom-10 right-20 z-0">
-        <Image src="/images/vector2.svg" alt="" width={72} height={82} />
-      </div>
-      <div className="absolute right-5 top-40 z-0">
-        <Image src="/images/vector3.svg" alt="" width={36} height={85} />
-      </div>
-
-      {/* Content container */}
-      <div className="relative z-10 grid gap-8 p-8 md:grid-cols-2 md:px-[94px] md:py-[84px]">
-        {/* Left column - Pink card */}
-        <div className="flex flex-col">
-          <Swiper
-            grabCursor={true}
-            effect={"creative"}
-            creativeEffect={{
-              prev: {
-                shadow: true,
-                translate: [0, 0, -400],
-              },
-              next: {
-                translate: ["100%", 0, 0],
-              },
-            }}
-            modules={[EffectCreative]}
-            className="ejes-tematicos-swiper"
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            onSlideChange={handleSlideChange}
-            slidesPerView={1}
-            spaceBetween={20}
-          >
-            {ejesTematicos.map((ejesTematico) => (
-              <SwiperSlide key={ejesTematico.titulo}>
-                <div className="flex flex-col">
-                  <h3 className="text-2xl font-bold text-white">
-                    {ejesTematico.titulo}
-                  </h3>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Navigation buttons */}
-          <div className="mt-8 flex gap-4">
-            <button
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white/10"
-              onClick={() => {
-                swiperRef.current?.slidePrev();
+      <div className="mx-auto max-w-[1216px]">
+        {/* Content container */}
+        <div className="relative flex flex-col gap-8 lg:flex-row">
+          {/* Left column - cards */}
+          <div className="flex flex-1 flex-col">
+            <Swiper
+              grabCursor={true}
+              effect={"creative"}
+              creativeEffect={{
+                prev: {
+                  shadow: true,
+                  translate: [0, 0, -400],
+                },
+                next: {
+                  translate: ["100%", 0, 0],
+                },
               }}
-              aria-label="Anterior"
+              modules={[EffectCreative]}
+              className="ejes-tematicos-swiper"
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              onSlideChange={handleSlideChange}
+              slidesPerView={1}
+              spaceBetween={20}
             >
-              <ArrowLeft className="h-5 w-5" />
-            </button>
-            <button
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white/10"
-              onClick={() => {
-                swiperRef.current?.slideNext();
-              }}
-              aria-label="Siguiente"
+              {ejesTematicos.map((ejesTematico, index) => (
+                <SwiperSlide key={ejesTematico.titulo}>
+                  <div className="flex lg:w-[min(100%,446px)] flex-row flex-wrap gap-4 md:gap-11 rounded-[20px] xl:flex-col w-full">
+                    <div className="scale-75 md:scale-100">{iconosEjesTematicos[index].icon}</div>
+                    <h3 className="w-[min(100%,446px)] rounded-[20px] text-4xl font-medium text-white md:text-5xl">
+                      {ejesTematico.titulo}
+                    </h3>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Right column - Text content */}
+          <div className="flex flex-1 flex-col pl-4 lg:justify-between">
+            <div className="w-fit">
+              <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">
+                Ejes Temáticos
+              </h2>
+              <p className="mb-8 w-fit text-lg text-white">
+                Conocé los ejes temáticos de esta edición
+              </p>
+            </div>
+            <Swiper
+              grabCursor={true}
+              className="ejes-tematicos-texto-swiper"
+              onSwiper={(swiper) => (textoSwiperRef.current = swiper)}
+              onSlideChange={handleTextoSlideChange}
+              slidesPerView={1}
+              spaceBetween={20}
             >
-              <ArrowRight className="h-5 w-5" />
-            </button>
+              {ejesTematicos.map((ejesTematico) => (
+                <SwiperSlide key={ejesTematico.titulo + "-texto"}>
+                  <p className="whitespace-pre-line text-xl text-white">
+                    {ejesTematico.descripcion}
+                  </p>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
 
-        {/* Right column - Text content */}
-        <div className="flex flex-col justify-center">
-          <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            Ejes Temáticos
-          </h2>
-          <p className="mb-8 text-xl text-white">
-            Conocé los ejes temáticos de esta edición
-          </p>
-          <Swiper
-            grabCursor={true}
-            className="ejes-tematicos-texto-swiper"
-            onSwiper={(swiper) => (textoSwiperRef.current = swiper)}
-            onSlideChange={handleTextoSlideChange}
-            slidesPerView={1}
-            spaceBetween={20}
+        {/* Navigation buttons */}
+        <div className="mt-8 flex gap-6">
+          <button
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10"
+            onClick={() => {
+              swiperRef.current?.slidePrev();
+            }}
+            aria-label="Anterior"
           >
-            {ejesTematicos.map((ejesTematico) => (
-              <SwiperSlide key={ejesTematico.titulo + "-texto"}>
-                <p className="max-w-[400px] text-xl text-white">
-                  {ejesTematico.descripcion}
-                </p>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            <div className="rotate-180">
+              <ArrowThin />
+            </div>
+          </button>
+          <button
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10"
+            onClick={() => {
+              swiperRef.current?.slideNext();
+            }}
+            aria-label="Siguiente"
+          >
+            <ArrowThin />
+          </button>
         </div>
       </div>
     </section>

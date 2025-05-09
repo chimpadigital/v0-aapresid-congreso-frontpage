@@ -1,7 +1,7 @@
 export const ejesTematicos = [
   {
     titulo: "Aprender Produciendo",
-    descripcion: "Una sinergia entre la ciencia, los organismos de investigación y los productores, quienes participan activamente de los ensayos llevados a cabo en escenarios reales.  Pensado para dar respuestas a las demandas del productor a través del desarrollo de tecnologías sustentables."
+    descripcion: "Una sinergia entre la ciencia, los organismos de investigación y los productores, quienes participan activamente de los ensayos llevados a cabo en escenarios reales.\n  Pensado para dar respuestas a las demandas del productor a través del desarrollo de tecnologías sustentables."
   },
   {
     titulo: "Desafíos Globales",
