@@ -22,9 +22,9 @@ export function AboutSection() {
           <h2 className="mb-6 text-4xl font-light leading-tight text-white md:text-5xl lg:text-5xl">
             ¿Qué es el
             <br />
-            <span className="font-bold">Congreso Aapresid?</span>
+            <span className="font-medium">Congreso Aapresid?</span>
           </h2>
-          <p className="w-full max-w-[70ch] text-base text-white">
+          <p className="w-full max-w-[45ch] text-base text-white">
             El Congreso Aapresid es un evento de referencia internacional, que
             lleva más de tres décadas conectando innovación, tecnología y
             conocimiento con el propósito de impulsar sistemas productivos cada
