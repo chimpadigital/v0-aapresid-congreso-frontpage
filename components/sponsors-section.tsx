@@ -16,125 +16,62 @@ interface SponsorProps {
 const sponsorsA: SponsorProps[] = [
   {
     name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
+    logo: "/images/sponsors/logo.png",
     url: "#",
   },
   {
     name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
+    logo: "/images/sponsors/logo2.png",
     url: "#",
   },
   {
     name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
+    logo: "/images/sponsors/logo3.png",
     url: "#",
   },
   {
     name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
+    logo: "/images/sponsors/logo4.png",
     url: "#",
   },
   {
     name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
+    logo: "/images/sponsors/logo5.png",
     url: "#",
   },
   {
     name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
+    logo: "/images/sponsors/logo6.png",
     url: "#",
   },
   {
-    name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
+    name: "Chacraswwervicios",
+    logo: "/images/sponsors/logo6.png",
     url: "#",
   },
   {
-    name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
+    name: "Bunertge",
+    logo: "/images/sponsors/logo5.png",
     url: "#",
   },
   {
-    name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
+    name: "Buenttos Aires Ciudad",
+    logo: "/images/sponsors/logo2.png",
     url: "#",
   },
   {
-    name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
+    name: "ATAtytNOR",
+    logo: "/images/sponsors/logo.png",
     url: "#",
   },
   {
-    name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
+    name: "Bancoet Macro",
+    logo: "/images/sponsors/logo4.png",
     url: "#",
   },
   {
-    name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
-    url: "#",
-  },
-];
-
-const sponsorsB: SponsorProps[] = [
-  {
-    name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
-    url: "#",
-  },
-  {
-    name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
-    url: "#",
-  },
-  {
-    name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
-    url: "#",
-  },
-  {
-    name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
-    url: "#",
-  },
-  {
-    name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
-    url: "#",
-  },
-  {
-    name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
-    url: "#",
-  },
-  {
-    name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
-    url: "#",
-  },
-  {
-    name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
-    url: "#",
-  },
-  {
-    name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
-    url: "#",
-  },
-  {
-    name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
-    url: "#",
-  },
-  {
-    name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
-    url: "#",
-  },
-  {
-    name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
+    name: "Bayeeetr",
+    logo: "/images/sponsors/logo3.png",
     url: "#",
   },
 ];
@@ -154,9 +91,14 @@ export function SponsorsSection() {
             <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS A</h3>
             <div className="mb-12 h-px w-full bg-gray-300"></div>
 
-            <div className="mb-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+            <div className="mb-12 flex flex-wrap gap-y-8">
               {sponsorsA.map((sponsor, i) => (
-                <SponsorLogo key={sponsor.name + "-" + i} {...sponsor} />
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
               ))}
             </div>
           </div>
@@ -167,9 +109,14 @@ export function SponsorsSection() {
 
             <div className="mb-12 h-px w-full bg-gray-300"></div>
 
-            <div className="mb-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-              {sponsorsB.map((sponsor, i) => (
-                <SponsorLogo key={sponsor.name + "-" + i} {...sponsor} />
+            <div className="mb-12 flex flex-wrap gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
               ))}
             </div>
           </div>
@@ -180,9 +127,14 @@ export function SponsorsSection() {
 
             <div className="mb-12 h-px w-full bg-gray-300"></div>
 
-            <div className="mb-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-              {sponsorsB.map((sponsor, i) => (
-                <SponsorLogo key={sponsor.name + "-" + i} {...sponsor} />
+            <div className="mb-12 flex flex-wrap gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
               ))}
             </div>
           </div>
@@ -193,9 +145,14 @@ export function SponsorsSection() {
 
             <div className="mb-12 h-px w-full bg-gray-300"></div>
 
-            <div className="mb-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-              {sponsorsB.map((sponsor, i) => (
-                <SponsorLogo key={sponsor.name + "-" + i} {...sponsor} />
+            <div className="mb-12 flex flex-wrap gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
               ))}
             </div>
           </div>
@@ -206,9 +163,14 @@ export function SponsorsSection() {
 
             <div className="mb-12 h-px w-full bg-gray-300"></div>
 
-            <div className="mb-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-              {sponsorsB.map((sponsor, i) => (
-                <SponsorLogo key={sponsor.name + "-" + i} {...sponsor} />
+            <div className="mb-12 flex flex-wrap gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
               ))}
             </div>
           </div>
@@ -219,22 +181,27 @@ export function SponsorsSection() {
 
             <div className="mb-12 h-px w-full bg-gray-300"></div>
 
-            <div className="mb-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-              {sponsorsB.map((sponsor, i) => (
-                <SponsorLogo key={sponsor.name + "-" + i} {...sponsor} />
+            <div className="mb-12 flex flex-wrap gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
-      <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 xl:px-[58px] xl:py-[27.5px] md:mx-[30px]">
-        <div className="mx-auto max-w-[1200px] justify-between gap-[25px] flex flex-col xl:flex-row">
+      <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[30px] xl:px-[58px] xl:py-[27.5px]">
+        <div className="mx-auto flex max-w-[1200px] flex-col justify-between gap-[25px] xl:flex-row">
           <div className="flex items-center justify-between gap-4">
             <TextoApoyan />
             <LogoClarin />
             <LogoLaNacion />
           </div>
-          <div className="h-12 w-[2.5px] bg-white hidden xl:block shrink-0"></div>
+          <div className="hidden h-12 w-[2.5px] shrink-0 bg-white xl:block"></div>
           <hr className="xl:hidden" />
           <div className="flex items-center justify-between gap-4">
             <TextoOrganizan />
@@ -253,7 +220,7 @@ function SponsorLogo({ name, logo, url }: SponsorProps) {
       href={url}
       className="flex h-20 items-center justify-center p-2 transition-opacity hover:opacity-80"
     >
-      <div className="relative h-full w-full">
+      <div className="relative w-32 h-16">
         <Image
           src={logo || "/placeholder.svg"}
           alt={name}
