@@ -84,6 +84,7 @@ const config: Config = {
         sans: ['Owners', 'Arial', 'Helvetica', 'sans-serif'],
       },
       screens: {
+        "2xs" : '350px',
         xs: '470px',
       },
     },

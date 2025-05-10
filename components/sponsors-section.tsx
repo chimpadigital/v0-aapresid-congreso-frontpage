@@ -79,7 +79,7 @@ const sponsorsA: SponsorProps[] = [
 export function SponsorsSection() {
   return (
     <>
-      <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 py-16 md:m-[30px] md:px-16">
+      <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pt-[88px] pb-6 md:mx-[33px] md:px-16">
         <div className="mx-auto max-w-7xl">
           {/* Title */}
           <h2 className="mb-16 text-center text-4xl font-medium text-[#2D3D34] md:text-5xl lg:text-6xl">
@@ -89,13 +89,13 @@ export function SponsorsSection() {
           {/* Sponsors A */}
           <div className="mb-16">
             <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS A</h3>
-            <div className="mb-12 h-px w-full bg-gray-300"></div>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap gap-y-8">
+            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -107,13 +107,13 @@ export function SponsorsSection() {
           <div>
             <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS B</h3>
 
-            <div className="mb-12 h-px w-full bg-gray-300"></div>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap gap-y-8">
+            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -125,13 +125,13 @@ export function SponsorsSection() {
           <div>
             <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS C</h3>
 
-            <div className="mb-12 h-px w-full bg-gray-300"></div>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap gap-y-8">
+            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -143,13 +143,13 @@ export function SponsorsSection() {
           <div>
             <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS D</h3>
 
-            <div className="mb-12 h-px w-full bg-gray-300"></div>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap gap-y-8">
+            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -161,13 +161,13 @@ export function SponsorsSection() {
           <div>
             <h3 className="mb-4 text-2xl text-[#2D3D34]">INSTITUCIONALES</h3>
 
-            <div className="mb-12 h-px w-full bg-gray-300"></div>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap gap-y-8">
+            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -179,13 +179,13 @@ export function SponsorsSection() {
           <div>
             <h3 className="mb-4 text-2xl text-[#2D3D34]">MEDIOS</h3>
 
-            <div className="mb-12 h-px w-full bg-gray-300"></div>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap gap-y-8">
+            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full xs:basis-1/2 md:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -194,16 +194,16 @@ export function SponsorsSection() {
           </div>
         </div>
       </section>
-      <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[30px] xl:px-[58px] xl:py-[27.5px]">
-        <div className="mx-auto flex max-w-[1200px] flex-col justify-between gap-[25px] xl:flex-row">
-          <div className="flex items-center justify-between gap-4">
+      <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[33px] xl:px-[58px] xl:py-[27.5px]">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-4 xsgap-[25px] xl:flex-row">
+          <div className="flex items-center justify-between gap-4 flex-1">
             <TextoApoyan />
             <LogoClarin />
             <LogoLaNacion />
           </div>
           <div className="hidden h-12 w-[2.5px] shrink-0 bg-white xl:block"></div>
           <hr className="xl:hidden" />
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-4 flex-1">
             <TextoOrganizan />
             <LogoAapresid />
             <LogoExponenciar />

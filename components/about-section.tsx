@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function AboutSection() {
   return (
-    <section className="relative mx-4 overflow-hidden rounded-[20px] md:mx-[30px] mt-8 md:mt-20">
+    <section className="relative mx-4 overflow-hidden rounded-[20px] md:mx-[33px] mt-0 md:mt-20">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -16,7 +16,7 @@ export function AboutSection() {
       </div>
 
       {/* Content container */}
-      <div className="relative w-full gap-8 p-6 md:grid md:grid-cols-2 md:px-24 md:py-28">
+      <div className="relative w-full gap-8 p-6 md:grid md:grid-cols-2 md:px-12 lg:px-24 md:py-28">
         {/* Left column */}
         <div className="flex w-full flex-col justify-center">
           <h2 className="mb-6 text-4xl font-light leading-tight text-white md:text-5xl lg:text-5xl">

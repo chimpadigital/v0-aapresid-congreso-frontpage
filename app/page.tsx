@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
       {/* Header section with video background */}
-      <header className="relative mx-4 mt-4 min-h-screen overflow-hidden rounded-[20px] md:mx-[30px] md:mt-[30px]">
+      <header className="relative mx-4 mt-4 min-h-screen overflow-hidden rounded-[20px] md:mx-[30px] md:mt-[33px]">
         <div className="absolute inset-0 z-0">
           {/* Fallback image while video loads */}
           <div className="absolute inset-0">

@@ -91,19 +91,19 @@ export function FaqSection() {
   const visibleFaqs = faqs;
 
   return (
-    <section className="relative mx-4 md:m-[30px] overflow-hidden rounded-[20px] bg-[url('/images/fondo-preguntas-dark.png')] bg-cover bg-bottom">
+    <section className="relative mx-4 mt-[44px] overflow-hidden rounded-[20px] bg-[url('/images/fondo-preguntas-dark.png')] bg-cover bg-bottom md:mx-[33px]">
       {/* Content container */}
       <div className="relative flex flex-col items-center p-8 md:px-16 md:py-24">
-        <h2 className="mb-12 text-center text-[40px] text-white">
+        <h2 className="mb-10 md:mb-20 text-center text-[40px] text-white">
           Preguntas <span className="font-medium">Frecuentes</span>
         </h2>
 
         {/* FAQ accordion */}
-        <div className="w-full max-w-3xl space-y-4">
+        <div className="w-full max-w-3xl space-y-[40px]">
           {visibleFaqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-[16px] bg-white transition-all duration-500 ease-in-out"
+              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[1500ms] ease-in-out"
             >
               <button
                 className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
@@ -125,7 +125,7 @@ export function FaqSection() {
 
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   faq.isOpen
                     ? "max-h-[2000px] opacity-100"
                     : "max-h-0 opacity-0"

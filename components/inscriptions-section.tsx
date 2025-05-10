@@ -5,7 +5,7 @@ import ArrowRounded from "./icons/ArrowRounded";
 
 export function InscriptionsSection() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 pt-[68px] md:px-8">
+    <section className="mx-auto w-full max-w-7xl px-4 pt-6 md:pt-[68px] md:px-8">
       <div className="relative flex flex-col md:flex-row">
         {/* Left side - Dark green with circuit pattern */}
         <div className="relative flex w-full items-center justify-center overflow-hidden rounded-t-[30px] bg-[#2D3D34] px-8 py-16 md:w-[calc(50%+20px)] md:rounded-l-[30px] md:rounded-tr-none md:px-16 md:py-20">
