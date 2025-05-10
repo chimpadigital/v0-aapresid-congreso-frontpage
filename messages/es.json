@@ -1,6 +1,4 @@
 {
-  "hello": "Hola",
-  "welcome": "Bienvenido",
   "navbar": {
     "inscripciones": "Inscripciones",
     "acerca_de": "Acerca de",
@@ -15,8 +13,8 @@
     "noticias": "Noticias",
     "contacto": "Contacto",
     "comercial": "Comercial",
-    "espanol": "Español",
-    "english": "Inglés"
+    "espanol": "ES",
+    "english": "EN"
   },
   "hero": {
     "programamos": "Programamos",

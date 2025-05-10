@@ -7,13 +7,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 import LogoNavbar from "@/public/images/logo-navbar.svg";
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from "next-intl";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const { t } = useTranslation('translation');
+  const t = useTranslations("navbar");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +63,7 @@ export function Navbar() {
     <>
       {/* Original navbar - visible when not scrolled */}
       <nav
-        className={`xs:py-[19px] fixed left-0 right-0 z-[9999] mx-8 transition-all duration-300 md:static md:top-0 md:mx-0 md:w-full md:px-[14px] ${
+        className={`fixed left-0 right-0 z-[9999] mx-8 transition-all duration-300 xs:py-[19px] md:static md:top-0 md:mx-0 md:w-full md:px-[14px] ${
           scrolled
             ? "top-2 md:pointer-events-none md:opacity-0"
             : "top-6 md:opacity-100"
@@ -91,13 +91,13 @@ export function Navbar() {
               <NavItem label="Contenidos" hasDropdown />
               <NavItem label="Prensa" hasDropdown />
               <NavItem label="Comercial" /> */}
-              <NavItem label={t('navbar.espanol')} hasDropdown />
+              <NavItem label={t("espanol")} hasDropdown />
 
               <Link
                 href="/inscripciones"
                 className="relative z-[1] ml-4 overflow-hidden rounded-full bg-white px-[30px] py-[15.5px] font-medium text-[#2D3D34] transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-white hover:before:scale-[3]"
               >
-                {t('navbar.inscripciones')}
+                {t("inscripciones")}
               </Link>
             </div>
 

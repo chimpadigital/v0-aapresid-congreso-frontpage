@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale} from 'next-intl/server';
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "v0 App",
@@ -14,15 +15,20 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locales: string };
+  params: { locale: string };
 }) {
   const locale = await getLocale();
-
-
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale}
+            messages={messages}>
           {children}
         </NextIntlClientProvider>
         <a

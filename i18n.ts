@@ -1,17 +1,12 @@
-import { notFound } from 'next/navigation';
-import { getRequestConfig } from 'next-intl/server';
-
-// Lista de idiomas permitidos
-const locales = ['es', 'en'] as const;
-type Locale = (typeof locales)[number];
-
-export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as Locale)) {
-    notFound();
-  }
-
+import {getRequestConfig} from 'next-intl/server';
+ 
+export default getRequestConfig(async () => {
+  // Provide a static locale, fetch a user setting,
+  // read from `cookies()`, `headers()`, etc.
+  const locale = 'en';
+ 
   return {
-    locale: locale as Locale, // ✅ garantizamos que ya es válido
+    locale,
     messages: (await import(`./messages/${locale}.json`)).default
   };
 });
