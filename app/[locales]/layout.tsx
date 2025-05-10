@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
+import {NextIntlClientProvider} from 'next-intl';
+import {getLocale} from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: "v0 App",
@@ -7,16 +9,22 @@ export const metadata: Metadata = {
   generator: "v0.dev",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
+  params: { locales: string };
+}) {
+  const locale = await getLocale();
 
+
+  return (
+    <html lang={locale}>
+      <body>
+        <NextIntlClientProvider>
+          {children}
+        </NextIntlClientProvider>
         <a
           href="/inscripciones"
           target="_blank"

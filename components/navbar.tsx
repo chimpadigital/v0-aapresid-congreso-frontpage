@@ -7,11 +7,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 import LogoNavbar from "@/public/images/logo-navbar.svg";
+import { useTranslation } from 'next-i18next';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation('translation');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,13 +91,13 @@ export function Navbar() {
               <NavItem label="Contenidos" hasDropdown />
               <NavItem label="Prensa" hasDropdown />
               <NavItem label="Comercial" /> */}
-              <NavItem label="ES" hasDropdown />
+              <NavItem label={t('navbar.espanol')} hasDropdown />
 
               <Link
                 href="/inscripciones"
                 className="relative z-[1] ml-4 overflow-hidden rounded-full bg-white px-[30px] py-[15.5px] font-medium text-[#2D3D34] transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-white hover:before:scale-[3]"
               >
-                Inscripciones
+                {t('navbar.inscripciones')}
               </Link>
             </div>
 

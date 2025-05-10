@@ -8,7 +8,7 @@ import { FaqSection } from "@/components/faq-section";
 import { SponsorsSection } from "@/components/sponsors-section";
 import { Footer } from "@/components/footer";
 
-export default function Home() {
+export default function Home({ params }: { params: { locale: string } }) {
   return (
     <main>
       {/* Header section with video background */}
