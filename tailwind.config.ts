@@ -83,6 +83,9 @@ const config: Config = {
       fontFamily: {
         sans: ['Owners', 'Arial', 'Helvetica', 'sans-serif'],
       },
+      screens: {
+        xs: '470px',
+      },
     },
   },
   plugins: [],
