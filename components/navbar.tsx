@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { button } from "@/styles/primitives";
+import LogoNavbar from "@/public/images/logo-navbar.svg";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,20 +61,27 @@ export function Navbar() {
     <>
       {/* Original navbar - visible when not scrolled */}
       <nav
-        className={`w-full px-[14px] py-[19px] transition-all duration-300 ${
-          scrolled ? "pointer-events-none opacity-0" : "opacity-100"
+        className={`xs:py-[19px] fixed left-0 right-0 z-[9999] mx-8 transition-all duration-300 md:static md:top-0 md:mx-0 md:w-full md:px-[14px] ${
+          scrolled
+            ? "top-2 md:pointer-events-none md:opacity-0"
+            : "top-6 md:opacity-100"
         }`}
       >
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-wrap items-center justify-between gap-4 rounded-full bg-[#A6A6A6]/50 px-[19px] py-[14px] backdrop-blur-[10px]">
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center">
-                <img
-                  src="/images/logo-navbar.svg"
-                  alt="Congreso Aapresid Logo"
-                  className="h-10 w-auto"
-                />
+          <div className="flex items-center justify-between gap-3 rounded-full bg-[#A6A6A6]/50 px-[19px] py-[14px] backdrop-blur-[10px] md:gap-4">
+            <div className="flex h-full w-full items-center">
+              <Link href="/" className="flex h-full items-center">
+                <div className="relative flex h-10 w-full items-center">
+                  <Image
+                    src={LogoNavbar}
+                    alt="Congreso Aapresid Logo"
+                    className="h-10 max-h-full w-auto max-w-full object-contain"
+                  />
+                </div>
               </Link>
+            </div>
+            <div className="md:hidden">
+              <NavItem label="ES" hasDropdown />
             </div>
 
             <div className="hidden items-center space-x-6 text-white md:flex">
@@ -92,7 +99,8 @@ export function Navbar() {
               </Link>
             </div>
 
-            <button className="text-white md:hidden">
+            {/* DESACTIVADO ENTREGA 1 - Menu Hamburguesa */}
+            <button className="bottom-4 right-4 z-[10001] hidden text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -114,11 +122,11 @@ export function Navbar() {
 
       {/* Compact navbar - visible when scrolled */}
       <nav
-        className={`fixed left-0 right-0 top-0 z-[9999] transition-all duration-300 ${
+        className={`fixed left-0 right-0 top-0 z-[9999] hidden transition-all duration-300 md:block ${
           scrolled ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="my-4 max-w-7xl mx-auto  z-[9999]">
+        <div className="z-[9999999] mx-auto my-4 max-w-7xl">
           <div className="flex items-center justify-between rounded-full bg-transparent px-4 py-3 md:px-6">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
@@ -133,8 +141,8 @@ export function Navbar() {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3  z-[9999999]">
-            <NavItem label="ES" hasDropdown />
+            <div className="z-[9999999] flex items-center gap-3">
+              <NavItem label="ES" hasDropdown />
               <Link
                 href="/inscripciones"
                 className="relative z-[1] ml-4 overflow-hidden rounded-full bg-secondary px-[30px] py-[15.5px] font-medium text-[#fff] transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3]"
@@ -283,9 +291,19 @@ function NavItem({
         {hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
       </button>
       {hasDropdown && label === "ES" && (
-        <div className="absolute left-0 top-full min-w-[120px] rounded-lg bg-white py-2 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-50">
-          <Link href="/es" className="block px-4 py-2 text-[#2D3D34] hover:bg-[#64B33D]/10 hover:text-[#64B33D] transition-colors">Español</Link>
-          <Link href="/en" className="block px-4 py-2 text-[#2D3D34] hover:bg-[#64B33D]/10 hover:text-[#64B33D] transition-colors">English</Link>
+        <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[120px] rounded-lg bg-white py-2 opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+          <Link
+            href="/es"
+            className="block px-4 py-2 text-[#2D3D34] transition-colors hover:bg-[#64B33D]/10 hover:text-[#64B33D]"
+          >
+            Español
+          </Link>
+          <Link
+            href="/en"
+            className="block px-4 py-2 text-[#2D3D34] transition-colors hover:bg-[#64B33D]/10 hover:text-[#64B33D]"
+          >
+            English
+          </Link>
         </div>
       )}
     </div>
