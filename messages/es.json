@@ -34,7 +34,8 @@
     "inscribite_aca": "Inscribite acá"
   },
   "about": {
-    "que_es_el_congreso": "¿Qué es el Congreso Aapresid?",
+    "que_es": "¿Qué es el ",
+    "congreso": "Congreso Aapresid?",
     "descripcion": "El Congreso Aapresid es un evento de referencia internacional, que lleva más de tres décadas conectando innovación, tecnología y conocimiento con el propósito de impulsar sistemas productivos cada vez más sustentables. Durante cada edición, congrega a los más importantes referentes nacionales e internacionales para discutir y posicionar contenido prospectivo de interés para el agro.",
     "conoce_el": "Conocé el",
     "cronograma": "cronograma",
@@ -93,9 +94,7 @@
       },
       {
         "pregunta": "¿Cómo me inscribo para asistir?",
-        "respuesta": [
-          "Próximamente dentro de esta misma página."
-        ]
+        "respuesta": ["Próximamente dentro de esta misma página."]
       },
       {
         "pregunta": "¿Dónde puedo ver el programa del Congreso?",
@@ -115,6 +114,7 @@
     ]
   },
   "sponsors": {
+    "title": "Nos acompañan",
     "patrocinios_a": "PATROCINIOS A",
     "patrocinios_b": "PATROCINIOS B",
     "patrocinios_c": "PATROCINIOS C",
@@ -140,4 +140,4 @@
     "expoagro_dir1": "Av. Corrientes 1302 5 Piso",
     "expoagro_dir2": "(C1043ABN) CABA"
   }
-} 
+}

@@ -6,6 +6,7 @@ import TextoApoyan from "./icons/TextoApoyan";
 import TextoOrganizan from "./icons/TextoOrganizan";
 import LogoAapresid from "./icons/LogoAapresid";
 import LogoExponenciar from "./icons/LogoExponenciar";
+import { useTranslations } from "next-intl";
 
 interface SponsorProps {
   name: string;
@@ -77,27 +78,30 @@ const sponsorsA: SponsorProps[] = [
 ];
 
 export function SponsorsSection() {
+  const t = useTranslations("sponsors");
   return (
     <>
-      <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pt-[88px] pb-6 md:mx-[33px] md:px-16">
+      <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
         <div className="mx-auto max-w-7xl">
           {/* Title */}
           <h2 className="mb-16 text-center text-4xl font-medium text-[#2D3D34] md:text-5xl lg:text-6xl">
-            Nos acompañan
+            {t("title")}
           </h2>
 
           {/* Sponsors A */}
           <div className="mb-16">
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS A</h3>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_a")}
+            </h3>
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} />
+                  <SponsorLogo {...sponsor} height={75} />
                 </div>
               ))}
             </div>
@@ -105,17 +109,19 @@ export function SponsorsSection() {
 
           {/* Sponsors B */}
           <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS B</h3>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_b")}
+            </h3>
 
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} />
+                  <SponsorLogo {...sponsor} height={65} />
                 </div>
               ))}
             </div>
@@ -123,17 +129,19 @@ export function SponsorsSection() {
 
           {/* Sponsors C */}
           <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS C</h3>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_c")}
+            </h3>
 
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} />
+                  <SponsorLogo {...sponsor} height={55} />
                 </div>
               ))}
             </div>
@@ -141,17 +149,19 @@ export function SponsorsSection() {
 
           {/* Sponsors D */}
           <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">PATROCINIOS D</h3>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_d")}
+            </h3>
 
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} />
+                  <SponsorLogo {...sponsor} height={45} />
                 </div>
               ))}
             </div>
@@ -159,15 +169,17 @@ export function SponsorsSection() {
 
           {/* institucionales */}
           <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">INSTITUCIONALES</h3>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("institucionales")}
+            </h3>
 
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -177,15 +189,15 @@ export function SponsorsSection() {
 
           {/* MEDIOS */}
           <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">MEDIOS</h3>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">{t("medios")}</h3>
 
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap xs:gap-y-8 justify-center">
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsorsA.map((sponsor, i) => (
                 <div
                   key={sponsor.name + "-" + i}
-                  className="w-full 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6 flex justify-center"
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
                   <SponsorLogo {...sponsor} />
                 </div>
@@ -195,15 +207,15 @@ export function SponsorsSection() {
         </div>
       </section>
       <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[33px] xl:px-[58px] xl:py-[27.5px]">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-4 xsgap-[25px] xl:flex-row">
-          <div className="flex items-center justify-between gap-4 flex-1">
+        <div className="xsgap-[25px] mx-auto flex max-w-[1400px] flex-col gap-4 xl:flex-row">
+          <div className="flex flex-1 items-center justify-between gap-4">
             <TextoApoyan />
             <LogoClarin />
             <LogoLaNacion />
           </div>
           <div className="hidden h-12 w-[2.5px] shrink-0 bg-white xl:block"></div>
           <hr className="xl:hidden" />
-          <div className="flex items-center justify-between gap-4 flex-1">
+          <div className="flex flex-1 items-center justify-between gap-4">
             <TextoOrganizan />
             <LogoAapresid />
             <LogoExponenciar />
@@ -214,13 +226,20 @@ export function SponsorsSection() {
   );
 }
 
-function SponsorLogo({ name, logo, url }: SponsorProps) {
+function SponsorLogo({
+  name,
+  logo,
+  url,
+  height = 74,
+}: SponsorProps & { height?: number }) {
   return (
-    <Link
+    <a
       href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex h-20 items-center justify-center p-2 transition-opacity hover:opacity-80"
     >
-      <div className="relative w-32 h-16">
+      <div className="relative w-32" style={{ height }}>
         <Image
           src={logo || "/placeholder.svg"}
           alt={name}
@@ -229,6 +248,6 @@ function SponsorLogo({ name, logo, url }: SponsorProps) {
           sizes="(max-width: 768px) 250px, 300px"
         />
       </div>
-    </Link>
+    </a>
   );
 }

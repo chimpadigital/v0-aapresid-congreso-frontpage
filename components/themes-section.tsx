@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, Eye } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
 import SwiperCore from "swiper";
@@ -12,7 +11,6 @@ import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 
 import "../styles/swiper.css";
-import { ejesTematicos } from "@/data/ejesTematicos";
 import Eje1Aprender from "./icons/Eje1Aprender";
 import ArrowThin from "./icons/ArrowThin";
 import Eje2Desafios from "./icons/Eje2Desafios";
@@ -21,8 +19,15 @@ import Eje4Manejo from "./icons/Eje4Manejo";
 import Eje5Sistemas from "./icons/Eje5Sistemas";
 import Eje6SistemasSustentables from "./icons/Eje6SistemasSustentables";
 import Eje7Prospectiva from "./icons/Eje7Prospectiva";
+import { useTranslations } from "next-intl";
 
 export function ThemesSection() {
+  const t = useTranslations("themes");
+  const ejesTematicos = t.raw("ejes") as Array<{
+    titulo: string;
+    descripcion: string;
+  }>;
+
   // Referencias para ambos Swipers
   const swiperRef = useRef<SwiperCore | null>(null);
   const textoSwiperRef = useRef<SwiperCore | null>(null);
@@ -101,7 +106,7 @@ export function ThemesSection() {
             >
               {ejesTematicos.map((ejesTematico, index) => (
                 <SwiperSlide key={ejesTematico.titulo}>
-                  <div className="flex w-full flex-row items-center xl:items-start flex-wrap gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] xl:flex-col">
+                  <div className="flex w-full flex-row flex-wrap items-center gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] xl:flex-col xl:items-start">
                     <div className="scale-75 md:scale-100">
                       {iconosEjesTematicos[index].icon}
                     </div>
@@ -118,10 +123,10 @@ export function ThemesSection() {
           <div className="flex flex-1 flex-col pl-4 lg:justify-between">
             <div className="w-fit">
               <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">
-                Ejes Temáticos
+                {t("ejes_tematicos")}
               </h2>
               <p className="mb-8 w-fit text-lg text-white">
-                Conocé los ejes temáticos de esta edición
+                {t("conoce_los_ejes")}
               </p>
             </div>
             <Swiper

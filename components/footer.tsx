@@ -12,8 +12,11 @@ import LogoAapresid from "@/public/images/logo-congreso.svg";
 import LogoExpoagro from "@/public/images/logo-expoagro.svg";
 import LogoCodigo from "@/public/images/logo-codigo.svg";
 import RedInstagram from "./icons/RedInstagram";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("footer");
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Ensure video plays on iOS and other mobile devices
@@ -114,17 +117,17 @@ export function Footer() {
           <div className="flex flex-1 flex-col items-start gap-6">
             <div className="text-white">
               <div className="text-xl font-medium leading-none">
-                6 al 8 de agosto
+                {t("fecha")}
               </div>
               <div className="text-xl font-light">
-                La Rural de Palermo, Buenos Aires
+                {t("lugar")}
               </div>
             </div>
             <Link
               href="/inscripciones"
               className="relative z-[1] overflow-hidden rounded-full bg-secondary px-[60.5px] py-[16px] text-lg font-light text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3]"
             >
-              Inscripciones
+              {t("inscripciones")}
             </Link>
           </div>
         </div>
@@ -162,9 +165,9 @@ export function Footer() {
               </div>
 
               <div className="pl-3 text-lg font-light leading-none tracking-wider text-white">
-                <div>Sumate a nuestra comunidad de</div>
-                <div>conocimiento e innovación en Red.</div>
-                <div className="font-normal">¡Juntos sabemos más!</div>
+                <div>{t("aapresid_comunidad1")}</div>
+                <div>{t("aapresid_comunidad2")}</div>
+                <div className="font-normal">¡{t("aapresid_comunidad3")}!</div>
               </div>
             </div>
 

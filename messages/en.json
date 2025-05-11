@@ -17,124 +17,126 @@
     "english": "EN"
   },
   "hero": {
-    "programamos": "Programamos",
-    "el_futuro_del_agro": "el futuro del agro",
-    "fecha": "6, 7 y 8 de Agosto",
+    "programamos": "We program",
+    "el_futuro_del_agro": "the future of agriculture",
+    "fecha": "6, 7 and 8 of August",
     "lugar": "La Rural de Palermo, Buenos Aires"
   },
   "countdown": {
-    "dias": "Días",
-    "horas": "Horas",
-    "minutos": "Minutos",
-    "segundos": "Segundos"
+    "dias": "Days",
+    "horas": "Hours",
+    "minutos": "Minutes",
+    "segundos": "Seconds"
   },
   "inscriptions": {
-    "inscripciones": "Inscripciones",
-    "sos_socio": "¿Sos socio Aapresid?",
-    "inscribite_aca": "Inscribite acá"
+    "inscripciones": "Inscriptions",
+    "sos_socio": "Are you a Aapresid member?",
+    "inscribite_aca": "Subscribe here"
   },
   "about": {
-    "que_es_el_congreso": "¿Qué es el Congreso Aapresid?",
-    "descripcion": "El Congreso Aapresid es un evento de referencia internacional, que lleva más de tres décadas conectando innovación, tecnología y conocimiento con el propósito de impulsar sistemas productivos cada vez más sustentables. Durante cada edición, congrega a los más importantes referentes nacionales e internacionales para discutir y posicionar contenido prospectivo de interés para el agro.",
-    "conoce_el": "Conocé el",
-    "cronograma": "cronograma",
-    "completo": "completo",
-    "de_charlas": "de charlas",
-    "proximamente": "Próximamente"
+    "que_es": "What is the",
+    "congreso": "Aapresid Congress?",
+    "descripcion": "The Aapresid Congress is an international reference event, which has been connecting innovation, technology and knowledge for more than three decades with the purpose of promoting increasingly sustainable production systems. During each edition, it brings together the most important national and international referents to discuss and position future content of interest to agriculture.",
+    "conoce_el": "Know the",
+    "cronograma": "schedule",
+    "completo": "complete",
+    "de_charlas": "of talks",
+    "proximamente": "Coming soon"
   },
   "themes": {
-    "ejes_tematicos": "Ejes Temáticos",
-    "conoce_los_ejes": "Conocé los ejes temáticos de esta edición",
+    "ejes_tematicos": "Thematic axes",
+    "conoce_los_ejes": "Know the thematic axes of this edition",
     "ejes": [
       {
-        "titulo": "Aprender Produciendo",
-        "descripcion": "Una sinergia entre la ciencia, los organismos de investigación y los productores, quienes participan activamente de los ensayos llevados a cabo en escenarios reales. Pensado para dar respuestas a las demandas del productor a través del desarrollo de tecnologías sustentables."
+        "titulo": "Learn by Producing",
+        "descripcion": "A synergy between science, research organizations and producers, who actively participate in the trials carried out in real scenarios. It is designed to provide answers to the demands of the producer through the development of sustainable technologies."
       },
       {
-        "titulo": "Desafíos Globales",
-        "descripcion": "Fortalecer la participación del país en el ámbito global con la responsabilidad y oportunidad de compartir nuestra experiencia en el desarrollo de un modelo de producción que permite cuidar, regenerar los recursos y tener un menor impacto negativo en el ambiente."
+        "titulo": "Global Challenges",
+        "descripcion": "Strengthen the participation of the country in the global field with the responsibility and opportunity to share our experience in the development of a production model that allows us to take care of, regenerate resources and have a lower negative impact on the environment."
       },
       {
-        "titulo": "Innovación y Agtech",
-        "descripcion": "Promover un ecosistema tecnológico accesible e integrado, explorando la adopción de herramientas digitales que puedan ofrecer soluciones al productor. Busca integrar la digitalización y la evolución tecnológica en el agro, abordando el ecosistema AgTech y la maquinaria agrícola."
+        "titulo": "Innovation and Agtech",
+        "descripcion": "Promote an accessible and integrated technological ecosystem, exploring the adoption of digital tools that can offer solutions to the producer. It seeks to integrate digitalization and technological evolution in agriculture, addressing the AgTech ecosystem and agricultural machinery."
       },
       {
-        "titulo": "Manejo de Plagas",
-        "descripcion": "Conjunto de prácticas y técnicas llevadas a cabo para controlar a aquellos organismos que pueden llegar a perjudicar los sistemas de producción. Se abordarán distintos tipos de estrategias sustentables que busquen minimizar el impacto ambiental y aseguren el control de las plagas."
+        "titulo": "Pest Management",
+        "descripcion": "Set of practices and techniques carried out to control those organisms that can harm production systems. Different types of sustainable strategies will be addressed that seek to minimize the environmental impact and ensure the control of pests."
       },
       {
-        "titulo": "Sistemas Integrados",
-        "descripcion": "Ampliar la mirada en la diversidad de producciones, mostrando casos reales y experiencias de productores que apuestan por otros sistemas de producción impulsando la diversificación y la integración mostrando sus múltiples beneficios, productivos y sustentables."
+        "titulo": "Integrated Systems",
+        "descripcion": "Expand the vision on the diversity of productions, showing real cases and experiences of producers who bet on other production systems, promoting diversification and integration, showing their multiple benefits, productive and sustainable."
       },
       {
-        "titulo": "Sistemas Productivos Sustentables",
-        "descripcion": "Estos sistemas se caracterizan por ser agroecológicamente responsables y económicamente viables. Esto implica el uso eficiente de los recursos naturales, la minimización de los impactos ambientales negativos, el fomento de la biodiversidad y la economía circular. Además, buscan la resiliencia frente a los cambios climáticos y otros desafíos globales."
+        "titulo": "Sustainable Production Systems",
+        "descripcion": "These systems are characterized by being agroecologically responsible and economically viable. This implies the efficient use of natural resources, the minimization of negative environmental impacts, the promotion of biodiversity and the circular economy. In addition, they seek resilience against climate change and other global challenges."
       },
       {
-        "titulo": "Perspectivas Sociopolíticas",
-        "descripcion": "Una mirada integral al contexto político y social del productor que le permita  poner en agenda las necesidades para llevar adelante una producción sustentable y rentable en el tiempo. Poder acercar la toma de decisiones a los productores y viceversa."
+        "titulo": "Political and Social Perspectives",
+        "descripcion": "A comprehensive look at the producer's political and social context, allowing them to put on the agenda the needs to carry out a sustainable and profitable production in the long term. Being able to bring decision-making closer to producers and vice versa."
       }
     ]
   },
   "faq": {
-    "titulo": "Preguntas Frecuentes",
+    "titulo": "Frequently Asked Questions",
     "items": [
       {
-        "pregunta": "¿Qué es el Congreso Aapresid?",
+        "pregunta": "What is the Aapresid Congress?",
         "respuesta": [
-          "Es un evento de 3 días vinculado al agro. Consolidado como el evento de conocimiento agropecuario más destacado en nuestro país y un referente a nivel mundial. El mismo es un congreso multitemático y cuenta con diversas salas que funcionan en simultáneo."
+          "It is a 3-day event linked to agriculture. Consolidated as the most prominent agro-knowledge event in our country and a reference at a global level. The same is a multi-thematic congress and has multiple rooms that operate simultaneously."
         ]
       },
       {
-        "pregunta": "¿En qué fechas y cómo se llevará a cabo el Congreso?",
+        "pregunta": "When and how will the Congress be held?",
         "respuesta": [
-          "El Congreso se realizará por primera vez, en La Rural de Palermo (Ciudad Autónoma de Buenos Aires) de manera presencial, los días 6, 7 y 8 de agosto."
+          "The Congress will be held for the first time, in La Rural de Palermo (City of Buenos Aires) in a physical way, on the days 6, 7 and 8 of August."
         ]
       },
       {
-        "pregunta": "¿Cómo me inscribo para asistir?",
+        "pregunta": "How can I register to attend?",
         "respuesta": [
-          "Próximamente dentro de esta misma página."
+          "Soon within this same page."
         ]
       },
       {
-        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "pregunta": "Where can I see the program of the Congress?",
         "respuesta": [
-          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+          "The schedule will be available in the Congress section of the Aapresid website and you will be able to download it, it will be updated periodically with speakers and titles."
         ]
       },
       {
-        "pregunta": "¿Cuál es la fecha límite de inscripción gratuita como socio Aapresid?",
+        "pregunta": "What is the deadline for free registration as an Aapresid member?",
         "respuesta": [
-          "El socio Aapresid podrá inscribirse de manera gratuita siempre y cuando tenga la cuota abonada a la fecha.",
-          "La fecha límite de inscripción del socio Aapresid para asistir de forma gratuita al congreso es el **5 de agosto de 2025**. Una vez pasada esa fecha el socio deberá inscribirse pagando el costo de la entrada.",
-          "**Soy socio de Aapresid, ¿cómo debo registrarme al Congreso Aapresid?** \n **1er paso**: asegúrese de estar al día con la cuota societaria. El día previo al lanzamiento de las inscripciones Aapresid pre-cargará un listado de correos electrónicos correspondientes a socios con cuota al día. \n **2do paso**: ingrese a la sección web de congreso y haga click en el espacio ¿Sos socio Aapresid?, en el botón 'QUIERO MI ENTRADA'. Se le solicitará que cargué su email y DNI y complete el formulario de inscripción. Esto mismo puede hacerlo desde el botón en el e-mail sobre Congreso que se le enviará a su casilla registrada en la base de socios de Aapresid. \n **3er paso**: una vez completados estos datos su inscripción estará lista. Solo debe presentarse al congreso presencial con su entrada que le llegará a su casilla de correo electrónico o ingresar al congreso en formato virtual utilizando estos mismos datos (email, DNI Y n° de socio). ",
-          "**Soy socio y no puedo completar mi inscripción gratuita, ¿a qué se debe?** \n Para poder registrarse de manera gratuita cómo socio ustede debe tener su cuota al día Chequee que el correo que está utilizando es el mismo con el cual usted está registrado en Aapresid como socio"
+          "The Aapresid member can register for free as long as they have the fee paid by the date.",
+          "The deadline for the Aapresid member to attend the Congress for free is **5th of August 2025**. Once that date has passed, the member will have to register paying the cost of the entry.",
+          "**I am an Aapresid member, how should I register for the Aapresid Congress?** \n **1st step**: ensure you are up to date with the membership fee. The day before the launch of Aapresid inscriptions, Aapresid will pre-load a list of emails corresponding to members with the fee paid. \n **2nd step**: enter the Congress section of the website and click on the space 'Are you a Aapresid member?', in the button 'I WANT MY ENTRY'. You will be asked to load your email and DNI and complete the registration form. This can be done from the button in the email about Congress that will be sent to your registered email in the Aapresid members base. \n **3rd step**: once these data are completed, your registration will be ready. You only need to present yourself at the Congress physically with your entry that will be sent to your email or enter the Congress in virtual format using these same data (email, DNI and member number). ",
+          "**I am a member and I cannot complete my free registration, why?** \n To be able to register for free as a member, you must have your fee paid. Check that the email you are using is the same as the one you are registered with in Aapresid as a member"
         ]
       }
     ]
   },
   "sponsors": {
-    "patrocinios_a": "PATROCINIOS A",
-    "patrocinios_b": "PATROCINIOS B",
-    "patrocinios_c": "PATROCINIOS C",
-    "patrocinios_d": "PATROCINIOS D",
-    "institucionales": "INSTITUCIONALES",
-    "medios": "MEDIOS",
-    "apoyan": "Apoyan",
-    "organizan": "Organizan"
+    "title": "With us",
+    "patrocinios_a": "SPONSORS A",
+    "patrocinios_b": "SPONSORS B",
+    "patrocinios_c": "SPONSORS C",
+    "patrocinios_d": "SPONSORS D",
+    "institucionales": "INSTITUTIONAL",
+    "medios": "MEDIA",
+    "apoyan": "Support",
+    "organizan": "Organize"
   },
   "footer": {
-    "fecha": "6 al 8 de agosto",
+    "fecha": "6, 7 and 8 of August",
     "lugar": "La Rural de Palermo, Buenos Aires",
-    "inscripciones": "Inscripciones",
+    "inscripciones": "Inscriptions",
     "aapresid": "aapresid.org.ar",
     "aapresid_tel": "Tel: +54 (341) 4260745/46",
     "aapresid_dir1": "Dorrego 1639, S2000 Rosario,",
     "aapresid_dir2": "Santa Fe.",
     "aapresid_comunidad1": "Sumate a nuestra comunidad de",
-    "aapresid_comunidad2": "conocimiento e innovación en Red.",
-    "aapresid_comunidad3": "¡Juntos sabemos más!",
+    "aapresid_comunidad2": "knowledge and innovation in Red.",
+    "aapresid_comunidad3": "¡Together we know more!",
     "expoagro": "expoagro.com.ar",
     "expoagro_tel": "Tel: 011 5128 9800/05",
     "expoagro_dir1": "Av. Corrientes 1302 5 Piso",

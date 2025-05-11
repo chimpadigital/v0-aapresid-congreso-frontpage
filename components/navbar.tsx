@@ -7,12 +7,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 import LogoNavbar from "@/public/images/logo-navbar.svg";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  
   const t = useTranslations("navbar");
 
   useEffect(() => {
@@ -59,6 +60,8 @@ export function Navbar() {
     setMenuOpen(false);
   };
 
+  const locale = useLocale();
+
   return (
     <>
       {/* Original navbar - visible when not scrolled */}
@@ -83,7 +86,7 @@ export function Navbar() {
               </Link>
             </div>
             <div className="md:hidden">
-              <NavItem label="ES" hasDropdown />
+              <NavItem label={locale} hasDropdown />
             </div>
 
             <div className="hidden items-center space-x-6 text-white md:flex">
@@ -91,7 +94,7 @@ export function Navbar() {
               <NavItem label="Contenidos" hasDropdown />
               <NavItem label="Prensa" hasDropdown />
               <NavItem label="Comercial" /> */}
-              <NavItem label={t("espanol")} hasDropdown />
+              <NavItem label={locale} hasDropdown />
 
               <Link
                 href="/inscripciones"
@@ -289,10 +292,10 @@ function NavItem({
   return (
     <div className="group relative">
       <button className="flex items-center font-medium text-white transition-colors hover:text-[#64B33D]">
-        {label}
+        {label.toLocaleUpperCase()}
         {hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
       </button>
-      {hasDropdown && label === "ES" && (
+      {hasDropdown && (label === "es" || label === "en") && (
         <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[120px] rounded-lg bg-white py-2 opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
           <Link
             href="/es"
