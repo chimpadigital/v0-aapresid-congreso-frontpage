@@ -8,11 +8,11 @@ import { FaqSection } from "@/components/faq-section";
 import { SponsorsSection } from "@/components/sponsors-section";
 import { Footer } from "@/components/footer";
 
-export default function Home() {
+export default function Home({ params }: { params: { locale: string } }) {
   return (
     <main>
       {/* Header section with video background */}
-      <header className="relative mx-4 mt-4 min-h-screen overflow-hidden rounded-[20px] md:mx-[30px] md:mt-[30px]">
+      <header className="relative mx-4 mt-4 min-h-screen overflow-hidden rounded-[20px] md:mx-[30px] md:mt-[33px]">
         <div className="absolute inset-0 z-0">
           {/* Fallback image while video loads */}
           <div className="absolute inset-0">

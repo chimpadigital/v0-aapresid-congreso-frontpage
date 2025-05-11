@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface FaqItem {
   question: string;
@@ -36,41 +37,39 @@ function RichText({ text }: { text: string | string[] }) {
 }
 
 export function FaqSection() {
+  const t = useTranslations("faq");
+  const preguntas = t.raw("items") as Array<{
+    pregunta: string;
+    respuesta: string | string[];
+  }>;
   const [faqs, setFaqs] = useState<FaqItem[]>([
     {
-      question: "¿Qué es el Congreso Aapresid?",
-      answer: [
-        "Es un evento de 3 días vinculado al agro. Consolidado como el evento de conocimiento agropecuario más destacado en nuestro país y un referente a nivel mundial. El mismo es un congreso multitemático y cuenta con diversas salas que funcionan en simultáneo.",
-      ],
+      question: preguntas[0].pregunta,
+      answer: preguntas[0].respuesta,
       isOpen: false,
     },
     {
-      question: "¿En qué fechas y cómo se llevará a cabo el Congreso?",
-      answer: [
-        "El Congreso se realizará por primera vez, en La Rural de Palermo (Ciudad Autónoma de Buenos Aires) de manera presencial, los días 6, 7 y 8 de agosto.",
-      ],
+      question: preguntas[1].pregunta,
+      answer: preguntas[1].respuesta,
       isOpen: false,
     },
     {
-      question: "¿Cómo me inscribo para asistir?",
-      answer: ["Próximamente dentro de esta misma página."],
+      question: preguntas[2].pregunta,
+      answer: preguntas[2].respuesta,
       isOpen: false,
     },
     {
-      question: "¿Dónde puedo ver el programa del Congreso?",
-      answer: [
-        "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos.",
-      ],
+      question: preguntas[3].pregunta,
+      answer: preguntas[3].respuesta,
       isOpen: false,
     },
     {
-      question:
-        "¿Cuál es la fecha límite de inscripción gratuita como socio Aapresid?",
+      question: preguntas[4].pregunta,
       answer: [
-        "El socio Aapresid podrá inscribirse de manera gratuita siempre y cuando tenga la cuota abonada a la fecha.",
-        "La fecha límite de inscripción del socio Aapresid para asistir de forma gratuita al congreso es el **5 de agosto de 2025**. Una vez pasada esa fecha el socio deberá inscribirse pagando el costo de la entrada.",
-        "**Soy socio de Aapresid, ¿cómo debo registrarme al Congreso Aapresid?** \n **1er paso**: asegúrese de estar al día con la cuota societaria. El día previo al lanzamiento de las inscripciones Aapresid pre-cargará un listado de correos electrónicos correspondientes a socios con cuota al día. \n **2do paso**: ingrese a la sección web de congreso y haga click en el espacio ¿Sos socio Aapresid?, en el botón “QUIERO MI ENTRADA”. Se le solicitará que cargué su email y DNI y complete el formulario de inscripción. Esto mismo puede hacerlo desde el botón en el e-mail sobre Congreso que se le enviará a su casilla registrada en la base de socios de Aapresid. \n **3er paso**: una vez completados estos datos su inscripción estará lista. Solo debe presentarse al congreso presencial con su entrada que le llegará a su casilla de correo electrónico o ingresar al congreso en formato virtual utilizando estos mismos datos (email, DNI Y n° de socio). ",
-        "**Soy socio y no puedo completar mi inscripción gratuita, ¿a qué se debe?** \n Para poder registrarse de manera gratuita cómo socio ustede debe tener su cuota al día Chequee que el correo que está utilizando es el mismo con el cual usted está registrado en Aapresid como socio",
+        preguntas[4].respuesta[0],
+        preguntas[4].respuesta[1],
+        preguntas[4].respuesta[2],
+        preguntas[4].respuesta[3],
       ],
       isOpen: false,
     },
@@ -91,19 +90,19 @@ export function FaqSection() {
   const visibleFaqs = faqs;
 
   return (
-    <section className="relative mx-4 md:m-[30px] overflow-hidden rounded-[20px] bg-[url('/images/fondo-preguntas-dark.png')] bg-cover bg-bottom">
+    <section className="relative mx-4 mt-[44px] overflow-hidden rounded-[20px] bg-[url('/images/fondo-preguntas-dark.png')] bg-cover bg-bottom md:mx-[33px]">
       {/* Content container */}
       <div className="relative flex flex-col items-center p-8 md:px-16 md:py-24">
-        <h2 className="mb-12 text-center text-[40px] text-white">
+        <h2 className="mb-10 text-center text-[40px] text-white md:mb-20">
           Preguntas <span className="font-medium">Frecuentes</span>
         </h2>
 
         {/* FAQ accordion */}
-        <div className="w-full max-w-3xl space-y-4">
+        <div className="w-full max-w-3xl space-y-[40px]">
           {visibleFaqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-[16px] bg-white transition-all duration-500 ease-in-out"
+              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[1500ms] ease-in-out"
             >
               <button
                 className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
@@ -125,7 +124,7 @@ export function FaqSection() {
 
               <div
                 id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   faq.isOpen
                     ? "max-h-[2000px] opacity-100"
                     : "max-h-0 opacity-0"
