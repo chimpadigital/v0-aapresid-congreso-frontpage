@@ -12,8 +12,6 @@ interface FaqItem {
   isOpen: boolean;
 }
 
-
-
 export function FaqSection() {
   const t = useTranslations("faq");
   const preguntas = t.raw("items") as Array<{
@@ -88,7 +86,7 @@ export function FaqSection() {
                 aria-expanded={faq.isOpen}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="font-medium text-[#2D3D34]">
+                <span className="text-lg font-medium tracking-wider text-[#2D3D34]">
                   {faq.question}
                 </span>
                 <span className="ml-2 flex-shrink-0 rounded-[16px] bg-[#ED7F00] p-1">
@@ -109,7 +107,10 @@ export function FaqSection() {
                 }`}
               >
                 <div className="px-4 pb-4 text-gray-700">
-                  <RichText text={faq.answer} className="mb-3 whitespace-pre-line text-[#736D6D] last:mb-0" />
+                  <RichText
+                    text={faq.answer}
+                    className="mb-3 whitespace-pre-line tracking-[0.08em] text-[#736D6D] last:mb-0"
+                  />
                 </div>
               </div>
             </div>

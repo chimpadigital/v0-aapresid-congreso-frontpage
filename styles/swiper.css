@@ -15,7 +15,7 @@
   color: #fff;
   border-radius: 20px;
   width: min(100%, 446px);
-  padding: 47px 58px 58px 58px;
+  padding: 38px 58px 58px 58px;
 }
 
 .swiper.ejes-tematicos-swiper .swiper-slide:nth-child(1n) {
@@ -62,13 +62,13 @@
 
 
 .swiper.ejes-tematicos-texto-swiper {
-  width: min(100%, 50ch);
+  width: min(100%, 53ch);
   height: fit-content;
   margin: 0;
 }
 
 .swiper.ejes-tematicos-texto-swiper .swiper-wrapper {
-  width: 50ch !important;
+  width: 53ch !important;
 }
 
 .swiper.ejes-tematicos-texto-swiper .swiper-slide {
