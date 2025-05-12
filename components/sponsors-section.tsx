@@ -9,6 +9,7 @@ import LogoExponenciar from "./icons/LogoExponenciar";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import * as motion from "motion/react-client";
 
 interface categoryProps {
   category1: SponsorPropsItem[];
@@ -59,17 +60,24 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsors?.category1.map((sponsor: SponsorPropsItem, i) => (
-                <div
+              {(sponsors?.category1 || []).map((sponsor, i) => (
+                <motion.div
                   key={sponsor.imagePath + "-" + i}
                   className="flex w-fit justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.5,
+                    easing: "ease-out",
+                  }}
                 >
                   <SponsorLogo
                     imagePath={sponsor.imagePath}
                     title={sponsor.title}
                     height={135}
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -84,16 +92,23 @@ export function SponsorsSection() {
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsors?.category2.map((sponsor: SponsorPropsItem, i) => (
-                <div
+                <motion.div
                   key={sponsor.imagePath + "-" + i}
                   className="flex w-fit justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.5,
+                    easing: "ease-out",
+                  }}
                 >
                   <SponsorLogo
                     imagePath={sponsor.imagePath}
                     title={sponsor.title}
                     height={125}
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -108,16 +123,23 @@ export function SponsorsSection() {
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsors?.category3.map((sponsor: SponsorPropsItem, i) => (
-                <div
+                <motion.div
                   key={sponsor.imagePath + "-" + i}
                   className="flex w-fit justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.5,
+                    easing: "ease-out",
+                  }}
                 >
                   <SponsorLogo
                     imagePath={sponsor.imagePath}
                     title={sponsor.title}
                     height={115}
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -132,16 +154,23 @@ export function SponsorsSection() {
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => (
-                <div
+                <motion.div
                   key={sponsor.imagePath + "-" + i}
                   className="flex w-fit justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.5,
+                    easing: "ease-out",
+                  }}
                 >
                   <SponsorLogo
                     imagePath={sponsor.imagePath}
                     title={sponsor.title}
                     height={105}
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -156,16 +185,23 @@ export function SponsorsSection() {
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => (
-                <div
+                <motion.div
                   key={sponsor.imagePath + "-" + i}
                   className="flex w-fit justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.5,
+                    easing: "ease-out",
+                  }}
                 >
                   <SponsorLogo
                     imagePath={sponsor.imagePath}
                     title={sponsor.title}
                     height={105}
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -178,16 +214,23 @@ export function SponsorsSection() {
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
               {sponsors?.medios.map((sponsor: SponsorPropsItem, i) => (
-                <div
+                <motion.div
                   key={sponsor.imagePath + "-" + i}
                   className="flex w-fit justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: i * 0.1,
+                    duration: 0.5,
+                    easing: "ease-out",
+                  }}
                 >
                   <SponsorLogo
                     imagePath={sponsor.imagePath}
                     title={sponsor.title}
                     height={115}
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
