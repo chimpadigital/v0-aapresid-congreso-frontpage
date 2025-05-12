@@ -10,17 +10,14 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface SponsorProps {
-  name: string;
-  logo: string;
-  url: string;
-}
 
 interface categoryProps {
   category1: SponsorPropsItem[];
   category2: SponsorPropsItem[];
   category3: SponsorPropsItem[];
   category4: SponsorPropsItem[];
+  institucion: SponsorPropsItem[];
+  medios: SponsorPropsItem[];
 }
 
 interface SponsorPropsItem {
@@ -67,9 +64,9 @@ export function SponsorsSection() {
               {sponsors?.category1.map((sponsor: SponsorPropsItem, i) => (
                 <div
                   key={sponsor.imagePath + "-" + i}
-                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                  className="flex w-fit justify-center"
                 >
-                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={75} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={135} />
                 </div>
               ))}
             </div>
@@ -87,9 +84,9 @@ export function SponsorsSection() {
               {sponsors?.category2.map((sponsor: SponsorPropsItem, i) => (
                 <div
                   key={sponsor.imagePath + "-" + i}
-                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                  className="flex w-fit justify-center "
                 >
-                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title}height={65} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title}height={125} />
                 </div>
               ))}
             </div>
@@ -107,9 +104,9 @@ export function SponsorsSection() {
               {sponsors?.category3.map((sponsor: SponsorPropsItem, i) => (
                 <div
                   key={sponsor.imagePath + "-" + i}
-                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                  className="flex w-fit justify-center "
                 >
-                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={55} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={115} />
                 </div>
               ))}
             </div>
@@ -127,9 +124,9 @@ export function SponsorsSection() {
               {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => (
                 <div
                   key={sponsor.imagePath + "-" + i}
-                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                  className="flex w-fit justify-center "
                 >
-                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={45} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={105} />
                 </div>
               ))}
             </div>
@@ -144,10 +141,10 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => (
+              {sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => (
                 <div
                   key={sponsor.imagePath + "-" + i}
-                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                  className="flex w-fit justify-center "
                 >
                   <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} />
                 </div>
@@ -162,10 +159,10 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => (
+              {sponsors?.medios.map((sponsor: SponsorPropsItem, i) => (
                 <div
                   key={sponsor.imagePath + "-" + i}
-                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                  className="flex w-fit justify-center "
                 >
                   <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} />
                 </div>
@@ -206,7 +203,7 @@ function SponsorLogo({
       rel="noopener noreferrer"
       className="flex h-20 items-center justify-center p-2 transition-opacity hover:opacity-80"
     >
-      <div className="relative w-32" style={{ height }}>
+      <div className="relative aspect-[260/135]" style={{ height }}>
         <Image
           src={imagePath || "/placeholder.svg"}
           alt={title}
