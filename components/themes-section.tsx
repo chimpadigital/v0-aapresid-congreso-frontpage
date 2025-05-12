@@ -83,6 +83,14 @@ export function ThemesSection() {
       <div className="mx-auto max-w-[1216px]">
         {/* Content container */}
         <div className="relative flex flex-col gap-8 lg:flex-row">
+        <div className="w-fit  lg:hidden">
+              <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">
+                {t("ejes_tematicos")}
+              </h2>
+              <p className="w-fit text-lg font-light tracking-wider text-white">
+                {t("conoce_los_ejes")}
+              </p>
+            </div>
           {/* Left column - cards */}
           <div className="flex flex-1 flex-col">
             <Swiper
@@ -121,11 +129,11 @@ export function ThemesSection() {
 
           {/* Right column - Text content */}
           <div className="flex flex-1 flex-col pl-4 lg:justify-between">
-            <div className="w-fit">
+            <div className="w-fit hidden lg:block">
               <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">
                 {t("ejes_tematicos")}
               </h2>
-              <p className="mb-8 w-fit text-lg text-white">
+              <p className="mb-8 w-fit text-lg font-light tracking-wider text-white">
                 {t("conoce_los_ejes")}
               </p>
             </div>
@@ -139,7 +147,7 @@ export function ThemesSection() {
             >
               {ejesTematicos.map((ejesTematico) => (
                 <SwiperSlide key={ejesTematico.titulo + "-texto"}>
-                  <p className="whitespace-pre-line text-xl font-light text-white">
+                  <p className="whitespace-pre-line text-xl font-light tracking-wider text-white">
                     {ejesTematico.descripcion}
                   </p>
                 </SwiperSlide>
@@ -149,7 +157,7 @@ export function ThemesSection() {
         </div>
 
         {/* Navigation buttons */}
-        <div className="mt-8 flex gap-6">
+        <div className="mt-8 flex gap-6 justify-center lg:justify-start">
           <button
             className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10 disabled:opacity-50"
             onClick={() => {
