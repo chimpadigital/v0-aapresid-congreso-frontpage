@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { RichText } from "./rich-text";
 
 interface FaqItem {
   question: string;
@@ -11,30 +12,7 @@ interface FaqItem {
   isOpen: boolean;
 }
 
-// Componente para renderizar texto con **bold** y saltos de línea
-function RichText({ text }: { text: string | string[] }) {
-  const lines = Array.isArray(text) ? text : [text];
-  return (
-    <>
-      {lines.map((line, idx) => (
-        <p
-          key={idx}
-          className="mb-3 whitespace-pre-line text-[#736D6D] last:mb-0"
-        >
-          {line.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-            part.startsWith("**") && part.endsWith("**") ? (
-              <strong key={i} className="font-medium">
-                {part.slice(2, -2)}
-              </strong>
-            ) : (
-              part
-            ),
-          )}
-        </p>
-      ))}
-    </>
-  );
-}
+
 
 export function FaqSection() {
   const t = useTranslations("faq");
@@ -131,7 +109,7 @@ export function FaqSection() {
                 }`}
               >
                 <div className="px-4 pb-4 text-gray-700">
-                  <RichText text={faq.answer} />
+                  <RichText text={faq.answer} className="mb-3 whitespace-pre-line text-[#736D6D] last:mb-0" />
                 </div>
               </div>
             </div>

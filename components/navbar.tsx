@@ -135,7 +135,7 @@ export function Navbar() {
           <div className="flex items-center justify-between rounded-full bg-transparent px-4 py-3 md:px-6">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <div className="rounded-full bg-[#7D7777]/70 px-4 py-3 backdrop-blur-sm">
+                <div className="rounded-full bg-[#7D7777]/70 px-4 py-[13.6px] backdrop-blur-sm">
                   <Image
                     src="/images/logos-juntos.svg"
                     alt="Congreso Aapresid"
