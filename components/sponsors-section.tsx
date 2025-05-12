@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import LogoClarin from "./icons/LogoClarin";
 import LogoLaNacion from "./icons/LogoLaNacion";
@@ -7,6 +6,9 @@ import TextoOrganizan from "./icons/TextoOrganizan";
 import LogoAapresid from "./icons/LogoAapresid";
 import LogoExponenciar from "./icons/LogoExponenciar";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { getSponsors } from "@/lib/getSponsors";
+import { getTranslations } from "next-intl/server";
 
 interface SponsorProps {
   name: string;
@@ -25,60 +27,14 @@ const sponsorsA: SponsorProps[] = [
     logo: "/images/sponsors/logo2.png",
     url: "#",
   },
-  {
-    name: "Bayer",
-    logo: "/images/sponsors/logo3.png",
-    url: "#",
-  },
-  {
-    name: "Banco Macro",
-    logo: "/images/sponsors/logo4.png",
-    url: "#",
-  },
-  {
-    name: "Bunge",
-    logo: "/images/sponsors/logo5.png",
-    url: "#",
-  },
-  {
-    name: "Chacraservicios",
-    logo: "/images/sponsors/logo6.png",
-    url: "#",
-  },
-  {
-    name: "Chacraswwervicios",
-    logo: "/images/sponsors/logo6.png",
-    url: "#",
-  },
-  {
-    name: "Bunertge",
-    logo: "/images/sponsors/logo5.png",
-    url: "#",
-  },
-  {
-    name: "Buenttos Aires Ciudad",
-    logo: "/images/sponsors/logo2.png",
-    url: "#",
-  },
-  {
-    name: "ATAtytNOR",
-    logo: "/images/sponsors/logo.png",
-    url: "#",
-  },
-  {
-    name: "Bancoet Macro",
-    logo: "/images/sponsors/logo4.png",
-    url: "#",
-  },
-  {
-    name: "Bayeeetr",
-    logo: "/images/sponsors/logo3.png",
-    url: "#",
-  },
 ];
 
-export function SponsorsSection() {
-  const t = useTranslations("sponsors");
+export async function SponsorsSection() {
+  const t = await getTranslations("sponsors");
+
+  const sponsors = await getSponsors();
+
+  console.log(sponsors);
   return (
     <>
       <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
