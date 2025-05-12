@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import LogoClarin from "./icons/LogoClarin";
 import LogoLaNacion from "./icons/LogoLaNacion";
@@ -7,13 +8,24 @@ import LogoAapresid from "./icons/LogoAapresid";
 import LogoExponenciar from "./icons/LogoExponenciar";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { getSponsors } from "@/lib/getSponsors";
-import { getTranslations } from "next-intl/server";
+import axios from "axios";
 
 interface SponsorProps {
   name: string;
   logo: string;
   url: string;
+}
+
+interface categoryProps {
+  category1: SponsorPropsItem[];
+  category2: SponsorPropsItem[];
+  category3: SponsorPropsItem[];
+  category4: SponsorPropsItem[];
+}
+
+interface SponsorPropsItem {
+  imagePath: string;
+  title: string;
 }
 
 const sponsorsA: SponsorProps[] = [
@@ -29,12 +41,25 @@ const sponsorsA: SponsorProps[] = [
   },
 ];
 
-export async function SponsorsSection() {
-  const t = await getTranslations("sponsors");
+export function SponsorsSection() {
+  const t = useTranslations("sponsors");
 
-  const sponsors = await getSponsors();
+  const [sponsors, setSponsors] = useState<categoryProps>();
 
-  console.log(sponsors);
+  useEffect(() => {
+    const fetchSponsors = async () => {
+      try {
+        const res = await axios.get("/api/sponsors");
+        setSponsors(res.data);
+      } catch (err) {
+        console.error("Error fetching sponsors", err);
+      }
+    };
+
+    fetchSponsors();
+  }, []);
+
+
   return (
     <>
       <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
@@ -52,12 +77,12 @@ export async function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsorsA.map((sponsor, i) => (
+              {sponsors?.category1.map((sponsor: SponsorPropsItem, i) => (
                 <div
-                  key={sponsor.name + "-" + i}
+                  key={sponsor.imagePath + "-" + i}
                   className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} height={75} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={75} />
                 </div>
               ))}
             </div>
@@ -72,12 +97,12 @@ export async function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsorsA.map((sponsor, i) => (
+              {sponsors?.category2.map((sponsor: SponsorPropsItem, i) => (
                 <div
-                  key={sponsor.name + "-" + i}
+                  key={sponsor.imagePath + "-" + i}
                   className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} height={65} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title}height={65} />
                 </div>
               ))}
             </div>
@@ -92,12 +117,12 @@ export async function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsorsA.map((sponsor, i) => (
+              {sponsors?.category3.map((sponsor: SponsorPropsItem, i) => (
                 <div
-                  key={sponsor.name + "-" + i}
+                  key={sponsor.imagePath + "-" + i}
                   className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} height={55} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={55} />
                 </div>
               ))}
             </div>
@@ -112,12 +137,12 @@ export async function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsorsA.map((sponsor, i) => (
+              {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => (
                 <div
-                  key={sponsor.name + "-" + i}
+                  key={sponsor.imagePath + "-" + i}
                   className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} height={45} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} height={45} />
                 </div>
               ))}
             </div>
@@ -132,12 +157,12 @@ export async function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsorsA.map((sponsor, i) => (
+              {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => (
                 <div
-                  key={sponsor.name + "-" + i}
+                  key={sponsor.imagePath + "-" + i}
                   className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} />
                 </div>
               ))}
             </div>
@@ -150,12 +175,12 @@ export async function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
-              {sponsorsA.map((sponsor, i) => (
+              {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => (
                 <div
-                  key={sponsor.name + "-" + i}
+                  key={sponsor.imagePath + "-" + i}
                   className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
                 >
-                  <SponsorLogo {...sponsor} />
+                  <SponsorLogo imagePath={sponsor.imagePath} title={sponsor.title} />
                 </div>
               ))}
             </div>
@@ -183,22 +208,21 @@ export async function SponsorsSection() {
 }
 
 function SponsorLogo({
-  name,
-  logo,
-  url,
+  imagePath,
+  title,
   height = 74,
-}: SponsorProps & { height?: number }) {
+}: SponsorPropsItem & { height?: number }) {
   return (
     <a
-      href={url}
+      href={imagePath}
       target="_blank"
       rel="noopener noreferrer"
       className="flex h-20 items-center justify-center p-2 transition-opacity hover:opacity-80"
     >
       <div className="relative w-32" style={{ height }}>
         <Image
-          src={logo || "/placeholder.svg"}
-          alt={name}
+          src={imagePath || "/placeholder.svg"}
+          alt={title}
           fill
           className="object-contain"
           sizes="(max-width: 768px) 250px, 300px"
