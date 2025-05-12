@@ -28,19 +28,6 @@ interface SponsorPropsItem {
   title: string;
 }
 
-const sponsorsA: SponsorProps[] = [
-  {
-    name: "ATANOR",
-    logo: "/images/sponsors/logo.png",
-    url: "#",
-  },
-  {
-    name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/logo2.png",
-    url: "#",
-  },
-];
-
 export function SponsorsSection() {
   const t = useTranslations("sponsors");
 
