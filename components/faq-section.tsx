@@ -103,7 +103,7 @@ export function FaqSection() {
             <motion.div
               key={index}
               variants={item}
-              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[1500ms] ease-in-out"
+              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[300ms] ease-linear"
             >
               <button
                 className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
