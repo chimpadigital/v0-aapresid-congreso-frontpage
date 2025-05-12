@@ -1,5 +1,5 @@
+"use client";
 import Image from "next/image";
-import Link from "next/link";
 import LogoClarin from "./icons/LogoClarin";
 import LogoLaNacion from "./icons/LogoLaNacion";
 import TextoApoyan from "./icons/TextoApoyan";
