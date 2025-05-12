@@ -1,7 +1,7 @@
 "use client";
+import * as motion from "motion/react-client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { RichText } from "./rich-text";
@@ -11,6 +11,25 @@ interface FaqItem {
   answer: string | string[];
   isOpen: boolean;
 }
+
+const list = {
+  visible: {
+    opacity: 1,
+    duration: 0.2,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+  hidden: {
+    opacity: 0,
+  },
+};
+
+const item = {
+  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: -100 },
+};
 
 export function FaqSection() {
   const t = useTranslations("faq");
@@ -74,10 +93,16 @@ export function FaqSection() {
         </h2>
 
         {/* FAQ accordion */}
-        <div className="w-full max-w-3xl space-y-[40px]">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={list}
+          className="w-full max-w-3xl space-y-[40px]"
+        >
           {visibleFaqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={item}
               className="overflow-hidden rounded-[16px] bg-white transition-all duration-[1500ms] ease-in-out"
             >
               <button
@@ -113,9 +138,9 @@ export function FaqSection() {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
