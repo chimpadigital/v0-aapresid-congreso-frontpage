@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import MapPin from "./icons/MapPin"
 import Calendar from "./icons/Calendar"
+import { useTranslations } from "next-intl"
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -10,6 +11,9 @@ export function Hero() {
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  const t = useTranslations("hero");
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-32">
@@ -24,7 +28,7 @@ export function Hero() {
                 transitionDelay: "0.1s",
               }}
             >
-              Programamos
+              {t("programamos")}
             </span>
           </span>
           <br />
@@ -37,7 +41,7 @@ export function Hero() {
                 transitionDelay: "0.3s",
               }}
             >
-              el futuro del agro
+              {t("el_futuro_del_agro")}
             </span>
           </span>
           
@@ -53,7 +57,7 @@ export function Hero() {
             }}
           >
             <Calendar />
-            <span className="text-xl ml-[15px]">6, 7 y 8 de Agosto</span>
+            <span className="text-xl ml-[15px]">{t("fecha")}</span>
           </div>
 
           <div
@@ -65,7 +69,7 @@ export function Hero() {
             }}
           >
             <MapPin />
-            <span className="text-xl ml-[17px]">La Rural de Palermo, Buenos Aires</span>
+            <span className="text-xl ml-[17px]">{t("lugar")}</span>
           </div>
         </div>
       </div>

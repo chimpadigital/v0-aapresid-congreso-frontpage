@@ -1,165 +1,253 @@
-import Image from "next/image"
-import Link from "next/link"
+"use client";
+import Image from "next/image";
+import LogoClarin from "./icons/LogoClarin";
+import LogoLaNacion from "./icons/LogoLaNacion";
+import TextoApoyan from "./icons/TextoApoyan";
+import TextoOrganizan from "./icons/TextoOrganizan";
+import LogoAapresid from "./icons/LogoAapresid";
+import LogoExponenciar from "./icons/LogoExponenciar";
+import { useTranslations } from "next-intl";
 
 interface SponsorProps {
-  name: string
-  logo: string
-  url: string
+  name: string;
+  logo: string;
+  url: string;
 }
 
 const sponsorsA: SponsorProps[] = [
   {
     name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
+    logo: "/images/sponsors/logo.png",
     url: "#",
   },
   {
     name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
+    logo: "/images/sponsors/logo2.png",
     url: "#",
   },
   {
     name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
+    logo: "/images/sponsors/logo3.png",
     url: "#",
   },
   {
     name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
+    logo: "/images/sponsors/logo4.png",
     url: "#",
   },
   {
     name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
+    logo: "/images/sponsors/logo5.png",
     url: "#",
   },
   {
     name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
-    url: "#",
-  },
-]
-
-const sponsorsB: SponsorProps[] = [
-  {
-    name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
+    logo: "/images/sponsors/logo6.png",
     url: "#",
   },
   {
-    name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
+    name: "Chacraswwervicios",
+    logo: "/images/sponsors/logo6.png",
     url: "#",
   },
   {
-    name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
+    name: "Bunertge",
+    logo: "/images/sponsors/logo5.png",
     url: "#",
   },
   {
-    name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
+    name: "Buenttos Aires Ciudad",
+    logo: "/images/sponsors/logo2.png",
     url: "#",
   },
   {
-    name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
+    name: "ATAtytNOR",
+    logo: "/images/sponsors/logo.png",
     url: "#",
   },
   {
-    name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
+    name: "Bancoet Macro",
+    logo: "/images/sponsors/logo4.png",
     url: "#",
   },
-]
+  {
+    name: "Bayeeetr",
+    logo: "/images/sponsors/logo3.png",
+    url: "#",
+  },
+];
 
 export function SponsorsSection() {
+  const t = useTranslations("sponsors");
   return (
-    <section className="relative m-[30px] bg-white rounded-[20px] overflow-hidden py-16 px-8 md:px-16">
-      <div className="max-w-7xl mx-auto">
-        {/* Title */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D3D34] text-center mb-16">Nos acompañan</h2>
+    <>
+      <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Title */}
+          <h2 className="mb-16 text-center text-4xl font-medium text-[#2D3D34] md:text-5xl lg:text-6xl">
+            {t("title")}
+          </h2>
 
-        {/* Sponsors A */}
-        <div className="mb-16">
-          <h3 className="text-xl font-medium text-[#2D3D34] mb-4">PATROCINIOS A</h3>
-          <div className="h-px w-full bg-gray-300 mb-12"></div>
+          {/* Sponsors A */}
+          <div className="mb-16">
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_a")}
+            </h3>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-          {/* Desktop layout */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-            {sponsorsA.map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                >
+                  <SponsorLogo {...sponsor} height={75} />
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Mobile layout - two rows */}
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-8">
-            {sponsorsA.slice(0, 4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
-          </div>
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-12">
-            {sponsorsA.slice(4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
+          {/* Sponsors B */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_b")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                >
+                  <SponsorLogo {...sponsor} height={65} />
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Second row for desktop */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8">
-            {sponsorsA.map((sponsor) => (
-              <SponsorLogo key={`second-${sponsor.name}`} {...sponsor} />
-            ))}
+          {/* Sponsors C */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_c")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                >
+                  <SponsorLogo {...sponsor} height={55} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sponsors D */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_d")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                >
+                  <SponsorLogo {...sponsor} height={45} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* institucionales */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("institucionales")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* MEDIOS */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">{t("medios")}</h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center xs:gap-y-8">
+              {sponsorsA.map((sponsor, i) => (
+                <div
+                  key={sponsor.name + "-" + i}
+                  className="flex w-full justify-center 2xs:basis-1/2 xs:basis-1/3 lg:basis-1/6"
+                >
+                  <SponsorLogo {...sponsor} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Sponsors B */}
-        <div>
-          <h3 className="text-xl font-medium text-[#2D3D34] mb-4">PATROCINIOS B</h3>
-          <div className="h-px w-full bg-gray-300 mb-12"></div>
-
-          {/* Desktop layout */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-            {sponsorsB.map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
+      </section>
+      <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[33px] xl:px-[58px] xl:py-[27.5px]">
+        <div className="xsgap-[25px] mx-auto flex max-w-[1400px] flex-col gap-4 xl:flex-row">
+          <div className="flex flex-1 items-center justify-between gap-4">
+            <TextoApoyan />
+            <LogoClarin />
+            <LogoLaNacion />
           </div>
-
-          {/* Mobile layout - two rows */}
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-8">
-            {sponsorsB.slice(0, 4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
-          </div>
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-12">
-            {sponsorsB.slice(4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
-          </div>
-
-          {/* Second row for desktop */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8">
-            {sponsorsB.map((sponsor) => (
-              <SponsorLogo key={`second-${sponsor.name}`} {...sponsor} />
-            ))}
+          <div className="hidden h-12 w-[2.5px] shrink-0 bg-white xl:block"></div>
+          <hr className="xl:hidden" />
+          <div className="flex flex-1 items-center justify-between gap-4">
+            <TextoOrganizan />
+            <LogoAapresid />
+            <LogoExponenciar />
           </div>
         </div>
       </div>
-    </section>
-  )
+    </>
+  );
 }
 
-function SponsorLogo({ name, logo, url }: SponsorProps) {
+function SponsorLogo({
+  name,
+  logo,
+  url,
+  height = 74,
+}: SponsorProps & { height?: number }) {
   return (
-    <Link href={url} className="flex items-center justify-center h-20 p-2 hover:opacity-80 transition-opacity">
-      <div className="relative w-full h-full">
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex h-20 items-center justify-center p-2 transition-opacity hover:opacity-80"
+    >
+      <div className="relative w-32" style={{ height }}>
         <Image
           src={logo || "/placeholder.svg"}
           alt={name}
           fill
           className="object-contain"
-          sizes="(max-width: 768px) 150px, 200px"
+          sizes="(max-width: 768px) 250px, 300px"
         />
       </div>
-    </Link>
-  )
+    </a>
+  );
 }

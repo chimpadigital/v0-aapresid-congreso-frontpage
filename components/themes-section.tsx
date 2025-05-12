@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, Eye } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
 import SwiperCore from "swiper";
@@ -12,7 +11,6 @@ import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 
 import "../styles/swiper.css";
-import { ejesTematicos } from "@/data/ejesTematicos";
 import Eje1Aprender from "./icons/Eje1Aprender";
 import ArrowThin from "./icons/ArrowThin";
 import Eje2Desafios from "./icons/Eje2Desafios";
@@ -21,8 +19,15 @@ import Eje4Manejo from "./icons/Eje4Manejo";
 import Eje5Sistemas from "./icons/Eje5Sistemas";
 import Eje6SistemasSustentables from "./icons/Eje6SistemasSustentables";
 import Eje7Prospectiva from "./icons/Eje7Prospectiva";
+import { useTranslations } from "next-intl";
 
 export function ThemesSection() {
+  const t = useTranslations("themes");
+  const ejesTematicos = t.raw("ejes") as Array<{
+    titulo: string;
+    descripcion: string;
+  }>;
+
   // Referencias para ambos Swipers
   const swiperRef = useRef<SwiperCore | null>(null);
   const textoSwiperRef = useRef<SwiperCore | null>(null);
@@ -70,15 +75,10 @@ export function ThemesSection() {
   ];
 
   return (
-    <section className="relative m-4 md:m-[30px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.webp')] bg-cover bg-center p-8 xl:px-[94px] xl:py-[84px]">
+    <section className="relative mx-4 mt-[27px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.webp')] bg-cover bg-center p-8 md:mx-[33px] xl:px-[94px] xl:py-[84px]">
       {/* Decorative hexagons */}
       <div className="absolute right-0 top-4 z-0">
-        <Image
-          src="/images/vector-ejes.svg"
-          alt=""
-          width={200}
-          height={108}
-        />
+        <Image src="/images/vector-ejes.svg" alt="" width={200} height={108} />
       </div>
       <div className="mx-auto max-w-[1216px]">
         {/* Content container */}
@@ -106,8 +106,10 @@ export function ThemesSection() {
             >
               {ejesTematicos.map((ejesTematico, index) => (
                 <SwiperSlide key={ejesTematico.titulo}>
-                  <div className="flex lg:w-[min(100%,446px)] flex-row flex-wrap gap-4 md:gap-11 rounded-[20px] xl:flex-col w-full">
-                    <div className="scale-75 md:scale-100">{iconosEjesTematicos[index].icon}</div>
+                  <div className="flex w-full flex-row flex-wrap items-center gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] xl:flex-col xl:items-start">
+                    <div className="scale-75 md:scale-100">
+                      {iconosEjesTematicos[index].icon}
+                    </div>
                     <h3 className="w-[min(100%,446px)] rounded-[20px] text-4xl font-medium text-white md:text-5xl">
                       {ejesTematico.titulo}
                     </h3>
@@ -121,10 +123,10 @@ export function ThemesSection() {
           <div className="flex flex-1 flex-col pl-4 lg:justify-between">
             <div className="w-fit">
               <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">
-                Ejes Temáticos
+                {t("ejes_tematicos")}
               </h2>
               <p className="mb-8 w-fit text-lg text-white">
-                Conocé los ejes temáticos de esta edición
+                {t("conoce_los_ejes")}
               </p>
             </div>
             <Swiper
@@ -137,7 +139,7 @@ export function ThemesSection() {
             >
               {ejesTematicos.map((ejesTematico) => (
                 <SwiperSlide key={ejesTematico.titulo + "-texto"}>
-                  <p className="whitespace-pre-line text-xl text-white">
+                  <p className="whitespace-pre-line text-xl font-light text-white">
                     {ejesTematico.descripcion}
                   </p>
                 </SwiperSlide>
@@ -149,22 +151,22 @@ export function ThemesSection() {
         {/* Navigation buttons */}
         <div className="mt-8 flex gap-6">
           <button
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10 disabled:opacity-50"
             onClick={() => {
               swiperRef.current?.slidePrev();
             }}
-            aria-label="Anterior"
+            aria-label="Anterior / Previous"
           >
             <div className="rotate-180">
               <ArrowThin />
             </div>
           </button>
           <button
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10 disabled:opacity-50"
             onClick={() => {
               swiperRef.current?.slideNext();
             }}
-            aria-label="Siguiente"
+            aria-label="Siguiente / Next"
           >
             <ArrowThin />
           </button>

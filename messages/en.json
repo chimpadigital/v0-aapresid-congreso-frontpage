@@ -1,0 +1,144 @@
+{
+  "navbar": {
+    "inscripciones": "Registration",
+    "acerca_de": "About",
+    "que_es_el_congreso": "What is the Aapresid Congress?",
+    "historia": "History",
+    "ediciones_anteriores": "Previous Editions",
+    "contenidos": "Contents",
+    "programa": "Program",
+    "oradores": "Speakers",
+    "ejes_tematicos": "Thematic axes",
+    "prensa": "Press",
+    "noticias": "News",
+    "contacto": "Contact",
+    "comercial": "Commercial",
+    "espanol": "ES",
+    "english": "EN"
+  },
+  "hero": {
+    "programamos": "We program",
+    "el_futuro_del_agro": "the future of agriculture",
+    "fecha": "August 6th, 7th, and 8th",
+    "lugar": "La Rural, exhibition venue in Buenos Aires"
+  },
+  "countdown": {
+    "dias": "Days",
+    "horas": "Hours",
+    "minutos": "Minutes",
+    "segundos": "Seconds"
+  },
+  "inscriptions": {
+    "inscripciones": "Registration",
+    "sos_socio": "Are you a Aapresid member?",
+    "inscribite_aca": "Subscribe here"
+  },
+  "about": {
+    "que_es": "What is the",
+    "congreso": "Aapresid Congress?",
+    "descripcion": "The Aapresid Congress is an international benchmark event, with over three decades of connecting innovation, technology, and knowledge, aimed at promoting progressively sustainable productive systems. In each edition, the most notable domestic and international experts convene to discuss and provide prospective content relevant to the agricultural sector.",
+    "conoce_el": "See the full",
+    "cronograma": "schedule",
+    "completo": "complete",
+    "de_charlas": "of the lectures",
+    "conoce_el_programa": "See the **full schedule** of the lectures",
+    "proximamente": "Available soon"
+  },
+  "themes": {
+    "ejes_tematicos": "Thematic axes",
+    "conoce_los_ejes": "See the thematic axes for this year’s edition",
+    "ejes": [
+      {
+        "titulo": "Learning by Producing",
+        "descripcion": "A synergy among science, research organizations, and farmers, who are actively involved in conducting tests in real-world settings, is designed to provide answers to farmers’ demands through the development of sustainable technology."
+      },
+      {
+        "titulo": "Global Challenges",
+        "descripcion": "Strengthen Argentina’s presence on the global stage, embracing the responsibility and opportunity to share our experience in developing a production model that enables resource protection and restoration, while reducing negative environmental impact."
+      },
+      {
+        "titulo": " Innovation and Agtech",
+        "descripcion": "The section seeks to promote an accessible and integrated technological ecosystem by exploring the adoption of digital tools to provide solutions for farmers; and to integrate agriculture’s digitization and technological evolution by engaging with the Agtech ecosystem and agriculture machinery."
+      },
+      {
+        "titulo": "Pest Management",
+        "descripcion": "A group of practices and methods employed for controlling living organisms that may damage production systems. Different sustainable strategies will be addressed to minimize environmental impact and ensure effective pest control."
+      },
+      {
+        "titulo": "Integrated Systems",
+        "descripcion": "Broaden the panorama of production diversity by conveying real cases and farmers’ experiences, who rely on different production systems while promoting diversification and integration, and demonstrating the multiple productive and sustainable benefits."
+      },
+      {
+        "titulo": "Sustainable Production Systems",
+        "descripcion": "These systems are characterized by being agroecologically responsible and economically viable. This entails the efficient use of natural resources, the reduction of negative environmental impact, and the promotion of biodiversity and a circular economy. Additionally, they seek resilience against climate change and other global challenges."
+      },
+      {
+        "titulo": "Socio-political Perspectives",
+        "descripcion": "An integral approach to farmers’ political and social context that enables them to meet the needs for achieving sustainable production profitable over time. The goal is to bring decision-making closer to farmers, and vice versa."
+      }
+    ]
+  },
+  "faq": {
+    "titulo": "Frequently Asked Questions",
+    "items": [
+      {
+        "pregunta": "What is the Aapresid Congress?",
+        "respuesta": [
+          "Aapresid is a three-day, agriculture-related event. Consolidated as the most notable event regarding agricultural knowledge in Argentina, and a model worldwide. It is a multi-thematic congress with various rooms functioning simultaneously. "
+        ]
+      },
+      {
+        "pregunta": "When and where is the Congress taking place?",
+        "respuesta": [
+          "For the first time, the Congress will be held at La Rural venue, in Palermo (Autonomous City of Buenos Aires), on **August 6ht, 7th, and 8th, 2025.**"
+        ]
+      },
+      {
+        "pregunta": "How do I sign up?",
+        "respuesta": ["Coming soon on this page."]
+      },
+      {
+        "pregunta": "Where can I see the program of the Congress?",
+        "respuesta": [
+          "The schedule will be available for download in the Congress section at the Aapresid web, and will be regularly updated with speaker names and lecture titles."
+        ]
+      },
+      {
+        "pregunta": "What is the deadline for free registration as a member of Aapresid?",
+        "respuesta": [
+          "An Aapresid member will be able to register for free as long as their fees are paid to date.",
+          "The registration deadline for the Aapresid member to be able to attend the Congress free of charge is **August 5th, 2025**. Once that date has passed, the member must register paying the total cost of the ticket.",
+          "**I am a member of Aapresid, how do I register for the Aapresid Congress?** \n **1st step**: make sure you are up to date with the institution fee. The day before registration, Aapresid will upload a list of email accounts for those members whose fees are up to date. \n **2nd step**: enter the Congress web section, click on “Are you an Aapresid member?” on the “I WANT MY TICKET” button. You will be asked to submit your email account, ID number, and to complete a registration form. This can also be done using the button included in the email about the Congress, which will be sent to the account registered in the Aapresid member database. \n **3rd step**: your registration will be ready once the required information is provided. Afterwards, you just have to arrive at the Congress with your ticket, which will be sent through email, or you can attend the Congress virtually using the same information—email, ID number, and membership number.",
+          "**I am an Aapresid member but I cannot complete my free registration, why?** \n To register for free, your Aapresid membership dues must be up to date. Make sure that the email account you are using matches the one registered in the Aapresid member database."
+        ]
+      }
+    ]
+  },
+  "sponsors": {
+    "title": "Our Partners",
+    "patrocinios_a": "SPONSORS A",
+    "patrocinios_b": "SPONSORS B",
+    "patrocinios_c": "SPONSORS C",
+    "patrocinios_d": "SPONSORS D",
+    "institucionales": "INSTITUTIONAL",
+    "medios": "MEDIA",
+    "apoyan": "Support",
+    "organizan": "Organize"
+  },
+  "footer": {
+    "fecha": "August 6th to 8th, 2025",
+    "lugar": "La Rural, exhibition venue in Buenos Aires",
+    "inscripciones": "Registration",
+    "aapresid": "aapresid.org.ar",
+    "aapresid_tel": "Tel: +54 (341) 4260745/46",
+    "aapresid_dir1": "Dorrego 1639, S2000 Rosario,",
+    "aapresid_dir2": "Santa Fe.",
+    "aapresid_comunidad1": "Join our community for",
+    "aapresid_comunidad2": "knowledge and innovation networking.",
+    "aapresid_comunidad3": "¡Together we expand our knowledge!!",
+    "expoagro": "expoagro.com.ar",
+    "expoagro_tel": "Tel: 011 5128 9800/05",
+    "expoagro_dir1": "Av. Corrientes 1302 5 Piso",
+    "expoagro_dir2": "(C1043ABN) CABA"
+  }
+}
