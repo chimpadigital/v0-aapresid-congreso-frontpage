@@ -4,7 +4,9 @@ import DownloadIcon from "./icons/DownloadIcon";
 import { useTranslations } from "next-intl";
 
 const DescargaComercial = () => {
+    
   const t = useTranslations("commercial");
+
   return (
     <section className="mx-4 pb-6 pt-14 xl:pb-36 xl:pt-44">
       <div className="mx-auto flex w-full max-w-[1052px] flex-col flex-wrap items-center justify-center gap-4 text-center md:flex-row min-[935px]:text-left lg:justify-between">
