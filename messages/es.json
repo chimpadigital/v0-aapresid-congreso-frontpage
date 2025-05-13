@@ -79,6 +79,11 @@
       }
     ]
   },
+  "commercial": {
+    "titulo": "Formá parte de la",
+    "congreso": "33° edición del Congreso",
+    "descarga": "Descarga carpeta comercial"
+  },
   "faq": {
     "titulo1": "Preguntas",
     "titulo2": "Frecuentes",
