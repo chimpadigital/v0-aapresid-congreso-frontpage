@@ -79,7 +79,8 @@
     ]
   },
   "faq": {
-    "titulo": "Preguntas Frecuentes",
+    "titulo1": "Preguntas",
+    "titulo2": "Frecuentes",
     "items": [
       {
         "pregunta": "¿Qué es el Congreso Aapresid?",

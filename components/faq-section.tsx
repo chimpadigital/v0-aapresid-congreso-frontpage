@@ -33,6 +33,7 @@ const item = {
 
 export function FaqSection() {
   const t = useTranslations("faq");
+
   const preguntas = t.raw("items") as Array<{
     pregunta: string;
     respuesta: string | string[];
@@ -89,7 +90,7 @@ export function FaqSection() {
       {/* Content container */}
       <div className="relative flex flex-col items-center p-8 md:px-16 md:py-24">
         <h2 className="mb-10 text-center text-[40px] text-white md:mb-20">
-          Preguntas <span className="font-medium">Frecuentes</span>
+          {t("titulo1")} <span className="font-medium">{t("titulo2")}</span>
         </h2>
 
         {/* FAQ accordion */}
