@@ -1,15 +1,18 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
 
+const API_BASE_URL = process.env.API_BASE_URL;
+
+
 export async function GET() {
   try {
     const [a, b, c, d, institucion, medios] = await Promise.all([
-      axios.get("https://api-congreso.aapresid.org.ar/api/logos?categoryId=8"),
-      axios.get("https://api-congreso.aapresid.org.ar/api/logos?categoryId=2"),
-      axios.get("https://api-congreso.aapresid.org.ar/api/logos?categoryId=3"),
-      axios.get("https://api-congreso.aapresid.org.ar/api/logos?categoryId=4"),
-      axios.get("https://api-congreso.aapresid.org.ar/api/logos?categoryId=5"),
-      axios.get("https://api-congreso.aapresid.org.ar/api/logos?categoryId=6"),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=8`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=2`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=3`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=4`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=5`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=6`),
     ]);
 
     return NextResponse.json({
