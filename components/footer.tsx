@@ -13,6 +13,7 @@ import LogoExpoagro from "@/public/images/logo-expoagro.svg";
 import LogoCodigo from "@/public/images/logo-codigo.svg";
 import RedInstagram from "./icons/RedInstagram";
 import { useTranslations } from "next-intl";
+import RedTikTok from "./icons/RedTikTok";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -56,7 +57,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="relative mx-4 mb-8 mt-6 md:mt-[48px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.png')] bg-cover bg-center md:mx-[33px]">
+    <footer className="relative mx-4 mb-8 mt-6 overflow-hidden rounded-[20px] bg-[url('/images/trama-background.png')] bg-cover bg-center md:mx-[33px] md:mt-[48px]">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         {/* Video element with multiple sources for better compatibility */}
@@ -94,7 +95,7 @@ export function Footer() {
                 alt="Congreso Aapresid"
                 className="h-full w-auto object-contain"
               />
-              <div className="xs:block my-auto hidden h-12 w-px translate-y-[5px] bg-white"></div>
+              <div className="my-auto hidden h-12 w-px translate-y-[5px] bg-white xs:block"></div>
               <div className="flex items-center">
                 <Image
                   src={LogoExpoagro}
@@ -102,7 +103,7 @@ export function Footer() {
                   className="h-full w-auto object-contain"
                 />
               </div>
-              <div className="xs:block my-auto hidden h-12 w-px translate-y-[5px] bg-white"></div>
+              <div className="my-auto hidden h-12 w-px translate-y-[5px] bg-white xs:block"></div>
               <div className="flex items-center">
                 <Image
                   src={LogoCodigo}
@@ -116,16 +117,14 @@ export function Footer() {
           {/* Right - Date and button */}
           <div className="flex flex-1 flex-col items-start gap-6">
             <div className="text-white">
-              <div className="text-xl font-medium leading-none">
+              <div className="text-xl font-medium leading-[1.30rem]">
                 {t("fecha")}
               </div>
-              <div className="text-xl font-light">
-                {t("lugar")}
-              </div>
+              <div className="text-xl font-light">{t("lugar")}</div>
             </div>
             <Link
               href="/inscripciones"
-              className="relative z-[1] overflow-hidden rounded-full bg-secondary px-[60.5px] py-[16px] text-lg font-light text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3]"
+              className="relative z-[1] overflow-hidden rounded-full bg-secondary px-[60.5px] py-[16px] text-lg font-light text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3] tracking-wider"
             >
               {t("inscripciones")}
             </Link>
@@ -138,7 +137,7 @@ export function Footer() {
         {/* Bottom section */}
         <div className="flex h-full flex-col items-start justify-between gap-6 md:flex-row">
           {/* Left - Aapresid */}
-          <div className="flex min-h-[320px] flex-[2] flex-col items-stretch justify-between">
+          <div className="flex min-h-[340px] flex-[2] flex-col items-stretch justify-between">
             <div>
               <div className="mb-4 flex items-center gap-2">
                 <Image
@@ -158,16 +157,16 @@ export function Footer() {
                 aapresid.org.ar
               </a>
 
-              <div className="mb-4 pl-3 text-lg font-light leading-none tracking-wider text-white">
+              <div className="mb-4 pl-3 text-lg font-light leading-[1.30rem] tracking-widest text-white">
                 <div>Tel: +54 (341) 4260745/46</div>
                 <div>Dorrego 1639, S2000 Rosario,</div>
                 <div>Santa Fe.</div>
               </div>
 
-              <div className="pl-3 text-lg font-light leading-none tracking-wider text-white">
+              <div className="pl-3 text-lg font-light leading-[1.30rem] tracking-widest text-white">
                 <div>{t("aapresid_comunidad1")}</div>
                 <div>{t("aapresid_comunidad2")}</div>
-                <div className="font-normal">¡{t("aapresid_comunidad3")}!</div>
+                <div className="font-normal">{t("aapresid_comunidad3")}</div>
               </div>
             </div>
 
@@ -175,26 +174,26 @@ export function Footer() {
             <div className="mt-auto flex gap-4">
               <SocialIcon
                 icon={<RedLinkedin />}
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/aapresid/"
               />
               <SocialIcon
                 icon={<RedInstagram />}
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/aapresid/"
               />
               <SocialIcon
                 icon={<RedFacebook />}
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/aapresidargentina/?ref=br_rs"
               />
-              <SocialIcon icon={<RedX />} href="#" />
+              <SocialIcon icon={<RedX />} href="https://x.com/aapresid" />
               <SocialIcon
                 icon={<RedYoutube />}
-                href="https://www.youtube.com"
+                href="https://www.youtube.com/@aapresid"
               />
             </div>
           </div>
 
           {/* Right - Expoagro */}
-          <div className="flex min-h-[320px] flex-1 flex-col items-stretch justify-between">
+          <div className="flex min-h-[340px] flex-1 flex-col items-stretch justify-between">
             {" "}
             <div>
               <div className="mb-4 flex flex-col items-start">
@@ -215,31 +214,32 @@ export function Footer() {
                 expoagro.com.ar
               </a>
 
-              <div className="mb-6 font-light leading-none tracking-wider text-white">
+              <div className="mb-6 font-light leading-[1.30rem] tracking-widest text-white">
                 <div>Tel: 011 5128 9800/05</div>
                 <div>Av. Corrientes 1302 5 Piso</div>
                 <div>(C1043ABN) CABA</div>
               </div>
             </div>
             {/* Social icons */}
-            <div className="flex gap-4">
-              <SocialIcon
-                icon={<RedLinkedin />}
-                href="https://www.linkedin.com"
-              />
+            <div className="flex gap-4 text-lg tracking-wider">
               <SocialIcon
                 icon={<RedInstagram />}
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/expoagrocom/"
+              />
+              <SocialIcon
+                icon={<RedLinkedin />}
+                href="https://www.linkedin.com/company/expoagroargentina/"
               />
               <SocialIcon
                 icon={<RedFacebook />}
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/ExpoagroArgentina/"
               />
-              <SocialIcon icon={<RedX />} href="#" />
+              <SocialIcon icon={<RedX />} href="https://x.com/Expoagrocom" />
               <SocialIcon
                 icon={<RedYoutube />}
-                href="https://www.youtube.com"
+                href="https://www.youtube.com/channel/UCL7FxmRKzatPxn4YIYNuN6Q"
               />
+              {/* <SocialIcon icon={<RedTikTok />} href="https://www.tiktok.com" /> */}
             </div>
           </div>
         </div>
@@ -254,7 +254,7 @@ function SocialIcon({ icon, href }: { icon: React.ReactNode; href: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-10 w-10 items-center justify-center rounded-full text-[#2D3D34] transition-colors"
+      className="flex h-10 w-10 items-center justify-center rounded-full tracking-wider text-[#2D3D34] transition-colors"
     >
       {icon}
     </a>

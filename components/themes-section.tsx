@@ -20,6 +20,7 @@ import Eje5Sistemas from "./icons/Eje5Sistemas";
 import Eje6SistemasSustentables from "./icons/Eje6SistemasSustentables";
 import Eje7Prospectiva from "./icons/Eje7Prospectiva";
 import { useTranslations } from "next-intl";
+import * as motion from "motion/react-client";
 
 export function ThemesSection() {
   const t = useTranslations("themes");
@@ -83,8 +84,21 @@ export function ThemesSection() {
       <div className="mx-auto max-w-[1216px]">
         {/* Content container */}
         <div className="relative flex flex-col gap-8 lg:flex-row">
+          <div className="w-fit lg:hidden">
+            <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">
+              {t("ejes_tematicos")}
+            </h2>
+            <p className="w-fit text-lg font-light tracking-wider text-white">
+              {t("conoce_los_ejes")}
+            </p>
+          </div>
           {/* Left column - cards */}
-          <div className="flex flex-1 flex-col">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="flex flex-1 flex-col"
+          >
             <Swiper
               grabCursor={true}
               effect={"creative"}
@@ -117,15 +131,20 @@ export function ThemesSection() {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
 
           {/* Right column - Text content */}
-          <div className="flex flex-1 flex-col pl-4 lg:justify-between">
-            <div className="w-fit">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="flex flex-1 flex-col pl-4 lg:justify-between"
+          >
+            <div className="hidden w-fit lg:block">
               <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">
                 {t("ejes_tematicos")}
               </h2>
-              <p className="mb-8 w-fit text-lg text-white">
+              <p className="mb-8 w-fit text-lg font-light tracking-wider text-white">
                 {t("conoce_los_ejes")}
               </p>
             </div>
@@ -139,17 +158,17 @@ export function ThemesSection() {
             >
               {ejesTematicos.map((ejesTematico) => (
                 <SwiperSlide key={ejesTematico.titulo + "-texto"}>
-                  <p className="whitespace-pre-line text-xl font-light text-white">
+                  <p className="whitespace-pre-line text-xl font-light tracking-wider text-white">
                     {ejesTematico.descripcion}
                   </p>
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
 
         {/* Navigation buttons */}
-        <div className="mt-8 flex gap-6">
+        <div className="mt-8 flex justify-center gap-6 lg:justify-start">
           <button
             className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white transition-colors hover:bg-white/10 disabled:opacity-50"
             onClick={() => {

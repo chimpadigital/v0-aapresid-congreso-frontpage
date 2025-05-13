@@ -1,7 +1,7 @@
 "use client";
+import * as motion from "motion/react-client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { RichText } from "./rich-text";
@@ -12,10 +12,28 @@ interface FaqItem {
   isOpen: boolean;
 }
 
+const list = {
+  visible: {
+    opacity: 1,
+    duration: 0.2,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+  hidden: {
+    opacity: 1,
+  },
+};
 
+const item = {
+  visible: { y: 0 },
+  hidden: { y: 100 },
+};
 
 export function FaqSection() {
   const t = useTranslations("faq");
+
   const preguntas = t.raw("items") as Array<{
     pregunta: string;
     respuesta: string | string[];
@@ -72,15 +90,21 @@ export function FaqSection() {
       {/* Content container */}
       <div className="relative flex flex-col items-center p-8 md:px-16 md:py-24">
         <h2 className="mb-10 text-center text-[40px] text-white md:mb-20">
-          Preguntas <span className="font-medium">Frecuentes</span>
+          {t("titulo1")} <span className="font-medium">{t("titulo2")}</span>
         </h2>
 
         {/* FAQ accordion */}
-        <div className="w-full max-w-3xl space-y-[40px]">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={list}
+          className="w-full max-w-3xl space-y-[40px]"
+        >
           {visibleFaqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
-              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[1500ms] ease-in-out"
+              variants={item}
+              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[200ms] ease-linear"
             >
               <button
                 className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
@@ -88,7 +112,7 @@ export function FaqSection() {
                 aria-expanded={faq.isOpen}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="font-medium text-[#2D3D34]">
+                <span className="text-lg font-medium tracking-wider text-[#2D3D34]">
                   {faq.question}
                 </span>
                 <span className="ml-2 flex-shrink-0 rounded-[16px] bg-[#ED7F00] p-1">
@@ -109,12 +133,15 @@ export function FaqSection() {
                 }`}
               >
                 <div className="px-4 pb-4 text-gray-700">
-                  <RichText text={faq.answer} className="mb-3 whitespace-pre-line text-[#736D6D] last:mb-0" />
+                  <RichText
+                    text={faq.answer}
+                    className="mb-3 whitespace-pre-line tracking-[0.08em] text-[#736D6D] last:mb-0"
+                  />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

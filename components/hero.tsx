@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useState } from "react"
 import MapPin from "./icons/MapPin"
 import Calendar from "./icons/Calendar"

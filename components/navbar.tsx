@@ -13,7 +13,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  
+
   const t = useTranslations("navbar");
 
   useEffect(() => {
@@ -147,7 +147,14 @@ export function Navbar() {
             </div>
 
             <div className="z-[9999999] flex items-center gap-3">
-              <NavItem label="ES" hasDropdown />
+              <div
+                style={{
+                  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.10)",
+                }}
+                className="grid aspect-square h-[56px] place-items-center rounded-full bg-[#7D7777B2] backdrop-blur-sm text-white"
+              >
+                <NavItem label={locale} hasDropdown />
+              </div>
               <Link
                 href="/inscripciones"
                 className="relative z-[1] ml-4 overflow-hidden rounded-full bg-secondary px-[30px] py-[15.5px] font-medium text-[#fff] transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3]"
@@ -291,7 +298,7 @@ function NavItem({
 }) {
   return (
     <div className="group relative">
-      <button className="flex items-center font-medium text-white transition-colors hover:text-[#64B33D]">
+      <button className="flex items-center font-medium text-inherit transition-colors hover:text-[#64B33D]">
         {label.toLocaleUpperCase()}
         {hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
       </button>
