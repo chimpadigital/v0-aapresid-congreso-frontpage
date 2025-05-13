@@ -34,25 +34,30 @@ export function InscriptionsSection() {
         </div>
 
         {/* Right side - Light green */}
-       {isClient && <motion.div
-          initial={{ x: isMobile ? 0 : -150, y: isMobile ? -150 : 0 }}
-          whileInView={{ x: 0, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.4 }}
-          className="relative -top-6 flex w-full flex-col items-center justify-center rounded-[30px] bg-[#64B33D] px-8 py-16 md:top-auto md:-ml-[40px] md:w-[calc(50%+20px)] md:px-16 md:py-20"
-        >
-          <h3 className="mb-6 text-center text-2xl font-light text-white md:text-3xl lg:text-4xl">
-            {t("sos_socio")}
-          </h3>
-
-          <Link
-            href="/inscripciones"
-            className="relative z-[1] ml-4 flex w-[min(374px,100%)] items-center justify-center gap-[10px] overflow-hidden rounded-full border border-white bg-transparent px-[30px] py-[15.5px] font-medium text-white transition-colors duration-[1s] before:absolute before:-left-[10%] before:top-[100%] before:z-[-1] before:h-[390%] before:w-[10%] before:origin-left before:-rotate-[30deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-x-[20] hover:before:scale-y-[2]"
+        {isClient && (
+          <motion.div
+            initial={{ x: isMobile ? 0 : -150, y: isMobile ? -150 : 0 }}
+            whileInView={{ x: 0, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="relative -top-6 flex w-full flex-col items-center justify-center rounded-[30px] bg-[#64B33D] px-8 py-16 md:top-auto md:-ml-[40px] md:w-[calc(50%+20px)] md:px-16 md:py-20"
           >
-            <span className="text-2xl">{t("inscribite_aca")}</span>
-            <ArrowRounded />
-          </Link>
-        </motion.div>}
+            <h3 className="mb-6 text-center text-2xl font-light text-white md:text-3xl lg:text-4xl">
+              {t("sos_socio")}
+            </h3>
+
+            <button
+              disabled
+              // href="https://www.aapresid.org.ar/es/asociate"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              className="relative z-[1] ml-4 flex w-[min(374px,100%)] items-center justify-center gap-[10px] overflow-hidden rounded-full border border-white bg-transparent px-[30px] py-[15.5px] font-medium text-white transition-colors duration-[1s] before:absolute before:-left-[10%] before:top-[100%] before:z-[-1] before:h-[390%] before:w-[10%] before:origin-left before:-rotate-[30deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-x-[20] hover:before:scale-y-[2] pointer-events-none"
+            >
+              <span className="text-2xl">{t("proximamente")}</span>
+              {/* <ArrowRounded /> */}
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
