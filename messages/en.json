@@ -79,7 +79,8 @@
     ]
   },
   "faq": {
-    "titulo": "Frequently Asked Questions",
+    "titulo1": "Frequently",
+    "titulo2": "Asked Questions",
     "items": [
       {
         "pregunta": "What is the Aapresid Congress?",
