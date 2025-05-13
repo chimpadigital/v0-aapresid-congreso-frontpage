@@ -151,7 +151,7 @@ export function Navbar() {
                 style={{
                   boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.10)",
                 }}
-                className="grid aspect-square h-[56px] place-items-center rounded-full bg-[#7D7777B2] backdrop-blur-sm text-white"
+                className="grid h-[56px] place-items-center rounded-full bg-[#7D7777B2] px-5 text-white backdrop-blur-sm"
               >
                 <NavItem label={locale} hasDropdown />
               </div>
