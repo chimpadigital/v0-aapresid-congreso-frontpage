@@ -266,7 +266,7 @@ function SponsorLogo({
       href={imagePath}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-20 items-center justify-center p-2 transition-opacity hover:opacity-80"
+      className="flex items-center justify-center p-2 transition-opacity hover:opacity-80"
     >
       <div className="relative aspect-[260/135]" style={{ height }}>
         <Image

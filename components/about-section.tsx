@@ -42,7 +42,7 @@ export function AboutSection() {
 
           {/* Right column */}
           <motion.div
-            initial={{ opacity: 0, y: -100 }}
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="mt-8 flex flex-col items-start md:mt-0 md:px-20"
