@@ -124,7 +124,7 @@ export function Footer() {
             </div>
             <Link
               href="/inscripciones"
-              className="relative z-[1] overflow-hidden rounded-full bg-secondary px-[60.5px] py-[16px] text-lg font-light text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3]"
+              className="relative z-[1] overflow-hidden rounded-full bg-secondary px-[60.5px] py-[16px] text-lg font-light text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3] tracking-wider"
             >
               {t("inscripciones")}
             </Link>

@@ -22,13 +22,13 @@ const list = {
     },
   },
   hidden: {
-    opacity: 0,
+    opacity: 1,
   },
 };
 
 const item = {
-  visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: -100 },
+  visible: { y: 0 },
+  hidden: { y: 100 },
 };
 
 export function FaqSection() {
@@ -104,7 +104,7 @@ export function FaqSection() {
             <motion.div
               key={index}
               variants={item}
-              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[300ms] ease-linear"
+              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[200ms] ease-linear"
             >
               <button
                 className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
