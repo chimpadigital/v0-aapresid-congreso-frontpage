@@ -86,7 +86,7 @@ export function FaqSection() {
   const visibleFaqs = faqs;
 
   return (
-    <section className="relative mx-4 mt-[44px] overflow-hidden rounded-[20px] bg-[url('/images/fondo-preguntas-dark.png')] bg-cover bg-bottom md:mx-[33px]">
+    <section className="relative mx-4 mt-[44px] overflow-hidden rounded-[20px] bg-primary bg-cover bg-bottom md:mx-[33px]">
       {/* Content container */}
       <div className="relative flex flex-col items-center p-8 md:px-16 md:py-24">
         <h2 className="mb-10 text-center text-[40px] text-white md:mb-20">

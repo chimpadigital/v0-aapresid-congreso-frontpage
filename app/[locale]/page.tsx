@@ -7,6 +7,7 @@ import { ThemesSection } from "@/components/themes-section";
 import { FaqSection } from "@/components/faq-section";
 import { SponsorsSection } from "@/components/sponsors-section";
 import { Footer } from "@/components/footer";
+import DescargaComercial from "@/components/descarga-comercial";
 
 export default function Home({ params }: { params: { locale: string } }) {
   return (
@@ -57,6 +58,9 @@ export default function Home({ params }: { params: { locale: string } }) {
 
       {/* Themes section */}
       <ThemesSection />
+
+      {/* Descarga comercial */}
+      <DescargaComercial />
 
       {/* FAQ section */}
       <FaqSection />
