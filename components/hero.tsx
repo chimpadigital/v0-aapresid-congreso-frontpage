@@ -17,10 +17,10 @@ export function Hero() {
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-32">
       <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-tight ">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white  my-[1lh] md:mx-0 ">
           <span className="inline-block">
             <span
-              className="inline-block transform transition-all duration-700 ease-out font-normal"
+              className="inline-block transform transition-all duration-700 ease-out font-normal leading-[1] md:leading-tight"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(40px)",
@@ -33,7 +33,7 @@ export function Hero() {
           <br />
           <span className="inline-block">
             <span
-              className="inline-block transform transition-all duration-700 ease-out"
+              className="inline-block leading-[1] md:leading-tight transform transition-all duration-700 ease-out"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(40px)",

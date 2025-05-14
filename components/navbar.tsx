@@ -14,7 +14,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  
+
   const t = useTranslations("navbar");
 
   useEffect(() => {
@@ -302,7 +302,7 @@ function NavItem({
 }) {
   return (
     <div className="group relative">
-      <button className="flex items-center font-medium text-inherit transition-colors">
+      <button className="flex items-center font-medium text-white transition-colors">
         {label.toLocaleUpperCase()}
         {hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
       </button>
