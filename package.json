@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start-srv": "next start -p 8100",
     "start": "next start",
     "lint": "next lint"
   },
