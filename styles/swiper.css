@@ -18,31 +18,31 @@
   padding: 38px 58px 58px 58px;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide:nth-child(1n) {
+.swiper.ejes-tematicos-swiper .swiper-slide.aprender {
   background-color: #EF7B80;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide:nth-child(2n) {
+.swiper.ejes-tematicos-swiper .swiper-slide.desafios {
   background-color: #147DBE;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide:nth-child(3n) {
+.swiper.ejes-tematicos-swiper .swiper-slide.innovacion {
   background-color: #E84615;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide:nth-child(4n) {
+.swiper.ejes-tematicos-swiper .swiper-slide.manejo {
   background-color: #D34240;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide:nth-child(5n) {
+.swiper.ejes-tematicos-swiper .swiper-slide.sistemas {
   background-color: #EAAB21;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide:nth-child(6n) {
+.swiper.ejes-tematicos-swiper .swiper-slide.sustentables {
   background-color: #15A884;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide:nth-child(7n) {
+.swiper.ejes-tematicos-swiper .swiper-slide.prospectiva {
   background-color: #99529B;
 }
 

@@ -20,7 +20,7 @@
     "programamos": "We program",
     "el_futuro_del_agro": "the future of agriculture",
     "fecha": "August 6th, 7th, and 8th",
-    "lugar": "La Rural, exhibition venue in Buenos Aires"
+    "lugar": "La Rural de Palermo, Buenos Aires"
   },
   "countdown": {
     "dias": "Days",
@@ -33,7 +33,6 @@
     "sos_socio": "Are you a Aapresid member?",
     "inscribite_aca": "Subscribe here",
     "proximamente": "Available soon"
-
   },
   "about": {
     "que_es": "What is the",
@@ -52,31 +51,38 @@
     "ejes": [
       {
         "titulo": "Learning by Producing",
-        "descripcion": "A synergy among science, research organizations, and farmers, who are actively involved in conducting tests in real-world settings, is designed to provide answers to farmers’ demands through the development of sustainable technology."
+        "descripcion": "A synergy among science, research organizations, and farmers, who are actively involved in conducting tests in real-world settings, is designed to provide answers to farmers’ demands through the development of sustainable technology.",
+        "clase": "aprender"
       },
       {
         "titulo": "Global Challenges",
-        "descripcion": "Strengthen Argentina’s presence on the global stage, embracing the responsibility and opportunity to share our experience in developing a production model that enables resource protection and restoration, while reducing negative environmental impact."
+        "descripcion": "Strengthen Argentina’s presence on the global stage, embracing the responsibility and opportunity to share our experience in developing a production model that enables resource protection and restoration, while reducing negative environmental impact.",
+        "clase": "desafios"
       },
       {
         "titulo": " Innovation and Agtech",
-        "descripcion": "The section seeks to promote an accessible and integrated technological ecosystem by exploring the adoption of digital tools to provide solutions for farmers; and to integrate agriculture’s digitization and technological evolution by engaging with the Agtech ecosystem and agriculture machinery."
+        "descripcion": "The section seeks to promote an accessible and integrated technological ecosystem by exploring the adoption of digital tools to provide solutions for farmers; and to integrate agriculture’s digitization and technological evolution by engaging with the Agtech ecosystem and agriculture machinery.",
+        "clase": "innovacion"
       },
       {
         "titulo": "Pest Management",
-        "descripcion": "A group of practices and methods employed for controlling living organisms that may damage production systems. Different sustainable strategies will be addressed to minimize environmental impact and ensure effective pest control."
+        "descripcion": "A group of practices and methods employed for controlling living organisms that may damage production systems. Different sustainable strategies will be addressed to minimize environmental impact and ensure effective pest control.",
+        "clase": "manejo"
       },
       {
         "titulo": "Integrated Systems",
-        "descripcion": "Broaden the panorama of production diversity by conveying real cases and farmers’ experiences, who rely on different production systems while promoting diversification and integration, and demonstrating the multiple productive and sustainable benefits."
+        "descripcion": "Broaden the panorama of production diversity by conveying real cases and farmers’ experiences, who rely on different production systems while promoting diversification and integration, and demonstrating the multiple productive and sustainable benefits.",
+        "clase": "sistemas"
       },
       {
         "titulo": "Sustainable Production Systems",
-        "descripcion": "These systems are characterized by being agroecologically responsible and economically viable. This entails the efficient use of natural resources, the reduction of negative environmental impact, and the promotion of biodiversity and a circular economy. Additionally, they seek resilience against climate change and other global challenges."
+        "descripcion": "These systems are characterized by being agroecologically responsible and economically viable. This entails the efficient use of natural resources, the reduction of negative environmental impact, and the promotion of biodiversity and a circular economy. Additionally, they seek resilience against climate change and other global challenges.",
+        "clase": "sustentables"
       },
       {
         "titulo": "Socio-political Perspectives",
-        "descripcion": "An integral approach to farmers’ political and social context that enables them to meet the needs for achieving sustainable production profitable over time. The goal is to bring decision-making closer to farmers, and vice versa."
+        "descripcion": "An integral approach to farmers’ political and social context that enables them to meet the needs for achieving sustainable production profitable over time. The goal is to bring decision-making closer to farmers, and vice versa.",
+        "clase": "prospectiva"
       }
     ]
   },
@@ -115,9 +121,7 @@
         "pregunta": "What is the deadline for free registration as a member of Aapresid?",
         "respuesta": [
           "An Aapresid member will be able to register for free as long as their fees are paid to date.",
-          "The registration deadline for the Aapresid member to be able to attend the Congress free of charge is **August 5th, 2025**. Once that date has passed, the member must register paying the total cost of the ticket.",
-          "**I am a member of Aapresid, how do I register for the Aapresid Congress?** \n **1st step**: make sure you are up to date with the institution fee. The day before registration, Aapresid will upload a list of email accounts for those members whose fees are up to date. \n **2nd step**: enter the Congress web section, click on “Are you an Aapresid member?” on the “I WANT MY TICKET” button. You will be asked to submit your email account, ID number, and to complete a registration form. This can also be done using the button included in the email about the Congress, which will be sent to the account registered in the Aapresid member database. \n **3rd step**: your registration will be ready once the required information is provided. Afterwards, you just have to arrive at the Congress with your ticket, which will be sent through email, or you can attend the Congress virtually using the same information—email, ID number, and membership number.",
-          "**I am an Aapresid member but I cannot complete my free registration, why?** \n To register for free, your Aapresid membership dues must be up to date. Make sure that the email account you are using matches the one registered in the Aapresid member database."
+          "The registration deadline for the Aapresid member to be able to attend the Congress free of charge is **August 5th, 2025**. Once that date has passed, the member must register paying the total cost of the ticket."
         ]
       }
     ]
