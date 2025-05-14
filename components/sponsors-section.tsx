@@ -1,165 +1,316 @@
-import Image from "next/image"
-import Link from "next/link"
+"use client";
+import Image from "next/image";
+import LogoClarin from "./icons/LogoClarin";
+import LogoLaNacion from "./icons/LogoLaNacion";
+import TextoApoyan from "./icons/TextoApoyan";
+import TextoOrganizan from "./icons/TextoOrganizan";
+import LogoAapresid from "./icons/LogoAapresid";
+import LogoExponenciar from "./icons/LogoExponenciar";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import * as motion from "motion/react-client";
 
-interface SponsorProps {
-  name: string
-  logo: string
-  url: string
+interface categoryProps {
+  category1: SponsorPropsItem[];
+  category2: SponsorPropsItem[];
+  category3: SponsorPropsItem[];
+  category4: SponsorPropsItem[];
+  institucion: SponsorPropsItem[];
+  medios: SponsorPropsItem[];
 }
 
-const sponsorsA: SponsorProps[] = [
-  {
-    name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
-    url: "#",
-  },
-  {
-    name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
-    url: "#",
-  },
-  {
-    name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
-    url: "#",
-  },
-  {
-    name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
-    url: "#",
-  },
-  {
-    name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
-    url: "#",
-  },
-  {
-    name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
-    url: "#",
-  },
-]
-
-const sponsorsB: SponsorProps[] = [
-  {
-    name: "Chacraservicios",
-    logo: "/images/sponsors/chacraservicios.png",
-    url: "#",
-  },
-  {
-    name: "Banco Macro",
-    logo: "/images/sponsors/banco-macro.png",
-    url: "#",
-  },
-  {
-    name: "Bunge",
-    logo: "/images/sponsors/bunge.png",
-    url: "#",
-  },
-  {
-    name: "ATANOR",
-    logo: "/images/sponsors/atanor.png",
-    url: "#",
-  },
-  {
-    name: "Bayer",
-    logo: "/images/sponsors/bayer.png",
-    url: "#",
-  },
-  {
-    name: "Buenos Aires Ciudad",
-    logo: "/images/sponsors/buenos-aires-ciudad.png",
-    url: "#",
-  },
-]
+interface SponsorPropsItem {
+  imagePath: string;
+  title: string;
+  link: string;
+}
 
 export function SponsorsSection() {
+  const t = useTranslations("sponsors");
+
+  const [sponsors, setSponsors] = useState<categoryProps>();
+
+  useEffect(() => {
+    const fetchSponsors = async () => {
+      try {
+        const res = await axios.get("/api/sponsors");
+        setSponsors(res.data);
+      } catch (err) {
+        console.error("Error fetching sponsors", err);
+      }
+    };
+
+    fetchSponsors();
+  }, []);
+
+  // console.log(JSON.parse(sponsors?.category1[0].link || ""));
+  console.log(sponsors);
   return (
-    <section className="relative m-[30px] bg-white rounded-[20px] overflow-hidden py-16 px-8 md:px-16">
-      <div className="max-w-7xl mx-auto">
-        {/* Title */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D3D34] text-center mb-16">Nos acompañan</h2>
+    <>
+      <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
+        <div className="mx-auto max-w-7xl">
+          {/* Title */}
+          <h2 className="mb-16 text-center text-4xl font-medium text-[#2D3D34] md:text-5xl lg:text-6xl">
+            {t("title")}
+          </h2>
 
-        {/* Sponsors A */}
-        <div className="mb-16">
-          <h3 className="text-xl font-medium text-[#2D3D34] mb-4">PATROCINIOS A</h3>
-          <div className="h-px w-full bg-gray-300 mb-12"></div>
+          {/* Sponsors A */}
+          <div className="mb-16">
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_a")}
+            </h3>
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-          {/* Desktop layout */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-            {sponsorsA.map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
+            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+              {(sponsors?.category1 || []).map((sponsor, i) => {
+                return (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={sponsor.title}
+                      height={135}
+                      link={sponsor.link}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Mobile layout - two rows */}
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-8">
-            {sponsorsA.slice(0, 4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
-          </div>
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-12">
-            {sponsorsA.slice(4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
+          {/* Sponsors B */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_b")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+              {sponsors?.category2.map((sponsor: SponsorPropsItem, i) => {
+                return (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={sponsor.title}
+                      height={125}
+                      link={sponsor.link}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Second row for desktop */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8">
-            {sponsorsA.map((sponsor) => (
-              <SponsorLogo key={`second-${sponsor.name}`} {...sponsor} />
-            ))}
+          {/* Sponsors C */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_c")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+              {sponsors?.category3.map((sponsor: SponsorPropsItem, i) => {
+                return (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={sponsor.title}
+                      height={115}
+                      link={sponsor.link}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Sponsors D */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("patrocinios_d")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+              {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => {
+                return (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={sponsor.title}
+                      height={105}
+                      link={sponsor.link}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* institucionales */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              {t("institucionales")}
+            </h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+              {sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => {
+                return (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={sponsor.title}
+                      height={105}
+                      link={sponsor.link}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* MEDIOS */}
+          <div>
+            <h3 className="mb-4 text-2xl text-[#2D3D34]">{t("medios")}</h3>
+
+            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+
+            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+              {sponsors?.medios.map((sponsor: SponsorPropsItem, i) => {
+                return (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={sponsor.title}
+                      height={115}
+                      link={sponsor.link}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
-
-        {/* Sponsors B */}
-        <div>
-          <h3 className="text-xl font-medium text-[#2D3D34] mb-4">PATROCINIOS B</h3>
-          <div className="h-px w-full bg-gray-300 mb-12"></div>
-
-          {/* Desktop layout */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-            {sponsorsB.map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
+      </section>
+      <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[33px] xl:px-[58px] xl:py-[27.5px]">
+        <div className="xsgap-[25px] mx-auto flex max-w-[1400px] flex-col gap-4 xl:flex-row">
+          <div className="flex flex-1 items-center justify-between gap-4">
+            <TextoApoyan />
+            <LogoClarin />
+            <LogoLaNacion />
           </div>
-
-          {/* Mobile layout - two rows */}
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-8">
-            {sponsorsB.slice(0, 4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
-          </div>
-          <div className="md:hidden grid grid-cols-2 gap-8 mb-12">
-            {sponsorsB.slice(4).map((sponsor) => (
-              <SponsorLogo key={sponsor.name} {...sponsor} />
-            ))}
-          </div>
-
-          {/* Second row for desktop */}
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8">
-            {sponsorsB.map((sponsor) => (
-              <SponsorLogo key={`second-${sponsor.name}`} {...sponsor} />
-            ))}
+          <div className="hidden h-12 w-[2.5px] shrink-0 bg-white xl:block"></div>
+          <hr className="xl:hidden" />
+          <div className="flex flex-1 items-center justify-between gap-4">
+            <TextoOrganizan />
+            <LogoAapresid />
+            <LogoExponenciar />
           </div>
         </div>
       </div>
-    </section>
-  )
+    </>
+  );
 }
 
-function SponsorLogo({ name, logo, url }: SponsorProps) {
+function SponsorLogo({
+  imagePath,
+  title,
+  height = 74,
+  link,
+}: {
+  title: string;
+  imagePath: string;
+  height?: number;
+  link: string;
+}) {
+  const parsedLink = JSON.parse(link || "{}");
+  const parsedTitle = JSON.parse(title || "{}");
+
+  const url = parsedLink["es"]?.startsWith("http")
+    ? parsedLink["es"]
+    : `https://${parsedLink["es"]}`;
+
   return (
-    <Link href={url} className="flex items-center justify-center h-20 p-2 hover:opacity-80 transition-opacity">
-      <div className="relative w-full h-full">
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center p-2 transition-opacity hover:opacity-80"
+    >
+      <div className="relative aspect-[260/135]" style={{ height }}>
         <Image
-          src={logo || "/placeholder.svg"}
-          alt={name}
+          src={imagePath || "/placeholder.svg"}
+          alt={parsedTitle["es"] || ""}
           fill
           className="object-contain"
-          sizes="(max-width: 768px) 150px, 200px"
+          sizes="(max-width: 768px) 250px, 300px"
         />
       </div>
-    </Link>
-  )
+    </a>
+  );
 }
