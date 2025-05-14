@@ -14,6 +14,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
+  
   const t = useTranslations("navbar");
 
   useEffect(() => {
