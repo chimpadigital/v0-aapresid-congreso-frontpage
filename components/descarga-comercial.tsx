@@ -20,7 +20,7 @@ const DescargaComercial = () => {
           <a
             download
             href="/TARIFARIO_CONGRESO_2025.pdf"
-            className="relative z-[1] ml-4 inline-block overflow-hidden rounded-full bg-accent fill-white px-[30px] py-[15.5px] text-lg text-[#fff] transition-colors duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:fill-primary hover:text-primary hover:before:scale-[3]"
+            className="relative z-[1] ml-4 inline-block overflow-hidden rounded-full bg-accent fill-white px-[30px] py-[15.5px] text-lg text-[#fff] transition-all duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]"
           >
             <div className="flex items-center gap-2">
               {t("descarga")}

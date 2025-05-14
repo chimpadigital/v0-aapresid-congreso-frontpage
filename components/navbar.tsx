@@ -301,7 +301,7 @@ function NavItem({
 }) {
   return (
     <div className="group relative">
-      <button className="flex items-center font-medium text-inherit transition-colors hover:text-[#64B33D]">
+      <button className="flex items-center font-medium text-inherit transition-colors">
         {label.toLocaleUpperCase()}
         {hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
       </button>
