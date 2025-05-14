@@ -27,15 +27,15 @@ export function ThemesSection() {
   const ejesTematicos = t.raw("ejes") as Array<{
     titulo: string;
     descripcion: string;
-    clase: string
+    clase: string;
   }>;
 
-  // Referencias para ambos Swipers
   const swiperRef = useRef<SwiperCore | null>(null);
   const textoSwiperRef = useRef<SwiperCore | null>(null);
 
   const handleSlideChange = (swiper: SwiperCore) => {
     const realIndex = swiper.realIndex;
+
     if (
       textoSwiperRef.current &&
       textoSwiperRef.current.realIndex !== realIndex
@@ -46,12 +46,34 @@ export function ThemesSection() {
 
   const handleTextoSlideChange = (swiper: SwiperCore) => {
     const realIndex = swiper.realIndex;
+
     if (swiperRef.current && swiperRef.current.realIndex !== realIndex) {
       swiperRef.current.slideToLoop(realIndex);
     }
   };
 
   const iconosEjesTematicos = [
+    {
+      icon: <Eje1Aprender />,
+    },
+    {
+      icon: <Eje2Desafios />,
+    },
+    {
+      icon: <Eje3Innovacion />,
+    },
+    {
+      icon: <Eje4Manejo />,
+    },
+    {
+      icon: <Eje5Sistemas />,
+    },
+    {
+      icon: <Eje6SistemasSustentables />,
+    },
+    {
+      icon: <Eje7Prospectiva />,
+    },
     {
       icon: <Eje1Aprender />,
     },
@@ -119,20 +141,25 @@ export function ThemesSection() {
               spaceBetween={20}
               loop={true}
             >
-              {ejesTematicos.map((ejesTematico, index) => (
-                <SwiperSlide key={ejesTematico.titulo} className={ejesTematico.clase}>
-                  <div
-                    className={`flex w-full flex-row flex-wrap items-center gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] xl:flex-col xl:items-start `}
+              {ejesTematicos
+                .concat(ejesTematicos)
+                .map((ejesTematico, index) => (
+                  <SwiperSlide
+                    key={ejesTematico.titulo + index}
+                    className={ejesTematico.clase}
                   >
-                    <div className="scale-75 md:scale-100">
-                      {iconosEjesTematicos[index].icon}
+                    <div
+                      className={`flex w-full flex-row flex-wrap items-center gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] xl:flex-col xl:items-start`}
+                    >
+                      <div className="scale-75 md:scale-100">
+                        {iconosEjesTematicos[index].icon}
+                      </div>
+                      <h3 className="w-[min(100%,446px)] rounded-[20px] text-4xl font-medium text-white md:text-5xl">
+                        {ejesTematico.titulo}
+                      </h3>
                     </div>
-                    <h3 className="w-[min(100%,446px)] rounded-[20px] text-4xl font-medium text-white md:text-5xl">
-                      {ejesTematico.titulo}
-                    </h3>
-                  </div>
-                </SwiperSlide>
-              ))}
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </motion.div>
 
@@ -153,6 +180,7 @@ export function ThemesSection() {
             </div>
             <Swiper
               grabCursor={true}
+              modules={[EffectCreative]}
               className="ejes-tematicos-texto-swiper"
               onSwiper={(swiper) => (textoSwiperRef.current = swiper)}
               onSlideChange={handleTextoSlideChange}
@@ -160,13 +188,15 @@ export function ThemesSection() {
               spaceBetween={20}
               loop={true}
             >
-              {ejesTematicos.map((ejesTematico) => (
-                <SwiperSlide key={ejesTematico.titulo + "-texto"}>
-                  <p className="whitespace-pre-line text-xl font-light tracking-wider text-white">
-                    {ejesTematico.descripcion}
-                  </p>
-                </SwiperSlide>
-              ))}
+              {ejesTematicos
+                .concat(ejesTematicos)
+                .map((ejesTematico, index) => (
+                  <SwiperSlide key={ejesTematico.titulo + "-texto" + index}>
+                    <p className="whitespace-pre-line text-xl font-light tracking-wider text-white">
+                      {ejesTematico.descripcion}
+                    </p>
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </motion.div>
         </div>
