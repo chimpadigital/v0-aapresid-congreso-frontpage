@@ -63,28 +63,29 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {(sponsors?.category1 || []).map((sponsor, i) => {
-                return (
-                  <motion.div
-                    key={sponsor.imagePath + "-" + i}
-                    className="flex w-fit justify-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: i * 0.1,
-                      duration: 0.5,
-                      easing: "ease-out",
-                    }}
-                  >
-                    <SponsorLogo
-                      imagePath={sponsor.imagePath}
-                      title={sponsor.title}
-                      height={135}
-                      link={sponsor.link}
-                    />
-                  </motion.div>
-                );
-              })}
+              {sponsors?.category1 &&
+                sponsors?.category1.map((sponsor, i) => {
+                  return (
+                    <motion.div
+                      key={sponsor.imagePath + "-" + i}
+                      className="flex w-fit justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: i * 0.1,
+                        duration: 0.5,
+                        easing: "ease-out",
+                      }}
+                    >
+                      <SponsorLogo
+                        imagePath={sponsor.imagePath}
+                        title={sponsor.title}
+                        height={135}
+                        link={sponsor.link}
+                      />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
 
@@ -97,28 +98,29 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.category2.map((sponsor: SponsorPropsItem, i) => {
-                return (
-                  <motion.div
-                    key={sponsor.imagePath + "-" + i}
-                    className="flex w-fit justify-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: i * 0.1,
-                      duration: 0.5,
-                      easing: "ease-out",
-                    }}
-                  >
-                    <SponsorLogo
-                      imagePath={sponsor.imagePath}
-                      title={sponsor.title}
-                      height={125}
-                      link={sponsor.link}
-                    />
-                  </motion.div>
-                );
-              })}
+              {sponsors?.category2 &&
+                sponsors?.category2.map((sponsor: SponsorPropsItem, i) => {
+                  return (
+                    <motion.div
+                      key={sponsor.imagePath + "-" + i}
+                      className="flex w-fit justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: i * 0.1,
+                        duration: 0.5,
+                        easing: "ease-out",
+                      }}
+                    >
+                      <SponsorLogo
+                        imagePath={sponsor.imagePath}
+                        title={sponsor.title}
+                        height={125}
+                        link={sponsor.link}
+                      />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
 
@@ -131,28 +133,29 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.category3.map((sponsor: SponsorPropsItem, i) => {
-                return (
-                  <motion.div
-                    key={sponsor.imagePath + "-" + i}
-                    className="flex w-fit justify-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: i * 0.1,
-                      duration: 0.5,
-                      easing: "ease-out",
-                    }}
-                  >
-                    <SponsorLogo
-                      imagePath={sponsor.imagePath}
-                      title={sponsor.title}
-                      height={115}
-                      link={sponsor.link}
-                    />
-                  </motion.div>
-                );
-              })}
+              {sponsors?.category3 &&
+                sponsors?.category3.map((sponsor: SponsorPropsItem, i) => {
+                  return (
+                    <motion.div
+                      key={sponsor.imagePath + "-" + i}
+                      className="flex w-fit justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: i * 0.1,
+                        duration: 0.5,
+                        easing: "ease-out",
+                      }}
+                    >
+                      <SponsorLogo
+                        imagePath={sponsor.imagePath}
+                        title={sponsor.title}
+                        height={115}
+                        link={sponsor.link}
+                      />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
 
@@ -165,28 +168,29 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => {
-                return (
-                  <motion.div
-                    key={sponsor.imagePath + "-" + i}
-                    className="flex w-fit justify-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: i * 0.1,
-                      duration: 0.5,
-                      easing: "ease-out",
-                    }}
-                  >
-                    <SponsorLogo
-                      imagePath={sponsor.imagePath}
-                      title={sponsor.title}
-                      height={105}
-                      link={sponsor.link}
-                    />
-                  </motion.div>
-                );
-              })}
+              {sponsors?.category4 &&
+                sponsors?.category4.map((sponsor: SponsorPropsItem, i) => {
+                  return (
+                    <motion.div
+                      key={sponsor.imagePath + "-" + i}
+                      className="flex w-fit justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: i * 0.1,
+                        duration: 0.5,
+                        easing: "ease-out",
+                      }}
+                    >
+                      <SponsorLogo
+                        imagePath={sponsor.imagePath}
+                        title={sponsor.title}
+                        height={105}
+                        link={sponsor.link}
+                      />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
 
@@ -199,28 +203,29 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => {
-                return (
-                  <motion.div
-                    key={sponsor.imagePath + "-" + i}
-                    className="flex w-fit justify-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: i * 0.1,
-                      duration: 0.5,
-                      easing: "ease-out",
-                    }}
-                  >
-                    <SponsorLogo
-                      imagePath={sponsor.imagePath}
-                      title={sponsor.title}
-                      height={105}
-                      link={sponsor.link}
-                    />
-                  </motion.div>
-                );
-              })}
+              {sponsors?.institucion &&
+                sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => {
+                  return (
+                    <motion.div
+                      key={sponsor.imagePath + "-" + i}
+                      className="flex w-fit justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: i * 0.1,
+                        duration: 0.5,
+                        easing: "ease-out",
+                      }}
+                    >
+                      <SponsorLogo
+                        imagePath={sponsor.imagePath}
+                        title={sponsor.title}
+                        height={105}
+                        link={sponsor.link}
+                      />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
 
@@ -231,28 +236,29 @@ export function SponsorsSection() {
             <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
             <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.medios.map((sponsor: SponsorPropsItem, i) => {
-                return (
-                  <motion.div
-                    key={sponsor.imagePath + "-" + i}
-                    className="flex w-fit justify-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: i * 0.1,
-                      duration: 0.5,
-                      easing: "ease-out",
-                    }}
-                  >
-                    <SponsorLogo
-                      imagePath={sponsor.imagePath}
-                      title={sponsor.title}
-                      height={115}
-                      link={sponsor.link}
-                    />
-                  </motion.div>
-                );
-              })}
+              {sponsors?.medios &&
+                sponsors?.medios.map((sponsor: SponsorPropsItem, i) => {
+                  return (
+                    <motion.div
+                      key={sponsor.imagePath + "-" + i}
+                      className="flex w-fit justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: i * 0.1,
+                        duration: 0.5,
+                        easing: "ease-out",
+                      }}
+                    >
+                      <SponsorLogo
+                        imagePath={sponsor.imagePath}
+                        title={sponsor.title}
+                        height={115}
+                        link={sponsor.link}
+                      />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -283,17 +289,19 @@ function SponsorLogo({
   height = 74,
   link,
 }: {
-  title: string;
+  title: string | Record<string, string>;
   imagePath: string;
   height?: number;
-  link: string;
+  link: string | Record<string, string>;
 }) {
-  const parsedLink = JSON.parse(link || "{}");
-  const parsedTitle = JSON.parse(title || "{}");
+  const parsedLink =
+  typeof link === "string" ? JSON.parse(link || "{}") : link;
+const parsedTitle =
+  typeof title === "string" ? JSON.parse(title || "{}") : title;
 
-  const url = parsedLink["es"]?.startsWith("http")
-    ? parsedLink["es"]
-    : `https://${parsedLink["es"]}`;
+const url = parsedLink["es"]?.startsWith("http")
+  ? parsedLink["es"]
+  : `https://${parsedLink["es"]}`;
 
   return (
     <a
