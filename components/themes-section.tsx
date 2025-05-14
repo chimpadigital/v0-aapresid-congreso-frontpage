@@ -27,27 +27,27 @@ export function ThemesSection() {
   const ejesTematicos = t.raw("ejes") as Array<{
     titulo: string;
     descripcion: string;
+    clase: string
   }>;
 
   // Referencias para ambos Swipers
   const swiperRef = useRef<SwiperCore | null>(null);
   const textoSwiperRef = useRef<SwiperCore | null>(null);
 
-  // Sincronizar ambos sliders
   const handleSlideChange = (swiper: SwiperCore) => {
+    const realIndex = swiper.realIndex;
     if (
       textoSwiperRef.current &&
-      textoSwiperRef.current.activeIndex !== swiper.activeIndex
+      textoSwiperRef.current.realIndex !== realIndex
     ) {
-      textoSwiperRef.current.slideTo(swiper.activeIndex);
+      textoSwiperRef.current.slideToLoop(realIndex);
     }
   };
+
   const handleTextoSlideChange = (swiper: SwiperCore) => {
-    if (
-      swiperRef.current &&
-      swiperRef.current.activeIndex !== swiper.activeIndex
-    ) {
-      swiperRef.current.slideTo(swiper.activeIndex);
+    const realIndex = swiper.realIndex;
+    if (swiperRef.current && swiperRef.current.realIndex !== realIndex) {
+      swiperRef.current.slideToLoop(realIndex);
     }
   };
 
@@ -117,10 +117,13 @@ export function ThemesSection() {
               onSlideChange={handleSlideChange}
               slidesPerView={1}
               spaceBetween={20}
+              loop={true}
             >
               {ejesTematicos.map((ejesTematico, index) => (
-                <SwiperSlide key={ejesTematico.titulo}>
-                  <div className="flex w-full flex-row flex-wrap items-center gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] xl:flex-col xl:items-start">
+                <SwiperSlide key={ejesTematico.titulo} className={ejesTematico.clase}>
+                  <div
+                    className={`flex w-full flex-row flex-wrap items-center gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] xl:flex-col xl:items-start `}
+                  >
                     <div className="scale-75 md:scale-100">
                       {iconosEjesTematicos[index].icon}
                     </div>
@@ -155,6 +158,7 @@ export function ThemesSection() {
               onSlideChange={handleTextoSlideChange}
               slidesPerView={1}
               spaceBetween={20}
+              loop={true}
             >
               {ejesTematicos.map((ejesTematico) => (
                 <SwiperSlide key={ejesTematico.titulo + "-texto"}>
