@@ -5,6 +5,7 @@ import Calendar from "./icons/Calendar"
 import { useTranslations } from "next-intl"
 
 export function Hero() {
+  
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
