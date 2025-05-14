@@ -8,7 +8,7 @@ interface RichTextProps {
 
 export function RichText({
   text,
-  as: Component = "p", // por defecto <p>
+  as: Component = "p",
   className = "",
 }: RichTextProps) {
   const lines = Array.isArray(text) ? text : [text];
@@ -16,19 +16,17 @@ export function RichText({
   return (
     <>
       {lines.map((line, idx) => (
-        <Component
-          key={idx}
-          className={`${className}`}
-        >
-          {line.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-            part.startsWith("**") && part.endsWith("**") ? (
-              <strong key={i} className="font-medium">
-                {part.slice(2, -2)}
-              </strong>
-            ) : (
-              part
-            )
-          )}
+        <Component key={idx} className={className}>
+          {typeof line === "string" &&
+            line.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+              part.startsWith("**") && part.endsWith("**") ? (
+                <strong key={i} className="font-medium">
+                  {part.slice(2, -2)}
+                </strong>
+              ) : (
+                part
+              )
+            )}
         </Component>
       ))}
     </>
