@@ -7,7 +7,7 @@ const API_BASE_URL = process.env.API_BASE_URL;
 export async function GET() {
   try {
     const [a, b, c, d, institucion, medios] = await Promise.all([
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=8`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=9`),
       axios.get(`${API_BASE_URL}/api/logos?categoryId=2`),
       axios.get(`${API_BASE_URL}/api/logos?categoryId=3`),
       axios.get(`${API_BASE_URL}/api/logos?categoryId=4`),
