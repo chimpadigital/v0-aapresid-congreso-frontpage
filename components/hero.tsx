@@ -5,6 +5,7 @@ import Calendar from "./icons/Calendar"
 import { useTranslations } from "next-intl"
 
 export function Hero() {
+  
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -12,7 +13,6 @@ export function Hero() {
   }, [])
 
   const t = useTranslations("hero");
-
 
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-32">
