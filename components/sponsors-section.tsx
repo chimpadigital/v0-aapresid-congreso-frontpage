@@ -56,21 +56,22 @@ export function SponsorsSection() {
           </h2>
 
           {/* Sponsors A */}
-          <div className="mb-16">
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">
-              {t("patrocinios_a")}
-            </h3>
-            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+          {sponsors?.category1.length !== 0 && (
+            <div className="mb-16">
+              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+                {t("patrocinios_a")}
+              </h3>
+              <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.category1 &&
-                sponsors?.category1.map((sponsor, i) => {
+              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+                {sponsors?.category1.map((sponsor, i) => {
                   return (
                     <motion.div
                       key={sponsor.imagePath + "-" + i}
                       className="flex w-fit justify-center"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{
                         delay: i * 0.1,
                         duration: 0.5,
@@ -86,26 +87,27 @@ export function SponsorsSection() {
                     </motion.div>
                   );
                 })}
+              </div>
             </div>
-          </div>
-
+          )}
           {/* Sponsors B */}
-          <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">
-              {t("patrocinios_b")}
-            </h3>
+          {sponsors?.category2.length !== 0 && (
+            <div>
+              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+                {t("patrocinios_b")}
+              </h3>
 
-            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+              <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.category2 &&
-                sponsors?.category2.map((sponsor: SponsorPropsItem, i) => {
+              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+                {sponsors?.category2.map((sponsor: SponsorPropsItem, i) => {
                   return (
                     <motion.div
                       key={sponsor.imagePath + "-" + i}
                       className="flex w-fit justify-center"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{
                         delay: i * 0.1,
                         duration: 0.5,
@@ -121,26 +123,28 @@ export function SponsorsSection() {
                     </motion.div>
                   );
                 })}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Sponsors C */}
-          <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">
-              {t("patrocinios_c")}
-            </h3>
+          {sponsors?.category3.length !== 0 && (
+            <div>
+              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+                {t("patrocinios_c")}
+              </h3>
 
-            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+              <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.category3 &&
-                sponsors?.category3.map((sponsor: SponsorPropsItem, i) => {
+              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+                {sponsors?.category3.map((sponsor: SponsorPropsItem, i) => {
                   return (
                     <motion.div
                       key={sponsor.imagePath + "-" + i}
                       className="flex w-fit justify-center"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{
                         delay: i * 0.1,
                         duration: 0.5,
@@ -156,26 +160,28 @@ export function SponsorsSection() {
                     </motion.div>
                   );
                 })}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Sponsors D */}
-          <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">
-              {t("patrocinios_d")}
-            </h3>
+          {sponsors?.category4.length !== 0 && (
+            <div>
+              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+                {t("patrocinios_d")}
+              </h3>
 
-            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+              <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.category4 &&
-                sponsors?.category4.map((sponsor: SponsorPropsItem, i) => {
+              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+                {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => {
                   return (
                     <motion.div
                       key={sponsor.imagePath + "-" + i}
                       className="flex w-fit justify-center"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{
                         delay: i * 0.1,
                         duration: 0.5,
@@ -191,26 +197,28 @@ export function SponsorsSection() {
                     </motion.div>
                   );
                 })}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* institucionales */}
-          <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">
-              {t("institucionales")}
-            </h3>
+          {sponsors?.institucion.length !== 0 && (
+            <div>
+              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+                {t("institucionales")}
+              </h3>
 
-            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+              <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.institucion &&
-                sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => {
+              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+                {sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => {
                   return (
                     <motion.div
                       key={sponsor.imagePath + "-" + i}
                       className="flex w-fit justify-center"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{
                         delay: i * 0.1,
                         duration: 0.5,
@@ -226,24 +234,26 @@ export function SponsorsSection() {
                     </motion.div>
                   );
                 })}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* MEDIOS */}
-          <div>
-            <h3 className="mb-4 text-2xl text-[#2D3D34]">{t("medios")}</h3>
+          {sponsors?.medios.length !== 0 && (
+            <div>
+              <h3 className="mb-4 text-2xl text-[#2D3D34]">{t("medios")}</h3>
 
-            <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
+              <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
-            <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-              {sponsors?.medios &&
-                sponsors?.medios.map((sponsor: SponsorPropsItem, i) => {
+              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+                {sponsors?.medios.map((sponsor: SponsorPropsItem, i) => {
                   return (
                     <motion.div
                       key={sponsor.imagePath + "-" + i}
                       className="flex w-fit justify-center"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{
                         delay: i * 0.1,
                         duration: 0.5,
@@ -259,8 +269,9 @@ export function SponsorsSection() {
                     </motion.div>
                   );
                 })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
       <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[33px] xl:px-[58px] xl:py-[27.5px]">
@@ -294,14 +305,13 @@ function SponsorLogo({
   height?: number;
   link: string | Record<string, string>;
 }) {
-  const parsedLink =
-  typeof link === "string" ? JSON.parse(link || "{}") : link;
-const parsedTitle =
-  typeof title === "string" ? JSON.parse(title || "{}") : title;
+  const parsedLink = typeof link === "string" ? JSON.parse(link || "{}") : link;
+  const parsedTitle =
+    typeof title === "string" ? JSON.parse(title || "{}") : title;
 
-const url = parsedLink["es"]?.startsWith("http")
-  ? parsedLink["es"]
-  : `https://${parsedLink["es"]}`;
+  const url = parsedLink["es"]?.startsWith("http")
+    ? parsedLink["es"]
+    : `https://${parsedLink["es"]}`;
 
   return (
     <a
