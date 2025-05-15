@@ -7,12 +7,12 @@ const API_BASE_URL = process.env.API_BASE_URL || '';
 export async function GET() {
   try {
     const [a, b, c, d, institucion, medios] = await Promise.all([
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=9`),
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=2`),
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=3`),
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=4`),
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=5`),
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=6`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=1&pageSize=1000`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=2&pageSize=1000`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=3&pageSize=1000`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=4&pageSize=1000`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=5&pageSize=1000`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=6&pageSize=1000`),
     ]);
 
     return NextResponse.json({
