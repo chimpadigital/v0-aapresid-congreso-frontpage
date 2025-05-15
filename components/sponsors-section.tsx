@@ -44,7 +44,6 @@ export function SponsorsSection() {
     fetchSponsors();
   }, []);
 
-  // console.log(JSON.parse(sponsors?.category1[0].link || ""));
   console.log(sponsors);
   return (
     <>
