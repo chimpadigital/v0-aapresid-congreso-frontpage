@@ -82,7 +82,7 @@ const featuredTalks = [
 
  export function FeaturedTalksSection() {
   return (
-    <section className="relative m-[30px] bg-[#F0F0F1] rounded-[20px] overflow-hidden py-16 px-8 md:px-16">
+    <section className="relative m-4 md:m-[30px] bg-[#F0F0F1] rounded-[20px] overflow-hidden py-16 px-4 xs:px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Título */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D3D34] text-center mb-16">
@@ -94,12 +94,24 @@ const featuredTalks = [
           <Swiper
             modules={[Pagination]}
             spaceBetween={25}
-            slidesPerView="auto"
+            // slidesPerView={1}
+            // breakpoints={{
+            //   640: {
+            //     slidesPerView: 1,
+            //   },
+            //   768: {
+            //     slidesPerView: 2,
+            //   },
+            //   1024: {
+            //     slidesPerView: 'auto',
+            //   },
+            // }}
+            slidesPerView= 'auto'
             pagination={{ clickable: true }}
             className="swiper-charlas-destacadas"
           >
             {featuredTalks.map((talk) => (
-              <SwiperSlide key={talk.id} className="pb-12 !w-[381px]">
+              <SwiperSlide key={talk.id} className="pb-12 w-full md:!w-fit">
                 <CharlaDestacadaCard
                   title={talk.title}
                   speakers={talk.speakers}
