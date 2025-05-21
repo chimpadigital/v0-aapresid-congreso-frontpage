@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
-import MapPin from "./icons/MapPin"
-import Calendar from "./icons/Calendar"
+import MapPin from "../icons/MapPin"
+import Calendar from "../icons/Calendar"
 import { useTranslations } from "next-intl"
 
 export function Hero() {

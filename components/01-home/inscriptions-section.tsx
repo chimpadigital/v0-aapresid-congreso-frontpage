@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import ArrowRounded from "./icons/ArrowRounded";
+import ArrowRounded from "../icons/ArrowRounded";
 import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 import { useIsMobile } from "@/hooks/use-mobile";

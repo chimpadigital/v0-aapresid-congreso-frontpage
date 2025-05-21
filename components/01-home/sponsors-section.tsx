@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import LogoClarin from "./icons/LogoClarin";
-import LogoLaNacion from "./icons/LogoLaNacion";
-import TextoApoyan from "./icons/TextoApoyan";
-import TextoOrganizan from "./icons/TextoOrganizan";
-import LogoAapresid from "./icons/LogoAapresid";
-import LogoExponenciar from "./icons/LogoExponenciar";
+import LogoClarin from "../icons/LogoClarin";
+import LogoLaNacion from "../icons/LogoLaNacion";
+import TextoApoyan from "../icons/TextoApoyan";
+import TextoOrganizan from "../icons/TextoOrganizan";
+import LogoAapresid from "../icons/LogoAapresid";
+import LogoExponenciar from "../icons/LogoExponenciar";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import axios from "axios";

@@ -4,7 +4,7 @@ import * as motion from "motion/react-client";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { RichText } from "./rich-text";
+import { RichText } from "../rich-text";
 
 interface FaqItem {
   question: string;
