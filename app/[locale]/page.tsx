@@ -10,7 +10,8 @@ import { Footer } from "@/components/footer";
 import DescargaComercial from "@/components/01-home/descarga-comercial";
 import { DisertantesDestacados } from "@/components/01-home/disertantes-destacados";
 import { FeaturedTalksSection } from "@/components/01-home/charlas-destacadas";
- 
+import { GacetillasSection } from "@/components/01-home/gacetilla-section";
+
 export default function Home({ params }: { params: { locale: string } }) {
   return (
     <main>
@@ -46,7 +47,6 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
 
         <div className="relative z-10 p-4">
-          <Navbar />
           <Hero />
           <Countdown />
         </div>
@@ -60,15 +60,18 @@ export default function Home({ params }: { params: { locale: string } }) {
 
       {/* Themes section */}
       <ThemesSection />
-   
+
       {/* Disertantes destacados section */}
-      <DisertantesDestacados /> 
+      <DisertantesDestacados />
 
       {/* Featured talks section */}
-      <FeaturedTalksSection /> 
+      <FeaturedTalksSection />
 
       {/* Descarga comercial */}
       <DescargaComercial />
+
+      {/* Gacetillas section */}
+      <GacetillasSection />
 
       {/* FAQ section */}
       <FaqSection />
@@ -76,8 +79,6 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* Sponsors section */}
       <SponsorsSection />
 
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }

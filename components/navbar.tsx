@@ -8,12 +8,12 @@ import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 import LogoNavbar from "@/public/images/logo-navbar.svg";
 import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-
 
   const t = useTranslations("navbar");
 
@@ -67,7 +67,7 @@ export function Navbar() {
     <>
       {/* Original navbar - visible when not scrolled */}
       <nav
-        className={`fixed left-0 right-0 z-[9999] mx-8 transition-all duration-300 xs:py-[19px] md:static md:top-0 md:mx-0 md:w-full md:px-[14px] ${
+        className={`fixed left-0 right-0 z-[9999] mx-8 transition-all duration-300 xs:py-14 md:fixed md:top-0 md:mx-0 md:w-full md:px-[14px]  ${
           scrolled
             ? "top-2 md:pointer-events-none md:opacity-0"
             : "top-6 md:opacity-100"
@@ -300,6 +300,10 @@ function NavItem({
   label: string;
   hasDropdown?: boolean;
 }) {
+  const pathname = usePathname();
+  // Extrae el path sin el locale
+  const pathWithoutLocale = pathname.replace(/^\/(es|en)(\/|$)/, "/");
+
   return (
     <div className="group relative">
       <button className="flex items-center font-medium text-white transition-colors">
@@ -309,13 +313,13 @@ function NavItem({
       {hasDropdown && (label === "es" || label === "en") && (
         <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[120px] rounded-lg bg-white py-2 opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
           <Link
-            href="/es"
+            href={`/es${pathWithoutLocale}`}
             className="block px-4 py-2 text-[#2D3D34] transition-colors hover:bg-[#64B33D]/10 hover:text-[#64B33D]"
           >
             Español
           </Link>
           <Link
-            href="/en"
+            href={`/en${pathWithoutLocale}`}
             className="block px-4 py-2 text-[#2D3D34] transition-colors hover:bg-[#64B33D]/10 hover:text-[#64B33D]"
           >
             English

@@ -94,18 +94,6 @@ const featuredTalks = [
           <Swiper
             modules={[Pagination]}
             spaceBetween={25}
-            // slidesPerView={1}
-            // breakpoints={{
-            //   640: {
-            //     slidesPerView: 1,
-            //   },
-            //   768: {
-            //     slidesPerView: 2,
-            //   },
-            //   1024: {
-            //     slidesPerView: 'auto',
-            //   },
-            // }}
             slidesPerView= 'auto'
             pagination={{ clickable: true }}
             className="swiper-charlas-destacadas"
