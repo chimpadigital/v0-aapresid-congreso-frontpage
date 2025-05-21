@@ -8,7 +8,8 @@ import { FaqSection } from "@/components/faq-section";
 import { SponsorsSection } from "@/components/sponsors-section";
 import { Footer } from "@/components/footer";
 import DescargaComercial from "@/components/descarga-comercial";
-
+import { DisertantesDestacados } from "@/components/disertantes-destacados";
+ 
 export default function Home({ params }: { params: { locale: string } }) {
   return (
     <main>
@@ -58,6 +59,9 @@ export default function Home({ params }: { params: { locale: string } }) {
 
       {/* Themes section */}
       <ThemesSection />
+   
+      {/* Disertantes destacados section */}
+      <DisertantesDestacados /> 
 
       {/* Descarga comercial */}
       <DescargaComercial />
