@@ -26,7 +26,7 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
 }) => {
   return (
     <div className="h-full w-fit md:w-[381px] rounded-[20px] bg-white px-6 md:px-[41px] py-[46px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.10)]">
-      <h3 className="mb-6 text-[20px] font-medium leading-tight text-[#2D3D34]">
+      <h3 className="mb-6 text-[20px] font-medium leading-tight text-primary">
         {title}
       </h3>
 

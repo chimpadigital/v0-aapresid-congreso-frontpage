@@ -85,7 +85,7 @@ const featuredTalks = [
     <section className="relative m-4 md:m-[30px] bg-[#F0F0F1] rounded-[20px] overflow-hidden py-16 px-4 xs:px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Título */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D3D34] text-center mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary text-center mb-16">
           Charlas destacadas
         </h2>
 

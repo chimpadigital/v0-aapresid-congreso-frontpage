@@ -81,7 +81,7 @@ export function Footer() {
           />
         </video>
 
-        <div className="absolute inset-0 bg-[#2D3D34]/70" />
+        <div className="absolute inset-0 bg-primary/70" />
       </div>
 
       <div className="relative p-8 md:px-12 md:pb-12 md:pt-[85px]">
@@ -256,7 +256,7 @@ function SocialIcon({ icon, href }: { icon: React.ReactNode; href: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-10 w-10 items-center justify-center rounded-full tracking-wider text-[#2D3D34] transition-colors"
+      className="flex h-10 w-10 items-center justify-center rounded-full tracking-wider text-primary transition-colors"
     >
       {icon}
     </a>

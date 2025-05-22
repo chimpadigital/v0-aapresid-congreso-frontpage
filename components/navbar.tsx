@@ -100,7 +100,7 @@ export function Navbar() {
               {/* INSCRIPCIONES */}
               {/* <Link
                 href="/inscripciones"
-                className="relative z-[1] ml-4 overflow-hidden rounded-full bg-white px-[30px] py-[15.5px] font-medium text-[#2D3D34] transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-white hover:before:scale-[3]"
+                className="relative z-[1] ml-4 overflow-hidden rounded-full bg-white px-[30px] py-[15.5px] font-medium text-primary transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-white hover:before:scale-[3]"
               >
                 {t("inscripciones")}
               </Link> */}
@@ -174,9 +174,9 @@ export function Navbar() {
                 aria-label="Toggle menu"
               >
                 {menuOpen ? (
-                  <X className="h-6 w-6 text-[#2D3D34]" />
+                  <X className="h-6 w-6 text-primary" />
                 ) : (
-                  <Menu className="h-6 w-6 text-[#2D3D34]" />
+                  <Menu className="h-6 w-6 text-primary" />
                 )}
               </button> */}
             </div>
@@ -199,7 +199,7 @@ export function Navbar() {
               <div className="mb-8 flex justify-end">
                 <button
                   onClick={closeMenu}
-                  className="text-[#2D3D34] transition-colors hover:text-[#64B33D]"
+                  className="text-primary transition-colors hover:text-accent"
                   aria-label="Close menu"
                 >
                   <X className="h-6 w-6" />
@@ -314,13 +314,13 @@ function NavItem({
         <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[120px] rounded-lg bg-white py-2 opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
           <Link
             href={`/es${pathWithoutLocale}`}
-            className="block px-4 py-2 text-[#2D3D34] transition-colors hover:bg-[#64B33D]/10 hover:text-[#64B33D]"
+            className="block px-4 py-2 text-primary transition-colors hover:bg-accent/10 hover:text-accent"
           >
             Español
           </Link>
           <Link
             href={`/en${pathWithoutLocale}`}
-            className="block px-4 py-2 text-[#2D3D34] transition-colors hover:bg-[#64B33D]/10 hover:text-[#64B33D]"
+            className="block px-4 py-2 text-primary transition-colors hover:bg-accent/10 hover:text-accent"
           >
             English
           </Link>
@@ -348,7 +348,7 @@ function MobileNavItem({ label, href, onClick, children }: MobileNavItemProps) {
     return (
       <Link
         href={href}
-        className="text-xl font-medium text-white transition-colors hover:text-[#64B33D]"
+        className="text-xl font-medium text-white transition-colors hover:text-accent"
         onClick={onClick}
       >
         {label}
@@ -359,7 +359,7 @@ function MobileNavItem({ label, href, onClick, children }: MobileNavItemProps) {
   return (
     <div>
       <button
-        className="flex w-full items-center justify-between text-xl font-medium text-white transition-colors hover:text-[#64B33D]"
+        className="flex w-full items-center justify-between text-xl font-medium text-white transition-colors hover:text-accent"
         onClick={toggleOpen}
       >
         <span>{label}</span>
@@ -389,7 +389,7 @@ function MobileSubItem({
   return (
     <Link
       href={href}
-      className="block py-1 text-[#2D3D34]/80 transition-colors hover:text-[#64B33D]"
+      className="block py-1 text-primary/80 transition-colors hover:text-accent"
       onClick={onClick}
     >
       {label}

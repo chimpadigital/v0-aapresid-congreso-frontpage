@@ -37,7 +37,7 @@ export function GacetillasSection() {
   return (
     <section className="mx-auto max-w-[1415px] bg-white px-4 py-16 md:px-8">
       <div>
-        <h2 className="mb-4 text-center text-4xl font-bold text-[#2D3D34] md:text-5xl">
+        <h2 className="mb-4 text-center text-4xl font-bold text-primary md:text-5xl">
           Gacetillas <span className="font-normal">Prensa</span>
         </h2>
 
@@ -59,7 +59,7 @@ export function GacetillasSection() {
         <div className="flex justify-center">
           <Link
             href="#"
-            className="inline-flex items-center border-b border-[#2D3D34] pb-1 text-xl font-medium text-[#2D3D34] transition-colors hover:border-[#64B33D] hover:text-[#64B33D]"
+            className="inline-flex items-center border-b border-primary pb-1 text-xl font-medium text-primary transition-colors hover:border-accent hover:text-accent"
           >
             Ver todas las gacetillas <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
