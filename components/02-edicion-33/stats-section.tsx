@@ -1,72 +1,81 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef } from "react";
 
 interface StatItemProps {
-  title: string
-  value: number
-  suffix?: string
-  duration?: number
-  prefix?: string
+  title: string;
+  value: number;
+  suffix?: string;
+  duration?: number;
+  prefix?: string;
 }
 
-function StatItem({ title, value, suffix = "", prefix, duration = 2000 }: StatItemProps) {
-  const [count, setCount] = useState(0)
-  const countRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+function StatItem({
+  title,
+  value,
+  suffix = "",
+  prefix,
+  duration = 2000,
+}: StatItemProps) {
+  const [count, setCount] = useState(0);
+  const countRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
+          setIsVisible(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.1 },
-    )
+    );
 
     if (countRef.current) {
-      observer.observe(countRef.current)
+      observer.observe(countRef.current);
     }
 
     return () => {
-      observer.disconnect()
-    }
-  }, [])
+      observer.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
-    if (!isVisible) return
+    if (!isVisible) return;
 
-    let start = 0
-    const end = value
-    const increment = end / 40
-    const stepTime = Math.floor(duration / 40)
+    let start = 0;
+    const end = value;
+    const increment = end / 40;
+    const stepTime = Math.floor(duration / 40);
 
     const timer = setInterval(() => {
-      start += increment
-      setCount(Math.floor(start))
+      start += increment;
+      setCount(Math.floor(start));
 
       if (start >= end) {
-        setCount(end)
-        clearInterval(timer)
+        setCount(end);
+        clearInterval(timer);
       }
-    }, stepTime)
+    }, stepTime);
 
     return () => {
-      clearInterval(timer)
-    }
-  }, [value, duration, isVisible])
+      clearInterval(timer);
+    };
+  }, [value, duration, isVisible]);
 
   return (
-    <div className="relative flex flex-col items-center justify-center" ref={countRef}>
+    <div
+      className="relative flex flex-col items-center justify-center"
+      ref={countRef}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="233"
         height="253"
         viewBox="0 0 235 255"
         fill="none"
-        className=" min-[320px]:w-[90%] min-[320px]:h-auto  sm:w-[233px] sm:h-[253px]"
+        className="min-[320px]:h-auto min-[320px]:w-[90%] sm:h-[253px] sm:w-[233px]"
       >
         <path
           opacity="0.48"
@@ -76,16 +85,20 @@ function StatItem({ title, value, suffix = "", prefix, duration = 2000 }: StatIt
           strokeMiterlimit="10"
         />
       </svg>
-      <div className="absolute flex flex-col items-center justify-between w-full h-[115px]">
-        <h3 className="text-[18px] font-medium text-primary text-center max-w-[160px] mb-2 leading-none">{title}</h3>
-        <div className="text-[60px] font-medium text-primary flex items-center leading-none">
+      <div className="absolute flex h-[115px] w-full flex-col items-center justify-between">
+        <h3 className="mb-2 max-w-[160px] text-center text-[18px] font-medium leading-none text-primary">
+          {title}
+        </h3>
+        <div className="flex items-center text-[60px] font-medium leading-none text-primary">
           {prefix && <span>{prefix}</span>}
           {count}
-          <span className="text-3xl ml-2 relative top-2">{suffix}</span>
+          {suffix && (
+            <span className="relative top-2 ml-2 text-3xl">{suffix}</span>
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export function StatsSection() {
@@ -108,17 +121,24 @@ export function StatsSection() {
       suffix: " mil",
       prefix: "+",
     },
-  ]
+  ];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-white">
-      <div className="max-w-[1415px] mx-auto">
+    <section className="bg-white px-4 py-16 md:px-8">
+      <div className="mx-auto max-w-[1415px]">
         <div className="flex flex-wrap justify-center gap-[33px]">
           {stats.map((stat, index) => (
-            <StatItem key={index} title={stat.title} value={stat.value} suffix={stat.suffix} duration={2000} prefix={stat.prefix} />
+            <StatItem
+              key={index}
+              title={stat.title}
+              value={stat.value}
+              suffix={stat.suffix}
+              duration={2000}
+              prefix={stat.prefix}
+            />
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
