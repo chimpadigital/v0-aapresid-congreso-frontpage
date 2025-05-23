@@ -10,15 +10,15 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 
-import "../styles/swiper.css";
-import Eje1Aprender from "./icons/Eje1Aprender";
-import ArrowThin from "./icons/ArrowThin";
-import Eje2Desafios from "./icons/Eje2Desafios";
-import Eje3Innovacion from "./icons/Eje3Innovacion";
-import Eje4Manejo from "./icons/Eje4Manejo";
-import Eje5Sistemas from "./icons/Eje5Sistemas";
-import Eje6SistemasSustentables from "./icons/Eje6SistemasSustentables";
-import Eje7Prospectiva from "./icons/Eje7Prospectiva";
+import "../../styles/swiper.css";
+import Eje1Aprender from "../icons/Eje1Aprender";
+import ArrowThin from "../icons/ArrowThin";
+import Eje2Desafios from "../icons/Eje2Desafios";
+import Eje3Innovacion from "../icons/Eje3Innovacion";
+import Eje4Manejo from "../icons/Eje4Manejo";
+import Eje5Sistemas from "../icons/Eje5Sistemas";
+import Eje6SistemasSustentables from "../icons/Eje6SistemasSustentables";
+import Eje7Prospectiva from "../icons/Eje7Prospectiva";
 import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 

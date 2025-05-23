@@ -1,15 +1,17 @@
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { Countdown } from "@/components/countdown";
-import { InscriptionsSection } from "@/components/inscriptions-section";
-import { AboutSection } from "@/components/about-section";
-import { ThemesSection } from "@/components/themes-section";
-import { FaqSection } from "@/components/faq-section";
-import { SponsorsSection } from "@/components/sponsors-section";
+import { Hero } from "@/components/01-home/hero";
+import { Countdown } from "@/components/01-home/countdown";
+import { InscriptionsSection } from "@/components/01-home/inscriptions-section";
+import { AboutSection } from "@/components/01-home/about-section";
+import { ThemesSection } from "@/components/01-home/themes-section";
+import { FaqSection } from "@/components/01-home/faq-section";
+import { SponsorsSection } from "@/components/01-home/sponsors-section";
 import { Footer } from "@/components/footer";
-import DescargaComercial from "@/components/descarga-comercial";
-import { DisertantesDestacados } from "@/components/disertantes-destacados";
- 
+import DescargaComercial from "@/components/01-home/descarga-comercial";
+import { DisertantesDestacados } from "@/components/01-home/disertantes-destacados";
+import { FeaturedTalksSection } from "@/components/01-home/charlas-destacadas";
+import { GacetillasSection } from "@/components/01-home/gacetilla-section";
+
 export default function Home({ params }: { params: { locale: string } }) {
   return (
     <main>
@@ -45,7 +47,6 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
 
         <div className="relative z-10 p-4">
-          <Navbar />
           <Hero />
           <Countdown />
         </div>
@@ -59,12 +60,18 @@ export default function Home({ params }: { params: { locale: string } }) {
 
       {/* Themes section */}
       <ThemesSection />
-   
+
       {/* Disertantes destacados section */}
-      <DisertantesDestacados /> 
+      <DisertantesDestacados />
+
+      {/* Featured talks section */}
+      <FeaturedTalksSection />
 
       {/* Descarga comercial */}
       <DescargaComercial />
+
+      {/* Gacetillas section */}
+      <GacetillasSection />
 
       {/* FAQ section */}
       <FaqSection />
@@ -72,8 +79,6 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* Sponsors section */}
       <SponsorsSection />
 
-      {/* Footer */}
-      <Footer />
     </main>
   );
 }

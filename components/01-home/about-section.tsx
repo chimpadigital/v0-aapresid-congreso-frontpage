@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { RichText } from "./rich-text";
+import { RichText } from "../rich-text";
 import * as motion from "motion/react-client";
 
 export function AboutSection() {

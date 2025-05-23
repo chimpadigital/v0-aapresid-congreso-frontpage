@@ -131,7 +131,7 @@ export function DisertantesDestacados() {
     <section className="relative m-[30px] bg-white rounded-[20px] overflow-hidden py-16 px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Título */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2D3D34] text-center mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary text-center mb-16">
           Disertantes destacados
         </h2>
 
@@ -177,7 +177,7 @@ export function DisertantesDestacados() {
                 className="object-cover grayscale"
               />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#2D3D34] mb-4">{activeSpeaker.name}</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">{activeSpeaker.name}</h3>
             <p className="text-gray-600">{activeSpeaker.bio}</p>
           </div>
         </div>

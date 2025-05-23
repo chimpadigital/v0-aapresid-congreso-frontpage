@@ -59,8 +59,6 @@
 
 
 /* CARDS EJES TEMATICOS TEXTOSCAR */
-
-
 .swiper.ejes-tematicos-texto-swiper {
   width: min(100%, 53ch);
   height: fit-content;
@@ -84,3 +82,21 @@
       margin-top: 0;
     }
   }
+
+  /* CARDS CHARLAS DESTACADAS */
+
+.swiper-charlas-destacadas .swiper-slide {
+  height: auto;
+}
+
+.swiper-charlas-destacadas .swiper-pagination-bullet {
+  background-color: #64b33d !important;
+  opacity: 0.7;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-charlas-destacadas  .swiper-pagination-bullet-active {
+  background-color: #ed7f00 !important;
+  opacity: 1;
+}

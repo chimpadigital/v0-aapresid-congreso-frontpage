@@ -4,7 +4,7 @@ import * as motion from "motion/react-client";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { RichText } from "./rich-text";
+import { RichText } from "../rich-text";
 
 interface FaqItem {
   question: string;
@@ -112,7 +112,7 @@ export function FaqSection() {
                 aria-expanded={faq.isOpen}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-lg font-medium tracking-wider text-[#2D3D34]">
+                <span className="text-lg font-medium tracking-wider text-primary">
                   {faq.question}
                 </span>
                 <span className="ml-2 flex-shrink-0 rounded-[16px] bg-[#ED7F00] p-1">

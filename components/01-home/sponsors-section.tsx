@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import LogoClarin from "./icons/LogoClarin";
-import LogoLaNacion from "./icons/LogoLaNacion";
-import TextoApoyan from "./icons/TextoApoyan";
-import TextoOrganizan from "./icons/TextoOrganizan";
-import LogoAapresid from "./icons/LogoAapresid";
-import LogoExponenciar from "./icons/LogoExponenciar";
+import LogoClarin from "../icons/LogoClarin";
+import LogoLaNacion from "../icons/LogoLaNacion";
+import TextoApoyan from "../icons/TextoApoyan";
+import TextoOrganizan from "../icons/TextoOrganizan";
+import LogoAapresid from "../icons/LogoAapresid";
+import LogoExponenciar from "../icons/LogoExponenciar";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -49,14 +49,14 @@ export function SponsorsSection() {
       <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
         <div className="mx-auto max-w-7xl">
           {/* Title */}
-          <h2 className="mb-16 text-center text-4xl font-medium text-[#2D3D34] md:text-5xl lg:text-6xl">
+          <h2 className="mb-16 text-center text-4xl font-medium text-primary md:text-5xl lg:text-6xl">
             {t("title")}
           </h2>
 
           {/* Sponsors A */}
           {sponsors?.category1.length !== 0 && (
             <div className="mb-16">
-              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_a")}
               </h3>
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
@@ -91,7 +91,7 @@ export function SponsorsSection() {
           {/* Sponsors B */}
           {sponsors?.category2.length !== 0 && (
             <div>
-              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_b")}
               </h3>
 
@@ -128,7 +128,7 @@ export function SponsorsSection() {
           {/* Sponsors C */}
           {sponsors?.category3.length !== 0 && (
             <div>
-              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_c")}
               </h3>
 
@@ -165,7 +165,7 @@ export function SponsorsSection() {
           {/* Sponsors D */}
           {sponsors?.category4.length !== 0 && (
             <div>
-              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_d")}
               </h3>
 
@@ -202,7 +202,7 @@ export function SponsorsSection() {
           {/* institucionales */}
           {sponsors?.institucion.length !== 0 && (
             <div>
-              <h3 className="mb-4 text-2xl text-[#2D3D34]">
+              <h3 className="mb-4 text-2xl text-primary">
                 {t("institucionales")}
               </h3>
 
@@ -239,7 +239,7 @@ export function SponsorsSection() {
           {/* MEDIOS */}
           {sponsors?.medios.length !== 0 && (
             <div>
-              <h3 className="mb-4 text-2xl text-[#2D3D34]">{t("medios")}</h3>
+              <h3 className="mb-4 text-2xl text-primary">{t("medios")}</h3>
 
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
