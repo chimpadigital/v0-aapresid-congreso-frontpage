@@ -4,8 +4,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import "lenis/dist/lenis.css";
 import Providers from "@/components/providers";
-import { Navbar } from "@/components/navbar";
+// import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar/index";
 
 export const metadata: Metadata = {
   title: "Congreso Aapresid",
