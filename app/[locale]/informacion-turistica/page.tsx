@@ -1,4 +1,5 @@
 import { DelCampoCiudadSection } from "@/components/03-informacion-turistica/del-campo";
+import SliderBsAs from "@/components/03-informacion-turistica/slider-bsas";
 import { HeroSection } from "@/components/hero-section";
 import React from "react";
 
@@ -10,7 +11,8 @@ const InformcionTuristica = () => {
         title1="Información"
         title2="Turística"
       />
-      <DelCampoCiudadSection/>
+      <DelCampoCiudadSection />
+      <SliderBsAs />
     </section>
   );
 };
