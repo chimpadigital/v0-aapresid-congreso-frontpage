@@ -35,19 +35,29 @@ const fotosBsAs = [
 
 const SliderBsAs = () => {
   return (
-    <section className="pl-28">
+    <section className="px-4 xl:pr-0 xl:pl-28">
 
     <Swiper
       modules={[Pagination]}
       spaceBetween={25}
       slidesPerView="auto"
+      breakpoints={
+        {
+          768: {
+            slidesPerView: 1,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }
+      }
       pagination={{ clickable: true }}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       className="swiper-fotos-bsas"
       >
       {fotosBsAs.map((foto) => (
           <SwiperSlide key={foto.alt} className="w-full pb-12 md:!w-fit">
-          <figure className="relative aspect-[615/696] w-[370px]">
+          <figure className="relative aspect-[615/696] w-full sm:w-[370px] mx-auto">
             <Image
               src={foto.path}
               alt={foto.alt}

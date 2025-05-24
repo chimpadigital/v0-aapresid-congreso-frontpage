@@ -125,7 +125,7 @@ export function DelCampoCiudadSection() {
 
               {/* Hexágono verde claro */}
               <motion.div
-                className="absolute -left-8 top-14 z-10 h-[70px] w-[70px]"
+                className="absolute left-0 md:-left-8 top-14 z-10 h-[70px] w-[70px]"
                 style={{
                   y: scrollY * 0.08,
                 }}
@@ -142,7 +142,7 @@ export function DelCampoCiudadSection() {
 
               {/* Hexágono verde claro */}
               <motion.div
-                className="absolute -right-12 bottom-14 z-10 h-[50px] w-[50px]"
+                className="absolute right-0 bottom-32 md:-right-12 md:-bottom-14 z-10 h-[50px] w-[50px]"
                 style={{
                   y: scrollY * 0.15,
                 }}
