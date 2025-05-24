@@ -48,13 +48,13 @@ export function CompactNavbar({ scrolled, menuOpen, toggleMenu, locale }: Compac
             </Link> */}
 
             <button
-              className="flex h-[55px] w-[55px] items-center justify-center rounded-full bg-[#D9D9D9]/80 backdrop-blur-sm"
+              className="flex h-[55px] w-[55px] items-center justify-center rounded-full bg-[#7D7777B2]/70 backdrop-blur-sm"
               onClick={toggleMenu}
               aria-expanded={menuOpen}
               aria-label="Toggle menu"
               style={{ opacity: menuOpen ? 0 : 1 }}
             >
-              {menuOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6 text-primary" />}
+              {menuOpen ? <X className="h-6 w-6 text-primary" /> : <Menu className="h-6 w-6 text-white" />}
             </button>
           </div>
         </div>

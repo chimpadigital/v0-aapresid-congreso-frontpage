@@ -101,7 +101,7 @@ export function ThemesSection() {
     <section className="relative mx-4 mt-[27px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.webp')] bg-cover bg-center p-8 md:mx-[33px] xl:px-[94px] xl:py-[84px]">
       {/* Decorative hexagons */}
       <div className="absolute right-0 top-4 z-0">
-        <Image src="/images/vector-ejes.svg" alt="" width={200} height={108} />
+        <Image src="/images/home/vector-ejes.svg" alt="" width={200} height={108} />
       </div>
       <div className="mx-auto max-w-[1216px]">
         {/* Content container */}

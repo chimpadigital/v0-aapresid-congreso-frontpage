@@ -10,7 +10,7 @@ export function AboutSection() {
   return (
     <section className="relative mx-4 mt-0 overflow-hidden rounded-[20px] p-6 md:mx-[33px] md:mt-20 md:px-12 md:py-28 lg:px-24">
       {/* Background image */}
-      <div className="absolute inset-0 bg-[url('/images/campo-background.webp')] bg-cover bg-fixed">
+      <div className="absolute inset-0 bg-[url('/images/home/campo-background.webp')] bg-cover bg-fixed">
         {/* <Image
           src="/images/campo-background.png"
           alt="Campo agrícola"
@@ -62,7 +62,7 @@ export function AboutSection() {
 
       {/* Decorative hexagons */}
       <Image
-        src="/images/decorative-hexa.svg"
+        src="/images/home/decorative-hexa.svg"
         alt="Hexagon"
         width={200}
         height={200}
@@ -70,7 +70,7 @@ export function AboutSection() {
       />
 
       <Image
-        src="/images/decorative-hexa2.svg"
+        src="/images/home/decorative-hexa2.svg"
         alt="Hexagon"
         width={150}
         height={150}

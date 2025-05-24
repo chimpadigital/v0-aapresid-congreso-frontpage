@@ -72,7 +72,7 @@ export function Footer() {
           poster="/images/trama-background.png"
         >
           {/* Local source */}
-          <source src="/videos/video-footer.mp4" type="video/mp4" />
+          <source src="/videos/video-circuitos.mp4" type="video/mp4" />
 
           {/* External CDN source as backup */}
           <source

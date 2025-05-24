@@ -73,30 +73,32 @@
   height: fit-content;
 }
 
+.swiper.ejes-tematicos-texto-swiper .swiper-slide {
+  margin-top: auto;
+}
+
+@media screen and (max-width: 1024px) {
   .swiper.ejes-tematicos-texto-swiper .swiper-slide {
-    margin-top: auto;
+    margin-top: 0;
   }
+}
 
-  @media screen and (max-width: 1024px) {
-    .swiper.ejes-tematicos-texto-swiper .swiper-slide {
-      margin-top: 0;
-    }
-  }
-
-  /* CARDS CHARLAS DESTACADAS */
+/* CARDS CHARLAS DESTACADAS */
 
 .swiper-charlas-destacadas .swiper-slide {
   height: auto;
 }
 
-.swiper-charlas-destacadas .swiper-pagination-bullet {
+.swiper-charlas-destacadas .swiper-pagination-bullet,
+.swiper-fotos-bsas .swiper-pagination-bullet {
   background-color: #64b33d !important;
   opacity: 0.7;
   width: 10px !important;
   height: 10px !important;
 }
 
-.swiper-charlas-destacadas  .swiper-pagination-bullet-active {
+.swiper-charlas-destacadas .swiper-pagination-bullet-active,
+.swiper-fotos-bsas .swiper-pagination-bullet-active {
   background-color: #ed7f00 !important;
   opacity: 1;
 }
