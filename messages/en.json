@@ -163,6 +163,67 @@
           "An Aapresid member will be able to register for free as long as their fees are paid to date.",
           "The registration deadline for the Aapresid member to be able to attend the Congress free of charge is **August 5th, 2025**. Once that date has passed, the member must register paying the total cost of the ticket."
         ]
+      },
+      {
+        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "respuesta": [
+          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+        ]
+      },
+      {
+        "pregunta": "¿Hasta cuándo tengo tiempo para inscribirme al Congreso?",
+        "respuesta": [
+          "Hay tiempo de inscripción online hasta el último día del evento, Viernes 8 de Agosto."
+        ]
+      },
+      {
+        "pregunta": "¿Se entregarán certificados de asistencia?",
+        "respuesta": [
+          "Sí, se entregarán constancias de participación al finalizar el evento, y la misma se hará de manera digital."
+        ]
+      },
+      {
+        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "respuesta": [
+          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+        ]
+      },
+      {
+        "pregunta": "¿Las charlas de oradores extranjeros cuentan con traducción?",
+        "respuesta": [
+          "Si, contamos con traducción en simultáneo de inglés-español en tres salas de conferencias."
+        ]
+      },
+      {
+        "pregunta": "¿Este año se transmitirán las charlas en la web en vivo y en directo?",
+        "respuesta": [
+          "Sólo una sala transmitirá sus charlas en vivo y en directo por la página web del Congreso Aapresid, dichas charlas serán de acceso gratuito y abiertas para todo público.",
+          "También, se transmitirá en vivo durante los 3 días el streaming “Levantando La Perdiz” donde participarán disertantes e invitados dentro del Congreso, a través del canal de Youtube de Aapresid."
+        ]
+      },
+      {
+        "pregunta": "¿Se podrá acceder a la filmación de otras salas y charlas?",
+        "respuesta": [
+          "Sí, se podrá tener acceso a la filmación de otras salas y charlas. Las mismas serán habilitadas post - congreso."
+        ]
+      },
+      {
+        "pregunta": "¿Cómo puedo obtener información para ser sponsor del congreso?",
+        "respuesta": [
+          "Comunicarse con los responsables comerciales de Aapresid troiano@aapresid.org.ar o Aquí podrá encontrar más datos de contacto: [www.aapresid.org.ar/es/quienes-somos](https://aapresid.org.ar/es/quienes-somos)"
+        ]
+      },
+      {
+        "pregunta": "¿Al abonar la inscripción como se tramita la facturación?",
+        "respuesta": [
+          "Sí, una vez efectuado el pago desde Aapresid estaremos enviando la factura correspondiente. Se deberá enviar previamente a la casilla de correo electrónico lopez@aapresid.org.ar el comprobante de pago."
+        ]
+      },
+      {
+        "pregunta": "¿Su pregunta no está en el listado?",
+        "respuesta": [
+          "Puede comunicarse con nosotros a través del siguiente mail: colalongo@aapresid.org.ar O en caso de hablar en inglés, comunicarse a prospectiva@aapresid.org.ar"
+        ]
       }
     ]
   },
