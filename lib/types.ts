@@ -16,3 +16,10 @@ export interface MobileNavItemProps {
   onClick?: () => void
   children?: React.ReactNode
 }
+
+
+export type FaqItem = {
+    question: string;
+    answer: string | string[];
+    isOpen?: boolean;
+  };

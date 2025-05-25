@@ -49,7 +49,7 @@ export function ComoLlegarSection() {
 
           {/* Mapa derecho */}
           <div className="relative h-72 w-full bg-gray-100 lg:h-auto">
-            <APIProvider apiKey={process.env.NEXT_PUBLIC_MAP_KEY ?? ""}>
+            <APIProvider apiKey={process.env.NEXT_PUBLIC_MAP ?? ""}>
               <Map
                 defaultCenter={{
                   lat: -34.57957730343763,

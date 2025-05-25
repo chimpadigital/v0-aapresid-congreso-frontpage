@@ -3,8 +3,10 @@ import * as motion from "motion/react-client";
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { RichText } from "../rich-text";
+import Link from "next/link";
+import Accordion from "../faq-accordion";
 
 interface FaqItem {
   question: string;
@@ -38,20 +40,16 @@ export function FaqSection() {
     pregunta: string;
     respuesta: string | string[];
   }>;
+  
   const [faqs, setFaqs] = useState<FaqItem[]>([
-    {
-      question: preguntas[0].pregunta,
-      answer: preguntas[0].respuesta,
-      isOpen: false,
-    },
     {
       question: preguntas[1].pregunta,
       answer: preguntas[1].respuesta,
       isOpen: false,
     },
     {
-      question: preguntas[2].pregunta,
-      answer: preguntas[2].respuesta,
+      question: preguntas[5].pregunta,
+      answer: preguntas[5].respuesta,
       isOpen: false,
     },
     {
@@ -60,13 +58,13 @@ export function FaqSection() {
       isOpen: false,
     },
     {
-      question: preguntas[4].pregunta,
-      answer: [
-        preguntas[4].respuesta[0],
-        preguntas[4].respuesta[1],
-        preguntas[4].respuesta[2],
-        preguntas[4].respuesta[3],
-      ],
+      question: preguntas[13].pregunta,
+      answer: preguntas[13].respuesta,
+      isOpen: false,
+    },
+    {
+      question: preguntas[9].pregunta,
+      answer: [preguntas[9].respuesta[0], preguntas[9].respuesta[1]],
       isOpen: false,
     },
   ]);
@@ -81,6 +79,8 @@ export function FaqSection() {
       }),
     );
   };
+
+  const locale = useLocale();
 
   // Determinar cuántas preguntas mostrar
   const visibleFaqs = faqs;
@@ -100,48 +100,15 @@ export function FaqSection() {
           variants={list}
           className="w-full max-w-3xl space-y-[40px]"
         >
-          {visibleFaqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              variants={item}
-              className="overflow-hidden rounded-[16px] bg-white transition-all duration-[200ms] ease-linear"
-            >
-              <button
-                className="flex w-full items-center justify-between p-4 text-left focus:outline-none"
-                onClick={() => toggleFaq(index)}
-                aria-expanded={faq.isOpen}
-                aria-controls={`faq-answer-${index}`}
-              >
-                <span className="text-lg font-medium tracking-wider text-primary">
-                  {faq.question}
-                </span>
-                <span className="ml-2 flex-shrink-0 rounded-[16px] bg-[#ED7F00] p-1">
-                  {faq.isOpen ? (
-                    <ChevronUp className="h-5 w-5 text-white" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5 text-white" />
-                  )}
-                </span>
-              </button>
-
-              <div
-                id={`faq-answer-${index}`}
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  faq.isOpen
-                    ? "max-h-[2000px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="px-4 pb-4 text-gray-700">
-                  <RichText
-                    text={faq.answer}
-                    className="mb-3 whitespace-pre-line tracking-[0.08em] text-[#736D6D] last:mb-0"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          <Accordion items={faqs} />
         </motion.div>
+
+        <Link
+          href={`${locale}/preguntas-frecuentes`}
+          className="mx-auto mt-10 text-center text-lg text-white underline"
+        >
+          Ver más preguntas frecuentes
+        </Link>
       </div>
     </section>
   );
