@@ -96,9 +96,39 @@
     "titulo2": "Asked Questions",
     "items": [
       {
+        "pregunta": "¿Qué es Aapresid?",
+        "respuesta": [
+          "[Translation needed] La Asociación Argentina de Productores en Siembra Directa (Aapresid) es una organización no gubernamental sin fines de lucro. Integrada por una red de productores agropecuarios que, a partir del interés en la conservación de su principal recurso, el suelo, adoptaron e impulsaron la difusión de un nuevo paradigma agrícola, basado en la Siembra Directa.",
+          "Más información: [www.aapresid.org.ar](https://www.aapresid.org.ar/es)"
+        ]
+      },
+      {
         "pregunta": "What is the Aapresid Congress?",
         "respuesta": [
           "Aapresid is a three-day, agriculture-related event. Consolidated as the most notable event regarding agricultural knowledge in Argentina, and a model worldwide. It is a multi-thematic congress with various rooms functioning simultaneously. "
+        ]
+      },
+      {
+        "pregunta": "¿Cuáles son las principales temáticas?",
+        "respuesta": [
+          "[Translation needed] Esta edición del Congreso tendrá 7 ejes temáticos: bajo los cuales estarán ordenadas más de 160 charlas y paneles:",
+          "- Aprender Produciendo",
+          "- Sistemas Integrados",
+          "- Sistemas Productivos Sustentables",
+          "- Manejo de Plagas",
+          "- Innovación y Agtech",
+          "- Desafíos Globales",
+          "- Perspectivas Sociopolíticas"
+        ]
+      },
+      {
+        "pregunta": "How do I sign up?",
+        "respuesta": ["Coming soon on this page."]
+      },
+      {
+        "pregunta": "¿Quiénes pueden participar del congreso?",
+        "respuesta": [
+          "[Translation needed] Cualquier persona puede sumarse al congreso. Está abierto a toda la comunidad."
         ]
       },
       {
@@ -108,13 +138,23 @@
         ]
       },
       {
-        "pregunta": "How do I sign up?",
-        "respuesta": ["Coming soon on this page."]
+        "pregunta": "¿Cuál es el lema de este Congreso?",
+        "respuesta": [
+          "[Translation needed] El lema del trigésimo tercer Congreso Aapresid es “Código Abierto”,",
+          "Código Abierto sintetiza el espíritu colaborativo, innovador y transformador que define al XXXIII Congreso Aapresid. Este lema une tres conceptos esenciales: la apertura al conocimiento colectivo, la capacidad de programar soluciones para el futuro y el respeto por los valores fundamentales que sustentan nuestras decisiones como comunidad agroalimentaria"
+        ]
       },
       {
-        "pregunta": "Where can I see the program of the Congress?",
+        "pregunta": "¿Qué costo tiene la entrada?",
         "respuesta": [
-          "The schedule will be available for download in the Congress section at the Aapresid web, and will be regularly updated with speaker names and lecture titles."
+          "[Translation needed] Los precios de las entradas serán publicados en esté mismo sitio cuando se lance el sistema de inscripciones, ahí podrá elegir entre distintos tipos de entradas con importantes descuentos y promociones."
+        ]
+      },
+      {
+        "pregunta": "¿Existen descuentos para estudiantes ?",
+        "respuesta": [
+          "[Translation needed] Aapresid tiene convenios de vinculación con muchas universidades, y los estudiantes de las mismas podrán obtener descuentos en las entradas. Se deberá consultar con las áreas de vinculación de las facultades en cuestión.",
+          "Por otro lado, los estudiantes universitarios que adjunten su certificado de alumno regular accederán a un importante descuento en el precio de todos los tipos de tickets."
         ]
       },
       {
