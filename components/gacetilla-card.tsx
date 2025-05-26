@@ -12,7 +12,7 @@ interface GacetillaCardProps {
 
 export function GacetillaCard({ date, title, description, imageUrl, href }: GacetillaCardProps) {
   return (
-    <div className="bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-md transition-shadow w-[min(100%,413px)]">
       <div className="relative h-[240px] w-full">
         <Image src={imageUrl || "/placeholder.svg"} alt={title} fill className="object-cover" />
       </div>

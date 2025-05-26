@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { GacetillaCard } from "./gacetilla-card";
+import { GacetillaCard } from "../gacetilla-card";
 
 // Datos de ejemplo para las gacetillas
 const gacetillas = [

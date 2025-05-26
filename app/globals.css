@@ -9,6 +9,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Owners';
   src: url('/fonts/Owners-Bold.ttf') format('truetype');
@@ -16,6 +17,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Owners';
   src: url('/fonts/Owners-Light.ttf') format('truetype');
@@ -23,6 +25,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Owners';
   src: url('/fonts/Owners-Medium.ttf') format('truetype');
@@ -30,6 +33,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Owners';
   src: url('/fonts/Owners-XLight.ttf') format('truetype');
@@ -37,6 +41,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Owners Narrow';
   src: url('/fonts/OwnersNarrow-Bold.ttf') format('truetype');
@@ -44,6 +49,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Owners Narrow';
   src: url('/fonts/OwnersNarrow-Black.ttf') format('truetype');
@@ -98,6 +104,7 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -138,7 +145,18 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+.react-datepicker-wrapper {
+  width: min(100%, 304px);
+  display: flex !important;
+
+  .react-datepicker__input-container {
+    margin-top: auto;
   }
 }
