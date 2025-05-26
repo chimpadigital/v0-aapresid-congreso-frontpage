@@ -19,7 +19,13 @@ export interface MobileNavItemProps {
 
 
 export type FaqItem = {
-    question: string;
-    answer: string | string[];
-    isOpen?: boolean;
-  };
+  question: string;
+  answer: string | string[];
+  isOpen?: boolean;
+};
+
+export interface SponsorPropsItem {
+  imagePath: string;
+  title: string;
+  link: string;
+}
