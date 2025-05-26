@@ -114,15 +114,17 @@ const ListaGacetilla = () => {
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>{" "}
       </div>
-      <p className="tracking-wider leading-none top-px relative">{value ? value : "Día"}</p>
+      <p className="relative top-px leading-none tracking-wider">
+        {value ? value : "Día"}
+      </p>
     </button>
   ));
 
   return (
     <section className="mx-auto max-w-[1390px] px-4 md:px-[33px] 2xl:px-0">
       <h2 className="mb-8 text-5xl tracking-wide text-primary">Gacetillas</h2>
-      <form className="mb-[91px] flex gap-5">
-        <label className="border-b-px flex max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">
+      <form className="mb-[91px] flex gap-[30px]">
+        <label className="border-b-px flex w-full max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">
           <LupaIcon />
           <input
             placeholder="Palabra clave"
@@ -142,6 +144,12 @@ const ListaGacetilla = () => {
             />
           }
         />
+
+        <button
+          className="relative z-[1] overflow-hidden rounded-full bg-accent px-[40px] py-[14px] text-lg font-light tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100  hover:before:scale-[3]"
+        >
+          Buscar
+        </button>
       </form>
       <div className="grid grid-cols-1 gap-[35px] md:grid-cols-2 lg:grid-cols-3">
         {gacetillas.map((gacetilla) => (
