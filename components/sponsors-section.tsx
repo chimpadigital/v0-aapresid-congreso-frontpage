@@ -314,11 +314,11 @@ function SponsorLogo({
     : `https://${parsedLink["es"]}`;
 
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center p-2 transition-opacity hover:opacity-80"
+    <div
+      // href={url}
+      // target="_blank"
+      // rel="noopener noreferrer"
+      className="flex items-center justify-center p-2 transition-opacity "
     >
       <div className="relative aspect-[260/135]" style={{ height }}>
         <Image
@@ -329,6 +329,6 @@ function SponsorLogo({
           sizes="(max-width: 768px) 250px, 300px"
         />
       </div>
-    </a>
+    </div>
   );
 }
