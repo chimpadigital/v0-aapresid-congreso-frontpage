@@ -41,7 +41,7 @@ export default function Accordion({
           style={{
             boxShadow: addShadow ? "0px 4px 4px rgba(0, 0, 0, 0.20)" : "none",
           }}
-          className="mb-4 overflow-hidden rounded-[16px] bg-white transition-all duration-200 ease-linear"
+          className="mb-10 overflow-hidden rounded-[16px] bg-white transition-all duration-200 ease-linear"
         >
           <button
             className="flex w-full items-center justify-between p-4 text-left focus:outline-none"

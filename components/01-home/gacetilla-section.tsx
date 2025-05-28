@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { GacetillaCard } from "../gacetilla-card";
@@ -29,17 +29,16 @@ export function GacetillasSection() {
       .catch(() => setLoading(false));
   }, []);
 
-  console.log(gacetillas)
   const locale = useLocale();
 
   return (
-    <section className="mx-auto max-w-[1415px] bg-white px-4 py-16 md:px-8">
+    <section className="mx-auto max-w-[1415px] bg-white px-4 pt-[86px] pb-12 md:px-8">
       <div>
-        <h2 className="mb-4 text-center text-4xl font-bold text-primary md:text-5xl">
-          Gacetillas <span className="font-normal">Prensa</span>
+        <h2 className="text-54xl mb-10 text-center text-primary md:text-5xl">
+          Gacetillas <span className="font-medium">Prensa</span>
         </h2>
         {/* Grid de tarjetas */}
-        <div className="mb-16 mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-16 mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {loading ? (
             <div className="col-span-full text-center">Cargando...</div>
           ) : gacetillas.length === 0 ? (
@@ -66,7 +65,7 @@ export function GacetillasSection() {
                   title={title}
                   description={description}
                   imageUrl={gacetilla.image}
-                  href={"/gacetilla/" + gacetilla.id}
+                  href={`${locale}/gacetilla/` + gacetilla.id}
                 />
               );
             })
@@ -76,7 +75,7 @@ export function GacetillasSection() {
         <div className="flex justify-center">
           <Link
             href="#"
-            className="inline-flex items-center border-b border-primary pb-1 text-xl font-medium text-primary transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center border-b-2 border-primary pb-0 text-lg text-primary transition-colors hover:border-accent hover:text-accent tracking-wider"
           >
             Ver todas las gacetillas <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

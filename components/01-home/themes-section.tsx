@@ -385,10 +385,10 @@ export function ThemesSection() {
                 .map((ejesTematico, index) => (
                   <SwiperSlide key={ejesTematico.titulo + "-texto" + index}>
                     <h3
-                      className="mx-auto mb-4 w-fit rounded-full px-9 py-2 text-center text-[20px] font-medium leading-none tracking-wider text-white lg:mx-0 lg:text-left lg:text-[25px]"
+                      className="mx-auto mb-4 first-letter:capitalize w-fit rounded-full px-6 py-3 text-center text-[20px] font-medium leading-none tracking-wider text-white lg:mx-0 lg:text-left lg:text-[25px]"
                       style={{ backgroundColor: ejesTematico.color }}
                     >
-                      {ejesTematico.titulo}
+                      {ejesTematico.titulo.toLowerCase()}
                     </h3>
                     <p className="whitespace-pre-line text-xl font-light tracking-wider text-white">
                       {ejesTematico.descripcion}
@@ -408,7 +408,7 @@ export function ThemesSection() {
             }}
             aria-label="Anterior / Previous"
           >
-            <div className="rotate-180">
+            <div className="rotate-180 text-white">
               <ArrowThin />
             </div>
           </button>
@@ -419,7 +419,9 @@ export function ThemesSection() {
             }}
             aria-label="Siguiente / Next"
           >
-            <ArrowThin />
+            <div className="text-white">
+              <ArrowThin />
+            </div>
           </button>
         </div>
       </div>

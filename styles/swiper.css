@@ -108,7 +108,8 @@
 
 /* DISERTANTES DESTACADOS */
 .disertantes-thumbs .swiper-slide {
-  height: 150px;
+  /* height: 150px; */
+  aspect-ratio: 90/115;
 }
 
 @media screen and (min-width: 550px) {
@@ -122,4 +123,10 @@
 
 .disertantes-main .swiper-slide {
   height: 400px;
+}
+
+@media screen and (min-width: 550px) {
+  .disertantes-main .swiper-slide {
+    height: 500px;
+  }
 }

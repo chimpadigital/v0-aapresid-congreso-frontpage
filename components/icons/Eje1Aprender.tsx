@@ -1,10 +1,9 @@
+import { EjeIconSize } from "@/lib/types";
 import React from "react";
 
-interface Eje1AprenderProps {
-  size?: number;
-}
 
-const Eje1Aprender = ({ size = 88 }: Eje1AprenderProps) => {
+
+const Eje1Aprender = ({ size = 88 }: EjeIconSize) => {
   return (
     <svg width={size} height={size} viewBox="0 0 88 88" fill="none">
       <g clipPath="url(#clip0_6263_2748)">
