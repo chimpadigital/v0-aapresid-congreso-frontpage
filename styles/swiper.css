@@ -15,10 +15,10 @@
   color: #fff;
   border-radius: 20px;
   width: min(100%, 446px);
-  padding: 38px 58px 58px 58px;
+  padding: 58px 58px 10px 58px;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide.aprender {
+/* .swiper.ejes-tematicos-swiper .swiper-slide.aprender {
   background-color: #EF7B80;
 }
 
@@ -44,7 +44,7 @@
 
 .swiper.ejes-tematicos-swiper .swiper-slide.prospectiva {
   background-color: #99529B;
-}
+} */
 
 @media screen and (max-width: 1024px) {
   .swiper.ejes-tematicos-swiper {
@@ -62,7 +62,13 @@
 .swiper.ejes-tematicos-texto-swiper {
   width: min(100%, 53ch);
   height: fit-content;
-  margin: 0;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper.ejes-tematicos-texto-swiper {
+    margin: 0;
+  }
 }
 
 .swiper.ejes-tematicos-texto-swiper .swiper-wrapper {
@@ -73,9 +79,6 @@
   height: fit-content;
 }
 
-.swiper.ejes-tematicos-texto-swiper .swiper-slide {
-  margin-top: auto;
-}
 
 @media screen and (max-width: 1024px) {
   .swiper.ejes-tematicos-texto-swiper .swiper-slide {
@@ -84,7 +87,6 @@
 }
 
 /* CARDS CHARLAS DESTACADAS */
-
 .swiper-charlas-destacadas .swiper-slide {
   height: auto;
 }
@@ -101,4 +103,23 @@
 .swiper-fotos-bsas .swiper-pagination-bullet-active {
   background-color: #ed7f00 !important;
   opacity: 1;
+}
+
+
+/* DISERTANTES DESTACADOS */
+.disertantes-thumbs .swiper-slide {
+  height: 150px;
+}
+
+@media screen and (min-width: 550px) {
+  .disertantes-thumbs .swiper-slide {
+    height: 200px;
+  }
+}
+
+
+/* DISERTANTES MAIN */
+
+.disertantes-main .swiper-slide {
+  height: 400px;
 }

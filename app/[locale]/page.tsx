@@ -34,7 +34,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             playsInline
             preload="auto"
             className="absolute inset-0 h-full w-full object-cover"
-            poster="/images/congreso-background.png" // Fallback image while video loads
+            poster="/images/home/poster-hero.webp" // Fallback image while video loads
           >
             <source src="/videos/congreso-background.mp4" type="video/mp4" />
             <source

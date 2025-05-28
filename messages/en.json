@@ -52,37 +52,44 @@
       {
         "titulo": "Learning by Producing",
         "descripcion": "A synergy among science, research organizations, and farmers, who are actively involved in conducting tests in real-world settings, is designed to provide answers to farmers’ demands through the development of sustainable technology.",
-        "clase": "aprender"
+        "clase": "aprender",
+        "color": "#EF7B80"
       },
       {
         "titulo": "Global Challenges",
         "descripcion": "Strengthen Argentina’s presence on the global stage, embracing the responsibility and opportunity to share our experience in developing a production model that enables resource protection and restoration, while reducing negative environmental impact.",
-        "clase": "desafios"
+        "clase": "desafios",
+        "color": "#147DBE"
       },
       {
         "titulo": " Innovation and Agtech",
         "descripcion": "The section seeks to promote an accessible and integrated technological ecosystem by exploring the adoption of digital tools to provide solutions for farmers; and to integrate agriculture’s digitization and technological evolution by engaging with the Agtech ecosystem and agriculture machinery.",
-        "clase": "innovacion"
+        "clase": "innovacion",
+        "color": "#E84615"
       },
       {
         "titulo": "Pest Management",
         "descripcion": "A group of practices and methods employed for controlling living organisms that may damage production systems. Different sustainable strategies will be addressed to minimize environmental impact and ensure effective pest control.",
-        "clase": "manejo"
+        "clase": "manejo",
+        "color": "#D34240"
       },
       {
         "titulo": "Integrated Systems",
         "descripcion": "Broaden the panorama of production diversity by conveying real cases and farmers’ experiences, who rely on different production systems while promoting diversification and integration, and demonstrating the multiple productive and sustainable benefits.",
-        "clase": "sistemas"
+        "clase": "sistemas",
+        "color": "#EAAB21"
       },
       {
         "titulo": "Sustainable Production Systems",
         "descripcion": "These systems are characterized by being agroecologically responsible and economically viable. This entails the efficient use of natural resources, the reduction of negative environmental impact, and the promotion of biodiversity and a circular economy. Additionally, they seek resilience against climate change and other global challenges.",
-        "clase": "sustentables"
+        "clase": "sustentables",
+        "color": "#15A884"
       },
       {
         "titulo": "Socio-political Perspectives",
         "descripcion": "An integral approach to farmers’ political and social context that enables them to meet the needs for achieving sustainable production profitable over time. The goal is to bring decision-making closer to farmers, and vice versa.",
-        "clase": "prospectiva"
+        "clase": "prospectiva",
+        "color": "#99529B"
       }
     ]
   },

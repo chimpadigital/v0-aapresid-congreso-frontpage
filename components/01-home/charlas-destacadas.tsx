@@ -1,9 +1,9 @@
-"use client"
- import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination } from "swiper/modules"
-import "swiper/css"
-import "swiper/css/pagination"
-import CharlaDestacadaCard from "./charla-destacad-card"
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import CharlaDestacadaCard from "./charla-destacad-card";
 
 const featuredTalks = [
   {
@@ -78,15 +78,16 @@ const featuredTalks = [
     theme: "Eje 02: Sistemas Productivos Sustentables",
     section: "Sección Nacional",
   },
-]
+];
 
- export function FeaturedTalksSection() {
+export function FeaturedTalksSection() {
   return (
-    <section className="relative m-4 md:m-[30px] bg-[#F0F0F1] rounded-[20px] overflow-hidden py-16 px-4 xs:px-8 md:px-16">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative m-4 overflow-hidden rounded-[20px] bg-[#F0F0F1] px-4 py-16 xs:px-8 md:m-[30px] md:px-16">
+      <div className="mx-auto max-w-7xl">
         {/* Título */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary text-center mb-16">
-          Charlas destacadas
+        <h2 className="mb-16 text-center text-4xl font-medium text-primary lg:text-5xl">
+          Charlas
+          <span className="font-normal"> destacadas</span>
         </h2>
 
         {/* Slider de tarjetas */}
@@ -94,12 +95,12 @@ const featuredTalks = [
           <Swiper
             modules={[Pagination]}
             spaceBetween={25}
-            slidesPerView= 'auto'
+            slidesPerView="auto"
             pagination={{ clickable: true }}
             className="swiper-charlas-destacadas"
           >
             {featuredTalks.map((talk) => (
-              <SwiperSlide key={talk.id} className="pb-12 w-full md:!w-fit">
+              <SwiperSlide key={talk.id} className="w-full pb-12 md:!w-fit">
                 <CharlaDestacadaCard
                   title={talk.title}
                   speakers={talk.speakers}
@@ -114,5 +115,5 @@ const featuredTalks = [
         </div>
       </div>
     </section>
-  )
+  );
 }

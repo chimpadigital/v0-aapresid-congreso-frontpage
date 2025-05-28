@@ -29,3 +29,13 @@ export interface SponsorPropsItem {
   title: string;
   link: string;
 }
+
+
+export interface Speaker {
+  id: number;
+  name: string;
+  bio: string;
+  smallImage: string;
+  largeImage: string;
+  position: number; // Posición en la grilla (1-12)
+}
