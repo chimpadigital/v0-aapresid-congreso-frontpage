@@ -106,6 +106,8 @@ export function Navbar() {
         scrolled={scrolled}
         locale={locale as string}
         menuItems={menuItems}
+        toggleMenu={toggleMenu}
+        menuOpen={menuOpen}
       />
 
       <CompactNavbar

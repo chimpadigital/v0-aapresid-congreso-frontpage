@@ -165,7 +165,7 @@ export function Footer() {
                 <div>Santa Fe.</div>
               </div>
 
-              <div className="pl-3 text-lg font-light leading-[1.30rem] tracking-widest text-white">
+              <div className="pl-3 text-lg font-light leading-[1.30rem] tracking-widest text-white mb-4 md:mb-0">
                 <div>{t("aapresid_comunidad1")}</div>
                 <div>{t("aapresid_comunidad2")}</div>
                 <div className="font-normal">{t("aapresid_comunidad3")}</div>

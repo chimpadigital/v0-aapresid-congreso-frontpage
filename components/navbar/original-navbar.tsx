@@ -11,13 +11,20 @@ interface OriginalNavbarProps {
   scrolled: boolean;
   locale: string;
   menuItems: MenuItem[];
+  toggleMenu: () => void;
+  menuOpen: boolean;
 }
 
 // Definición de los elementos del menú principal
 
-export function OriginalNavbar({ scrolled, locale, menuItems  }: OriginalNavbarProps) {
+export function OriginalNavbar({
+  scrolled,
+  locale,
+  menuItems,
+  toggleMenu,
+  menuOpen,
+}: OriginalNavbarProps) {
   const t = useTranslations("navbar");
-
 
   return (
     <nav
@@ -42,8 +49,30 @@ export function OriginalNavbar({ scrolled, locale, menuItems  }: OriginalNavbarP
           </div>
 
           {/* Menú de idioma en móvil */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center justify-end gap-3">
             <NavItem label={locale} hasDropdown />
+            <button
+              className="bottom-4 right-4 z-[10001] text-white"
+              onClick={toggleMenu}
+              aria-expanded={menuOpen}
+              aria-label="Toggle menu"
+              style={{ opacity: menuOpen ? 0 : 1 }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="h-6 w-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
           </div>
 
           {/* Menú principal en desktop */}
@@ -74,28 +103,12 @@ export function OriginalNavbar({ scrolled, locale, menuItems  }: OriginalNavbarP
             {/* <Link
               href="/inscripciones"
               className="relative z-[1] ml-4 overflow-hidden rounded-full bg-white px-[30px] py-[15.5px] font-medium text-primary transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-white hover:before:scale-[3]"
-            >
+              >
               {t("inscripciones")}
-            </Link> */}
+              </Link> */}
           </div>
 
           {/* DESACTIVADO ENTREGA 1 - Menu Hamburguesa */}
-          <button className="bottom-4 right-4 z-[10001] hidden text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </nav>
