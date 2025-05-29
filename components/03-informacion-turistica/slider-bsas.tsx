@@ -35,40 +35,37 @@ const fotosBsAs = [
 
 const SliderBsAs = () => {
   return (
-    <section className="px-4 xl:pr-0 xl:pl-28">
-
-    <Swiper
-      modules={[Pagination]}
-      spaceBetween={25}
-      slidesPerView="auto"
-      breakpoints={
-        {
+    <section className="px-4 xl:pl-28 xl:pr-0">
+      <Swiper
+        modules={[Pagination]}
+        spaceBetween={45}
+        slidesPerView="auto"
+        breakpoints={{
           768: {
-            slidesPerView: 1,
+            slidesPerView: 2,
           },
           1024: {
             slidesPerView: 3,
           },
-        }
-      }
-      pagination={{ clickable: true }}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      className="swiper-fotos-bsas"
+        }}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        className="swiper-fotos-bsas"
       >
-      {fotosBsAs.map((foto) => (
+        {fotosBsAs.map((foto) => (
           <SwiperSlide key={foto.alt} className="w-full pb-12 md:!w-fit">
-          <figure className="relative aspect-[615/696] w-full sm:w-[370px] mx-auto">
-            <Image
-              src={foto.path}
-              alt={foto.alt}
-              fill
-              className="object-contain"
+            <figure className="relative mx-auto aspect-[615/696] w-full sm:w-[370px]">
+              <Image
+                src={foto.path}
+                alt={foto.alt}
+                fill
+                className="object-contain"
               />
-          </figure>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-      </section>
+            </figure>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 };
 

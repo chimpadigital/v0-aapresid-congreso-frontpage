@@ -3,7 +3,7 @@ import ComillasIcon from "../icons/ComillasIcon";
 
 export function SloganSection() {
   return (
-    <section className="bg-white px-4 py-16 md:px-8">
+    <section className="bg-white px-4 py-8 md:px-8 md:pb-[82px] md:pt-16">
       <div className="mx-auto max-w-[1415px]">
         <div className="flex flex-col items-center">
           {/* Logos */}
@@ -37,19 +37,15 @@ export function SloganSection() {
           </div>
 
           {/* Eslogan */}
-          <div className="flex text-center">
-            <span className="relative -top-8 mr-3 rotate-180">
-              <ComillasIcon />
-            </span>
-            <h2 className="text-3xl font-normal text-primary md:text-5xl">
+          <div className="relative text-center">
+            <h2 className="slogan text-3xl font-normal text-primary md:text-5xl">
+              <span className="text-5xl md:text-7xl leading-none text-secondary">“ </span>
               Programamos
               <span className="ml-2 font-medium text-accent">
                 el futuro del agro
               </span>
+              <span className="text-5xl md:text-7xl leading-none text-secondary relative top-2 left-1">”</span>
             </h2>
-            <span className="relative -top-0 ml-2">
-              <ComillasIcon />
-            </span>
           </div>
         </div>
       </div>

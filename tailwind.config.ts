@@ -83,6 +83,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Owners', 'Arial', 'Helvetica', 'sans-serif'],
+        gotham: ['Gotham', 'Arial', 'Helvetica', 'sans-serif'],
       },
       screens: {
         "2xs" : '350px',

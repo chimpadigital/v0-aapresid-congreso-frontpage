@@ -36,7 +36,7 @@ export function FeaturedTalksSection() {
         </h2>
         {/* Slider de tarjetas */}
         <div className="relative">
-          {(!loading && charlas.length === 0) ? (
+          {!loading && charlas.length === 0 ? (
             <div className="col-span-full py-12 text-center">
               No hay charlas destacadas.
             </div>
@@ -49,7 +49,9 @@ export function FeaturedTalksSection() {
               className="swiper-charlas-destacadas"
             >
               {loading ? (
-                <div className="col-span-full py-12 text-center">Cargando...</div>
+                <div className="col-span-full py-12 text-center">
+                  Cargando...
+                </div>
               ) : (
                 charlas.map((charla) => {
                   let title = "";
@@ -61,7 +63,8 @@ export function FeaturedTalksSection() {
                   let location = charla.Room?.name || "";
                   try {
                     title = JSON.parse(charla.multilingual_title)[locale] || "";
-                    section = JSON.parse(charla.multilingual_talk)[locale] || "";
+                    section =
+                      JSON.parse(charla.multilingual_talk)[locale] || "";
                     theme = charla.Theme?.name || "";
                   } catch {
                     title = charla.multilingual_title;
@@ -102,7 +105,7 @@ export function FeaturedTalksSection() {
           )}
         </div>
         <div className="mx-auto mt-12 max-w-[400px] text-center">
-          <button className="relative z-[1] mx-auto overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg font-normal text-white transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3] flex gap-[9px] items-center justify-center">
+          <button className="relative z-[1] mx-auto flex items-center justify-center gap-[9px] overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg font-normal tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]">
             Ver cronograma completo <CalendarDense />
           </button>
         </div>

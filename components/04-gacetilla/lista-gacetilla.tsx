@@ -147,9 +147,9 @@ const ListaGacetilla = () => {
   ));
 
   return (
-    <section className="mx-auto max-w-[1390px] px-4 md:px-[33px] 2xl:px-0">
+    <section className="mx-auto max-w-[1390px] px-4 pt-10 md:pt-0 md:px-[33px] 2xl:px-0">
       <h2 className="mb-8 text-5xl tracking-wide text-primary">Gacetillas</h2>
-      <form className="mb-[91px] flex gap-[30px]">
+      <form className="mb-[91px] flex flex-col gap-[30px]">
         <label className="border-b-px flex w-full max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">
           <LupaIcon />
           <input
@@ -171,7 +171,7 @@ const ListaGacetilla = () => {
           }
         />
 
-        <button className="relative z-[1] flex items-center gap-[10px] overflow-hidden rounded-full bg-accent px-[40px] py-[14px] text-lg font-light tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:before:scale-[3]">
+        <button className="relative z-[1] w-fit flex items-center gap-[10px] overflow-hidden rounded-full bg-accent px-[40px] py-[14px] text-lg font-light tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:before:scale-[3]">
           Buscar
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +190,7 @@ const ListaGacetilla = () => {
 
       {/* Grid de tarjetas */}
       {currentGacetillas.length > 0 ? (
-        <div className="grid grid-cols-1 gap-[35px] md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-[35px] gap-y-[40px] justify-items-center md:grid-cols-2 lg:grid-cols-3">
           {currentGacetillas.map((gacetilla) => (
             <GacetillaCard
               key={gacetilla.id}

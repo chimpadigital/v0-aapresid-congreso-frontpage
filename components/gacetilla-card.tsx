@@ -34,7 +34,7 @@ export function GacetillaCard({
   }
 
   return (
-    <div className="flex h-full w-[min(100%,413px)] flex-col overflow-hidden rounded-[20px] bg-white px-[26px] shadow-[0px_4px_4px_0px_#0000001A] transition-shadow hover:shadow-md">
+    <div className="flex h-full w-[min(100%,413px)] flex-col overflow-hidden rounded-[20px] bg-white pt-[26px] px-[26px] shadow-[0px_4px_4px_0px_#0000001A] transition-shadow hover:shadow-md">
       <div className="relative h-[240px] overflow-hidden rounded-2xl py-[29px]">
         <Image
           src={imageUrl || "/placeholder.svg"}

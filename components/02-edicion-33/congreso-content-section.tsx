@@ -26,7 +26,7 @@ export function CongresoContentSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white px-4 py-16 md:px-8"
+      className="relative overflow-hidden bg-white px-4 pb-16 md:px-8"
     >
       <div className="relative mx-auto max-w-[1113px]">
         <div className="flex flex-col items-center gap-8 lg:flex-row md:gap-16">

@@ -26,7 +26,7 @@ const SeccionIntro = () => {
   return (
     <section
       ref={sectionRef}
-      className="mx-auto max-w-[1113px] bg-white px-4 py-16 md:px-0"
+      className="mx-auto max-w-[1113px] bg-white px-4 pt-10 md:pt-[2px] md:px-0"
     >
       <div className="mx-4 flex flex-col items-center gap-[72px] sm:mx-[33px] md:gap-16 lg:flex-row xl:mx-0">
         {/* Columna de texto */}
