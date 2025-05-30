@@ -24,6 +24,8 @@ export async function GET(req: Request) {
         // Pasar también el parámetro de búsqueda si existe
         const search = searchParams.get('search');
         if (search) apiUrl += `&search=${encodeURIComponent(search)}`;
+        const lang = searchParams.get('lang');
+        if (lang) apiUrl += `&lang=${encodeURIComponent(lang)}`;
         const res = await fetch(apiUrl);
         if (!res.ok) {
             return NextResponse.json({ error: "Failed to fetch data" }, { status: res.status });

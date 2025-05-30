@@ -15,7 +15,6 @@ registerLocale("es", es);
 registerLocale("en", enUS);
 
 const ListaGacetilla = () => {
-  const router = useRouter();
   const searchParams = useSearchParams();
 
   // Leer página desde la URL (query param)
@@ -50,6 +49,10 @@ const ListaGacetilla = () => {
     if (appliedSearchTerm) {
       params.append("search", appliedSearchTerm);
     }
+    // Agregar parámetro lang según el locale
+    if (locale) {
+      params.append("lang", locale);
+    }
     fetch(
       `https://api.congreso.v1.franco.in.net/api/press-release?${params.toString()}`,
     )
@@ -69,28 +72,19 @@ const ListaGacetilla = () => {
     ? Math.ceil(gacetillas.total / itemsPerPage)
     : 1;
 
-  const handleSearch = (term: string, date: string) => {
-    setSearchTerm(term);
-    setSelectedDate(date);
-  };
-
-  const handleClear = () => {
-    setSearchTerm("");
-    setSelectedDate("");
-  };
-
-  // Actualizar la URL cuando cambia la página o la fecha
+    // Actualizar la URL cuando cambia la página, la fecha o el search term aplicado
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams();
     params.set("page", currentPage.toString());
     if (selectedDate) {
       params.set("date", selectedDate.toISOString().slice(0, 10));
-    } else {
-      params.delete("date");
+    }
+    if (appliedSearchTerm) {
+      params.set("search", appliedSearchTerm);
     }
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState({}, "", newUrl);
-  }, [currentPage, selectedDate]);
+  }, [currentPage, selectedDate, appliedSearchTerm]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -143,10 +137,34 @@ const ListaGacetilla = () => {
   // Al presionar Buscar, aplicar los filtros actuales y resetear a la página 1
   function handleSearchClick(e: React.FormEvent) {
     e.preventDefault();
-    setAppliedSearchTerm(searchTerm);
+    setAppliedSearchTerm(searchTerm); // Esto ya manda el search param
     setAppliedDate(selectedDate);
     setCurrentPage(1);
   }
+
+  // Inicializar los filtros desde la URL al cargar el componente
+  useEffect(() => {
+    // Solo en el primer render
+    const urlSearch = new URLSearchParams(window.location.search);
+    const search = urlSearch.get("search") || "";
+    const date = urlSearch.get("date");
+    const page = urlSearch.get("page") || "1";
+    setSearchTerm(search);
+    setAppliedSearchTerm(search);
+    if (date) {
+      const parsedDate = new Date(date);
+      setSelectedDate(parsedDate);
+      setAppliedDate(parsedDate);
+    }
+    setCurrentPage(parseInt(page, 10));
+    // Mantener los searchParams en la URL al cargar
+    const params = new URLSearchParams();
+    params.set("page", page);
+    if (search) params.set("search", search);
+    if (date) params.set("date", date);
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.replaceState({}, "", newUrl);
+  }, []);
 
   return (
     <section className="mx-auto max-w-[1390px] px-4 pt-10 md:px-[33px] md:pt-0 2xl:px-0">
@@ -155,10 +173,12 @@ const ListaGacetilla = () => {
         <label className="border-b-px mt-auto flex h-fit w-full max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">
           <LupaIcon />
           <input
-            placeholder="Palabra clave"
+            placeholder="Palabras claves"
             className="w-full px-2 py-1 text-lg tracking-wider placeholder-primary focus-visible:outline-none"
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
+            name="search"
+            autoComplete="off"
           />
         </label>
 
