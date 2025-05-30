@@ -24,12 +24,12 @@ export function DelCampoCiudadSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white px-4 py-16 md:px-8">
+    <section ref={sectionRef} className="bg-white px-4 pb-16 pt-10 md:pt-[75px] md:px-8">
       <div className="mx-auto max-w-[1230px]">
         <div className="flex flex-col gap-4 lg:flex-row lg:gap-16">
           {/* Columna izquierda - Texto */}
           <div className="flex-[2]">
-            <h2 className="mb-10 text-5xl font-normal text-primary md:text-5xl">
+            <h2 className="mb-10 mt-8 text-5xl font-normal text-primary md:text-5xl">
               Del campo a la <span className="font-medium">ciudad</span>
             </h2>
 

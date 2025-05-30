@@ -20,21 +20,25 @@ export function GacetillaCard({
 }: GacetillaCardProps) {
   const locale = useLocale();
 
-  // Formatea la fecha a '15 FEB 2025' o '15 FEB 2025' en inglés
+  // Formatea la fecha a '15 MAY 2025' o '15 MAY 2025' en inglés
   function formatDate(dateStr: string) {
     if (!dateStr) return "";
-    const d = new Date(dateStr);
+    // Forzar a tratar la fecha como UTC para evitar desfase por zona horaria local
+    const d = new Date(dateStr + "T00:00:00Z");
     if (isNaN(d.getTime())) return dateStr;
-    const day = d.getDate().toString().padStart(2, "0");
+    const day = d.getUTCDate().toString().padStart(2, "0");
     const month = d
-      .toLocaleString(locale === "en" ? "en-US" : "es-AR", { month: "short" })
+      .toLocaleString(locale === "en" ? "en-US" : "es-AR", {
+        month: "short",
+        timeZone: "UTC",
+      })
       .toUpperCase();
-    const year = d.getFullYear();
+    const year = d.getUTCFullYear();
     return `${day} ${month} ${year}`;
   }
 
   return (
-    <div className="flex h-full w-[min(100%,413px)] flex-col overflow-hidden rounded-[20px] bg-white px-[26px] shadow-[0px_4px_4px_0px_#0000001A] transition-shadow hover:shadow-md">
+    <div className="flex h-full w-[min(100%,413px)] flex-col overflow-hidden rounded-[20px] bg-white pt-[26px] px-[26px] shadow-[0px_4px_4px_0px_#0000001A] transition-shadow hover:shadow-md">
       <div className="relative h-[240px] overflow-hidden rounded-2xl py-[29px]">
         <Image
           src={imageUrl || "/placeholder.svg"}

@@ -15,7 +15,7 @@ import Image from "next/image";
 
 export function ComoLlegarSection() {
   return (
-    <section data-lenis-prevent className="bg-white px-4 py-16 md:px-8">
+    <section data-lenis-prevent className="bg-white px-4 pt-[100px] md:px-8">
       <div className="mx-auto max-w-[1415px]">
         <div className="flex min-h-[500px] flex-col overflow-hidden rounded-[20px] shadow-lg lg:flex-row">
           {/* Panel verde izquierdo */}
@@ -27,20 +27,20 @@ export function ComoLlegarSection() {
             </h2>
 
             <div className="w-auto max-w-full space-y-6 tracking-wider text-white lg:w-max lg:max-w-[46ch]">
-              <p className="text-base leading-relaxed">
+              <p className="text-base leading-tight">
                 En transporte público, la Línea D del subte es la mejor opción.
                 La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a
                 pocas cuadras del lugar. (Se necesita la tarjeta SUBE).
               </p>
 
-              <p className="text-base leading-relaxed">
-                Las líneas de <strong>colectivo</strong> que te acercan al
+              <p className="text-base leading-tight">
+                Las líneas de <span className="font-medium">colectivo</span > que te acercan al
                 predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59,
                 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.
               </p>
 
-              <p className="text-base leading-relaxed">
-                En <strong>tren</strong>: El tren San Martín te deja en la
+              <p className="text-base leading-tight">
+                En <span className="font-medium">tren</span >: El tren San Martín te deja en la
                 estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5
                 cuadras del predio.
               </p>

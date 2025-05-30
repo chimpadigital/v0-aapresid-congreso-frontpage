@@ -58,7 +58,7 @@
 }
 
 
-/* CARDS EJES TEMATICOS TEXTOSCAR */
+/* CARDS EJES TEMATICOS TEXTOS */
 .swiper.ejes-tematicos-texto-swiper {
   width: min(100%, 53ch);
   height: fit-content;
@@ -128,5 +128,17 @@
 @media screen and (min-width: 550px) {
   .disertantes-main .swiper-slide {
     height: 500px;
+  }
+}
+
+/* BUENOS AIRES */
+
+.swiper-fotos-bsas {
+  height: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper-fotos-bsas {
+    height: 550px;
   }
 }

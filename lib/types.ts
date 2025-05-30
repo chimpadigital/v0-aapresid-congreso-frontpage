@@ -115,3 +115,24 @@ export interface CharlaEvent {
   Theme: EventTheme;
   Moderator: EventModerator;
 }
+
+export interface GacetillaApiItem {
+  id: number;
+  title: string; // JSON string: {"en":"...","es":"..."}
+  excerpt: string; // JSON string: {"en":"...","es":"..."}
+  content_es: string;
+  content_en: string;
+  date: string;
+  image: string;
+  file: string | null;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface GacetillaApiResponse {
+  total: number;
+  page: number;
+  pageSize: number;
+  data: GacetillaApiItem[];
+}

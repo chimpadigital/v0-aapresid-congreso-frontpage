@@ -124,7 +124,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="bg-white px-4 py-16 md:px-8">
+    <section className="bg-white px-4 pt-12 pb-7 md:px-8">
       <div className="mx-auto max-w-[1415px]">
         <div className="flex flex-wrap justify-center gap-[33px]">
           {stats.map((stat, index) => (

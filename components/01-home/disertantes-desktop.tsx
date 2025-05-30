@@ -1,6 +1,7 @@
 "use client";
 import { Speaker } from "@/lib/types";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const DisertantesDestacadosDesk = ({
@@ -12,7 +13,7 @@ const DisertantesDestacadosDesk = ({
 }) => {
   // Estado para el disertante actualmente seleccionado
   const [activeSpeaker, setActiveSpeaker] = useState<Speaker | undefined>(
-    speakers[0]
+    speakers[0],
   );
 
   React.useEffect(() => {
@@ -70,7 +71,7 @@ const DisertantesDestacadosDesk = ({
     return (
       <div
         key={`speaker-${speaker.id}`}
-        className="relative aspect-[181/231]  h-[180px] cursor-pointer overflow-hidden rounded-[20px] transition-all duration-300 lg:h-[231px]"
+        className="relative aspect-[181/231] h-[180px] cursor-pointer overflow-hidden rounded-[20px] transition-all duration-300 lg:h-[231px]"
         onMouseEnter={() => handleSpeakerHover(speaker)}
         onFocus={() => handleSpeakerHover(speaker)}
       >
@@ -85,7 +86,7 @@ const DisertantesDestacadosDesk = ({
   };
 
   return (
-    <div className="flex flex-col items-start justify-between gap-2 md:flex-row lg:gap-8 px-[33px]">
+    <div className="flex flex-col items-start justify-between gap-2 px-[33px] md:flex-row lg:gap-8">
       {/* Columna izquierda - Grid de imágenes pequeñas */}
       <div className="w-fit">
         <div className="flex max-w-[775px] flex-wrap gap-[17px]">
@@ -124,7 +125,7 @@ const DisertantesDestacadosDesk = ({
             <h3 className="mb-2 text-2xl font-bold text-primary">
               {activeSpeaker.name}
             </h3>
-            <p className="text-[#736D6D]">
+            <p className="mb-11 text-[#736D6D]">
               {(() => {
                 try {
                   const descObj = JSON.parse(activeSpeaker.description);
@@ -134,6 +135,19 @@ const DisertantesDestacadosDesk = ({
                 }
               })()}
             </p>
+            <Link
+              href={`#`}
+              className="relative z-[1] mb-3 flex w-full items-center justify-center gap-[9px] overflow-hidden rounded-full bg-accent px-4 py-[16.5px] text-center text-lg font-normal leading-none tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]"
+            >
+              Ver todos los disertantes
+            </Link>
+
+            <Link
+              href={`#`}
+              className="relative z-[1] flex w-full items-center justify-center gap-[9px] overflow-hidden rounded-full bg-white px-4 py-[16.5px] text-center text-lg font-normal leading-none tracking-wider text-primary outline outline-1 outline-primary transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:outline-none hover:before:scale-[3]"
+            >
+              Ver cronograma de charlas
+            </Link>
           </>
         ) : (
           <div className="text-gray-400">Selecciona un disertante</div>

@@ -57,7 +57,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="relative mx-4 mb-8 mt-6 overflow-hidden rounded-[20px] bg-[url('/images/trama-background.png')] bg-cover bg-center md:mx-[33px] md:mt-[48px]">
+    <footer className="relative mx-4 mb-8 mt-[30px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.png')] bg-cover bg-center md:mx-[33px] md:mt-[30px]">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         {/* Video element with multiple sources for better compatibility */}

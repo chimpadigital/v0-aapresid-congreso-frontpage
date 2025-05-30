@@ -4,16 +4,8 @@
 
 @font-face {
   font-family: 'Owners';
-  src: url('/fonts/Owners-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Owners';
-  src: url('/fonts/Owners-Bold.ttf') format('truetype');
-  font-weight: 700;
+  src: url('/fonts/Owners-XLight.ttf') format('truetype');
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -28,16 +20,16 @@
 
 @font-face {
   font-family: 'Owners';
-  src: url('/fonts/Owners-Medium.ttf') format('truetype');
-  font-weight: 500;
+  src: url('/fonts/Owners-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Owners';
-  src: url('/fonts/Owners-XLight.ttf') format('truetype');
-  font-weight: 200;
+  src: url('/fonts/Owners-Medium.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -51,12 +43,37 @@
 }
 
 @font-face {
+  font-family: 'Owners';
+  src: url('/fonts/Owners-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Owners Narrow';
   src: url('/fonts/OwnersNarrow-Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/GothamOffice-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 body {
   font-family: 'Owners', Arial, Helvetica, sans-serif;

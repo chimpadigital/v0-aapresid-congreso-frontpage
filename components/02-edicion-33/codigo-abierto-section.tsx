@@ -26,42 +26,44 @@ export function CodigoAbiertoSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative mx-4 my-8 overflow-hidden rounded-[20px] bg-[url('/images/edicion-33/trama-grande.webp')] bg-cover bg-center px-4 pb-16 pt-28 md:mx-[33px] md:px-8"
+      className="relative mx-4 mt-8 overflow-hidden rounded-[20px] bg-[url('/images/edicion-33/trama-grande.webp')] bg-cover bg-center px-4 py-10 md:pb-28 md:pt-36 md:mx-[33px] md:px-8"
     >
-      <div className="relative mx-auto max-w-[1113px]">
+      <div className="relative mx-auto max-w-[1213px]">
         {/* Título */}
 
-        <div className="flex flex-col items-center gap-8 lg:flex-row md:gap-16">
+        <div className="flex flex-col items-center gap-4 md:gap-12 lg:flex-row leading-tight">
           {/* Columna de texto */}
-          <article className="max-w-[55ch] break-words text-lg font-light leading-[1.05] tracking-wider text-white">
-            <h2 className="md:text-5x font-base mb-14 text-4xl text-white">
+          <article className="max-w-[63ch] leading-tight break-words text-lg font-light text-white">
+            <h2 className="md:text-5xl font-base mb-6 md:mb-[59px] text-4xl text-white tracking-wider ">
               “Código Abierto”
             </h2>
-            <p>Estamos escribiendo el diálogo con el futuro.</p>
-            <p className="">
+            <p className="font-gotham font-light">
+              Estamos escribiendo el diálogo con el futuro.
+            </p>
+            <p className="font-gotham font-light">
               Cada idea, cada avance, cada conversación en el Congreso Aapresid
               es una línea de código en un programa colectivo. Uno que no solo
               resuelve los problemas de hoy, sino que anticipa los desafíos de
               mañana.
             </p>
-            <p className="mb-16">
+            <p className="font-gotham font-light mb-16">
               Vivimos en un mundo que no deja de cambiar. Y frente a esa
               transformación, entendemos que no basta con adaptarse: hay que
               crear. Crear nuevas sintaxis, nuevas conexiones, nuevas
               respuestas. Porque el conocimiento crece cuando se comparte y se
               multiplica cuando se conecta.
             </p>
-            <p className="">
+            <p className="font-gotham font-light">
               En el XXXIII Congreso Aapresid, abrimos las puertas de la
               innovación. Aquí, los límites se diluyen y las especializaciones
               se encuentran.
             </p>
-            <p>
+            <p className="font-gotham font-light">
               Cada productor, técnico, investigador y visionario que participa
               no trae solo preguntas o respuestas: trae piezas que encajan en un
               sistema mayor.
             </p>
-            <p className="">
+            <p className="font-gotham font-light">
               Somos más que testigos del cambio: somos programadores del futuro.
               Cada año, este Congreso compila y actualiza en un solo cuerpo los
               saberes de una comunidad que hace de la innovación su modo de
@@ -74,11 +76,11 @@ export function CodigoAbiertoSection() {
           </article>
 
           {/* Columna de imagen y hexágonos */}
-          <div className="relative md:w-2/5 hidden lg:block">
-            <div className="relative">
+          <div className="relative hidden md:w-2/5 lg:block">
+            <div className="relative h-[500px]">
               {/* Imagen principal hexagonal */}
-              <div className="">
-                <figure className="relative aspect-[531/468] w-[min(100%,531px)]">
+              <div className="h-full">
+                <figure className="relative h-full aspect-[531/468] w-[min(100%,531px)]">
                   <Image
                     src="/images/edicion-33/codigo-abierto.webp"
                     alt="Campo de cultivo"
@@ -122,7 +124,7 @@ export function CodigoAbiertoSection() {
 
               {/* Hexágono blanco decorativo */}
               <motion.div
-                className="absolute -bottom-5 left-[75px] h-[100px] w-[100px]"
+                className="absolute -bottom-5 left-[75px] h-[160px] w-[100px]"
                 style={{
                   y: scrollY * 0.03,
                 }}

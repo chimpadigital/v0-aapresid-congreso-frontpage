@@ -17,7 +17,7 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative mx-4 flex h-[500px] flex-col justify-center rounded-[20px] bg-cover bg-center p-[70px] md:m-[33px] ${className}`}
+      className={`relative mx-4 mt-4 flex h-[500px] flex-col justify-center rounded-[20px] bg-cover bg-center px-8 md:p-[70px] md:m-[33px] ${className}`}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       <div>

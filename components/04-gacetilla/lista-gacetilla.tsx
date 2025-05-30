@@ -2,93 +2,72 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import { GacetillaCard } from "../gacetilla-card";
 import LupaIcon from "../icons/LupaIcon";
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import CloseIcon from "../icons/CloseIcon";
 import { Paginacion } from "./paginacion";
+import { GacetillaApiItem, GacetillaApiResponse } from "@/lib/types";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useLocale } from "next-intl";
+import { es, enUS } from "date-fns/locale";
 
-const allGacetillas = [
-  {
-    id: 1,
-    date: "15 FEB 2025",
-    title: "Dorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    description:
-      "Horem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem...",
-    imageUrl: "/images/home/gacetilla-ejemplo-borrar.png",
-    href: "#",
-  },
-  {
-    id: 2,
-    date: "14 FEB 2025",
-    title: "Sistemas integrados de producción agrícola sostenible",
-    description:
-      "Nuevas metodologías para optimizar la producción mientras se mantiene el equilibrio ecológico. Descubre las últimas innovaciones en agricultura regenerativa...",
-    imageUrl: "/images/home/gacetilla-ejemplo-borrar.png",
-    href: "#",
-  },
-  {
-    id: 3,
-    date: "13 FEB 2025",
-    title: "Innovación tecnológica en el manejo de cultivos",
-    description:
-      "La tecnología está revolucionando la forma en que gestionamos nuestros cultivos. Desde drones hasta sensores IoT, conoce las herramientas del futuro...",
-    imageUrl: "/images/home/gacetilla-ejemplo-borrar.png",
-    href: "#",
-  },
-  // Agregar más elementos para demostrar la paginación
-  ...Array.from({ length: 20 }, (_, i) => ({
-    id: i + 4,
-    date: `${15 - (i % 15)} FEB 2025`,
-    title: `Artículo ${i + 4}: Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan...",
-    imageUrl: "/images/home/gacetilla-ejemplo-borrar.png",
-    href: "#",
-  })),
-];
-
-interface GacetillasWithPaginationProps {
-  itemsPerPage?: number;
-}
+registerLocale("es", es);
+registerLocale("en", enUS);
 
 const ListaGacetilla = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [filteredGacetillas, setFilteredGacetillas] = useState(allGacetillas);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Leer página desde la URL (query param)
+  const initialPage = parseInt(searchParams.get("page") || "1", 10);
+  const [currentPage, setCurrentPage] = useState(initialPage);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDate, setSelectedDate] = useState<any>(null);
-  const itemsPerPage = 6;
+  const itemsPerPage = 12;
 
-  // Filtrar gacetillas basado en búsqueda y fecha
+  const [gacetillas, setGacetillas] = useState<GacetillaApiResponse>();
+  const [loading, setLoading] = useState(true);
+
+  // Estado para los filtros que se aplican al buscar
+  const [appliedSearchTerm, setAppliedSearchTerm] = useState("");
+  const [appliedDate, setAppliedDate] = useState<Date | null>(null);
+
+  // Fetch gacetillas desde la API solo cuando cambian los filtros aplicados o la página
   useEffect(() => {
-    let filtered = allGacetillas;
-
-    if (searchTerm) {
-      filtered = filtered.filter(
-        (gacetilla) =>
-          gacetilla.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          gacetilla.description
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase()),
-      );
+    setLoading(true);
+    const params = new URLSearchParams({
+      page: currentPage.toString(),
+      pageSize: itemsPerPage.toString(),
+    });
+    if (appliedDate) {
+      const from = appliedDate.toISOString().slice(0, 10);
+      const toDate = new Date(appliedDate);
+      toDate.setDate(toDate.getDate() + 1);
+      const to = toDate.toISOString().slice(0, 10);
+      params.append("dateFrom", from);
+      params.append("dateTo", to);
     }
-
-    if (selectedDate) {
-      // Aquí podrías implementar filtrado por fecha real
-      // Por ahora, solo como ejemplo
-      filtered = filtered.filter((gacetilla) =>
-        gacetilla.date.includes("15 FEB"),
-      );
+    if (appliedSearchTerm) {
+      params.append("search", appliedSearchTerm);
     }
+    fetch(
+      `https://api.congreso.v1.franco.in.net/api/press-release?${params.toString()}`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setGacetillas(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [currentPage, itemsPerPage, appliedDate, appliedSearchTerm]);
 
-    setFilteredGacetillas(filtered);
-    setCurrentPage(1); // Resetear a la primera página cuando se filtra
-  }, [searchTerm, selectedDate]);
+  // Eliminar filtrado en frontend, usar solo la data de la API
+  const currentGacetillas = gacetillas?.data || [];
 
   // Calcular paginación
-  const totalPages = Math.ceil(filteredGacetillas.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentGacetillas = filteredGacetillas.slice(startIndex, endIndex);
+  const totalPages = gacetillas
+    ? Math.ceil(gacetillas.total / itemsPerPage)
+    : 1;
 
   const handleSearch = (term: string, date: string) => {
     setSearchTerm(term);
@@ -100,10 +79,23 @@ const ListaGacetilla = () => {
     setSelectedDate("");
   };
 
+  // Actualizar la URL cuando cambia la página o la fecha
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    params.set("page", currentPage.toString());
+    if (selectedDate) {
+      params.set("date", selectedDate.toISOString().slice(0, 10));
+    } else {
+      params.delete("date");
+    }
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.replaceState({}, "", newUrl);
+  }, [currentPage, selectedDate]);
+
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
     // Scroll suave hacia arriba cuando cambia la página
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 100, behavior: "smooth" });
   };
 
   const ExampleCustomInput = forwardRef<
@@ -146,22 +138,36 @@ const ListaGacetilla = () => {
     </button>
   ));
 
+  const locale = useLocale();
+
+  // Al presionar Buscar, aplicar los filtros actuales y resetear a la página 1
+  function handleSearchClick(e: React.FormEvent) {
+    e.preventDefault();
+    setAppliedSearchTerm(searchTerm);
+    setAppliedDate(selectedDate);
+    setCurrentPage(1);
+  }
+
   return (
-    <section className="mx-auto max-w-[1390px] px-4 md:px-[33px] 2xl:px-0">
+    <section className="mx-auto max-w-[1390px] px-4 pt-10 md:px-[33px] md:pt-0 2xl:px-0">
       <h2 className="mb-8 text-5xl tracking-wide text-primary">Gacetillas</h2>
-      <form className="mb-[91px] flex gap-[30px]">
-        <label className="border-b-px flex w-full max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">
+      <form className="mb-[91px] flex flex-col gap-[30px] md:flex-row" onSubmit={handleSearchClick}>
+        <label className="border-b-px mt-auto flex h-fit w-full max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">
           <LupaIcon />
           <input
             placeholder="Palabra clave"
             className="w-full px-2 py-1 text-lg tracking-wider placeholder-primary focus-visible:outline-none"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm}
           />
         </label>
 
         <DatePicker
           selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
+          onChange={date => setSelectedDate(date as Date | null)}
+          dateFormat={locale === "en" ? "yyyy/MM/dd" : "dd/MM/yyyy"}
           placeholderText="Día"
+          locale={locale}
           customInput={
             <ExampleCustomInput
               value={selectedDate ? selectedDate.toLocaleDateString() : ""}
@@ -171,7 +177,7 @@ const ListaGacetilla = () => {
           }
         />
 
-        <button className="relative z-[1] flex items-center gap-[10px] overflow-hidden rounded-full bg-accent px-[40px] py-[14px] text-lg font-light tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:before:scale-[3]">
+        <button type="submit" className="relative top-2 z-[1] flex w-fit items-center gap-[10px] overflow-hidden rounded-full bg-accent px-[40px] py-[14px] text-lg font-light tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]">
           Buscar
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -189,18 +195,33 @@ const ListaGacetilla = () => {
       </form>
 
       {/* Grid de tarjetas */}
-      {currentGacetillas.length > 0 ? (
-        <div className="grid grid-cols-1 gap-[35px] md:grid-cols-2 lg:grid-cols-3">
-          {currentGacetillas.map((gacetilla) => (
-            <GacetillaCard
-              key={gacetilla.id}
-              date={gacetilla.date}
-              title={gacetilla.title}
-              description={gacetilla.description}
-              imageUrl={gacetilla.imageUrl}
-              href={gacetilla.href}
-            />
-          ))}
+      {loading ? (
+        <div className="py-16 text-center">
+          <p className="text-lg text-[#736D6D]">Cargando gacetillas...</p>
+        </div>
+      ) : currentGacetillas.length > 0 ? (
+        <div className="grid grid-cols-1 justify-items-center gap-x-[35px] gap-y-[40px] md:grid-cols-2 md:justify-items-start lg:grid-cols-3">
+          {currentGacetillas.map((gacetilla) => {
+            let title = "";
+            let description = "";
+            try {
+              title = JSON.parse(gacetilla.title).es || gacetilla.title;
+              description = JSON.parse(gacetilla.excerpt).es || gacetilla.excerpt;
+            } catch {
+              title = gacetilla.title;
+              description = gacetilla.excerpt;
+            }
+            return (
+              <GacetillaCard
+                key={gacetilla.id}
+                date={gacetilla.date}
+                title={title}
+                description={description}
+                imageUrl={gacetilla.image}
+                href={"/gacetilla/" + gacetilla.id}
+              />
+            );
+          })}
         </div>
       ) : (
         <div className="py-16 text-center">
@@ -209,7 +230,6 @@ const ListaGacetilla = () => {
           </p>
         </div>
       )}
-
       {totalPages > 1 && (
         <Paginacion
           currentPage={currentPage}
