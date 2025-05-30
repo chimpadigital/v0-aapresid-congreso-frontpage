@@ -4,16 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { GacetillaCard } from "../gacetilla-card";
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
+import { GacetillaApiItem } from "@/lib/types";
 
-interface GacetillaApiItem {
-  id: number;
-  title: string;
-  excerpt: string;
-  content_es: string;
-  content_en: string;
-  date: string;
-  image: string;
-}
 
 export function GacetillasSection() {
   const [gacetillas, setGacetillas] = useState<GacetillaApiItem[]>([]);
