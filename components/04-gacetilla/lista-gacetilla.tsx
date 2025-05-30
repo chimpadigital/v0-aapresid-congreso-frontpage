@@ -22,7 +22,7 @@ const ListaGacetilla = () => {
   const [currentPage, setCurrentPage] = useState(initialPage);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDate, setSelectedDate] = useState<any>(null);
-  const itemsPerPage = 12;
+  const itemsPerPage = 2;
 
   const [gacetillas, setGacetillas] = useState<GacetillaApiResponse>();
   const [loading, setLoading] = useState(true);
@@ -72,19 +72,38 @@ const ListaGacetilla = () => {
     ? Math.ceil(gacetillas.total / itemsPerPage)
     : 1;
 
-    // Actualizar la URL cuando cambia la página, la fecha o el search term aplicado
+  // Inicializar los filtros desde la URL al cargar el componente
+  useEffect(() => {
+    // Solo en el primer render
+    const urlSearch = new URLSearchParams(window.location.search);
+    const search = urlSearch.get("search") || "";
+    const date = urlSearch.get("date");
+    const page = urlSearch.get("page") || "1";
+    setSearchTerm(search);
+    setAppliedSearchTerm(search);
+    if (date) {
+      // Crear la fecha como local (no UTC) para que el input muestre el día correcto
+      const [year, month, day] = date.split('-').map(Number);
+      const parsedDate = new Date(year, month - 1, day);
+      setSelectedDate(parsedDate);
+      setAppliedDate(parsedDate);
+    }
+    setCurrentPage(parseInt(page, 10));
+  }, []);
+
+  // Actualizar la URL cuando cambia la página, la fecha o el search term aplicado
   useEffect(() => {
     const params = new URLSearchParams();
     params.set("page", currentPage.toString());
-    if (selectedDate) {
-      params.set("date", selectedDate.toISOString().slice(0, 10));
-    }
     if (appliedSearchTerm) {
       params.set("search", appliedSearchTerm);
     }
+    if (appliedDate) {
+      params.set("date", appliedDate.toISOString().slice(0, 10));
+    }
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState({}, "", newUrl);
-  }, [currentPage, selectedDate, appliedSearchTerm]);
+  }, [currentPage, appliedDate, appliedSearchTerm]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -142,30 +161,6 @@ const ListaGacetilla = () => {
     setCurrentPage(1);
   }
 
-  // Inicializar los filtros desde la URL al cargar el componente
-  useEffect(() => {
-    // Solo en el primer render
-    const urlSearch = new URLSearchParams(window.location.search);
-    const search = urlSearch.get("search") || "";
-    const date = urlSearch.get("date");
-    const page = urlSearch.get("page") || "1";
-    setSearchTerm(search);
-    setAppliedSearchTerm(search);
-    if (date) {
-      const parsedDate = new Date(date);
-      setSelectedDate(parsedDate);
-      setAppliedDate(parsedDate);
-    }
-    setCurrentPage(parseInt(page, 10));
-    // Mantener los searchParams en la URL al cargar
-    const params = new URLSearchParams();
-    params.set("page", page);
-    if (search) params.set("search", search);
-    if (date) params.set("date", date);
-    const newUrl = `${window.location.pathname}?${params.toString()}`;
-    window.history.replaceState({}, "", newUrl);
-  }, []);
-
   return (
     <section className="mx-auto max-w-[1390px] px-4 pt-10 md:px-[33px] md:pt-0 2xl:px-0">
       <h2 className="mb-8 text-5xl tracking-wide text-primary">Gacetillas</h2>
@@ -190,7 +185,7 @@ const ListaGacetilla = () => {
           locale={locale}
           customInput={
             <ExampleCustomInput
-              value={selectedDate ? selectedDate.toLocaleDateString() : ""}
+              value={selectedDate ? selectedDate.toLocaleDateString(locale === "en" ? "en-US" : "es-AR") : ""}
               onClick={() => {}}
               className="flex w-[min(100%,304px)] items-center gap-3 border-b border-b-primary py-2 focus-within:border-b-accent"
             />
