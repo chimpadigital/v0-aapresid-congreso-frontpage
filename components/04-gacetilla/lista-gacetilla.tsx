@@ -233,7 +233,7 @@ const ListaGacetilla = () => {
                 title={title}
                 description={description}
                 imageUrl={gacetilla.image}
-                href={"/gacetilla/" + gacetilla.id}
+                href={ "gacetilla/" + gacetilla.id}
               />
             );
           })}
