@@ -28,7 +28,7 @@ const SeccionIntro = () => {
       ref={sectionRef}
       className="mx-auto max-w-[1113px] bg-white px-4 pt-10 md:pt-[2px] md:px-0"
     >
-      <div className="mx-4 flex flex-col items-center gap-[72px] sm:mx-[33px] md:gap-16 lg:flex-row xl:mx-0">
+      <div className="mx-4 flex flex-col items-center gap-[72px] sm:mx-[33px] md:gap-16 lg:flex-row xl:mx-0 tracking-wider">
         {/* Columna de texto */}
         <div className="lg:1/2">
           <p className="mb-8 text-[20px] text-[#736D6D] lg:max-w-[47ch]">

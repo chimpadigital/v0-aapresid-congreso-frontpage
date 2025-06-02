@@ -83,7 +83,7 @@ export function CongresoContentSection() {
                 }}
               >
                 <Image
-                  src="/images/edicion-33/hexagono-naranja.svg"
+                  src="/images/hexagono-naranja.svg"
                   alt="Hexágono decorativo"
                   width={50}
                   height={55}

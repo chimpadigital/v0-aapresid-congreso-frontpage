@@ -10,24 +10,24 @@ import { GacetillaApiItem } from "@/lib/types";
 export function GacetillasSection() {
   const [gacetillas, setGacetillas] = useState<GacetillaApiItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const locale = useLocale();
 
   useEffect(() => {
-    fetch("/api/gacetilla3")
+    fetch(`/api/gacetilla3?lang=${locale}`)
       .then((res) => res.json())
       .then((data) => {
         setGacetillas(data.data || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [locale]);
 
-  const locale = useLocale();
 
   return (
     <section className="mx-auto max-w-[1415px] bg-white px-4 pb-12 pt-[86px] md:px-8">
       <div>
         <h2 className="mb-10 text-center text-4xl text-primary md:text-5xl">
-          Gacetillas <span className="font-medium">Prensa</span>
+          Gacetillas de <span className="font-medium">Prensa</span>
         </h2>
         {/* Grid de tarjetas */}
         <div className="mb-16 mt-16 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">

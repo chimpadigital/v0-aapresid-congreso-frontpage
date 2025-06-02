@@ -1,11 +1,11 @@
-import { BackButton } from "./GoBackHero"
+import { BackButton } from "./GoBackHero";
 
 interface HeroSectionProps {
-  backgroundImage: string
-  title1: string
-  title2?: string
-  showBackButton?: boolean
-  className?: string
+  backgroundImage: string;
+  title1: string;
+  title2?: string;
+  showBackButton?: boolean;
+  className?: string;
 }
 
 export function HeroSection({
@@ -17,7 +17,7 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative mx-4 mt-4 flex h-[500px] flex-col justify-center rounded-[20px] bg-cover bg-center px-8 md:p-[70px] md:m-[33px] ${className}`}
+      className={`relative mx-4 mt-4 flex h-[500px] flex-col justify-center rounded-[20px] bg-cover bg-center px-8 md:m-[33px] md:p-[70px] ${className}`}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       <div>
@@ -28,7 +28,9 @@ export function HeroSection({
           {title2 ? (
             <>
               <h2 className="mb-1 text-3xl text-white md:text-5xl">{title1}</h2>
-              <h1 className="text-4xl font-medium text-white md:text-[40px]">{title2}</h1>
+              <h1 className="text-3xl font-medium text-white md:text-5xl">
+                {title2}
+              </h1>
             </>
           ) : (
             <h1 className="text-4xl text-white md:text-5xl">{title1}</h1>
@@ -36,5 +38,5 @@ export function HeroSection({
         </div>
       </div>
     </section>
-  )
+  );
 }
