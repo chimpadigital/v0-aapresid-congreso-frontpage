@@ -1,6 +1,4 @@
-import { BackButton } from "@/components/GoBackHero";
 import { GacetillaDetalle } from "@/lib/types";
-import Image from "next/image";
 import DownloadIcon from "@/components/icons/DownloadIcon";
 import CompartirIcon from "@/components/icons/CompartirIcon";
 
