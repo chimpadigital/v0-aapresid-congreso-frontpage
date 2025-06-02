@@ -70,7 +70,7 @@ const SeccionIntro = () => {
           >
             <figure className="relative h-full w-full">
               <Image
-                src="/images/edicion-33/hexagono-naranja.svg"
+                src="/images/hexagono-naranja.svg"
                 alt="Hexágono decorativo"
                 quality={100}
                 fill
