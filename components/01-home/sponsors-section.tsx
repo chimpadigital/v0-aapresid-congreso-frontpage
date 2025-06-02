@@ -42,6 +42,8 @@ export function SponsorsSection() {
     fetchSponsors();
   }, []);
 
+  console.log(sponsors?.category1)
+
   return (
     <>
       <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
@@ -113,7 +115,7 @@ export function SponsorsSection() {
                       <SponsorLogo
                         imagePath={sponsor.imagePath}
                         title={sponsor.title}
-                        height={125}
+                        height={115}
                         link={sponsor.link}
                       />
                     </motion.div>
@@ -150,7 +152,7 @@ export function SponsorsSection() {
                       <SponsorLogo
                         imagePath={sponsor.imagePath}
                         title={sponsor.title}
-                        height={115}
+                        height={95}
                         link={sponsor.link}
                       />
                     </motion.div>
@@ -187,7 +189,7 @@ export function SponsorsSection() {
                       <SponsorLogo
                         imagePath={sponsor.imagePath}
                         title={sponsor.title}
-                        height={105}
+                        height={75}
                         link={sponsor.link}
                       />
                     </motion.div>
