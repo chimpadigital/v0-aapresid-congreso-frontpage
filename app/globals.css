@@ -191,7 +191,7 @@ body {
 
 .gacetilla-detalle,
 .gacetilla-detalle p {
-  font-family: Owners !important;
+  @apply font-sans;
 }
 
 
@@ -202,7 +202,7 @@ body {
 .gacetilla-detalle h5,
 .gacetilla-detalle h6 {
   /* Tailwind: text-primary */
-  @apply text-primary font-medium;
+  @apply text-primary font-medium font-sans;
 }
 
 .gacetilla-detalle h1 {
