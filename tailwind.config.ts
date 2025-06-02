@@ -15,7 +15,7 @@ const config: Config = {
         accent: "#64B33D",
         secondary: "#ED7F00",
         background: "#fff",
-        parabraph: "#736D6D",
+        paragraph: "#736D6D",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",

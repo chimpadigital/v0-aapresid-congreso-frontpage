@@ -31,7 +31,7 @@ export function HeroSection({
               <h1 className="text-4xl font-medium text-white md:text-[40px]">{title2}</h1>
             </>
           ) : (
-            <h1 className="text-4xl font-bold text-white md:text-5xl">{title1}</h1>
+            <h1 className="text-4xl text-white md:text-5xl">{title1}</h1>
           )}
         </div>
       </div>

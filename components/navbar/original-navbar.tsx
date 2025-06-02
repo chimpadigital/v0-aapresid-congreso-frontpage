@@ -28,7 +28,7 @@ export function OriginalNavbar({
 
   return (
     <nav
-      className={`fixed left-0 right-0 z-[9999] mx-8 transition-all duration-300 xs:py-14 md:fixed md:top-0 md:mx-0 md:w-full md:px-[14px] ${
+      className={`fixed left-0 right-0 z-[9999] mx-8 transition-all duration-300 xs:pt-14 md:fixed md:top-0 md:mx-0 md:w-full md:px-[14px] ${
         scrolled
           ? "top-2 md:pointer-events-none md:opacity-0"
           : "top-6 md:opacity-100"

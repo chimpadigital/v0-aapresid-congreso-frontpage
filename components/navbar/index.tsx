@@ -28,7 +28,7 @@ export function Navbar() {
           label: "Información turística",
           href: `/${locale}/informacion-turistica`,
         },
-        { label: "Nos acompañan", href: `/${locale}/nos-acompanan` },
+        { label: "Nos acompañan", href: `/${locale}/nos-acompanian` },
       ],
     },
     // {
@@ -47,7 +47,7 @@ export function Navbar() {
     },
     {
       label: "Comercial",
-      href: `comercial`,
+      href: `/${locale}/comercial`,
     },
   ];
 

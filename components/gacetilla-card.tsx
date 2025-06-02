@@ -54,7 +54,7 @@ export function GacetillaCard({
         <h3 className="mb-[16px] text-[18px] font-bold leading-tight tracking-wider text-primary">
           {title}
         </h3>
-        <p className="truncate-4 mb-6 leading-tight tracking-wider text-parabraph">
+        <p className="truncate-4 mb-6 leading-tight tracking-wider text-paragraph">
           {description}
         </p>
         <div className="mt-auto">

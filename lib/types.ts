@@ -136,3 +136,17 @@ export interface GacetillaApiResponse {
   pageSize: number;
   data: GacetillaApiItem[];
 }
+
+export interface GacetillaDetalle {
+  id: number;
+  title: string; // JSON string: {"en":"...","es":"..."}
+  excerpt: string; // JSON string: {"en":"...","es":"..."}
+  content_es: string;
+  content_en: string;
+  date: string;
+  image: string;
+  file: string | null;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}

@@ -4,7 +4,7 @@ import { BackButton } from "../GoBackHero";
 const HeroGacetilla = () => {
   return (
     <section
-      className={`relative mx-4 flex flex-col justify-center rounded-[20px] bg-cover bg-center px-[70px] pb-[70px] pt-[140px] md:m-[33px] md:mb-[100px]`}
+      className={`relative mx-4 mt-4 flex flex-col justify-center rounded-[20px] bg-cover bg-center px-8 md:p-[70px] pb-[70px] pt-[140px] md:m-[33px] md:mb-[100px]`}
       style={{
         backgroundImage: `url('/images/gacetilla/circuito-prensa.webp')`,
       }}
