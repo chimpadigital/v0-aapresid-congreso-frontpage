@@ -32,15 +32,19 @@ const BannerContacto = () => {
       ref={sectionRef}
       className="mx-4 mt-7 rounded-[20px] bg-primary px-4 py-[37px] md:mx-[33px]"
     >
-      <div className="mx-auto flex max-w-[1415px] gap-20 md:px-16 flex-col md:flex-row">
+      <div className="mx-auto flex max-w-[1415px] flex-col gap-20 md:flex-row md:px-16">
         <div className="relative flex-1">
           <figure>
-            <Image alt="Imagen manos estechando" src={ImgContacto} className="mx-auto md:mx-0" />
+            <Image
+              alt="Imagen manos estechando"
+              src={ImgContacto}
+              className="mx-auto md:mx-0"
+            />
           </figure>
 
           {/* Hexágono naranja decorativo */}
           <motion.div
-            className="absolute bottom-[2.5rem] right-[50px] h-[117px] w-[117px] md:right-[50px]"
+            className="absolute -bottom-2 md:bottom-[2.5rem] right-[50px] h-[117px] w-[117px] md:right-[50px]"
             style={{
               y: scrollY * 0.03,
             }}
@@ -57,7 +61,7 @@ const BannerContacto = () => {
 
           {/* Hexágono verde claro */}
           <motion.div
-            className="absolute bottom-[9rem] right-[10rem] h-[70px] w-[70px]"
+            className="absolute -bottom-6 md:bottom-[9rem] right-[10rem] h-[70px] w-[70px]"
             style={{
               y: scrollY * 0.08,
             }}
@@ -74,7 +78,7 @@ const BannerContacto = () => {
         </div>
 
         <div className="flex flex-1 flex-col items-center justify-center text-center md:items-start md:text-left">
-          <div className="mx-auto md:pt-16">
+          <div className="mx-auto w-full md:pt-16">
             <h2 className="text-3xl font-bold leading-tight tracking-wider text-white md:text-[40px]">
               Contacto
             </h2>
@@ -82,24 +86,40 @@ const BannerContacto = () => {
               Área comercial{" "}
             </h3>
             <div className="mb-[46px]">
-              <div className="mb-3 flex items-center gap-[28px] tracking-widest text-white">
-                <Emailicon />
-                <p className="text-2xl">troiano@aapresid.org.ar</p>
+              <div className="mb-3 flex items-center gap-3 md:gap-[28px] tracking-widest text-white">
+                <div className="shrink-0">
+                  <Emailicon />
+                </div>
+                <p className="text-2xl w-full break-all hyphens-auto">
+                  troiano@aapresid.org.ar
+                </p>
               </div>
-              <div className="flex items-center gap-[28px] text-white">
-                <WhatsappIcon />
-                <p className="text-2xl">WhatsApp/Tel: +54 9 3416 01-8111</p>
+              <div className="flex items-center gap-3 md:gap-[28px] text-white">
+                <div className="shrink-0">
+                  <WhatsappIcon />
+                </div>
+                <p className="text-2xl w-full break-all hyphens-auto">
+                  WhatsApp/Tel: +54 9 3416 01-8111
+                </p>
               </div>
             </div>
 
             <div className="mb-[46px]">
-              <div className="mb-3 flex items-center gap-[28px] tracking-widest text-white">
-                <Emailicon />
-                <p className="text-2xl">ventas@exponenciar.com.ar</p>
+              <div className="mb-3 flex items-center gap-3 md:gap-[28px] tracking-widest text-white">
+                <div className="shrink-0">
+                  <Emailicon />
+                </div>
+                <p className="text-2xl w-full break-all hyphens-auto">
+                  ventas@exponenciar.com.ar
+                </p>
               </div>
-              <div className="flex items-center gap-[28px] text-white">
-                <WhatsappIcon />
-                <p className="text-2xl">WhatsApp/Tel: +54 9 11 5844-2945</p>
+              <div className="flex items-center gap-3 md:gap-[28px] text-white">
+                <div className="shrink-0">
+                  <WhatsappIcon />
+                </div>
+                <p className="text-2xl w-full break-all hyphens-auto">
+                  WhatsApp/Tel: +54 9 11 5844-2945
+                </p>
               </div>
             </div>
           </div>

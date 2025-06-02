@@ -187,3 +187,63 @@ body {
   text-overflow: ellipsis;
   white-space: normal;
 }
+
+
+.gacetilla-detalle,
+.gacetilla-detalle p {
+  @apply font-sans;
+}
+
+
+.gacetilla-detalle h1,
+.gacetilla-detalle h2,
+.gacetilla-detalle h3,
+.gacetilla-detalle h4,
+.gacetilla-detalle h5,
+.gacetilla-detalle h6 {
+  /* Tailwind: text-primary */
+  @apply text-primary font-medium font-sans;
+}
+
+.gacetilla-detalle h1 {
+  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+  @apply text-3xl mb-4 text-primary;
+}
+
+.gacetilla-detalle h2 {
+  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+  @apply text-2xl mb-4 text-primary;
+}
+
+.gacetilla-detalle h3 {
+  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+  @apply text-xl mb-4 text-primary;
+}
+
+.gacetilla-detalle h4 {
+  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+  @apply text-lg mb-4 text-primary;
+}
+
+.gacetilla-detalle h5 {
+  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+  @apply text-base mb-4 text-primary;
+}
+
+.gacetilla-detalle h6 {
+  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+  @apply text-sm mb-4 text-primary;
+}
+
+.gacetilla-detalle ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.gacetilla-detalle ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.gacetilla-detalle img {
+  border-radius: 20px;
+  overflow: hidden;
+}
