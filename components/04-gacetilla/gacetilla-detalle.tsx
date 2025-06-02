@@ -43,6 +43,7 @@ export default async function DetalleGacetillaContent({ id, locale }: Props) {
       <div className="py-10 text-center">No se encontró la gacetilla.</div>
     );
   }
+  console.log(detalle);
   return (
     <section>
       <article className="mx-auto max-w-[904px] px-4 py-8">
@@ -68,9 +69,9 @@ export default async function DetalleGacetillaContent({ id, locale }: Props) {
           }}
         />
       </article>
-      <div className="mx-auto flex max-w-5xl justify-end gap-5 px-4 py-8 flex-wrap">
+      <div className="mx-auto flex max-w-5xl flex-wrap justify-end gap-5 px-4 py-8">
         <a
-          href="/TARIFARIO_CONGRESO_2025.pdf"
+          href={detalle.file || "#"}
           download
           target="_blank"
           className="relative z-[1] flex w-[min(235px,100%)] items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white fill-primary px-[15px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]"

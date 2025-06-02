@@ -37,7 +37,7 @@ export function CongresoContentSection() {
               <Image
                 src="/images/edicion-33/charla-foto.webp"
                 alt="Orador del Congreso Aapresid"
-                className="h-auto w-full"
+                className="h-auto w-full px-8 object-contain"
                 quality={100}
                 fill
               />
@@ -95,7 +95,7 @@ export function CongresoContentSection() {
 
           {/* Columna derecha - Textos */}
           <div className="lg:w-1/2">
-            <div className="space-y-6">
+            <div className="space-y-6 tracking-wider">
               <p className="text-lg text-[#736D6D]">
                 El contenido del Congreso Aapresid es elaborado y pensado por
                 grupos interdisciplinarios conformados por referentes

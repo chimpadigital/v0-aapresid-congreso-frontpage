@@ -8,7 +8,7 @@ const DescargaComercialV2 = () => {
   const t = useTranslations("commercial");
 
   return (
-    <section className="relative mx-4 overflow-hidden rounded-[28px] bg-[url('/images/comercial/bg-formaparte.webp')] bg-cover bg-left md:bg-center bg-no-repeat md:mx-[33px]">
+    <section className="relative mt-6 md:mt-0 mx-4 overflow-hidden rounded-[28px] bg-[url('/images/comercial/bg-formaparte.webp')] bg-cover bg-left md:bg-center bg-no-repeat md:mx-[33px]">
       {/* Contenido */}
       <div className="relative mx-auto flex max-w-[1415px] flex-col items-center justify-between px-8 py-16 md:py-16 md:flex-row md:px-16">
         {/* Columna izquierda - Texto */}
