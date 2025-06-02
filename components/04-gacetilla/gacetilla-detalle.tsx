@@ -1,7 +1,8 @@
 import { GacetillaDetalle } from "@/lib/types";
 import DownloadIcon from "@/components/icons/DownloadIcon";
 import CompartirIcon from "@/components/icons/CompartirIcon";
-
+import ModalCompartir from "./modal-compartir";
+import "../../styles/detalle-gacetilla-style.css"
 interface Props {
   id: string;
   locale: string;
@@ -43,9 +44,13 @@ export default async function DetalleGacetillaContent({ id, locale }: Props) {
       <div className="py-10 text-center">No se encontró la gacetilla.</div>
     );
   }
-  console.log(detalle);
+
+  // Obtener la URL absoluta actual (solo server-side)
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const link = `${baseUrl}/${locale}/gacetilla/${id}`;
+
   return (
-    <section>
+    <section className="">
       <article className="mx-auto max-w-[904px] px-4 py-8">
         <figure className="relative mb-8 inline-block w-full md:mb-20">
           <img
@@ -61,7 +66,7 @@ export default async function DetalleGacetillaContent({ id, locale }: Props) {
           {formatDate(detalle.date, locale)}
         </div>
         <div
-          className="prose"
+          className="prose gacetilla-detalle"
           dangerouslySetInnerHTML={{
             __html:
               (locale === "en" ? detalle.content_en : detalle.content_es) ||
@@ -79,10 +84,7 @@ export default async function DetalleGacetillaContent({ id, locale }: Props) {
           <span>Descargar gacetilla</span>
           <DownloadIcon />
         </a>
-        <button className="relative z-[1] flex w-[min(235px,100%)] items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]">
-          <span>Compartir</span>
-          <CompartirIcon />
-        </button>
+        <ModalCompartir link={link} />
       </div>
     </section>
   );
