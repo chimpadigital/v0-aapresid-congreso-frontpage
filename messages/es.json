@@ -93,10 +93,27 @@
       }
     ]
   },
+  "speakers": {
+    "title1": "Disertantes ",
+    "title2": "destacados",
+    "conoce_los_oradores": "Ver todos los disertantes",
+    "ver-cronograma": "Cronograma (acceso al cronograma)"
+  },
+  "charlas": {
+    "title1": "Charlas ",
+    "title2": "destacadas",
+    "ver-cronograma": "Ver cronograma completo"
+  },
   "commercial": {
     "titulo": "Formá parte de la",
     "congreso": "33° edición del Congreso",
+    "descripcion": "Descargá el brochure comercial y conocé las oportunidades que ofrecemos.",
     "descarga": "Descargar carpeta comercial"
+  },
+  "gacetilla": {
+    "titulo1": "Gacetilla ",
+    "titulo2": "de Prensa",
+    "ver-todas": "Ver todas las gacetillas "
   },
   "faq": {
     "titulo1": "Preguntas",
@@ -244,6 +261,26 @@
     "medios": "MEDIOS",
     "apoyan": "Apoyan",
     "organizan": "Organizan"
+  },
+  "edicion-33": {
+    "hero": {
+      "title1": "Acerca del",
+      "title2": "Congreso"
+    },
+    "intro-text": {
+      "p1": "El Congreso Aapresid lleva más de tres décadas conectando innovación, tecnología y conocimiento con el propósito de impulsar sistemas productivos cada vez más sustentables, siendo hoy en día un evento de referencia internacional para técnicos, investigadores, decisores, productores y referentes de toda la cadena agroindustrial de la región.",
+      "p2": "Durante cada edición, el Congreso Aapresid congrega a los más importantes referentes nacionales e internacionales para discutir y poner en agenda los temas del futuro, vinculando ciencia y producción y así transformar nuestra agricultura, ayudando a la mitigación del cambio climático e iluminando los escenarios de la innovación."
+    },
+    "stats": {
+      "conferencias": "Conferencias en simultáneo",
+      "dias": "Días",
+      "disertantes": "Disertantes",
+      "asistentes": "Asistentes"
+    },
+    "contenido" :{
+       "p1": "El contenido del Congreso Aapresid es elaborado y pensado por grupos interdisciplinarios conformados por referentes académicos, institucionales, socios Aapresid y productores que a través de una metodología específica logran posicionar contenido prospectivo y que este año se reunirán en 7 ejes de: Aprender Produciendo, Desafíos Globales, Innovación y Agtech, Manejo de Plagas, Sistemas Integrados, Sistemas Productivos Sustentables, Perspectivas Sociopolíticas.",
+      "p2": "Luego del gran éxito de la última edición, el Congreso Aapresid se llevará a cabo nuevamente en la Ciudad Autónoma de Buenos Aires."
+    }
   },
   "footer": {
     "fecha": "6 al 8 de agosto",

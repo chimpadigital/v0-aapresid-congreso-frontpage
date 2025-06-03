@@ -93,10 +93,27 @@
       }
     ]
   },
+  "speakers": {
+    "title1": "Noteworthy",
+    "title2": "speakers",
+    "conoce_los_oradores": "See the entire list of speakers ",
+    "ver-cronograma": "Schedule (access to schedule)"
+  },
+  "charlas": {
+    "title1": "Notable ",
+    "title2": "lectures",
+    "ver-cronograma": "See full schedule"
+  },
   "commercial": {
     "titulo": "Join the",
     "congreso": "33° edition of the Congress",
+    "descripcion": "Download the commercial brochure and explore the options we are offering.",
     "descarga": "Download commercial folder"
+  },
+  "gacetilla": {
+    "titulo1": "Gacetilla ",
+    "titulo2": "de Prensa",
+    "ver-todas": "See all newsletters"
   },
   "faq": {
     "titulo1": "Frequently",
