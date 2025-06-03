@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import "lenis/dist/lenis.css";
 import Providers from "@/components/providers";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Congreso Aapresid",
@@ -30,9 +30,8 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <GoogleTagManager
-        gtmId="GTM-PLJHK8JX"
-      />
+      <GoogleTagManager gtmId="GTM-PLJHK8JX" />
+      <GoogleAnalytics gaId="G-N8BW6Y8FXJ" />
       <body>
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
