@@ -1,91 +1,92 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { LogoCategory } from "@/lib/types";
+import { useLocale } from "next-intl";
+
+function getField(jsonStr: string, lang: string, fallback = "") {
+  try {
+    const obj = JSON.parse(jsonStr);
+    if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+    const otherLang = lang === "en" ? "es" : "en";
+    if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+    return fallback;
+  } catch {
+    return jsonStr || fallback;
+  }
+}
 
 const Anfitriones = () => {
-  return (
-    <div className="mx-4 mt-[26px] rounded-[20px] bg-[#F0F0F1] px-4 py-16 md:mx-[33px]">
-      {/* COMPONENTE */}
-      <div className="mx-auto mb-16 max-w-[1049px]">
-        <h3 className="mb-12 w-full border-b border-b-primary pb-[20px] text-left text-3xl text-primary md:mb-[109px]">
-          Anfitrión
-        </h3>
-        <div className="flex flex-col md:flex-row">
-          <div className="flex-1 pb-10 md:pb-0">
-            <figure className="relative inline-block h-24 w-full md:h-full">
-              <Image
-                src="/images/comercial/logoborrar.png"
-                fill
-                alt="logo falso"
-                className="object-contain pr-20 md:pl-7"
-              />
-            </figure>
-          </div>
-          <article className="flex flex-[1.2] flex-col">
-            <h3 className="w-full pb-[20px] text-left text-3xl font-medium text-primary">
-              LogoIpsun
-            </h3>
-            <p className="text-paragraph leading-tight tracking-wider">
-              Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-              turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-              nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-              tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-              feugiat lectus. Class aptent taciti sociosqu ad litora torquent
-              per conubia nostra, per inceptos himenaeos. Praesent auctor purus
-              luctus enim egestas, ac scelerisque ante pulvinar. Donec ut
-              rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
-              vel bibendum lorem. Morbi convallis convallis diam sit amet
-              lacinia. Aliquam in elementum tellus.
-            </p>
-            <a
-              href="#"
-              className="relative ml-auto mt-[41px] inline-block min-w-[225px] rounded-full border border-primary px-4 py-1 text-center text-lg text-primary"
-            >
-              www.empresafalsa.com
-            </a>
-          </article>
-        </div>
-      </div>
+  const locale = useLocale();
+  const [categories, setCategories] = useState<LogoCategory[]>([]);
 
-      {/* COMPONENTE */}
+  useEffect(() => {
+    fetch("/api/sponsors")
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
+      .catch(() => setCategories([]));
+  }, []);
+
+  return (
+    <div className="mx-4 mt-[26px] rounded-[20px] px-4 py-16 md:mx-[33px]">
       <div className="mx-auto mb-16 max-w-[1049px]">
-        <h3 className="mb-12 w-full border-b border-b-primary pb-[20px] text-left text-3xl text-primary md:mb-[109px]">
-          Anfitrión
-        </h3>
-        <div className="flex flex-col md:flex-row">
-          <div className="flex-1 pb-10 md:pb-0">
-            <figure className="relative inline-block h-24 w-full md:h-full">
-              <Image
-                src="/images/comercial/logoborrar.png"
-                fill
-                alt="logo falso"
-                className="object-contain pr-20 md:pl-7"
-              />
-            </figure>
-          </div>
-          <article className="flex flex-[1.2] flex-col">
-            <h3 className="w-full pb-[20px] text-left text-3xl font-medium text-primary">
-              LogoIpsun
+        {categories.map((cat) => (
+          <div key={cat.id} className="mb-28">
+            <h3 className="mb-12 w-full border-b border-b-primary pb-[20px] text-left text-3xl text-primary md:mb-[109px]">
+              {getField(cat.name, locale)}
             </h3>
-            <p className="text-paragraph leading-tight tracking-wider">
-              Vorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-              turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-              nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-              tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-              feugiat lectus. Class aptent taciti sociosqu ad litora torquent
-              per conubia nostra, per inceptos himenaeos. Praesent auctor purus
-              luctus enim egestas, ac scelerisque ante pulvinar. Donec ut
-              rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
-              vel bibendum lorem. Morbi convallis convallis diam sit amet
-              lacinia. Aliquam in elementum tellus.
-            </p>
-            <a
-              href="#"
-              className="relative ml-auto mt-[41px] inline-block min-w-[225px] rounded-full border border-primary px-4 py-1 text-center text-lg text-primary"
-            >
-              www.empresafalsa.com
-            </a>
-          </article>
-        </div>
+            {cat.Logos.map((logo) => (
+              <div className="flex flex-col md:flex-row mb-16" key={logo.id}>
+                <div className="flex-1 pb-10 md:pb-0">
+                  <figure className="relative inline-block h-24 w-full md:h-full">
+                    <Image
+                      src={logo.imagePath}
+                      fill
+                      alt={getField(logo.title, locale)}
+                      className="object-contain pr-20 md:pl-7"
+                    />
+                  </figure>
+                </div>
+                <article className="flex flex-[1.2] flex-col">
+                  <h3 className="w-full pb-[20px] text-left text-3xl font-medium text-primary">
+                    {getField(logo.title, locale)}
+                  </h3>
+                  {/* DESCRIPTION: solo mostrar si hay info en algún idioma */}
+                  {(() => {
+                    const descEs = getField(logo.description || "", "es");
+                    const descEn = getField(logo.description || "", "en");
+                    if (descEs || descEn) {
+                      return (
+                        <p className="leading-tight tracking-wider text-paragraph">
+                          {getField(logo.description || "", locale)}
+                        </p>
+                      );
+                    }
+                    return null;
+                  })()}
+                  {/* LINK: solo mostrar si hay info en algún idioma */}
+                  {(() => {
+                    const linkEs = getField(logo.link || "", "es");
+                    const linkEn = getField(logo.link || "", "en");
+                    if (linkEs || linkEn) {
+                      return (
+                        <a
+                          href={getField(logo.link, locale)}
+                          className="relative ml-auto mt-[41px] inline-block min-w-[225px] rounded-full border border-primary px-4 py-1 text-center text-lg text-primary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {getField(logo.link, locale)}
+                        </a>
+                      );
+                    }
+                    return null;
+                  })()}
+                </article>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );

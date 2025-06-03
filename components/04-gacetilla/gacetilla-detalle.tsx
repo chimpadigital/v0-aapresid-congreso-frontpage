@@ -52,7 +52,6 @@ export default async function DetalleGacetillaContent(props: Props) {
       <div className="py-10 text-center">No se encontró la gacetilla.</div>
     );
   }
-  console.log(detalle);
 
   // Obtener la URL absoluta actual (solo server-side)
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -81,8 +80,14 @@ export default async function DetalleGacetillaContent(props: Props) {
           className="prose gacetilla-detalle"
           dangerouslySetInnerHTML={{
             __html:
-              (locale === "en" ? detalle.content_en : detalle.content_es) ||
-              getField(detalle.excerpt, locale),
+              (locale === "en"
+                ? (detalle.content_en && detalle.content_en.trim() !== ""
+                    ? detalle.content_en
+                    : detalle.content_es)
+                : (detalle.content_es && detalle.content_es.trim() !== ""
+                    ? detalle.content_es
+                    : detalle.content_en)
+              ) || getField(detalle.excerpt, locale),
           }}
         />
       </article>

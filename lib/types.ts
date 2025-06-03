@@ -150,3 +150,25 @@ export interface GacetillaDetalle {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface LogoItem {
+  id: number;
+  description: string | null; // JSON string: {"en":"...","es":"..."} o null
+  link: string; // JSON string: {"en":"...","es":"..."}
+  title: string; // JSON string: {"en":"...","es":"..."}
+  imagePath: string;
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+  categoryId: number;
+}
+
+export interface LogoCategory {
+  id: number;
+  name: string; // JSON string: {"en":"...","es":"..."}
+  description: string | null;
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+  Logos: LogoItem[];
+}
