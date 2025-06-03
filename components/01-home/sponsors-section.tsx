@@ -11,9 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import * as motion from "motion/react-client";
 import { SponsorLogo } from "../sponsor-logo";
-import { SponsorPropsItem } from "@/lib/types";
-
-
+import { SponsorPropsItem, LogoCategory } from "@/lib/types";
 
 interface categoryProps {
   category1: SponsorPropsItem[];
@@ -26,23 +24,43 @@ interface categoryProps {
 
 export function SponsorsSection() {
   const t = useTranslations("sponsors");
-
-  const [sponsors, setSponsors] = useState<categoryProps>();
+  const [categories, setCategories] = useState<LogoCategory[]>([]);
 
   useEffect(() => {
     const fetchSponsors = async () => {
       try {
         const res = await axios.get("/api/sponsors");
-        setSponsors(res.data);
+        setCategories(res.data);
       } catch (err) {
         console.error("Error fetching sponsors", err);
       }
     };
-
     fetchSponsors();
   }, []);
 
-  console.log(sponsors?.category1)
+  // Utilidad para obtener campo multilenguaje
+  function getField(jsonStr: string, lang: string, fallback = "") {
+    try {
+      const obj = JSON.parse(jsonStr);
+      if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+      const otherLang = lang === "en" ? "es" : "en";
+      if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+      return fallback;
+    } catch {
+      return jsonStr || fallback;
+    }
+  }
+
+  // Ejemplo: filtrar por nombre de categoría (ajusta según tus necesidades)
+  const getCategoryByName = (name: string) =>
+    categories.find((cat) => getField(cat.name, "es").toLowerCase().includes(name));
+
+  const patA = getCategoryByName("patrocinios a");
+  const patB = getCategoryByName("patrocinios b");
+  const patC = getCategoryByName("patrocinios c");
+  const patD = getCategoryByName("patrocinios d");
+  const instit = getCategoryByName("institucional");
+  const medios = getCategoryByName("medios");
 
   return (
     <>
@@ -54,219 +72,192 @@ export function SponsorsSection() {
           </h2>
 
           {/* Sponsors A */}
-          {sponsors?.category1.length !== 0 && (
+          {patA && patA.Logos.length !== 0 && (
             <div className="mb-16">
               <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_a")}
               </h3>
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
-
               <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-                {sponsors?.category1.map((sponsor, i) => {
-                  return (
-                    <motion.div
-                      key={sponsor.imagePath + "-" + i}
-                      className="flex w-fit justify-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: i * 0.1,
-                        duration: 0.5,
-                        easing: "ease-out",
-                      }}
-                    >
-                      <SponsorLogo
-                        imagePath={sponsor.imagePath}
-                        title={sponsor.title}
-                        height={135}
-                        link={sponsor.link}
-                      />
-                    </motion.div>
-                  );
-                })}
+                {patA.Logos.map((sponsor, i) => (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={getField(sponsor.title, "es")}
+                      height={135}
+                      link={getField(sponsor.link, "es")}
+                    />
+                  </motion.div>
+                ))}
               </div>
             </div>
           )}
           {/* Sponsors B */}
-          {sponsors?.category2.length !== 0 && (
+          {patB && patB.Logos.length !== 0 && (
             <div>
               <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_b")}
               </h3>
-
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
-
               <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-                {sponsors?.category2.map((sponsor: SponsorPropsItem, i) => {
-                  return (
-                    <motion.div
-                      key={sponsor.imagePath + "-" + i}
-                      className="flex w-fit justify-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: i * 0.1,
-                        duration: 0.5,
-                        easing: "ease-out",
-                      }}
-                    >
-                      <SponsorLogo
-                        imagePath={sponsor.imagePath}
-                        title={sponsor.title}
-                        height={115}
-                        link={sponsor.link}
-                      />
-                    </motion.div>
-                  );
-                })}
+                {patB.Logos.map((sponsor, i) => (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={getField(sponsor.title, "es")}
+                      height={115}
+                      link={getField(sponsor.link, "es")}
+                    />
+                  </motion.div>
+                ))}
               </div>
             </div>
           )}
-
           {/* Sponsors C */}
-          {sponsors?.category3.length !== 0 && (
+          {patC && patC.Logos.length !== 0 && (
             <div>
               <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_c")}
               </h3>
-
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
-
               <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-                {sponsors?.category3.map((sponsor: SponsorPropsItem, i) => {
-                  return (
-                    <motion.div
-                      key={sponsor.imagePath + "-" + i}
-                      className="flex w-fit justify-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: i * 0.1,
-                        duration: 0.5,
-                        easing: "ease-out",
-                      }}
-                    >
-                      <SponsorLogo
-                        imagePath={sponsor.imagePath}
-                        title={sponsor.title}
-                        height={95}
-                        link={sponsor.link}
-                      />
-                    </motion.div>
-                  );
-                })}
+                {patC.Logos.map((sponsor, i) => (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={getField(sponsor.title, "es")}
+                      height={95}
+                      link={getField(sponsor.link, "es")}
+                    />
+                  </motion.div>
+                ))}
               </div>
             </div>
           )}
-
           {/* Sponsors D */}
-          {sponsors?.category4.length !== 0 && (
+          {patD && patD.Logos.length !== 0 && (
             <div>
               <h3 className="mb-4 text-2xl text-primary">
                 {t("patrocinios_d")}
               </h3>
-
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
-
               <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-                {sponsors?.category4.map((sponsor: SponsorPropsItem, i) => {
-                  return (
-                    <motion.div
-                      key={sponsor.imagePath + "-" + i}
-                      className="flex w-fit justify-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: i * 0.1,
-                        duration: 0.5,
-                        easing: "ease-out",
-                      }}
-                    >
-                      <SponsorLogo
-                        imagePath={sponsor.imagePath}
-                        title={sponsor.title}
-                        height={75}
-                        link={sponsor.link}
-                      />
-                    </motion.div>
-                  );
-                })}
+                {patD.Logos.map((sponsor, i) => (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={getField(sponsor.title, "es")}
+                      height={75}
+                      link={getField(sponsor.link, "es")}
+                    />
+                  </motion.div>
+                ))}
               </div>
             </div>
           )}
-
           {/* institucionales */}
-          {sponsors?.institucion.length !== 0 && (
+          {instit && instit.Logos.length !== 0 && (
             <div>
               <h3 className="mb-4 text-2xl text-primary">
                 {t("institucionales")}
               </h3>
-
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
-
               <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-                {sponsors?.institucion.map((sponsor: SponsorPropsItem, i) => {
-                  return (
-                    <motion.div
-                      key={sponsor.imagePath + "-" + i}
-                      className="flex w-fit justify-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: i * 0.1,
-                        duration: 0.5,
-                        easing: "ease-out",
-                      }}
-                    >
-                      <SponsorLogo
-                        imagePath={sponsor.imagePath}
-                        title={sponsor.title}
-                        height={105}
-                        link={sponsor.link}
-                      />
-                    </motion.div>
-                  );
-                })}
+                {instit.Logos.map((sponsor, i) => (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={getField(sponsor.title, "es")}
+                      height={105}
+                      link={getField(sponsor.link, "es")}
+                    />
+                  </motion.div>
+                ))}
               </div>
             </div>
           )}
-
           {/* MEDIOS */}
-          {sponsors?.medios.length !== 0 && (
+          {medios && medios.Logos.length !== 0 && (
             <div>
               <h3 className="mb-4 text-2xl text-primary">{t("medios")}</h3>
-
               <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
-
               <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-                {sponsors?.medios.map((sponsor: SponsorPropsItem, i) => {
-                  return (
-                    <motion.div
-                      key={sponsor.imagePath + "-" + i}
-                      className="flex w-fit justify-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: i * 0.1,
-                        duration: 0.5,
-                        easing: "ease-out",
-                      }}
-                    >
-                      <SponsorLogo
-                        imagePath={sponsor.imagePath}
-                        title={sponsor.title}
-                        height={115}
-                        link={sponsor.link}
-                      />
-                    </motion.div>
-                  );
-                })}
+                {medios.Logos.map((sponsor, i) => (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={getField(sponsor.title, "es")}
+                      height={115}
+                      link={getField(sponsor.link, "es")}
+                    />
+                  </motion.div>
+                ))}
               </div>
             </div>
           )}

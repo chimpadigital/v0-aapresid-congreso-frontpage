@@ -12,7 +12,7 @@ export default async function DetalleGacetilla({ params }: Props) {
   return (
     <>
       <section
-        className={`relative mx-4 mt-4 flex min-h-[378px] rounded-[20px] bg-cover bg-center px-8 pb-[70px] pt-[140px] md:m-[33px] md:mb-[100px] md:p-[70px]`}
+        className={`relative mx-4 mt-4 flex min-h-[378px] rounded-[20px] bg-cover bg-center px-8 pb-[70px] pt-[140px] md:m-[33px] md:mb-10 md:p-[70px]`}
         style={{
           backgroundImage: `url('/images/gacetilla/circuito-prensa.webp')`,
         }}

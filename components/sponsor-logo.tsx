@@ -11,9 +11,30 @@ export function SponsorLogo({
   height?: number;
   link: string | Record<string, string>;
 }) {
-  const parsedLink = typeof link === "string" ? JSON.parse(link || "{}") : link;
-  const parsedTitle =
-    typeof title === "string" ? JSON.parse(title || "{}") : title;
+  // Si el link es un string que parece un JSON, parsear, si no, devolver como string plano
+  let parsedLink: any = link;
+  if (typeof link === "string") {
+    try {
+      // Si empieza con { y termina con }, intentamos parsear
+      if (link.trim().startsWith("{") && link.trim().endsWith("}")) {
+        parsedLink = JSON.parse(link);
+      }
+    } catch {
+      parsedLink = link;
+    }
+  }
+
+  // Solo parsear si parece un JSON válido
+  let parsedTitle: any = title;
+  if (typeof title === "string") {
+    try {
+      if (title.trim().startsWith("{") && title.trim().endsWith("}")) {
+        parsedTitle = JSON.parse(title);
+      }
+    } catch {
+      parsedTitle = title;
+    }
+  }
 
   const url = parsedLink["es"]?.startsWith("http")
     ? parsedLink["es"]

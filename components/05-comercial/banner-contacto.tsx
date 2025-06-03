@@ -78,7 +78,7 @@ const BannerContacto = () => {
         </div>
 
         <div className="flex flex-1 flex-col items-center justify-center text-center md:items-start md:text-left">
-          <div className="mx-auto w-full md:pt-16">
+          <div className="mx-auto w-full md:w-auto md:pt-16">
             <h2 className="text-3xl font-bold leading-tight tracking-wider text-white md:text-[40px]">
               Contacto
             </h2>
