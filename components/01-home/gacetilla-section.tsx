@@ -44,8 +44,9 @@ export function GacetillasSection() {
               try {
                 const titleObj = JSON.parse(gacetilla.title);
                 const descObj = JSON.parse(gacetilla.excerpt);
-                title = titleObj[locale] || titleObj.es || "";
-                description = descObj[locale] || descObj.es || "";
+                // Mostrar el otro idioma si el campo está vacío
+                title = titleObj[locale] && titleObj[locale].trim() !== "" ? titleObj[locale] : (locale === "en" ? titleObj.es : titleObj.en) || "";
+                description = descObj[locale] && descObj[locale].trim() !== "" ? descObj[locale] : (locale === "en" ? descObj.es : descObj.en) || "";
               } catch {
                 title = gacetilla.title;
                 description = gacetilla.excerpt;

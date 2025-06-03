@@ -1,8 +1,7 @@
 import { GacetillaDetalle } from "@/lib/types";
 import DownloadIcon from "@/components/icons/DownloadIcon";
-import CompartirIcon from "@/components/icons/CompartirIcon";
 import ModalCompartir from "./modal-compartir";
-import "../../styles/detalle-gacetilla-style.css"
+import "../../styles/detalle-gacetilla-style.css";
 interface Props {
   id: string;
   locale: string;
@@ -19,7 +18,13 @@ async function getDetalle(id: string): Promise<GacetillaDetalle | null> {
 function getField(jsonStr: string, lang: string, fallback = "") {
   try {
     const obj = JSON.parse(jsonStr);
-    return obj[lang] || fallback;
+    // Si el idioma pedido existe y no está vacío, lo devolvemos
+    if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+    // Si no, devolvemos el otro idioma si existe y no está vacío
+    const otherLang = lang === "en" ? "es" : "en";
+    if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+    // Si no, devolvemos el fallback
+    return fallback;
   } catch {
     return jsonStr || fallback;
   }
@@ -37,13 +42,17 @@ function formatDate(dateStr: string, locale: string) {
   return `${day} ${month} ${year}`;
 }
 
-export default async function DetalleGacetillaContent({ id, locale }: Props) {
+export default async function DetalleGacetillaContent(props: Props) {
+  // Esperar props.params si es Promise (por compatibilidad con Next.js)
+  const { id, locale } = props;
+
   const detalle = await getDetalle(id);
   if (!detalle) {
     return (
       <div className="py-10 text-center">No se encontró la gacetilla.</div>
     );
   }
+  console.log(detalle);
 
   // Obtener la URL absoluta actual (solo server-side)
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -52,6 +61,15 @@ export default async function DetalleGacetillaContent({ id, locale }: Props) {
   return (
     <section className="">
       <article className="mx-auto max-w-[904px] px-4 py-8">
+        <h1 className="mb-10 text-3xl font-bold text-primary md:mb-[69px] md:text-5xl">
+          {getField(detalle.title, locale)}
+        </h1>
+        <div className="mb-4 w-fit rounded-[5px] bg-[#64B33D40] px-[10px] py-1 text-sm text-primary">
+          {formatDate(detalle.date, locale)}
+        </div>
+        <div className="pb-10 text-2xl tracking-wider text-[#736D6D]">
+          {getField(detalle.excerpt, locale)}
+        </div>
         <figure className="relative mb-8 inline-block w-full md:mb-20">
           <img
             src={detalle.image || "/images/gacetilla/default-image.webp"}
@@ -59,12 +77,6 @@ export default async function DetalleGacetillaContent({ id, locale }: Props) {
             className="mb-6 w-full rounded-[10px] object-contain object-left"
           />
         </figure>
-        <h1 className="mb-10 text-3xl font-bold text-primary md:mb-[69px] md:text-5xl">
-          {getField(detalle.title, locale)}
-        </h1>
-        <div className="mb-4 w-fit rounded-[5px] bg-[#64B33D40] px-[10px] py-1 text-sm text-primary">
-          {formatDate(detalle.date, locale)}
-        </div>
         <div
           className="prose gacetilla-detalle"
           dangerouslySetInnerHTML={{

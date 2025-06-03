@@ -22,7 +22,7 @@ const ListaGacetilla = () => {
   const [currentPage, setCurrentPage] = useState(initialPage);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDate, setSelectedDate] = useState<any>(null);
-  const itemsPerPage = 2;
+  const itemsPerPage = 8;
 
   const [gacetillas, setGacetillas] = useState<GacetillaApiResponse>();
   const [loading, setLoading] = useState(true);
