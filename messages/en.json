@@ -262,6 +262,50 @@
     "apoyan": "Support",
     "organizan": "Organize"
   },
+  "edicion-33": {
+    "hero": {
+      "title1": "Acerca del",
+      "title2": "Congreso"
+    },
+    "intro-text": {
+      "p1": "About the Congress The Aapresid Congress has been connecting innovation, technology, and knowledge for over three decades, aiming to boost increasingly sustainable productive systems. Nowadays, it is an international benchmark event for technicians, researchers, decision-makers, farmers, and leaders from the entire agroindustrial chain in the region.",
+      "p2": "Each edition of the Aapresid Congress assembles the most prominent domestic and international figures to discuss and assess future topics by linking science and production; thus, transforming agriculture, helping mitigate climate change, and supporting innovation."
+    },
+    "stats": {
+      "conferencias": "Lectures ",
+      "dias": "Days",
+      "disertantes": "Speakers",
+      "asistentes": "Attendees"
+    },
+    "contenido": {
+      "p1": "All content conveyed at the Aapresid Congress is thoughtfully curated and produced by interdisciplinary groups consisting of academic and institutional leaders, Aapresid members, and farmers. Using a specific methodology, these groups present the prospective content, organized this year into 7 thematic axes: Learning by Producing, Global Challenges, Innovation & Agtech, Pest Management, Integrated Systems, Sustainable Production Systems, Socio-political Perspectives.",
+      "p2": "Following the great success of last year’s edition, the Aapresid Congress will once again be held in the Autonomous City of Buenos Aires."
+    },
+    "programamos": "We program",
+    "el-futuro": "the future of agriculture",
+    "open-code": {
+      "titulo": "Open Code",
+      "p1": "We are writing the dialog with the future. Each idea, each advance, each conversation occurring at the Aapresid Congress is a line of code in a collective program, which not only solves the problems of today but also foresees the challenges of tomorrow. We live in a world of continuous change. To face such transformation, we realized that it is not enough with just adapt—we need to create. Create new syntaxes, new connections, new answers; because knowledge expands when it is shared, and multiplies when combined.",
+      "p2": "The XXXIII Aapresid Congress opens the doors to innovation. Here, the limits become blurred, and specializations blend together. Each farmer, technician, and visionary involved not only provides questions or answers but also pieces that fit within a bigger system.",
+      "p3": "We are more than witnesses of change; we are the programmers of the future. Every year, the Congress collects and updates, in a single body, the knowledge of a community that makes innovation its lifestyle. It is not only about improving what already exists, but also about consistently imagining and redesigning in order to accompany transformations in the world. Because the future cannot be predicted—it is programmed. And the code we write together is open to everybody. This is the Aapresid Congress. This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+    },
+    "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+  },
+  "informacion-turistica": {
+    "hero-title1": "Información",
+    "hero-title2": "Turística",
+    "del-campo": "Del campo a la ",
+    "title-bold": "ciudad",
+    "subtitle": "Conectá con la Ciudad de Buenos Aires.",
+    "p1": "LUn espacio dónde se cruza la cultura Argentina, la ciudad de Buenos Aires es una ciudad llena espacios turísticos, que además de alojar el Congreso, ofrece la mejor calidad y diversidad de restaurantes, teatros, cines, parques naturales y monumentos históricos. ",
+    "p2": "Dentro de la ciudad podés encontrar: el Teatro Colón; uno de los teatros más prestigiosos del mundo, el Museo Nacional de Bellas Artes, con una vasta colección de arte argentino e internacional, el Jardín Japonés y el Jardín Botánico, lugares para disfrutar de un ambiente natural.",
+    "p3": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio. Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
+    "como-llegar": "¿Cómo llegar a",
+    "evento": " La Rural?",
+    "transporte-publico": "En transporte público, la Línea D del subte es la mejor opción. La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a pocas cuadras del lugar. (Se necesita la tarjeta SUBE).",
+    "colectivo": "Las líneas de **colectivo** que te acercan al predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
+    "tren": "En tren: El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."
+  },
   "footer": {
     "fecha": "August 6th to 8th, 2025",
     "lugar": "La Rural, exhibition venue in Buenos Aires",

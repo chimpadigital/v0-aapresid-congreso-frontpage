@@ -272,15 +272,39 @@
       "p2": "Durante cada edición, el Congreso Aapresid congrega a los más importantes referentes nacionales e internacionales para discutir y poner en agenda los temas del futuro, vinculando ciencia y producción y así transformar nuestra agricultura, ayudando a la mitigación del cambio climático e iluminando los escenarios de la innovación."
     },
     "stats": {
-      "conferencias": "Conferencias en simultáneo",
+      "conferencias": "Conferencias",
       "dias": "Días",
       "disertantes": "Disertantes",
       "asistentes": "Asistentes"
     },
-    "contenido" :{
-       "p1": "El contenido del Congreso Aapresid es elaborado y pensado por grupos interdisciplinarios conformados por referentes académicos, institucionales, socios Aapresid y productores que a través de una metodología específica logran posicionar contenido prospectivo y que este año se reunirán en 7 ejes de: Aprender Produciendo, Desafíos Globales, Innovación y Agtech, Manejo de Plagas, Sistemas Integrados, Sistemas Productivos Sustentables, Perspectivas Sociopolíticas.",
+    "contenido": {
+      "p1": "El contenido del Congreso Aapresid es elaborado y pensado por grupos interdisciplinarios conformados por referentes académicos, institucionales, socios Aapresid y productores que a través de una metodología específica logran posicionar contenido prospectivo y que este año se reunirán en 7 ejes de: Aprender Produciendo, Desafíos Globales, Innovación y Agtech, Manejo de Plagas, Sistemas Integrados, Sistemas Productivos Sustentables, Perspectivas Sociopolíticas.",
       "p2": "Luego del gran éxito de la última edición, el Congreso Aapresid se llevará a cabo nuevamente en la Ciudad Autónoma de Buenos Aires."
-    }
+    },
+    "programamos": "Programamos",
+    "el-futuro": "el futuro del agro",
+    "open-code": {
+      "titulo": "Código Abierto",
+      "p1": "Estamos escribiendo el diálogo con el futuro. Cada idea, cada avance, cada conversación en el Congreso Aapresid es una línea de código en un programa colectivo. Uno que no solo resuelve los problemas de hoy, sino que anticipa los desafíos de mañana. Vivimos en un mundo que no deja de cambiar. Y frente a esa transformación, entendemos que no basta con adaptarse: hay que crear. Crear nuevas sintaxis, nuevas conexiones, nuevas respuestas. Porque el conocimiento crece cuando se comparte y se multiplica cuando se conecta.",
+      "p2": "En el XXXIII Congreso Aapresid, abrimos las puertas de la innovación. Aquí, los límites se diluyen y las especializaciones se encuentran. Cada productor, técnico, investigador y visionario que participa no trae solo preguntas o respuestas: trae piezas que encajan en un sistema mayor.",
+      "p3": "Somos más que testigos del cambio: somos programadores del futuro. Cada año, este Congreso compila y actualiza en un solo cuerpo los saberes de una comunidad que hace de la innovación su modo de vida. No se trata solo de mejorar lo que ya existe, sino de imaginar y rediseñar a cada momento para acompañar las transformaciones del mundo. Porque el futuro no se predice: se programa. Y el código que escribimos juntos está abierto para todos. Este es el Congreso Aapresid. Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades."
+    },
+    "texto-final": "Este es el **Congreso Aapresid.** Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades."
+  },
+  "informacion-turistica": {
+    "hero-title1": "Información",
+    "hero-title2": "Turística",
+    "del-campo": "Del campo a la ",
+    "title-bold": "ciudad",
+    "subtitle": "Conectá con la Ciudad de Buenos Aires.",
+    "p1": "LUn espacio dónde se cruza la cultura Argentina, la ciudad de Buenos Aires es una ciudad llena espacios turísticos, que además de alojar el Congreso, ofrece la mejor calidad y diversidad de restaurantes, teatros, cines, parques naturales y monumentos históricos. ",
+    "p2": "Dentro de la ciudad podés encontrar: el Teatro Colón; uno de los teatros más prestigiosos del mundo, el Museo Nacional de Bellas Artes, con una vasta colección de arte argentino e internacional, el Jardín Japonés y el Jardín Botánico, lugares para disfrutar de un ambiente natural.",
+    "p3": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio. Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
+    "como-llegar": "¿Cómo llegar a",
+    "evento": " La Rural?",
+    "transporte-publico": "En transporte público, la Línea D del subte es la mejor opción. La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a pocas cuadras del lugar. (Se necesita la tarjeta SUBE).",
+    "colectivo": "Las líneas de **colectivo** que te acercan al predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
+    "tren": "En tren: El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."
   },
   "footer": {
     "fecha": "6 al 8 de agosto",
