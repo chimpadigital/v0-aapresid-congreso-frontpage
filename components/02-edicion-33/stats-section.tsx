@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
 
 interface StatItemProps {
@@ -102,21 +103,23 @@ function StatItem({
 }
 
 export function StatsSection() {
+  const t = useTranslations("edicion-33.stats");
+
   const stats = [
     {
-      title: "Conferencias en simultáneo",
-      value: 50,
+      title: t("conferencias"),
+      value: 160,
     },
     {
-      title: "Días",
+      title: t("dias"),
       value: 3,
     },
     {
-      title: "Disertantes",
+      title: t("disertantes"),
       value: 450,
     },
     {
-      title: "Asistentes",
+      title: t("asistentes"),
       value: 12,
       suffix: " mil",
       prefix: "+",
@@ -124,7 +127,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="bg-white px-4 pt-12 pb-7 md:px-8">
+    <section className="bg-white px-4 pb-7 pt-12 md:px-8">
       <div className="mx-auto max-w-[1415px]">
         <div className="flex flex-wrap justify-center gap-[33px]">
           {stats.map((stat, index) => (

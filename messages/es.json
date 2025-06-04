@@ -1,7 +1,14 @@
 {
   "navbar": {
     "inscripciones": "Inscripciones",
+    "inicio": "Inicio",
     "acerca_de": "Acerca de",
+    "edicion_33": "Edición N° 33",
+    "nos_acompanian": "Nos acompañan",
+    "FAQs": "Preguntas frecuentes",
+    "prensa": "Prensa",
+    "gacetilla": "Gacetilla",
+    "informacion_turistica": "Información turística",
     "que_es_el_congreso": "¿Qué es el Congreso?",
     "historia": "Historia",
     "ediciones_anteriores": "Ediciones anteriores",
@@ -9,7 +16,6 @@
     "programa": "Programa",
     "oradores": "Oradores",
     "ejes_tematicos": "Ejes temáticos",
-    "prensa": "Prensa",
     "noticias": "Noticias",
     "contacto": "Contacto",
     "comercial": "Comercial",
@@ -106,19 +112,23 @@
   },
   "commercial": {
     "forma-parte": "Formá parte de la",
-    "de-la-33": "33° edición del ",
+    "de-la-33": "33° edición del Congreso",
     "congreso": "Congreso",
-    "descripcion": "Descargá el brochure comercial y conocé las oportunidades que ofrecemos.",
+    "descripcion1": "Descargá el brochure comercial y conocé",
+    "descripcion2": "las oportunidades que ofrecemos.",
     "descarga": "Descargar carpeta comercial"
   },
+    "contacto": {
+    "contacto": "Contacto",
+    "area-comercial": "Área comercial"
+  },
   "gacetilla": {
-    "titulo1": "Gacetilla ",
-    "titulo2": "de Prensa",
+    "titulo1": "Gacetillas",
     "ver-todas": "Ver todas las gacetillas "
   },
   "faq": {
-    "titulo1": "Preguntas",
-    "titulo2": "Frecuentes",
+    "preguntas": "Preguntas",
+    "frecuentes": "Frecuentes",
     "items": [
       {
         "pregunta": "¿Qué es Aapresid?",
@@ -266,8 +276,8 @@
   },
   "edicion-33": {
     "hero": {
-      "title1": "Acerca del",
-      "title2": "Congreso"
+      "acerca": "Acerca del",
+      "congreso": "Congreso"
     },
     "intro-text": {
       "p1": "El Congreso Aapresid lleva más de tres décadas conectando innovación, tecnología y conocimiento con el propósito de impulsar sistemas productivos cada vez más sustentables, siendo hoy en día un evento de referencia internacional para técnicos, investigadores, decisores, productores y referentes de toda la cadena agroindustrial de la región.",
@@ -287,34 +297,45 @@
     "el-futuro": "el futuro del agro",
     "open-code": {
       "titulo": "Código Abierto",
-      "p1": "Estamos escribiendo el diálogo con el futuro. Cada idea, cada avance, cada conversación en el Congreso Aapresid es una línea de código en un programa colectivo. Uno que no solo resuelve los problemas de hoy, sino que anticipa los desafíos de mañana. Vivimos en un mundo que no deja de cambiar. Y frente a esa transformación, entendemos que no basta con adaptarse: hay que crear. Crear nuevas sintaxis, nuevas conexiones, nuevas respuestas. Porque el conocimiento crece cuando se comparte y se multiplica cuando se conecta.",
-      "p2": "En el XXXIII Congreso Aapresid, abrimos las puertas de la innovación. Aquí, los límites se diluyen y las especializaciones se encuentran. Cada productor, técnico, investigador y visionario que participa no trae solo preguntas o respuestas: trae piezas que encajan en un sistema mayor.",
-      "p3": "Somos más que testigos del cambio: somos programadores del futuro. Cada año, este Congreso compila y actualiza en un solo cuerpo los saberes de una comunidad que hace de la innovación su modo de vida. No se trata solo de mejorar lo que ya existe, sino de imaginar y rediseñar a cada momento para acompañar las transformaciones del mundo. Porque el futuro no se predice: se programa. Y el código que escribimos juntos está abierto para todos. Este es el Congreso Aapresid. Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades."
+      "p1": "Estamos escribiendo el diálogo con el futuro.",
+      "p2": "Cada idea, cada avance, cada conversación en el Congreso Aapresid es una línea de código en un programa colectivo. Uno que no solo resuelve los problemas de hoy, sino que anticipa los desafíos de mañana.",
+      "p3": "Vivimos en un mundo que no deja de cambiar. Y frente a esa transformación, entendemos que no basta con adaptarse: hay que crear. Crear nuevas sintaxis, nuevas conexiones, nuevas respuestas. Porque el conocimiento crece cuando se comparte y se multiplica cuando se conecta.",
+      "p4": "En el XXXIII Congreso Aapresid, abrimos las puertas de la innovación. Aquí, los límites se diluyen y las especializaciones se encuentran. ",
+      "p5": "Cada productor, técnico, investigador y visionario que participa no trae solo preguntas o respuestas: trae piezas que encajan en un sistema mayor.",
+      "p6": "Somos más que testigos del cambio: somos programadores del futuro. Cada año, este Congreso compila y actualiza en un solo cuerpo los saberes de una comunidad que hace de la innovación su modo de vida. No se trata solo de mejorar lo que ya existe, sino de imaginar y rediseñar a cada momento para acompañar las transformaciones del mundo. Porque el futuro no se predice: se programa. Y el código que escribimos juntos está abierto para todos."
     },
     "texto-final": "Este es el **Congreso Aapresid.** Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades."
   },
   "nos-acompanian": {
-    "hero-title1": "Nos",
-    "hero-title2": "acompañan"
+    "nos": "Nos",
+    "acompanian": "acompañan"
   },
   "gacetilla-page": {
     "hero-title": "Prensa",
     "title": "Gacetillas",
     "palabras": "Palabras claves",
-    "ver-todas": "Día",
-    "Buscar": "Buscar"
+    "día": "Día",
+    "buscar": "Buscar",
+    "medios": "Medios",
+    "descargar-gacetilla": "Descargar gacetilla",
+    "compartir": "Compartir",
+    "copiar": "Copiar",
+    "copiado": "Copiado!",
+    "similares": "Gacetillas similares!"
   },
   "informacion-turistica": {
-    "hero-title1": "Información",
-    "hero-title2": "Turística",
-    "del-campo": "Del campo a la ",
-    "title-bold": "ciudad",
-    "subtitle": "Conectá con la Ciudad de Buenos Aires.",
+    "informacion": "Información",
+    "turistica": "Turística",
+    "la-ciudad": "La ciudad, un ",
+    "un-codigo": "código abierto",
+    "conecta-bs-as": "Conectá con la Ciudad de Buenos Aires.",
     "p1": "Un espacio dónde se cruza la cultura Argentina, la ciudad de Buenos Aires es una ciudad llena espacios turísticos, que además de alojar el Congreso, ofrece la mejor calidad y diversidad de restaurantes, teatros, cines, parques naturales y monumentos históricos. ",
     "p2": "Dentro de la ciudad podés encontrar: el Teatro Colón; uno de los teatros más prestigiosos del mundo, el Museo Nacional de Bellas Artes, con una vasta colección de arte argentino e internacional, el Jardín Japonés y el Jardín Botánico, lugares para disfrutar de un ambiente natural.",
-    "p3": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio. Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
-    "como-llegar": "¿Cómo llegar a",
-    "evento": " La Rural?",
+    "p3": "En el centro, el distinguido Obelisco, símbolo de la ciudad, hasta la famosa Plaza de Mayo, donde se pueden observar importantes edificios históricos como la Casa Rosada. ",
+    "p4": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio.",
+    "p5": "Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
+    "como-llegar": "¿Cómo llegar al",
+    "evento": "Congreso Aapresid?",
     "transporte-publico": "En transporte público, la Línea D del subte es la mejor opción. La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a pocas cuadras del lugar. (Se necesita la tarjeta SUBE).",
     "colectivo": "Las líneas de **colectivo** que te acercan al predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
     "tren": "En tren: El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."

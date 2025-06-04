@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function DelCampoCiudadSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -23,47 +24,32 @@ export function DelCampoCiudadSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const t = useTranslations("informacion-turistica");
+  
   return (
-    <section ref={sectionRef} className="bg-white px-4 pb-16 pt-10 md:pt-[75px] md:px-8">
+    <section
+      ref={sectionRef}
+      className="bg-white px-4 pb-16 pt-10 md:px-8 md:pt-[75px]"
+    >
       <div className="mx-auto max-w-[1230px]">
         <div className="flex flex-col gap-4 lg:flex-row lg:gap-16">
           {/* Columna izquierda - Texto */}
           <div className="flex-[2]">
             <h2 className="mb-10 mt-8 text-5xl font-normal text-primary md:text-5xl">
-              Del campo a la <span className="font-medium">ciudad</span>
+              {t("la-ciudad")}{" "}
+              <span className="font-medium">{t("un-codigo")}</span>
             </h2>
 
             <h3 className="mb-10 text-xl font-medium text-secondary">
-              Conectá con la Ciudad de Buenos Aires.
+              {t("conecta-bs-as")}
             </h3>
 
-            <div className="text-paragraph max-w-[62ch] text-lg tracking-wider">
-              <p className="mb-8">
-                La ciudad de Buenos Aires es una ciudad llena de cultura y
-                espacios turísticos, que además de alojar el Congreso, ofrece
-                una basta cantidad de restaurantes, teatros, cines, parques
-                naturales y monumentos históricos.
-              </p>
-
-              <p className="mb-8">
-                Dentro de la ciudad podés encontrar: el Teatro Colón; uno de los
-                teatros más prestigiosos del mundo, el Museo Nacional de Bellas
-                Artes, con una vasta colección de arte argentino e
-                internacional, el Jardín Japonés y el Jardín Botánico, lugares
-                para disfrutar de un ambiente natural.
-              </p>
-
-              <p>
-                Además, por la Avenida Corrientes, podés disfrutar de la
-                gastronomía de las mejores pizzerías del país, como Guerrin y
-                Las Cuartetas.
-              </p>
-
-              <p>
-                Para salir a pasear, los barrios La Boca y Caminito, únicos por
-                sus colores y arquitectura, son especiales para recorrer en una
-                caminata.
-              </p>
+            <div className="max-w-[62ch] text-lg tracking-wider text-paragraph">
+              <p className="mb-8">{t("p1")}</p>
+              <p className="mb-8">{t("p2")}</p>
+              <p>{t("p3")}</p>
+              <p>{t("p4")}</p>
+              <p>{t("p5")}</p>
             </div>
           </div>
 
@@ -125,7 +111,7 @@ export function DelCampoCiudadSection() {
 
               {/* Hexágono verde claro */}
               <motion.div
-                className="absolute left-0 md:-left-8 top-14 z-10 h-[70px] w-[70px]"
+                className="absolute left-0 top-14 z-10 h-[70px] w-[70px] md:-left-8"
                 style={{
                   y: scrollY * 0.08,
                 }}
@@ -142,7 +128,7 @@ export function DelCampoCiudadSection() {
 
               {/* Hexágono verde claro */}
               <motion.div
-                className="absolute right-0 bottom-32 md:-right-12 md:bottom-32 z-10 h-[50px] w-[50px]"
+                className="absolute bottom-32 right-0 z-10 h-[50px] w-[50px] md:-right-12 md:bottom-32"
                 style={{
                   y: scrollY * 0.15,
                 }}
@@ -159,7 +145,7 @@ export function DelCampoCiudadSection() {
 
               {/* Hexágono verde claro */}
               <motion.div
-                className="absolute bottom-14 -right-4 z-10 h-[175px] w-[175px]"
+                className="absolute -right-4 bottom-14 z-10 h-[175px] w-[175px]"
                 style={{
                   y: scrollY * 0.03,
                 }}

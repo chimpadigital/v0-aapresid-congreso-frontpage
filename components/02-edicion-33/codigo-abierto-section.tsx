@@ -3,6 +3,7 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function CodigoAbiertoSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -23,6 +24,8 @@ export function CodigoAbiertoSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const t = useTranslations("edicion-33.open-code");
+
   return (
     <section
       ref={sectionRef}
@@ -35,43 +38,25 @@ export function CodigoAbiertoSection() {
           {/* Columna de texto */}
           <article className="max-w-[63ch] leading-tight break-words text-lg font-light text-white">
             <h2 className="md:text-5xl font-base mb-6 md:mb-[59px] text-4xl text-white tracking-wider ">
-              “Código Abierto”
+              “{t("titulo")}”
             </h2>
             <p className="font-gotham font-light">
-              Estamos escribiendo el diálogo con el futuro.
+              {t("p1")}
             </p>
             <p className="font-gotham font-light">
-              Cada idea, cada avance, cada conversación en el Congreso Aapresid
-              es una línea de código en un programa colectivo. Uno que no solo
-              resuelve los problemas de hoy, sino que anticipa los desafíos de
-              mañana.
+              {t("p2")}
             </p>
             <p className="font-gotham font-light mb-16">
-              Vivimos en un mundo que no deja de cambiar. Y frente a esa
-              transformación, entendemos que no basta con adaptarse: hay que
-              crear. Crear nuevas sintaxis, nuevas conexiones, nuevas
-              respuestas. Porque el conocimiento crece cuando se comparte y se
-              multiplica cuando se conecta.
+              {t("p3")}
             </p>
             <p className="font-gotham font-light">
-              En el XXXIII Congreso Aapresid, abrimos las puertas de la
-              innovación. Aquí, los límites se diluyen y las especializaciones
-              se encuentran.
+              {t("p4")}
             </p>
             <p className="font-gotham font-light">
-              Cada productor, técnico, investigador y visionario que participa
-              no trae solo preguntas o respuestas: trae piezas que encajan en un
-              sistema mayor.
+              {t("p5")}
             </p>
             <p className="font-gotham font-light">
-              Somos más que testigos del cambio: somos programadores del futuro.
-              Cada año, este Congreso compila y actualiza en un solo cuerpo los
-              saberes de una comunidad que hace de la innovación su modo de
-              vida. No se trata solo de mejorar lo que ya existe, sino de
-              imaginar y rediseñar a cada momento para acompañar las
-              transformaciones del mundo. Porque el futuro no se predice: se
-              programa. Y el código que escribimos juntos está abierto para
-              todos.
+              {t("p6")}
             </p>
           </article>
 

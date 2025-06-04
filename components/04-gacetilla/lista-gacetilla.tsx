@@ -8,7 +8,7 @@ import CloseIcon from "../icons/CloseIcon";
 import { Paginacion } from "./paginacion";
 import { GacetillaApiItem, GacetillaApiResponse } from "@/lib/types";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { es, enUS } from "date-fns/locale";
 
 registerLocale("es", es);
@@ -83,7 +83,7 @@ const ListaGacetilla = () => {
     setAppliedSearchTerm(search);
     if (date) {
       // Crear la fecha como local (no UTC) para que el input muestre el día correcto
-      const [year, month, day] = date.split('-').map(Number);
+      const [year, month, day] = date.split("-").map(Number);
       const parsedDate = new Date(year, month - 1, day);
       setSelectedDate(parsedDate);
       setAppliedDate(parsedDate);
@@ -111,7 +111,7 @@ const ListaGacetilla = () => {
     window.scrollTo({ top: 100, behavior: "smooth" });
   };
 
-  const ExampleCustomInput = forwardRef<
+  const CustomButtonCalendar = forwardRef<
     HTMLButtonElement,
     { value: string; onClick: () => void; className: string }
   >(({ value, onClick, className }, ref) => (
@@ -161,14 +161,19 @@ const ListaGacetilla = () => {
     setCurrentPage(1);
   }
 
+  const t = useTranslations("gacetilla-page");
+
   return (
     <section className="mx-auto max-w-[1390px] px-4 pt-10 md:px-[33px] md:pt-0 2xl:px-0">
-      <h2 className="mb-8 text-5xl tracking-wide text-primary">Gacetillas</h2>
-      <form className="mb-[91px] flex flex-col gap-[30px] md:flex-row" onSubmit={handleSearchClick}>
+      <h2 className="mb-8 text-5xl tracking-wide text-primary">{t("title")}</h2>
+      <form
+        className="mb-[91px] flex flex-col gap-[30px] md:flex-row"
+        onSubmit={handleSearchClick}
+      >
         <label className="border-b-px mt-auto flex h-fit w-full max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">
           <LupaIcon />
           <input
-            placeholder="Palabras claves"
+            placeholder={t("palabras")}
             className="w-full px-2 py-1 text-lg tracking-wider placeholder-primary focus-visible:outline-none"
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
@@ -179,21 +184,30 @@ const ListaGacetilla = () => {
 
         <DatePicker
           selected={selectedDate}
-          onChange={date => setSelectedDate(date as Date | null)}
+          onChange={(date) => setSelectedDate(date as Date | null)}
           dateFormat={locale === "en" ? "yyyy/MM/dd" : "dd/MM/yyyy"}
-          placeholderText="Día"
+          placeholderText={t("día")}
           locale={locale}
           customInput={
-            <ExampleCustomInput
-              value={selectedDate ? selectedDate.toLocaleDateString(locale === "en" ? "en-US" : "es-AR") : ""}
+            <CustomButtonCalendar
+              value={
+                selectedDate
+                  ? selectedDate.toLocaleDateString(
+                      locale === "en" ? "en-US" : "es-AR",
+                    )
+                  : ""
+              }
               onClick={() => {}}
               className="flex w-[min(100%,304px)] items-center gap-3 border-b border-b-primary py-2 focus-within:border-b-accent"
             />
           }
         />
 
-        <button type="submit" className="relative top-2 z-[1] flex w-fit items-center gap-[10px] overflow-hidden rounded-full bg-accent px-[40px] py-[14px] text-lg font-light tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]">
-          Buscar
+        <button
+          type="submit"
+          className="relative top-2 z-[1] flex w-fit items-center gap-[10px] overflow-hidden rounded-full bg-accent px-[40px] py-[14px] text-lg font-light tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]"
+        >
+          {t("buscar")}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15"
@@ -221,7 +235,8 @@ const ListaGacetilla = () => {
             let description = "";
             try {
               title = JSON.parse(gacetilla.title).es || gacetilla.title;
-              description = JSON.parse(gacetilla.excerpt).es || gacetilla.excerpt;
+              description =
+                JSON.parse(gacetilla.excerpt).es || gacetilla.excerpt;
             } catch {
               title = gacetilla.title;
               description = gacetilla.excerpt;
@@ -233,7 +248,7 @@ const ListaGacetilla = () => {
                 title={title}
                 description={description}
                 imageUrl={gacetilla.image}
-                href={ "gacetilla/" + gacetilla.id}
+                href={"gacetilla/" + gacetilla.id}
               />
             );
           })}

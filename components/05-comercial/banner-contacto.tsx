@@ -7,11 +7,12 @@ import React from "react";
 import ImgContacto from "@/public/images/comercial/contacto.webp";
 import WhatsappIcon from "../icons/WhatsappIcon";
 import Emailicon from "../icons/Emailicon";
+import { useTranslations } from "next-intl";
 
 const BannerContacto = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
-
+  const t = useTranslations("contacto");
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
@@ -80,17 +81,17 @@ const BannerContacto = () => {
         <div className="flex flex-1 flex-col items-center justify-center text-center md:items-start md:text-left">
           <div className="mx-auto w-full md:w-auto md:pt-16">
             <h2 className="text-3xl font-bold leading-tight tracking-wider text-white md:text-[40px]">
-              Contacto
+              {t("contacto")}
             </h2>
             <h3 className="mb-[64px] text-3xl tracking-wider text-white md:text-[40px]">
-              Área comercial{" "}
+              {t("area-comercial")}{" "}
             </h3>
             <div className="mb-[46px]">
               <div className="mb-3 flex items-center gap-3 tracking-widest text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="mailto:troiano@aapresid.org.ar"
                     className="hover:text-accent"
@@ -103,7 +104,7 @@ const BannerContacto = () => {
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="https://wa.me/5493416018111"
                     target="_blank"
@@ -121,7 +122,7 @@ const BannerContacto = () => {
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="mailto:ventas@exponenciar.com.ar"
                     className="hover:text-accent"
@@ -134,7 +135,7 @@ const BannerContacto = () => {
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="https://wa.me/5491158442945"
                     target="_blank"

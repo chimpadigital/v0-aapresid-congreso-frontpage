@@ -2,18 +2,16 @@
 import { mapStyles } from "@/lib/map-style";
 import {
   AdvancedMarker,
-  AdvancedMarkerAnchorPoint,
-  AdvancedMarkerProps,
   APIProvider,
-  InfoWindow,
   Map,
-  Pin,
-  useAdvancedMarkerRef,
-  CollisionBehavior,
 } from "@vis.gl/react-google-maps";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { RichText } from "../rich-text";
 
 export function ComoLlegarSection() {
+  const t = useTranslations("informacion-turistica");
+
   return (
     <section data-lenis-prevent className="bg-white px-4 pt-[100px] md:px-8">
       <div className="mx-auto max-w-[1415px]">
@@ -21,29 +19,19 @@ export function ComoLlegarSection() {
           {/* Panel verde izquierdo */}
           <div className="bg-accent bg-[url('/images/informacion-turistica/circuito-transparente.png')] bg-cover bg-center bg-no-repeat p-8 text-white lg:w-max lg:px-14 lg:py-40">
             <h2 className="mb-8 text-3xl font-normal leading-none md:text-[40px]">
-              ¿Cómo llegar
-              <br />
-              al <span className="font-bold">Congreso Aapresid</span>?
+              {t("como-llegar")}
+              <span className="font-bold"> {t("evento")}</span>
             </h2>
 
             <div className="w-auto max-w-full space-y-6 tracking-wider text-white lg:w-max lg:max-w-[46ch]">
               <p className="text-base leading-tight">
-                En transporte público, la Línea D del subte es la mejor opción.
-                La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a
-                pocas cuadras del lugar. (Se necesita la tarjeta SUBE).
+                {t("transporte-publico")}
               </p>
-
-              <p className="text-base leading-tight">
-                Las líneas de <span className="font-medium">colectivo</span > que te acercan al
-                predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59,
-                60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.
-              </p>
-
-              <p className="text-base leading-tight">
-                En <span className="font-medium">tren</span >: El tren San Martín te deja en la
-                estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5
-                cuadras del predio.
-              </p>
+              <RichText
+                text={t("colectivo")}
+                className="text-base leading-tight"
+              />
+              <RichText text={t("tren")} className="text-base leading-tight" />
             </div>
           </div>
 
