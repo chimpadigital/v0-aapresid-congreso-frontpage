@@ -11,7 +11,7 @@ const HeroGacetilla = async ({ showTitle = true }) => {
         backgroundImage: `url('/images/gacetilla/circuito-prensa.webp')`,
       }}
     >
-      <div className="mx-auto w-full max-w-7xl md:pl-5">
+      <div className="mx-auto w-full max-w-7xl ">
         <BackButton />
 
         {/* Título */}

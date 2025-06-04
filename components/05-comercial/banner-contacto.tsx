@@ -91,7 +91,7 @@ const BannerContacto = () => {
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="mailto:troiano@aapresid.org.ar"
                     className="hover:text-accent"
@@ -104,7 +104,7 @@ const BannerContacto = () => {
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="https://wa.me/5493416018111"
                     target="_blank"
@@ -122,7 +122,7 @@ const BannerContacto = () => {
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="mailto:ventas@exponenciar.com.ar"
                     className="hover:text-accent"
@@ -135,7 +135,7 @@ const BannerContacto = () => {
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-2xl">
+                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
                   <a
                     href="https://wa.me/5491158442945"
                     target="_blank"

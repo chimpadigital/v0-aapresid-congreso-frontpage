@@ -1,11 +1,12 @@
+"use client"
 import React from "react";
 import DownloadIcon from "../icons/DownloadIcon";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-const DescargaComercialV2 = async () => {
-  const t = await getTranslations("commercial");
+const DescargaComercialV2 =  () => {
+  const t = useTranslations("commercial");
 
   return (
     <section className="relative mx-4 mt-6 overflow-hidden rounded-[28px] bg-[url('/images/comercial/bg-formaparte.webp')] bg-cover bg-left bg-no-repeat md:mx-[33px] md:mt-0 md:bg-center">
@@ -18,15 +19,14 @@ const DescargaComercialV2 = async () => {
             <span className="font-bold">{t("de-la-33")}</span>{" "}
           </h2>
           <p className="mb-[28px] mt-[20px] text-xl tracking-wider text-primary">
-            {t("descripcion1")}
-            <br />
+            {t("descripcion1")} {' '}
             {t("descripcion2")}
           </p>
           <a
             href="/TARIFARIO_CONGRESO_2025.pdf"
             download
             target="_blank"
-            className="relative z-[1] flex w-fit items-center gap-3 overflow-hidden rounded-full bg-accent fill-white px-[30px] py-[15.5px] text-lg text-[#fff] transition-all duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]"
+            className="relative z-[1] flex w-fit items-center gap-3 overflow-hidden rounded-full bg-accent fill-white px-[30px] py-[15.5px] md:text-lg text-[#fff] transition-all duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]"
           >
             <span>{t("descarga")}</span>
             <DownloadIcon />
