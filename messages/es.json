@@ -97,7 +97,7 @@
     "title1": "Disertantes ",
     "title2": "destacados",
     "conoce_los_oradores": "Ver todos los disertantes",
-    "ver-cronograma": "Cronograma (acceso al cronograma)"
+    "ver-cronograma": "Cronograma"
   },
   "charlas": {
     "title1": "Charlas ",
@@ -105,8 +105,9 @@
     "ver-cronograma": "Ver cronograma completo"
   },
   "commercial": {
-    "titulo": "Formá parte de la",
-    "congreso": "33° edición del Congreso",
+    "forma-parte": "Formá parte de la",
+    "de-la-33": "33° edición del ",
+    "congreso": "Congreso",
     "descripcion": "Descargá el brochure comercial y conocé las oportunidades que ofrecemos.",
     "descarga": "Descargar carpeta comercial"
   },
@@ -197,7 +198,7 @@
       {
         "pregunta": "¿Hasta cuándo tengo tiempo para inscribirme al Congreso?",
         "respuesta": [
-          "Hay tiempo de inscripción online hasta el último día del evento, Viernes 8 de Agosto."
+          "Hay tiempo de inscripción online hasta el último día del evento, Viernes 8 de Agosto. Le recomendamos igualmente inscribirse hasta el **Lunes 4 de Agosto** por cuestiones operativas del sistema de inscripciones que facilitarán su ingreso al evento.  "
         ]
       },
       {
@@ -249,7 +250,8 @@
           "Puede comunicarse con nosotros a través del siguiente mail: colalongo@aapresid.org.ar O en caso de hablar en inglés, comunicarse a prospectiva@aapresid.org.ar"
         ]
       }
-    ]
+    ],
+    "mas-preguntas": "Ver todas las gacetillas"
   },
   "sponsors": {
     "title": "Nos acompañan",
@@ -291,13 +293,24 @@
     },
     "texto-final": "Este es el **Congreso Aapresid.** Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades."
   },
+  "nos-acompanian": {
+    "hero-title1": "Nos",
+    "hero-title2": "acompañan"
+  },
+  "gacetilla-page": {
+    "hero-title": "Prensa",
+    "title": "Gacetillas",
+    "palabras": "Palabras claves",
+    "ver-todas": "Día",
+    "Buscar": "Buscar"
+  },
   "informacion-turistica": {
     "hero-title1": "Información",
     "hero-title2": "Turística",
     "del-campo": "Del campo a la ",
     "title-bold": "ciudad",
     "subtitle": "Conectá con la Ciudad de Buenos Aires.",
-    "p1": "LUn espacio dónde se cruza la cultura Argentina, la ciudad de Buenos Aires es una ciudad llena espacios turísticos, que además de alojar el Congreso, ofrece la mejor calidad y diversidad de restaurantes, teatros, cines, parques naturales y monumentos históricos. ",
+    "p1": "Un espacio dónde se cruza la cultura Argentina, la ciudad de Buenos Aires es una ciudad llena espacios turísticos, que además de alojar el Congreso, ofrece la mejor calidad y diversidad de restaurantes, teatros, cines, parques naturales y monumentos históricos. ",
     "p2": "Dentro de la ciudad podés encontrar: el Teatro Colón; uno de los teatros más prestigiosos del mundo, el Museo Nacional de Bellas Artes, con una vasta colección de arte argentino e internacional, el Jardín Japonés y el Jardín Botánico, lugares para disfrutar de un ambiente natural.",
     "p3": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio. Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
     "como-llegar": "¿Cómo llegar a",

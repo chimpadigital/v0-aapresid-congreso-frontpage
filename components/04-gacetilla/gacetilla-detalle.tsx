@@ -1,7 +1,7 @@
 import { GacetillaDetalle } from "@/lib/types";
 import DownloadIcon from "@/components/icons/DownloadIcon";
 import ModalCompartir from "./modal-compartir";
-import "../../styles/detalle-gacetilla-style.css";
+
 interface Props {
   id: string;
   locale: string;
@@ -81,13 +81,12 @@ export default async function DetalleGacetillaContent(props: Props) {
           dangerouslySetInnerHTML={{
             __html:
               (locale === "en"
-                ? (detalle.content_en && detalle.content_en.trim() !== ""
-                    ? detalle.content_en
-                    : detalle.content_es)
-                : (detalle.content_es && detalle.content_es.trim() !== ""
-                    ? detalle.content_es
-                    : detalle.content_en)
-              ) || getField(detalle.excerpt, locale),
+                ? detalle.content_en && detalle.content_en.trim() !== ""
+                  ? detalle.content_en
+                  : detalle.content_es
+                : detalle.content_es && detalle.content_es.trim() !== ""
+                  ? detalle.content_es
+                  : detalle.content_en) || getField(detalle.excerpt, locale),
           }}
         />
       </article>
@@ -96,7 +95,8 @@ export default async function DetalleGacetillaContent(props: Props) {
           href={detalle.file || "#"}
           download
           target="_blank"
-          className="relative z-[1] flex w-[min(235px,100%)] items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white fill-primary px-[15px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]"
+          // className="relative z-[1] flex w-full items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white fill-primary px-[15px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[160%] before:top-[600%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[5] md:w-[min(235px,100%)]"
+          className="relative z-[1] flex w-full items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white px-[30px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-[min(235px,100%)] md:before:-left-[145%] md:before:top-[160%] hover:text-white md:hover:before:scale-[3]"
         >
           <span>Descargar gacetilla</span>
           <DownloadIcon />

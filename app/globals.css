@@ -194,6 +194,19 @@ body {
   @apply font-sans;
 }
 
+.gacetilla-detalle,
+.gacetilla-detalle p,
+.gacetilla-detalle i,
+.gacetilla-detalle span {
+  font-family: Owners, Arial, Helvetica, sans-serif !important;
+  color: #736D6D !important;
+  letter-spacing: .05em;
+}
+
+.gacetilla-detalle a {
+  text-decoration: underline;
+}
+
 
 .gacetilla-detalle h1,
 .gacetilla-detalle h2,
@@ -202,7 +215,8 @@ body {
 .gacetilla-detalle h5,
 .gacetilla-detalle h6 {
   /* Tailwind: text-primary */
-  @apply text-primary font-medium font-sans;
+  font-family: Owners, Arial, Helvetica, sans-serif !important;
+  color: #736D6D !important;
 }
 
 .gacetilla-detalle h1 {
@@ -211,27 +225,27 @@ body {
 }
 
 .gacetilla-detalle h2 {
-  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+
   @apply text-2xl mb-4 text-primary;
 }
 
 .gacetilla-detalle h3 {
-  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+
   @apply text-xl mb-4 text-primary;
 }
 
 .gacetilla-detalle h4 {
-  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+
   @apply text-lg mb-4 text-primary;
 }
 
 .gacetilla-detalle h5 {
-  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+
   @apply text-base mb-4 text-primary;
 }
 
 .gacetilla-detalle h6 {
-  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+
   @apply text-sm mb-4 text-primary;
 }
 

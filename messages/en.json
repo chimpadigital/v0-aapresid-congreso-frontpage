@@ -105,13 +105,14 @@
     "ver-cronograma": "See full schedule"
   },
   "commercial": {
-    "titulo": "Join the",
-    "congreso": "33° edition of the Congress",
+    "forma-parte": "Join the",
+    "de-la-33": "33° edition of the ",
+    "congreso": "Congress",
     "descripcion": "Download the commercial brochure and explore the options we are offering.",
     "descarga": "Download commercial folder"
   },
   "gacetilla": {
-    "titulo1": "Gacetilla ",
+    "titulo1": "Gacetillas ",
     "titulo2": "de Prensa",
     "ver-todas": "See all newsletters"
   },
@@ -249,7 +250,8 @@
           "Puede comunicarse con nosotros a través del siguiente mail: colalongo@aapresid.org.ar O en caso de hablar en inglés, comunicarse a prospectiva@aapresid.org.ar"
         ]
       }
-    ]
+    ],
+    "mas-preguntas": "View all FAQs"
   },
   "sponsors": {
     "title": "Our Partners",
@@ -264,8 +266,8 @@
   },
   "edicion-33": {
     "hero": {
-      "title1": "Acerca del",
-      "title2": "Congreso"
+      "title1": "About the",
+      "title2": "Congress"
     },
     "intro-text": {
       "p1": "About the Congress The Aapresid Congress has been connecting innovation, technology, and knowledge for over three decades, aiming to boost increasingly sustainable productive systems. Nowadays, it is an international benchmark event for technicians, researchers, decision-makers, farmers, and leaders from the entire agroindustrial chain in the region.",
@@ -292,19 +294,30 @@
     "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
   },
   "informacion-turistica": {
-    "hero-title1": "Información",
-    "hero-title2": "Turística",
-    "del-campo": "Del campo a la ",
-    "title-bold": "ciudad",
+    "hero-title1": "Tourist ",
+    "hero-title2": "Information",
+    "del-campo": "The City, an ",
+    "title-bold": "Open Code",
     "subtitle": "Conectá con la Ciudad de Buenos Aires.",
-    "p1": "LUn espacio dónde se cruza la cultura Argentina, la ciudad de Buenos Aires es una ciudad llena espacios turísticos, que además de alojar el Congreso, ofrece la mejor calidad y diversidad de restaurantes, teatros, cines, parques naturales y monumentos históricos. ",
-    "p2": "Dentro de la ciudad podés encontrar: el Teatro Colón; uno de los teatros más prestigiosos del mundo, el Museo Nacional de Bellas Artes, con una vasta colección de arte argentino e internacional, el Jardín Japonés y el Jardín Botánico, lugares para disfrutar de un ambiente natural.",
-    "p3": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio. Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
-    "como-llegar": "¿Cómo llegar a",
+    "p1": "A space where Argentine culture converges, the city of Buenos Aires is full of tourist attractions. In addition to housing the National Congress, it offers top-quality and diverse restaurants, theaters, cinemas, natural parks, and historic monuments.",
+    "p2": "Within the city, you can visit the Teatro Colón, one of the most prestigious opera houses in the world; the National Museum of Fine Arts, which boasts a vast collection of Argentine and international art; and the Japanese Garden and Botanical Garden, perfect spots to enjoy a natural setting.",
+    "p3": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
+    "como-llegar": "How to get to",
     "evento": " La Rural?",
-    "transporte-publico": "En transporte público, la Línea D del subte es la mejor opción. La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a pocas cuadras del lugar. (Se necesita la tarjeta SUBE).",
-    "colectivo": "Las líneas de **colectivo** que te acercan al predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
-    "tren": "En tren: El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."
+    "transporte-publico": "By public transport, the subway D Line is the best option. Plaza Italia station (Santa Fe Ave. and Thames) is a few blocks away from the place. (SUBE card is needed)",
+    "colectivo": "**Bus lines** that can get you close to the site are: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
+    "tren": "**By train:** The San Martín train takes you to Palermo station (Santa Fe Ave. and Juan B. Justo Ave.), located 5 blocks away from the site."
+  },
+  "nos-acompanian": {
+    "hero-title1": "Our ",
+    "hero-title2": "partners"
+  },
+  "gacetilla-page": {
+    "hero-title": "Prensa",
+    "title": "Gacetillas",
+    "palabras": "Key Words",
+    "ver-todas": "Day",
+    "Buscar": "Search"
   },
   "footer": {
     "fecha": "August 6th to 8th, 2025",

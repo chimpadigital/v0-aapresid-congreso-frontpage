@@ -44,7 +44,7 @@ const BannerContacto = () => {
 
           {/* Hexágono naranja decorativo */}
           <motion.div
-            className="absolute -bottom-2 md:bottom-[2.5rem] right-[50px] h-[117px] w-[117px] md:right-[50px]"
+            className="absolute -bottom-2 right-[50px] h-[117px] w-[117px] md:bottom-[2.5rem] md:right-[50px]"
             style={{
               y: scrollY * 0.03,
             }}
@@ -61,7 +61,7 @@ const BannerContacto = () => {
 
           {/* Hexágono verde claro */}
           <motion.div
-            className="absolute -bottom-6 md:bottom-[9rem] right-[10rem] h-[70px] w-[70px]"
+            className="absolute -bottom-6 right-[10rem] h-[70px] w-[70px] md:bottom-[9rem]"
             style={{
               y: scrollY * 0.08,
             }}
@@ -86,39 +86,63 @@ const BannerContacto = () => {
               Área comercial{" "}
             </h3>
             <div className="mb-[46px]">
-              <div className="mb-3 flex items-center gap-3 md:gap-[28px] tracking-widest text-white">
+              <div className="mb-3 flex items-center gap-3 tracking-widest text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="text-2xl w-full break-all hyphens-auto">
-                  troiano@aapresid.org.ar
+                <p className="w-full hyphens-auto break-all text-2xl">
+                  <a
+                    href="mailto:troiano@aapresid.org.ar"
+                    className="hover:text-accent"
+                  >
+                    troiano@aapresid.org.ar
+                  </a>
                 </p>
               </div>
-              <div className="flex items-center gap-3 md:gap-[28px] text-white">
+              <div className="flex items-center gap-3 text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="text-2xl w-full break-all hyphens-auto">
-                  WhatsApp/Tel: +54 9 3416 01-8111
+                <p className="w-full hyphens-auto break-all text-2xl">
+                  <a
+                    href="https://wa.me/5493416018111"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent"
+                  >
+                    WhatsApp/Tel: +54 9 3416 01-8111
+                  </a>
                 </p>
               </div>
             </div>
 
             <div className="mb-[46px]">
-              <div className="mb-3 flex items-center gap-3 md:gap-[28px] tracking-widest text-white">
+              <div className="mb-3 flex items-center gap-3 tracking-widest text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="text-2xl w-full break-all hyphens-auto">
-                  ventas@exponenciar.com.ar
+                <p className="w-full hyphens-auto break-all text-2xl">
+                  <a
+                    href="mailto:ventas@exponenciar.com.ar"
+                    className="hover:text-accent"
+                  >
+                    ventas@exponenciar.com.ar
+                  </a>
                 </p>
               </div>
-              <div className="flex items-center gap-3 md:gap-[28px] text-white">
+              <div className="flex items-center gap-3 text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="text-2xl w-full break-all hyphens-auto">
-                  WhatsApp/Tel: +54 9 11 5844-2945
+                <p className="w-full hyphens-auto break-all text-2xl">
+                  <a
+                    href="https://wa.me/5491158442945"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent"
+                  >
+                    WhatsApp/Tel: +54 9 11 5844-2945
+                  </a>
                 </p>
               </div>
             </div>

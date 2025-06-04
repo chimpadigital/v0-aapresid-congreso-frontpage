@@ -1,5 +1,6 @@
 "use client";
 import { Speaker } from "@/lib/types";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -85,6 +86,7 @@ const DisertantesDestacadosDesk = ({
     );
   };
 
+  const t = useTranslations("speakers");
   return (
     <div className="flex flex-col items-start justify-between gap-2 px-[33px] md:flex-row lg:gap-8">
       {/* Columna izquierda - Grid de imágenes pequeñas */}
@@ -139,14 +141,14 @@ const DisertantesDestacadosDesk = ({
               href={`#`}
               className="relative z-[1] mb-3 flex w-full items-center justify-center gap-[9px] overflow-hidden rounded-full bg-accent px-4 py-[16.5px] text-center text-lg font-normal leading-none tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]"
             >
-              Ver todos los disertantes
+              {t("conoce_los_oradores")}
             </Link>
 
             <Link
               href={`#`}
               className="relative z-[1] flex w-full items-center justify-center gap-[9px] overflow-hidden rounded-full bg-white px-4 py-[16.5px] text-center text-lg font-normal leading-none tracking-wider text-primary outline outline-1 outline-primary transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:outline-none hover:before:scale-[3]"
             >
-              Ver cronograma de charlas
+              {t("ver-cronograma")}
             </Link>
           </>
         ) : (

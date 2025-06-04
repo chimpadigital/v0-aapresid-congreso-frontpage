@@ -107,7 +107,7 @@ export function FaqSection() {
           href={`${locale}/preguntas-frecuentes`}
           className="mx-auto text-center text-lg text-white underline"
         >
-          Ver más preguntas frecuentes
+          {t("mas-preguntas")}
         </Link>
       </div>
     </section>

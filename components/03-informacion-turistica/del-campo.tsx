@@ -37,7 +37,7 @@ export function DelCampoCiudadSection() {
               Conectá con la Ciudad de Buenos Aires.
             </h3>
 
-            <div className="text-paragraph max-w-[62ch] text-lg leading-none tracking-wider">
+            <div className="text-paragraph max-w-[62ch] text-lg tracking-wider">
               <p className="mb-8">
                 La ciudad de Buenos Aires es una ciudad llena de cultura y
                 espacios turísticos, que además de alojar el Congreso, ofrece

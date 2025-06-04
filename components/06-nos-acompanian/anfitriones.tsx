@@ -36,14 +36,14 @@ const Anfitriones = () => {
               {getField(cat.name, locale)}
             </h3>
             {cat.Logos.map((logo) => (
-              <div className="flex flex-col md:flex-row mb-16" key={logo.id}>
+              <div className="mb-16 flex flex-col md:flex-row" key={logo.id}>
                 <div className="flex-1 pb-10 md:pb-0">
                   <figure className="relative inline-block h-24 w-full md:h-full">
                     <Image
                       src={logo.imagePath}
                       fill
                       alt={getField(logo.title, locale)}
-                      className="object-contain pr-20 md:pl-7"
+                      className="object-contain xs:pr-20 md:pl-7"
                     />
                   </figure>
                 </div>
@@ -72,7 +72,7 @@ const Anfitriones = () => {
                       return (
                         <a
                           href={getField(logo.link, locale)}
-                          className="relative ml-auto mt-[41px] inline-block min-w-[225px] rounded-full border border-primary px-4 py-1 text-center text-lg text-primary"
+                          className="relative ml-auto mt-[41px] inline-block w-full min-w-[225px] rounded-full border border-primary px-4 py-1 text-center text-lg text-primary md:w-auto"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
