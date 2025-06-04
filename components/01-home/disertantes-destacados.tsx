@@ -6,7 +6,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Speaker } from "@/lib/types";
 import DisertantesDestacadosDesk from "./disertantes-desktop";
 import DisertantesMobile from "./disertantes-mobile";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export function DisertantesDestacados() {
   const isMobile = useIsMobile();
@@ -26,14 +26,15 @@ export function DisertantesDestacados() {
       .catch(() => setLoading(false));
   }, [locale]);
 
- 
+  const t = useTranslations("speakers");
+
   return (
     <section className="relative m-0 overflow-hidden rounded-[20px] bg-white px-0 pb-8 pt-16 lg:px-16">
       <div className="mx-auto max-w-7xl">
         {/* Título */}
-        <h2 className="m-[30px] mb-8 md:mb-28 text-center text-4xl text-primary lg:text-5xl">
-          Disertantes
-          <span className="font-medium"> destacados</span>
+        <h2 className="m-[30px] mb-8 text-center text-4xl text-primary md:mb-28 lg:text-5xl">
+          {t("title1")}
+          <span className="font-medium"> {t("title2")}</span>
         </h2>
 
         {/* Contenedor principal */}
@@ -42,9 +43,9 @@ export function DisertantesDestacados() {
             Cargando disertantes...
           </div>
         ) : !isMobile ? (
-          <DisertantesDestacadosDesk speakers={speakers} locale={locale}/>
+          <DisertantesDestacadosDesk speakers={speakers} locale={locale} />
         ) : (
-          <DisertantesMobile speakers={speakers} locale={locale}/>
+          <DisertantesMobile speakers={speakers} locale={locale} />
         )}
       </div>
     </section>

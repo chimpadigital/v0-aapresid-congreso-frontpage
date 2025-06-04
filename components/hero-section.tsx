@@ -17,10 +17,10 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative mx-4 mt-4 flex h-[500px] flex-col justify-center rounded-[20px] bg-cover bg-center px-8 md:m-[33px] md:p-[70px] ${className}`}
+      className={`relative mx-4 mt-4 h-[400px] flex xs:h-[500px] flex-col justify-center md:justify-normal  rounded-[20px] bg-cover bg-center px-8 md:m-[33px] md:p-[70px] md:pt-[114px] ${className}`}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-      <div>
+      <div className="mx-auto max-w-7xl w-full">
         {showBackButton && <BackButton />}
 
         {/* Título */}

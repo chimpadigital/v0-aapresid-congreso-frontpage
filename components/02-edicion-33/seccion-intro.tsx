@@ -31,7 +31,7 @@ const SeccionIntro = () => {
       <div className="mx-4 flex flex-col items-center gap-[72px] sm:mx-[33px] md:gap-16 lg:flex-row xl:mx-0 tracking-wider">
         {/* Columna de texto */}
         <div className="lg:1/2">
-          <p className="mb-8 text-[20px] text-[#736D6D] lg:max-w-[47ch]">
+          <p className="mb-8 text-lg text-[#736D6D] lg:max-w-[47ch]">
             El Congreso Aapresid lleva más de tres décadas conectando
             innovación, tecnología y conocimiento con el propósito de impulsar
             sistemas productivos cada vez más sustentables, siendo hoy en día un
@@ -39,7 +39,7 @@ const SeccionIntro = () => {
             decisores, productores y referentes de toda la cadena agroindustrial
             de la región.
           </p>
-          <p className="max-w-[47ch] text-[20px] text-[#736D6D]">
+          <p className="max-w-[47ch] text-lg text-[#736D6D]">
             Durante cada edición, el Congreso Aapresid congrega a los más
             importantes referentes nacionales e internacionales para discutir y
             poner en agenda los temas del futuro, vinculando ciencia y

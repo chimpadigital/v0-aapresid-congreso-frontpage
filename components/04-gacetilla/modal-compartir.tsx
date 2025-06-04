@@ -31,7 +31,7 @@ const ModalCompartir = ({ link = "" }) => {
     <>
       <button
         onClick={onOpen}
-        className="relative z-[1] flex w-[min(235px,100%)] items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[145%] before:top-[160%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[3]"
+        className="relative z-[1] flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-[min(235px,100%)] md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3]"
       >
         <span>Compartir</span>
         <CompartirIcon />
@@ -63,7 +63,7 @@ const ModalCompartir = ({ link = "" }) => {
                   </a>
 
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${link}&text=this%20is%20a%20basic%20share%20page`}
+                    href={`https://twitter.com/intent/tweet?url=${link}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share Twitter"
@@ -115,7 +115,9 @@ const ModalCompartir = ({ link = "" }) => {
                 </div>
 
                 <div className="mt-10 flex w-full justify-between rounded-full border border-primary px-[40px] py-[23px] text-primary">
-                  <p className="w-full break-words">{link}</p>
+                  <p className="ml-4 w-full overflow-hidden whitespace-nowrap">
+                    {link}
+                  </p>
                   <button
                     onClick={handleCopy}
                     className="hidden text-sm font-medium sm:block"

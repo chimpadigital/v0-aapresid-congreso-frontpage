@@ -112,7 +112,7 @@ export function ThemesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative mx-4 mt-[27px] overflow-hidden rounded-[20px] bg-[url('/images/home/vector-ejes.webp')] bg-cover bg-center p-4 md:mx-[33px] xl:px-[94px] xl:py-[84px]"
+      className="relative mx-4 mt-[27px] overflow-hidden rounded-[20px] bg-[url('/images/home/vector-ejes.webp')] bg-cover bg-center p-8 md:mx-[33px] xl:px-[94px] xl:py-[84px]"
     >
       <div className="mx-auto max-w-[1216px]">
         {/* Content container */}

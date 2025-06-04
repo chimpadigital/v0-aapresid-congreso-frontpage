@@ -109,11 +109,11 @@ export function StatsSection() {
     },
     {
       title: "Días",
-      value: 2,
+      value: 3,
     },
     {
       title: "Disertantes",
-      value: 3,
+      value: 450,
     },
     {
       title: "Asistentes",

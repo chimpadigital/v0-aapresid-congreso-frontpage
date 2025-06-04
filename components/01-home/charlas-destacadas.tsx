@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import CharlaDestacadaCard from "./charla-destacad-card";
 import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { CharlaEvent } from "@/lib/types";
 import Calendar from "../icons/Calendar";
 import CalendarDense from "../icons/CalendarDense";
@@ -25,14 +25,14 @@ export function FeaturedTalksSection() {
       })
       .catch(() => setLoading(false));
   }, [locale]);
-
+  const t = useTranslations("charlas");
   return (
     <section className="relative m-4 mb-9 overflow-hidden rounded-[20px] bg-[#F0F0F1] px-4 py-16 xs:px-8 md:mx-[33px] md:mt-[100px] md:px-16">
       <div className="mx-auto max-w-7xl">
         {/* Título */}
         <h2 className="mb-20 text-center text-4xl font-medium text-primary lg:text-5xl">
-          Charlas
-          <span className="font-normal"> destacadas</span>
+          {t("title1")}
+          <span className="font-normal"> {t("title2")}</span>
         </h2>
         {/* Slider de tarjetas */}
         <div className="relative">
@@ -106,7 +106,7 @@ export function FeaturedTalksSection() {
         </div>
         <div className="mx-auto mt-12 max-w-[400px] text-center">
           <button className="relative z-[1] mx-auto flex items-center justify-center gap-[9px] overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg font-normal tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]">
-            Ver cronograma completo <CalendarDense />
+            {t("ver-cronograma")} <CalendarDense />
           </button>
         </div>
       </div>

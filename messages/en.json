@@ -105,13 +105,14 @@
     "ver-cronograma": "See full schedule"
   },
   "commercial": {
-    "titulo": "Join the",
-    "congreso": "33° edition of the Congress",
+    "forma-parte": "Join the",
+    "de-la-33": "33° edition of the ",
+    "congreso": "Congress",
     "descripcion": "Download the commercial brochure and explore the options we are offering.",
     "descarga": "Download commercial folder"
   },
   "gacetilla": {
-    "titulo1": "Gacetilla ",
+    "titulo1": "Gacetillas ",
     "titulo2": "de Prensa",
     "ver-todas": "See all newsletters"
   },
@@ -249,7 +250,8 @@
           "Puede comunicarse con nosotros a través del siguiente mail: colalongo@aapresid.org.ar O en caso de hablar en inglés, comunicarse a prospectiva@aapresid.org.ar"
         ]
       }
-    ]
+    ],
+    "mas-preguntas": "View all FAQs"
   },
   "sponsors": {
     "title": "Our Partners",
@@ -261,6 +263,61 @@
     "medios": "MEDIA",
     "apoyan": "Support",
     "organizan": "Organize"
+  },
+  "edicion-33": {
+    "hero": {
+      "title1": "About the",
+      "title2": "Congress"
+    },
+    "intro-text": {
+      "p1": "About the Congress The Aapresid Congress has been connecting innovation, technology, and knowledge for over three decades, aiming to boost increasingly sustainable productive systems. Nowadays, it is an international benchmark event for technicians, researchers, decision-makers, farmers, and leaders from the entire agroindustrial chain in the region.",
+      "p2": "Each edition of the Aapresid Congress assembles the most prominent domestic and international figures to discuss and assess future topics by linking science and production; thus, transforming agriculture, helping mitigate climate change, and supporting innovation."
+    },
+    "stats": {
+      "conferencias": "Lectures ",
+      "dias": "Days",
+      "disertantes": "Speakers",
+      "asistentes": "Attendees"
+    },
+    "contenido": {
+      "p1": "All content conveyed at the Aapresid Congress is thoughtfully curated and produced by interdisciplinary groups consisting of academic and institutional leaders, Aapresid members, and farmers. Using a specific methodology, these groups present the prospective content, organized this year into 7 thematic axes: Learning by Producing, Global Challenges, Innovation & Agtech, Pest Management, Integrated Systems, Sustainable Production Systems, Socio-political Perspectives.",
+      "p2": "Following the great success of last year’s edition, the Aapresid Congress will once again be held in the Autonomous City of Buenos Aires."
+    },
+    "programamos": "We program",
+    "el-futuro": "the future of agriculture",
+    "open-code": {
+      "titulo": "Open Code",
+      "p1": "We are writing the dialog with the future. Each idea, each advance, each conversation occurring at the Aapresid Congress is a line of code in a collective program, which not only solves the problems of today but also foresees the challenges of tomorrow. We live in a world of continuous change. To face such transformation, we realized that it is not enough with just adapt—we need to create. Create new syntaxes, new connections, new answers; because knowledge expands when it is shared, and multiplies when combined.",
+      "p2": "The XXXIII Aapresid Congress opens the doors to innovation. Here, the limits become blurred, and specializations blend together. Each farmer, technician, and visionary involved not only provides questions or answers but also pieces that fit within a bigger system.",
+      "p3": "We are more than witnesses of change; we are the programmers of the future. Every year, the Congress collects and updates, in a single body, the knowledge of a community that makes innovation its lifestyle. It is not only about improving what already exists, but also about consistently imagining and redesigning in order to accompany transformations in the world. Because the future cannot be predicted—it is programmed. And the code we write together is open to everybody. This is the Aapresid Congress. This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+    },
+    "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+  },
+  "informacion-turistica": {
+    "hero-title1": "Tourist ",
+    "hero-title2": "Information",
+    "del-campo": "The City, an ",
+    "title-bold": "Open Code",
+    "subtitle": "Conectá con la Ciudad de Buenos Aires.",
+    "p1": "A space where Argentine culture converges, the city of Buenos Aires is full of tourist attractions. In addition to housing the National Congress, it offers top-quality and diverse restaurants, theaters, cinemas, natural parks, and historic monuments.",
+    "p2": "Within the city, you can visit the Teatro Colón, one of the most prestigious opera houses in the world; the National Museum of Fine Arts, which boasts a vast collection of Argentine and international art; and the Japanese Garden and Botanical Garden, perfect spots to enjoy a natural setting.",
+    "p3": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
+    "como-llegar": "How to get to",
+    "evento": " La Rural?",
+    "transporte-publico": "By public transport, the subway D Line is the best option. Plaza Italia station (Santa Fe Ave. and Thames) is a few blocks away from the place. (SUBE card is needed)",
+    "colectivo": "**Bus lines** that can get you close to the site are: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
+    "tren": "**By train:** The San Martín train takes you to Palermo station (Santa Fe Ave. and Juan B. Justo Ave.), located 5 blocks away from the site."
+  },
+  "nos-acompanian": {
+    "hero-title1": "Our ",
+    "hero-title2": "partners"
+  },
+  "gacetilla-page": {
+    "hero-title": "Prensa",
+    "title": "Gacetillas",
+    "palabras": "Key Words",
+    "ver-todas": "Day",
+    "Buscar": "Search"
   },
   "footer": {
     "fecha": "August 6th to 8th, 2025",

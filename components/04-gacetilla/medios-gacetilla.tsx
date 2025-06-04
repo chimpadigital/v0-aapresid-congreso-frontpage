@@ -26,7 +26,7 @@ const MediosGacetilla = () => {
   }, []);
 
   return (
-    <div className="mx-4 mb-16 mt-10 md:mt-16 max-w-[1204px] md:mx-auto">
+    <div className="mx-4 mb-16 mt-10 md:mt-16 max-w-[1204px] xl:mx-auto">
       <h3 className="mb-4 text-2xl text-primary">Medios</h3>
       <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
