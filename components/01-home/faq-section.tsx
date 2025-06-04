@@ -69,28 +69,18 @@ export function FaqSection() {
     },
   ]);
 
-  const toggleFaq = (index: number) => {
-    setFaqs(
-      faqs.map((faq, i) => {
-        if (i === index) {
-          return { ...faq, isOpen: !faq.isOpen };
-        }
-        return faq;
-      }),
-    );
-  };
+
 
   const locale = useLocale();
 
   // Determinar cuántas preguntas mostrar
-  const visibleFaqs = faqs;
 
   return (
     <section className="relative mx-4 mt-[44px] overflow-hidden rounded-[20px] bg-primary bg-cover bg-bottom md:mx-[33px]">
       {/* Content container */}
       <div className="relative flex flex-col items-center p-8 md:px-16 md:pt-24 md:pb-[70px]">
         <h2 className="mb-10 max-w-[12ch] text-center text-[48px] leading-none text-white md:mb-10">
-          {t("titulo1")} <span className="font-medium">{t("titulo2")}</span>
+          {t("preguntas")} <span className="font-medium">{t("frecuentes")}</span>
         </h2>
 
         {/* FAQ accordion */}

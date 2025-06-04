@@ -3,6 +3,7 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const SeccionIntro = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -23,30 +24,20 @@ const SeccionIntro = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const t = useTranslations("edicion-33.intro-text");
+  
   return (
     <section
       ref={sectionRef}
-      className="mx-auto max-w-[1113px] bg-white px-4 pt-10 md:pt-[2px] md:px-0"
+      className="mx-auto max-w-[1113px] bg-white px-4 pt-10 md:px-0 md:pt-[2px]"
     >
-      <div className="mx-4 flex flex-col items-center gap-[72px] sm:mx-[33px] md:gap-16 lg:flex-row xl:mx-0 tracking-wider">
+      <div className="mx-4 flex flex-col items-center gap-[72px] tracking-wider sm:mx-[33px] md:gap-16 lg:flex-row xl:mx-0">
         {/* Columna de texto */}
         <div className="lg:1/2">
           <p className="mb-8 text-lg text-[#736D6D] lg:max-w-[47ch]">
-            El Congreso Aapresid lleva más de tres décadas conectando
-            innovación, tecnología y conocimiento con el propósito de impulsar
-            sistemas productivos cada vez más sustentables, siendo hoy en día un
-            evento de referencia internacional para técnicos, investigadores,
-            decisores, productores y referentes de toda la cadena agroindustrial
-            de la región.
+            {t("p1")}
           </p>
-          <p className="max-w-[47ch] text-lg text-[#736D6D]">
-            Durante cada edición, el Congreso Aapresid congrega a los más
-            importantes referentes nacionales e internacionales para discutir y
-            poner en agenda los temas del futuro, vinculando ciencia y
-            producción y así transformar nuestra agricultura, ayudando a la
-            mitigación del cambio climático e iluminando los escenarios de la
-            innovación.
-          </p>
+          <p className="max-w-[47ch] text-lg text-[#736D6D]">{t("p2")}</p>
         </div>
 
         {/* Columna de imagen */}

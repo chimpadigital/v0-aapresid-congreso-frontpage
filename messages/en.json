@@ -1,7 +1,14 @@
 {
   "navbar": {
     "inscripciones": "Registration",
+    "inicio": "Home",
     "acerca_de": "About",
+    "edicion_33": "33rd edition",
+    "nos_acompanian": "Our partners",
+    "FAQs": "Frequently asked questions",
+    "prensa": "News",
+    "gacetilla": "Newsletters",
+    "informacion_turistica": "Turist information",
     "que_es_el_congreso": "What is the Aapresid Congress?",
     "historia": "History",
     "ediciones_anteriores": "Previous Editions",
@@ -9,7 +16,6 @@
     "programa": "Program",
     "oradores": "Speakers",
     "ejes_tematicos": "Thematic axes",
-    "prensa": "Press",
     "noticias": "News",
     "contacto": "Contact",
     "comercial": "Commercial",
@@ -97,7 +103,7 @@
     "title1": "Noteworthy",
     "title2": "speakers",
     "conoce_los_oradores": "See the entire list of speakers ",
-    "ver-cronograma": "Schedule (access to schedule)"
+    "ver-cronograma": "Schedule"
   },
   "charlas": {
     "title1": "Notable ",
@@ -106,25 +112,29 @@
   },
   "commercial": {
     "forma-parte": "Join the",
-    "de-la-33": "33° edition of the ",
+    "de-la-33": "33° edition of the Congress",
     "congreso": "Congress",
-    "descripcion": "Download the commercial brochure and explore the options we are offering.",
+    "descripcion1": "Download the commercial brochure and explore",
+    "descripcion2": " the options we are offering.",
     "descarga": "Download commercial folder"
   },
+  "contacto": {
+    "contacto": "Contact",
+    "area-comercial": " Commercial Area"
+  },
   "gacetilla": {
-    "titulo1": "Gacetillas ",
-    "titulo2": "de Prensa",
+    "titulo1": "Newsletters",
     "ver-todas": "See all newsletters"
   },
   "faq": {
-    "titulo1": "Frequently",
-    "titulo2": "Asked Questions",
+    "preguntas": "Frequently",
+    "frecuentes": "Asked Questions",
     "items": [
       {
-        "pregunta": "¿Qué es Aapresid?",
+        "pregunta": "What is Aapresid?",
         "respuesta": [
-          "[Translation needed] La Asociación Argentina de Productores en Siembra Directa (Aapresid) es una organización no gubernamental sin fines de lucro. Integrada por una red de productores agropecuarios que, a partir del interés en la conservación de su principal recurso, el suelo, adoptaron e impulsaron la difusión de un nuevo paradigma agrícola, basado en la Siembra Directa.",
-          "Más información: [www.aapresid.org.ar](https://www.aapresid.org.ar/es)"
+          "The Argentine No-Till Farmers Association (Aapresid) is a non-governmental, non-profit organization. It is a network of agricultural producers interested in the conservation of their essential resource, the soil, by adopting and promoting a new farming paradigm based on No Tillage.",
+          "More information at: [www.aapresid.org.ar](https://www.aapresid.org.ar/es)"
         ]
       },
       {
@@ -134,16 +144,16 @@
         ]
       },
       {
-        "pregunta": "¿Cuáles son las principales temáticas?",
+        "pregunta": "Which are the main themes?",
         "respuesta": [
-          "[Translation needed] Esta edición del Congreso tendrá 7 ejes temáticos: bajo los cuales estarán ordenadas más de 160 charlas y paneles:",
-          "- Aprender Produciendo",
-          "- Sistemas Integrados",
-          "- Sistemas Productivos Sustentables",
-          "- Manejo de Plagas",
-          "- Innovación y Agtech",
-          "- Desafíos Globales",
-          "- Perspectivas Sociopolíticas"
+          "This edition of the Congress will include over 160 lectures and panels arranged under 7 thematic axes:",
+          "- Learning by Producing",
+          "- Integrated Systems",
+          "- Sustainable Productive Systems",
+          "- Pest Management",
+          "- Innovation and Agtech",
+          "- Global Challenges",
+          "- Socio-political Perspectives"
         ]
       },
       {
@@ -151,9 +161,9 @@
         "respuesta": ["Coming soon on this page."]
       },
       {
-        "pregunta": "¿Quiénes pueden participar del congreso?",
+        "pregunta": "Who can be part of the congress?",
         "respuesta": [
-          "[Translation needed] Cualquier persona puede sumarse al congreso. Está abierto a toda la comunidad."
+          "Everyone can be part of the congress. It is open to the entire community."
         ]
       },
       {
@@ -163,23 +173,23 @@
         ]
       },
       {
-        "pregunta": "¿Cuál es el lema de este Congreso?",
+        "pregunta": "What is the motto of this year’s Congress?",
         "respuesta": [
-          "[Translation needed] El lema del trigésimo tercer Congreso Aapresid es “Código Abierto”,",
-          "Código Abierto sintetiza el espíritu colaborativo, innovador y transformador que define al XXXIII Congreso Aapresid. Este lema une tres conceptos esenciales: la apertura al conocimiento colectivo, la capacidad de programar soluciones para el futuro y el respeto por los valores fundamentales que sustentan nuestras decisiones como comunidad agroalimentaria"
+          "The motto of this thirty-third Aapresid Congress is “Open Code”.",
+          "Open Code synthesizes the collaborative and groundbreaking spirit that defines the XXXIII Aapresid Congress. This motto connects three crucial concepts: embracing collective knowledge, programming solutions for the future, and respecting the essential values supporting our decisions as an agri-food community."
         ]
       },
       {
-        "pregunta": "¿Qué costo tiene la entrada?",
+        "pregunta": "What is the cost of admission?",
         "respuesta": [
-          "[Translation needed] Los precios de las entradas serán publicados en esté mismo sitio cuando se lance el sistema de inscripciones, ahí podrá elegir entre distintos tipos de entradas con importantes descuentos y promociones."
+          "Ticket prices will be made available on this site once the registration section is added. There, you will be able to choose between a variety of ticket options with important discounts and special offers."
         ]
       },
       {
-        "pregunta": "¿Existen descuentos para estudiantes ?",
+        "pregunta": "Is there any discount for students?",
         "respuesta": [
-          "[Translation needed] Aapresid tiene convenios de vinculación con muchas universidades, y los estudiantes de las mismas podrán obtener descuentos en las entradas. Se deberá consultar con las áreas de vinculación de las facultades en cuestión.",
-          "Por otro lado, los estudiantes universitarios que adjunten su certificado de alumno regular accederán a un importante descuento en el precio de todos los tipos de tickets."
+          "Aapresid maintains collaboration agreements with many universities, whose students will have access to ticket discounts. For information, consult the outreach department at your university.",
+          "Moreover, university students will have access to important discounts for every type of ticket by presenting their Student Status Certificate."
         ]
       },
       {
@@ -190,64 +200,59 @@
         ]
       },
       {
-        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "pregunta": "Where can I see the program of the Congress?",
         "respuesta": [
-          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+          "The schedule will be available for download in the Congress section at the Aapresid web, and will be regularly updated with speaker names and lecture titles."
         ]
       },
       {
-        "pregunta": "¿Hasta cuándo tengo tiempo para inscribirme al Congreso?",
+        "pregunta": "What is the registration deadline for the Congress?",
         "respuesta": [
-          "Hay tiempo de inscripción online hasta el último día del evento, Viernes 8 de Agosto."
+          "You can enroll online until the last day of the event, Friday, August 8th.",
+          "However, to ensure smooth registration and facilitate your entry to the event, we recommend completing enrollment by **Monday, August 4th.**"
         ]
       },
       {
-        "pregunta": "¿Se entregarán certificados de asistencia?",
+        "pregunta": "Will attendance certificates be provided?",
         "respuesta": [
-          "Sí, se entregarán constancias de participación al finalizar el evento, y la misma se hará de manera digital."
+          "Yes, participation certificates will be digitally delivered at the end of the event."
         ]
       },
       {
-        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "pregunta": "Will this year’s congress’ lectures be streamed live?",
         "respuesta": [
-          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+          "Yes, we offer simultaneous English-Spanish translation in three conference rooms."
         ]
       },
       {
-        "pregunta": "¿Las charlas de oradores extranjeros cuentan con traducción?",
+        "pregunta": "Will this year’s congress’ lectures be streamed live?",
         "respuesta": [
-          "Si, contamos con traducción en simultáneo de inglés-español en tres salas de conferencias."
+          "Only one of the rooms will stream lectures live on the Aapresid Congress website, which will be free and open to the public.",
+          "Additionally, “Levantando La Perdiz” program will host a three-day live stream featuring Congress speakers and invitees on Aapresid’s YouTube channel."
         ]
       },
       {
-        "pregunta": "¿Este año se transmitirán las charlas en la web en vivo y en directo?",
+        "pregunta": "Will recordings of other lectures or rooms be made accessible afterwards?",
         "respuesta": [
-          "Sólo una sala transmitirá sus charlas en vivo y en directo por la página web del Congreso Aapresid, dichas charlas serán de acceso gratuito y abiertas para todo público.",
-          "También, se transmitirá en vivo durante los 3 días el streaming “Levantando La Perdiz” donde participarán disertantes e invitados dentro del Congreso, a través del canal de Youtube de Aapresid."
+          "Yes, recordings of other lectures and rooms will be available after the congress."
         ]
       },
       {
-        "pregunta": "¿Se podrá acceder a la filmación de otras salas y charlas?",
+        "pregunta": "How to obtain information on becoming a Congress sponsor?",
         "respuesta": [
-          "Sí, se podrá tener acceso a la filmación de otras salas y charlas. Las mismas serán habilitadas post - congreso."
+          "You can contact Aapresid’s marketing team via troiano@aapresid.org.ar or visit [www.aapresid.org.ar/es/quienes-somos](https://aapresid.org.ar/es/quienes-somos)"
         ]
       },
       {
-        "pregunta": "¿Cómo puedo obtener información para ser sponsor del congreso?",
+        "pregunta": "What about invoicing after purchasing the ticket?",
         "respuesta": [
-          "Comunicarse con los responsables comerciales de Aapresid troiano@aapresid.org.ar o Aquí podrá encontrar más datos de contacto: [www.aapresid.org.ar/es/quienes-somos](https://aapresid.org.ar/es/quienes-somos)"
+          "Once the payment is completed and the receipt is emailed to lopez@aapresid.org.ar, Aapresid will issue the corresponding invoice"
         ]
       },
       {
-        "pregunta": "¿Al abonar la inscripción como se tramita la facturación?",
+        "pregunta": "Is your question not on the list?",
         "respuesta": [
-          "Sí, una vez efectuado el pago desde Aapresid estaremos enviando la factura correspondiente. Se deberá enviar previamente a la casilla de correo electrónico lopez@aapresid.org.ar el comprobante de pago."
-        ]
-      },
-      {
-        "pregunta": "¿Su pregunta no está en el listado?",
-        "respuesta": [
-          "Puede comunicarse con nosotros a través del siguiente mail: colalongo@aapresid.org.ar O en caso de hablar en inglés, comunicarse a prospectiva@aapresid.org.ar"
+          "You can contact us through colalongo@aapresid.org.ar If you are an English-speaker, please contact prospectiva@aapresid.org.ar"
         ]
       }
     ],
@@ -266,8 +271,8 @@
   },
   "edicion-33": {
     "hero": {
-      "title1": "About the",
-      "title2": "Congress"
+      "acerca": "About the",
+      "congreso": "Congress"
     },
     "intro-text": {
       "p1": "About the Congress The Aapresid Congress has been connecting innovation, technology, and knowledge for over three decades, aiming to boost increasingly sustainable productive systems. Nowadays, it is an international benchmark event for technicians, researchers, decision-makers, farmers, and leaders from the entire agroindustrial chain in the region.",
@@ -287,37 +292,48 @@
     "el-futuro": "the future of agriculture",
     "open-code": {
       "titulo": "Open Code",
-      "p1": "We are writing the dialog with the future. Each idea, each advance, each conversation occurring at the Aapresid Congress is a line of code in a collective program, which not only solves the problems of today but also foresees the challenges of tomorrow. We live in a world of continuous change. To face such transformation, we realized that it is not enough with just adapt—we need to create. Create new syntaxes, new connections, new answers; because knowledge expands when it is shared, and multiplies when combined.",
-      "p2": "The XXXIII Aapresid Congress opens the doors to innovation. Here, the limits become blurred, and specializations blend together. Each farmer, technician, and visionary involved not only provides questions or answers but also pieces that fit within a bigger system.",
-      "p3": "We are more than witnesses of change; we are the programmers of the future. Every year, the Congress collects and updates, in a single body, the knowledge of a community that makes innovation its lifestyle. It is not only about improving what already exists, but also about consistently imagining and redesigning in order to accompany transformations in the world. Because the future cannot be predicted—it is programmed. And the code we write together is open to everybody. This is the Aapresid Congress. This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+      "p1": "We are writing the dialog with the future.",
+      "p2": "Each idea, each advance, each conversation occurring at the Aapresid Congress is a line of code in a collective program, which not only solves the problems of today but also foresees the challenges of tomorrow.",
+      "p3": "We live in a world of continuous change. To face such transformation, we realized that it is not enough with just adapt—we need to create. Create new syntaxes, new connections, new answers; because knowledge expands when it is shared, and multiplies when combined.",
+      "p4": "The XXXIII Aapresid Congress opens the doors to innovation. Here, the limits become blurred, and specializations blend together. ",
+      "p5": "Each farmer, technician, and visionary involved not only provides questions or answers but also pieces that fit within a bigger system. We are more than witnesses of change; we are the programmers of the future. Every year, the Congress collects and updates, in a single body, the knowledge of a community that makes innovation its lifestyle.",
+      "p6": "It is not only about improving what already exists, but also about consistently imagining and redesigning in order to accompany transformations in the world. Because the future cannot be predicted—it is programmed. And the code we write together is open to everybody. This is the Aapresid Congress. This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
     },
     "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
   },
   "informacion-turistica": {
-    "hero-title1": "Tourist ",
-    "hero-title2": "Information",
-    "del-campo": "The City, an ",
-    "title-bold": "Open Code",
-    "subtitle": "Conectá con la Ciudad de Buenos Aires.",
+    "informacion": "Tourist ",
+    "turistica": "Information",
+    "la-ciudad": "The City, an ",
+    "un-codigo": "Open Code",
+    "conecta-bs-as": "Get connected with Buenos Aires.",
     "p1": "A space where Argentine culture converges, the city of Buenos Aires is full of tourist attractions. In addition to housing the National Congress, it offers top-quality and diverse restaurants, theaters, cinemas, natural parks, and historic monuments.",
     "p2": "Within the city, you can visit the Teatro Colón, one of the most prestigious opera houses in the world; the National Museum of Fine Arts, which boasts a vast collection of Argentine and international art; and the Japanese Garden and Botanical Garden, perfect spots to enjoy a natural setting.",
-    "p3": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
+    "p3": "In the downtown area, you'll find the iconic Obelisk, a symbol of the city, and the famous Plaza de Mayo, home to important historic buildings such as the Casa Rosada.",
+    "p4": "Along Corrientes Avenue, you can savor the country's best pizza at places like Guerrin, or enjoy a traditional asado at the famous grill Don Julio.",
+    "p5": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
     "como-llegar": "How to get to",
-    "evento": " La Rural?",
+    "evento": " Congreso Aapresid?",
     "transporte-publico": "By public transport, the subway D Line is the best option. Plaza Italia station (Santa Fe Ave. and Thames) is a few blocks away from the place. (SUBE card is needed)",
     "colectivo": "**Bus lines** that can get you close to the site are: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
     "tren": "**By train:** The San Martín train takes you to Palermo station (Santa Fe Ave. and Juan B. Justo Ave.), located 5 blocks away from the site."
   },
   "nos-acompanian": {
-    "hero-title1": "Our ",
-    "hero-title2": "partners"
+    "nos": "Our ",
+    "acompanian": "partners"
   },
   "gacetilla-page": {
-    "hero-title": "Prensa",
-    "title": "Gacetillas",
+    "hero-title": "News",
+    "title": "Newsletters",
     "palabras": "Key Words",
-    "ver-todas": "Day",
-    "Buscar": "Search"
+    "día": "Day",
+    "buscar": "Search",
+    "medios": "Media",
+    "descargar-gacetilla": "Download gacetilla",
+    "compartir": "Share",
+    "copiar": "Copy",
+    "copiado": "Copied!",
+    "similares": "Related newsletters"
   },
   "footer": {
     "fecha": "August 6th to 8th, 2025",

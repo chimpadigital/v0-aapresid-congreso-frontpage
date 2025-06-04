@@ -19,7 +19,7 @@ const DescargaComercial = () => {
             <span className="font-bold">{t("congreso")}</span>
           </h2>
           <p className="mb-[28px] mt-[20px] max-w-[35ch] text-xl tracking-wider text-white">
-            {t("descripcion")}
+            {t("descripcion1")} {t("descripcion2")}
           </p>
           <a
             href="/TARIFARIO_CONGRESO_2025.pdf"

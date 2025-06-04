@@ -2,6 +2,7 @@ import { GacetillaApiItem } from "@/lib/types";
 import { GacetillaCard } from "../gacetilla-card";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 interface Props {
   params: { locale: string };
@@ -17,11 +18,13 @@ export default async function GacetillasSimilares({ params }: Props) {
   const data = await res.json();
   const gacetillas: GacetillaApiItem[] = data.data || [];
 
+  const t = await getTranslations("gacetilla-page");
+
   return (
     <section className="mx-auto max-w-[1415px] bg-white px-4 pb-12 pt-[86px] md:px-8">
       <div>
-        <h2 className="mb-10 md:ml-16 text-left text-4xl text-primary md:text-5xl">
-          Gacetillas similares
+        <h2 className="mb-10 text-left text-4xl text-primary md:ml-16 md:text-5xl">
+          {t("similares")}
         </h2>
         {/* Grid de tarjetas */}
         <div className="mb-16 mt-16 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -41,14 +44,14 @@ export default async function GacetillasSimilares({ params }: Props) {
                   titleObj[locale] && titleObj[locale].trim() !== ""
                     ? titleObj[locale]
                     : locale === "en"
-                    ? titleObj.es
-                    : titleObj.en || "";
+                      ? titleObj.es
+                      : titleObj.en || "";
                 description =
                   descObj[locale] && descObj[locale].trim() !== ""
                     ? descObj[locale]
                     : locale === "en"
-                    ? descObj.es
-                    : descObj.en || "";
+                      ? descObj.es
+                      : descObj.en || "";
               } catch {
                 title = gacetilla.title;
                 description = gacetilla.excerpt;

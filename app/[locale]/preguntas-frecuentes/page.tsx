@@ -26,8 +26,8 @@ const PreguntasFrecuentes = () => {
   return (
     <section>
       <HeroSection
-        title1="Preguntas"
-        title2="Frecuentes"
+        title1={t("preguntas")}
+        title2={t("frecuentes")}
         backgroundImage="/images/preguntas-frecuentes/hero.webp"
       />
       <div className="mx-auto max-w-[820px] px-4 py-8">

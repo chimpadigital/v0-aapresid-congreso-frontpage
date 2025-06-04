@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { OriginalNavbar } from "./original-navbar";
 import { CompactNavbar } from "./compact-navbar";
 import { MobileMenu } from "./mobile-menu";
@@ -15,22 +15,24 @@ export function Navbar() {
   const locale = useLocale();
   const menuRef = useRef<HTMLDivElement | null>(null);
 
+  const t = useTranslations("navbar");
+
   const menuItems: MenuItem[] = [
     {
-      label: "Inicio",
+      label: t("inicio"),
       href: `/`,
     },
     {
-      label: "Acerca de",
+      label: t("acerca_de"),
       children: [
-        { label: "Edición N° 33", href: `/${locale}/edicion-33` },
+        { label: t("edicion_33"), href: `/${locale}/edicion-33` },
         {
-          label: "Información turística",
+          label: t("informacion_turistica"),
           href: `/${locale}/informacion-turistica`,
         },
-        { label: "Nos acompañan", href: `/${locale}/nos-acompanian` },
+        { label: t("nos_acompanian"), href: `/${locale}/nos-acompanian` },
         {
-          label: "Preguntas frecuentes",
+          label: t("FAQs"),
           href: `/${locale}/preguntas-frecuentes`,
         },
       ],
@@ -43,9 +45,9 @@ export function Navbar() {
     //   ],
     // },
     {
-      label: "Prensa",
+      label: t("prensa"),
       children: [
-        { label: "Gacetilla", href: `/${locale}/gacetilla` },
+        { label: t("gacetilla"), href: `/${locale}/gacetilla` },
         // { label: "Fotos", href: "/${locale}/fotos" },
       ],
     },

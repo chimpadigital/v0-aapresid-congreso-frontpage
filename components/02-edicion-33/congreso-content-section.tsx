@@ -3,6 +3,7 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function CongresoContentSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -22,6 +23,8 @@ export function CongresoContentSection() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const t = useTranslations("edicion-33.contenido");
 
   return (
     <section
@@ -97,19 +100,10 @@ export function CongresoContentSection() {
           <div className="lg:w-1/2">
             <div className="space-y-6 tracking-wider">
               <p className="text-lg text-[#736D6D]">
-                El contenido del Congreso Aapresid es elaborado y pensado por
-                grupos interdisciplinarios conformados por referentes
-                académicos, institucionales, socios Aapresid y productores que a
-                través de una metodología específica logran posicionar contenido
-                prospectivo y que este año se reunirán en 7 ejes de: Aprender
-                Produciendo, Desafíos Globales, Innovación y Agtech, Manejo de
-                Plagas, Sistemas Integrados, Sistemas Productivos Sustentables,
-                Perspectivas Sociopolíticas.
+                {t("p1")}
               </p>
               <p className="text-lg text-[#736D6D]">
-                Luego del gran éxito de la última edición, el Congreso Aapresid
-                se llevará a cabo nuevamente en la Ciudad Autónoma de Buenos
-                Aires.
+                {t("p2")}
               </p>
             </div>
           </div>

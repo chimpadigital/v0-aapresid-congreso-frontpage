@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import * as motion from "motion/react-client";
 import { SponsorLogo } from "../sponsor-logo";
+import { useTranslations } from "next-intl";
 
 interface categoryProps {
   medios: SponsorPropsItem[];
@@ -25,9 +26,11 @@ const MediosGacetilla = () => {
     fetchSponsors();
   }, []);
 
+  const t = useTranslations("gacetilla-page");
+
   return (
-    <div className="mx-4 mb-16 mt-10 md:mt-16 max-w-[1204px] xl:mx-auto">
-      <h3 className="mb-4 text-2xl text-primary">Medios</h3>
+    <div className="mx-4 mb-16 mt-10 max-w-[1204px] md:mt-16 xl:mx-auto">
+      <h3 className="mb-4 text-2xl text-primary">{t("medios")}</h3>
       <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
       <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
