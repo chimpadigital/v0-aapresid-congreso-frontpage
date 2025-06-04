@@ -29,6 +29,10 @@ export function Navbar() {
           href: `/${locale}/informacion-turistica`,
         },
         { label: "Nos acompañan", href: `/${locale}/nos-acompanian` },
+        {
+          label: "Preguntas frecuentes",
+          href: `/${locale}/preguntas-frecuentes`,
+        },
       ],
     },
     // {

@@ -11,6 +11,12 @@ import { Navbar } from "@/components/navbar/index";
 export const metadata: Metadata = {
   title: "Congreso Aapresid",
   description: "Congreso Aapresid",
+  openGraph: {
+    images: ["/images/bandera-aapre.webp"],
+  },
+  twitter: {
+    images: ["/images/bandera-aapre.webp"],
+  },
 };
 
 export default async function RootLayout({

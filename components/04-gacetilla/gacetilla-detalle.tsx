@@ -1,6 +1,7 @@
 import { GacetillaDetalle } from "@/lib/types";
 import DownloadIcon from "@/components/icons/DownloadIcon";
 import ModalCompartir from "./modal-compartir";
+import { Metadata } from "next";
 
 interface Props {
   id: string;
@@ -40,6 +41,34 @@ function formatDate(dateStr: string, locale: string) {
   month = month.charAt(0).toUpperCase() + month.slice(1).toLowerCase();
   const year = d.getFullYear();
   return `${day} ${month} ${year}`;
+}
+
+export async function generateMetadata({ id, locale }: Props): Promise<Metadata> {
+  const detalle = await getDetalle(id);
+  if (!detalle) return {};
+  const title = getField(detalle.title, locale);
+  const description = getField(detalle.excerpt, locale);
+  const image = detalle.image || "/images/bandera-aapre.webp";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const url = `${baseUrl}/${locale}/gacetilla/${id}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      url,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
+  };
 }
 
 export default async function DetalleGacetillaContent(props: Props) {
@@ -95,8 +124,7 @@ export default async function DetalleGacetillaContent(props: Props) {
           href={detalle.file || "#"}
           download
           target="_blank"
-          // className="relative z-[1] flex w-full items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white fill-primary px-[15px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[160%] before:top-[600%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[5] md:w-[min(235px,100%)]"
-          className="relative z-[1] flex w-full items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white px-[30px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-[min(235px,100%)] md:before:-left-[145%] md:before:top-[160%] hover:text-white md:hover:before:scale-[3]"
+          className="relative z-[1] flex w-full items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white px-[30px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-[min(255px,100%)] md:before:-left-[145%] md:before:top-[160%] hover:text-white md:hover:before:scale-[3]"
         >
           <span>Descargar gacetilla</span>
           <DownloadIcon />

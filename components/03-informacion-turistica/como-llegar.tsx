@@ -23,7 +23,7 @@ export function ComoLlegarSection() {
             <h2 className="mb-8 text-3xl font-normal leading-none md:text-[40px]">
               ¿Cómo llegar
               <br />
-              al <span className="font-bold">Congreso</span>?
+              al <span className="font-bold">Congreso Aapresid</span>?
             </h2>
 
             <div className="w-auto max-w-full space-y-6 tracking-wider text-white lg:w-max lg:max-w-[46ch]">
