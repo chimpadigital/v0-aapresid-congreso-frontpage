@@ -207,7 +207,6 @@ body {
   text-decoration: underline;
 }
 
-
 .gacetilla-detalle h1,
 .gacetilla-detalle h2,
 .gacetilla-detalle h3,
@@ -225,27 +224,22 @@ body {
 }
 
 .gacetilla-detalle h2 {
-
   @apply text-2xl mb-4 text-primary;
 }
 
 .gacetilla-detalle h3 {
-
   @apply text-xl mb-4 text-primary;
 }
 
 .gacetilla-detalle h4 {
-
   @apply text-lg mb-4 text-primary;
 }
 
 .gacetilla-detalle h5 {
-
   @apply text-base mb-4 text-primary;
 }
 
 .gacetilla-detalle h6 {
-
   @apply text-sm mb-4 text-primary;
 }
 
@@ -260,4 +254,14 @@ body {
 .gacetilla-detalle img {
   border-radius: 20px;
   overflow: hidden;
+}
+
+.gacetilla-detalle span:has(> img) {
+  width: 100% !important;
+  display: block;
+  height: auto !important;
+  margin-bottom: 1rem;
+}
+.gacetilla-detalle img {
+  width: 100%;
 }
