@@ -21,7 +21,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           {/* Fallback image while video loads */}
           <div className="absolute inset-0">
             <img
-              src="/images/poster-hero.webp"
+              src="/images/home/poster-hero.webp"
               alt="Background"
               className="h-full w-full object-cover"
             />

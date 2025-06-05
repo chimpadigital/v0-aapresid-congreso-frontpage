@@ -4,7 +4,7 @@ const API_BASE_URL = process.env.API_BASE_URL || '';
 
 export async function GET() {
     try {
-        const res = await fetch(`${API_BASE_URL}/api/events?page=1&limit=10`);
+        const res = await fetch(`${API_BASE_URL}/api/events?page=1&limit=10&featured=1`);
         if (!res.ok) {
             return NextResponse.json({ error: "Failed to fetch data" }, { status: res.status });
         }
