@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import { BackButton } from "../GoBackHero";
 import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-const HeroGacetilla = async ({ showTitle = true }) => {
-  const t = await getTranslations("gacetilla-page");
+const HeroGacetilla = ({ showTitle = true }) => {
+  const t = useTranslations("gacetilla-page");
   return (
     <section
       className={`relative mx-4 mt-4 flex min-h-[378px] flex-col justify-center rounded-[20px] bg-cover bg-center px-8 pb-[70px] pt-[140px] md:m-[33px] md:mb-[100px] md:p-[70px]`}
@@ -11,7 +13,7 @@ const HeroGacetilla = async ({ showTitle = true }) => {
         backgroundImage: `url('/images/gacetilla/circuito-prensa.webp')`,
       }}
     >
-      <div className="mx-auto w-full max-w-7xl ">
+      <div className="mx-auto w-full max-w-7xl">
         <BackButton />
 
         {/* Título */}

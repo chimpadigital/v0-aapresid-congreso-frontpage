@@ -1,9 +1,10 @@
-import { getTranslations } from "next-intl/server";
+"use client";
 import React from "react";
 import { RichText } from "../rich-text";
+import { useTranslations } from "next-intl";
 
-const CierreSection = async () => {
-  const t = await getTranslations("edicion-33");
+const CierreSection = () => {
+  const t = useTranslations("edicion-33");
   return (
     <>
       <RichText
