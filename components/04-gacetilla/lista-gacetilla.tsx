@@ -186,7 +186,7 @@ const ListaGacetilla = () => {
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date as Date | null)}
           dateFormat={locale === "en" ? "yyyy/MM/dd" : "dd/MM/yyyy"}
-          placeholderText={t("día")}
+          placeholderText={t("dia")}
           locale={locale}
           customInput={
             <CustomButtonCalendar

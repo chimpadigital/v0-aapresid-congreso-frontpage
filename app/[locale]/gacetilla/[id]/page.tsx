@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { BackButton } from "@/components/GoBackHero";
-import DetalleGacetillaContent, { getField } from "@/components/04-gacetilla/gacetilla-detalle";
+import DetalleGacetillaContent, {
+  getField,
+} from "@/components/04-gacetilla/gacetilla-detalle";
 import GacetillasSimilares from "@/components/04-gacetilla/gacetillas-similares";
 import HeroGacetilla from "@/components/04-gacetilla/hero-gacetilla";
 import { GacetillaDetalle } from "@/lib/types";
@@ -9,7 +11,6 @@ import { Metadata } from "next";
 interface Props {
   params: { id: string; locale: string };
 }
-
 
 interface PropsMeta {
   id: string;
@@ -25,9 +26,15 @@ async function getDetalle(id: string): Promise<GacetillaDetalle | null> {
   return res.json();
 }
 
-export async function generateMetadata({ id, locale }: PropsMeta): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string; locale: string };
+}): Promise<Metadata> {
+  const { id, locale } = params;
   const detalle = await getDetalle(id);
   if (!detalle) return {};
+
   const title = getField(detalle.title, locale);
   const description = getField(detalle.excerpt, locale);
   const image = detalle.image || "/images/bandera-aapre.webp";
@@ -56,12 +63,12 @@ export async function generateMetadata({ id, locale }: PropsMeta): Promise<Metad
 export default async function DetalleGacetilla({ params }: Props) {
   const { id, locale } = params;
 
-   const detalle = await getDetalle(id);
+  const detalle = await getDetalle(id);
   return (
     <>
-     <HeroGacetilla showTitle={false} />
+      <HeroGacetilla showTitle={false} />
       <Suspense fallback={<div className="py-10 text-center">Cargando...</div>}>
-        <DetalleGacetillaContent id={id} locale={locale} detalle={detalle}/>
+        <DetalleGacetillaContent id={id} locale={locale} detalle={detalle} />
       </Suspense>
       <GacetillasSimilares params={params} />
     </>
