@@ -6,7 +6,7 @@ export async function GET(req: Request) {
     try {
         const { searchParams } = new URL(req.url);
         const page = searchParams.get('page') || '1';
-        const pageSize = searchParams.get('pageSize') || '10';
+        const limit = searchParams.get('limit') || '10';
         // Nuevo: soportar parámetro 'date' y convertirlo a dateFrom/dateTo
         let dateFrom = searchParams.get('dateFrom');
         let dateTo = searchParams.get('dateTo');
@@ -18,7 +18,7 @@ export async function GET(req: Request) {
             d.setDate(d.getDate() + 1);
             dateTo = d.toISOString().slice(0, 10);
         }
-        let apiUrl = `${API_BASE_URL}/api/press-release?page=${page}&pageSize=${pageSize}`;
+        let apiUrl = `${API_BASE_URL}/api/press-release?page=${page}&limit=${limit}`;
         if (dateFrom) apiUrl += `&dateFrom=${dateFrom}`;
         if (dateTo) apiUrl += `&dateTo=${dateTo}`;
         // Pasar también el parámetro de búsqueda si existe

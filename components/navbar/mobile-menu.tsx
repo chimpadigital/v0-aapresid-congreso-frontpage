@@ -88,27 +88,43 @@ export function MobileMenu({
               <CloseIcon />
             </button>
           </div>
-          {isSubMenu && (
-            <button
-              onClick={goBack}
-              className="mb-10 w-fit text-white"
-              aria-label="Go back"
-            >
-              <span className="inline-block rounded-full border border-white px-[22px] py-[10px]">
-                <ArrowBack />
-              </span>
-            </button>
-          )}
+          {/* Botón GoBack animado */}
+          <AnimatePresence mode="wait">
+            {isSubMenu && (
+              <motion.button
+                key={"goback-" + menuHistory.length}
+                onClick={goBack}
+                className="mb-10 w-fit text-white"
+                aria-label="Go back"
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -30, opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+              >
+                <span className="inline-block rounded-full border border-white px-[22px] py-[10px]">
+                  <ArrowBack />
+                </span>
+              </motion.button>
+            )}
+          </AnimatePresence>
 
-          {/* Título del submenu */}
-          {isSubMenu && currentTitle && (
-            <div className="mb-[75px]">
-              <h2 className="text-2xl text-[40px] text-white">
-                {currentTitle}
-              </h2>
-            </div>
-          )}
-
+          {/* Título del submenu animado */}
+          <AnimatePresence mode="wait">
+            {isSubMenu && currentTitle && (
+              <motion.div
+                key={"title-" + currentTitle + menuHistory.length}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="mb-[75px]"
+              >
+                <h2 className="text-2xl text-[40px] text-white">
+                  {currentTitle}
+                </h2>
+              </motion.div>
+            )}
+          </AnimatePresence>
           {/* Menu Items */}
           <AnimatePresence mode="wait">
             <motion.div

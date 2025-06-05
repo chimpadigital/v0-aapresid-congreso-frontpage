@@ -35,7 +35,7 @@ const ListaGacetilla = () => {
     setLoading(true);
     const params = new URLSearchParams({
       page: currentPage.toString(),
-      pageSize: itemsPerPage.toString(),
+      limit: itemsPerPage.toString(),
     });
     if (appliedDate) {
       const from = appliedDate.toISOString().slice(0, 10);
