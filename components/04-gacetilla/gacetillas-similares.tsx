@@ -12,7 +12,7 @@ export default async function GacetillasSimilares({ params }: Props) {
   const locale = params.locale;
   // Fetch desde el server
   const res = await fetch(
-    `${process.env.API_BASE_URL || "https://api.congreso.v1.franco.in.net"}/api/press-release?page=1&pageSize=3&lang=${locale}`,
+    `${process.env.API_BASE_URL || "https://api.congreso.v1.franco.in.net"}/api/press-release?page=1&limit=3&lang=${locale}`,
     { cache: "no-store" },
   );
   const data = await res.json();

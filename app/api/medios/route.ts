@@ -7,7 +7,7 @@ const API_BASE_URL = process.env.API_BASE_URL || '';
 export async function GET() {
   try {
     const [medios] = await Promise.all([
-      axios.get(`${API_BASE_URL}/api/logos?categoryId=6&pageSize=1000`),
+      axios.get(`${API_BASE_URL}/api/logos?categoryId=6&limit=1000`),
     ]);
 
     return NextResponse.json({

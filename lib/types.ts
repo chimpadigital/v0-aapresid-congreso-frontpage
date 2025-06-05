@@ -133,7 +133,7 @@ export interface GacetillaApiItem {
 export interface GacetillaApiResponse {
   total: number;
   page: number;
-  pageSize: number;
+  limit: number;
   data: GacetillaApiItem[];
 }
 
