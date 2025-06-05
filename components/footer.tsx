@@ -57,7 +57,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="relative mx-4 mb-8 mt-[30px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.png')] bg-cover bg-center md:mx-[33px] md:mt-[30px]">
+    <footer className="relative mx-4 mb-8 mt-[30px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.webp')] bg-cover bg-center md:mx-[33px] md:mt-[30px]">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         {/* Video element with multiple sources for better compatibility */}
@@ -69,7 +69,7 @@ export function Footer() {
           playsInline
           preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
-          poster="/images/trama-background.png"
+          poster="/images/trama-background.webp"
         >
           {/* Local source */}
           <source src="/videos/video-circuitos.mp4" type="video/mp4" />
