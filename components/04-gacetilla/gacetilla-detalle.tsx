@@ -1,8 +1,8 @@
 import { GacetillaDetalle } from "@/lib/types";
 import DownloadIcon from "@/components/icons/DownloadIcon";
 import ModalCompartir from "./modal-compartir";
-import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import DescargaGacetilla from "./descarga-gacetilla";
 
 interface Props {
   id: string;
@@ -87,15 +87,8 @@ export default async function DetalleGacetillaContent(props: Props) {
         />
       </article>
       <div className="mx-auto flex max-w-5xl flex-wrap justify-end gap-5 px-4 py-8">
-        <a
-          href={detalle.file || "#"}
-          download
-          target="_blank"
-          className="relative z-[1] flex w-full items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-white px-[30px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[6] md:w-[min(255px,100%)] md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3]"
-        >
-          <span>{t("descargar-gacetilla")}</span>
-          <DownloadIcon />
-        </a>
+        {detalle.file ? <DescargaGacetilla file={detalle.file} /> : ""}
+
         <ModalCompartir link={link} />
       </div>
     </section>

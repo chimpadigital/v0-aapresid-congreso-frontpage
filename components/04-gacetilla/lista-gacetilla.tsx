@@ -4,10 +4,9 @@ import { GacetillaCard } from "../gacetilla-card";
 import LupaIcon from "../icons/LupaIcon";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import CloseIcon from "../icons/CloseIcon";
-import { Paginacion } from "./paginacion";
-import { GacetillaApiItem, GacetillaApiResponse } from "@/lib/types";
-import { useRouter, useSearchParams } from "next/navigation";
+ import { Paginacion } from "./paginacion";
+import { GacetillaApiResponse } from "@/lib/types";
+import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { es, enUS } from "date-fns/locale";
 
@@ -135,7 +134,7 @@ const ListaGacetilla = () => {
         </svg>{" "}
       </div>
       <p className="relative top-px leading-none tracking-wider">
-        {value ? value : "Día"}
+        {value ? value : t("dia")}
       </p>
       {value && (
         <span
@@ -165,7 +164,6 @@ const ListaGacetilla = () => {
 
   return (
     <section className="mx-auto max-w-[1390px] px-4 pt-10 md:px-[33px] md:pt-0 2xl:px-0">
-      <h2 className="mb-8 text-5xl tracking-wide text-primary">{t("title")}</h2>
       <form
         className="mb-[91px] flex flex-col gap-[30px] md:flex-row"
         onSubmit={handleSearchClick}

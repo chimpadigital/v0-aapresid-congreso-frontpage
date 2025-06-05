@@ -7,7 +7,7 @@
     "nos_acompanian": "Nos acompañan",
     "FAQs": "Preguntas frecuentes",
     "prensa": "Prensa",
-    "gacetilla": "Gacetilla",
+    "gacetilla": "Gacetillas",
     "informacion_turistica": "Información turística",
     "que_es_el_congreso": "¿Qué es el Congreso?",
     "historia": "Historia",
@@ -311,7 +311,7 @@
     "acompanian": "acompañan"
   },
   "gacetilla-page": {
-    "hero-title": "Prensa",
+    "hero-title": "Gacetillas",
     "title": "Gacetillas",
     "palabras": "Palabras claves",
     "dia": "Día",
