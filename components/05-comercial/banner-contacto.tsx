@@ -87,64 +87,56 @@ const BannerContacto = () => {
               {t("area-comercial")}{" "}
             </h3>
             <div className="mb-[46px]">
-              <div className="mb-3 flex items-center gap-3 tracking-widest text-white md:gap-[28px]">
+              <div className="mb-3 flex items-center md:justify-normal justify-center gap-3 tracking-widest text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
-                  <a
-                    href="mailto:troiano@aapresid.org.ar"
-                    className="hover:text-accent"
-                  >
-                    troiano@aapresid.org.ar
-                  </a>
-                </p>
+                <a
+                  href="mailto:troiano@aapresid.org.ar"
+                  className="hyphens-auto break-all text-lg hover:text-accent md:text-2xl"
+                >
+                  troiano@aapresid.org.ar
+                </a>
               </div>
-              <div className="flex items-center gap-3 text-white md:gap-[28px]">
+              <div className="flex items-center md:justify-normal justify-center gap-3 text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
-                  <a
-                    href="https://wa.me/5493416018111"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-accent"
-                  >
-                    WhatsApp/Tel: +54 9 3416 01-8111
-                  </a>
-                </p>
+                <a
+                  href="https://wa.me/5493416018111"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hyphens-auto break-all text-lg hover:text-accent md:text-2xl"
+                >
+                  WhatsApp/Tel: +54 9 3416 01-8111
+                </a>
               </div>
             </div>
 
             <div className="mb-[46px]">
-              <div className="mb-3 flex items-center gap-3 tracking-widest text-white md:gap-[28px]">
+              <div className="mb-3 flex items-center md:justify-normal justify-center gap-3 tracking-widest text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <Emailicon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
-                  <a
-                    href="mailto:ventas@exponenciar.com.ar"
-                    className="hover:text-accent"
-                  >
-                    ventas@exponenciar.com.ar
-                  </a>
-                </p>
+                <a
+                  href="mailto:ventas@exponenciar.com.ar"
+                  className="hyphens-auto break-all text-lg hover:text-accent md:text-2xl"
+                >
+                  ventas@exponenciar.com.ar
+                </a>
               </div>
-              <div className="flex items-center gap-3 text-white md:gap-[28px]">
+              <div className="flex items-center md:justify-normal justify-center gap-3 text-white md:gap-[28px]">
                 <div className="shrink-0">
                   <WhatsappIcon />
                 </div>
-                <p className="w-full hyphens-auto break-all text-lg md:text-2xl">
-                  <a
-                    href="https://wa.me/5491158442945"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-accent"
-                  >
-                    WhatsApp/Tel: +54 9 11 5844-2945
-                  </a>
-                </p>
+                <a
+                  href="https://wa.me/5491158442945"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hyphens-auto break-all text-lg hover:text-accent md:text-2xl"
+                >
+                  WhatsApp/Tel: +54 9 11 5844-2945
+                </a>
               </div>
             </div>
           </div>

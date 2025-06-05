@@ -4,7 +4,7 @@ import { BackButton } from "../GoBackHero";
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
-const HeroGacetilla = ({ showTitle = true }) => {
+const HeroGacetilla = () => {
   const t = useTranslations("gacetilla-page");
   return (
     <section
@@ -17,7 +17,7 @@ const HeroGacetilla = ({ showTitle = true }) => {
         <BackButton />
 
         {/* Título */}
-        <div className={`${showTitle ? "opacity-100" : "opacity-0"}`}>
+        <div>
           <h1 className="mb-1 text-3xl text-white md:text-5xl">
             {t("hero-title")}
           </h1>

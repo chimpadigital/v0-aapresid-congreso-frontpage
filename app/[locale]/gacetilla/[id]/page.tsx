@@ -66,7 +66,7 @@ export default async function DetalleGacetilla({ params }: Props) {
   const detalle = await getDetalle(id);
   return (
     <>
-      <HeroGacetilla showTitle={false} />
+      <HeroGacetilla />
       <Suspense fallback={<div className="py-10 text-center">Cargando...</div>}>
         <DetalleGacetillaContent id={id} locale={locale} detalle={detalle} />
       </Suspense>
