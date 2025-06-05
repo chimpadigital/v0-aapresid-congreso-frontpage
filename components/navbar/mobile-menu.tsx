@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { X, ChevronRight, ArrowLeft } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import type React from "react";
 import { MenuItem } from "@/lib/types";
 import ChevronArrow from "../icons/ChevronArrow";
@@ -110,33 +110,42 @@ export function MobileMenu({
           )}
 
           {/* Menu Items */}
-          <div className={`flex flex-col ${isSubMenu ? "space-y-1" : "space-y-6"}`}>
-            {currentMenu.map((item, index) => (
-              <div key={index}>
-                {item.href ? (
-                  <Link
-                    href={item.href}
-                    className={`flex items-center justify-between tracking-wider ${isSubMenu ? "text-[28px] font-light" : "text-[40px]"}  text-white transition-colors hover:text-white/70`}
-                    onClick={handleClose}
-                  >
-                    <span>{item.label}</span>
-                  </Link>
-                ) : (
-                  <button
-                    onClick={() => handleMenuItemClick(item)}
-                    className="flex items-baseline justify-between gap-5 text-[40px] tracking-wider text-white transition-colors hover:text-white/70"
-                  >
-                    <span>{item.label}</span>
-                    {item.children && (
-                      <div className="relative top-1">
-                        <ChevronArrow />
-                      </div>
-                    )}
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentTitle + menuHistory.length}
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -50, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className={`flex flex-col ${isSubMenu ? "space-y-1" : "space-y-6"}`}
+            >
+              {currentMenu.map((item, index) => (
+                <div key={index}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className={`flex items-center justify-between tracking-wider ${isSubMenu ? "text-[28px] font-light" : "text-[40px]"} text-white transition-colors hover:text-white/70`}
+                      onClick={handleClose}
+                    >
+                      <span>{item.label}</span>
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleMenuItemClick(item)}
+                      className="flex items-baseline justify-between gap-5 text-[40px] tracking-wider text-white transition-colors hover:text-white/70"
+                    >
+                      <span>{item.label}</span>
+                      {item.children && (
+                        <div className="relative top-1">
+                          <ChevronArrow />
+                        </div>
+                      )}
+                    </button>
+                  )}
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
           {/* Botón de Inscripciones */}
           {/* <div className="mt-auto pt-8">
