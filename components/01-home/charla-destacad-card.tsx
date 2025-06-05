@@ -48,10 +48,7 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
       return { icon: <Eje1Manejo size={30} />, color: "#D34240" };
     if (normalized.includes("integrad"))
       return { icon: <Eje1Sistemas size={30} />, color: "#EAAB21" };
-    if (
-      normalized.includes("sustentable") ||
-      normalized.includes("productivo")
-    )
+    if (normalized.includes("sustentable") || normalized.includes("productivo"))
       return { icon: <Eje1Sustentable size={30} />, color: "#15A884" };
     if (normalized.includes("sociopol"))
       return { icon: <Eje1Perspectiva size={30} />, color: "#99529B" };
@@ -98,12 +95,14 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
           <span className="text-[18px] text-[#736D6D]">{theme}</span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
-            <PlanetaIcon />
+        {section.length > 1 && (
+          <div className="flex items-center gap-4">
+            <div className="flex-shrink-0">
+              <PlanetaIcon />
+            </div>
+            <span className="text-[18px] text-[#736D6D]">{section}</span>
           </div>
-          <span className="text-[18px] text-[#736D6D]">{section}</span>
-        </div>
+        )}
       </div>
     </div>
   );
