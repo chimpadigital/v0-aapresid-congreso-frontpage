@@ -57,7 +57,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="relative mx-4 mb-8 mt-6 overflow-hidden rounded-[20px] bg-[url('/images/trama-background.png')] bg-cover bg-center md:mx-[33px] md:mt-[48px]">
+    <footer className="relative mx-4 mb-8 mt-[30px] overflow-hidden rounded-[20px] bg-[url('/images/trama-background.webp')] bg-cover bg-center md:mx-[33px] md:mt-[30px]">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         {/* Video element with multiple sources for better compatibility */}
@@ -69,10 +69,10 @@ export function Footer() {
           playsInline
           preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
-          poster="/images/trama-background.png"
+          poster="/images/trama-background.webp"
         >
           {/* Local source */}
-          <source src="/videos/video-footer.mp4" type="video/mp4" />
+          <source src="/videos/video-circuitos.mp4" type="video/mp4" />
 
           {/* External CDN source as backup */}
           <source
@@ -81,7 +81,7 @@ export function Footer() {
           />
         </video>
 
-        <div className="absolute inset-0 bg-[#2D3D34]/70" />
+        <div className="absolute inset-0 bg-primary/70" />
       </div>
 
       <div className="relative p-8 md:px-12 md:pb-12 md:pt-[85px]">
@@ -115,9 +115,9 @@ export function Footer() {
           </div>
 
           {/* Right - Date and button */}
-          <div className="flex flex-1 flex-col items-start gap-6">
+          <div className="flex flex-1 flex-col items-start gap-6 tracking-wider">
             <div className="text-white">
-              <div className="text-xl font-medium leading-[1.30rem]">
+              <div className="text-xl font-medium leading-[1.30rem] mb-1">
                 {t("fecha")}
               </div>
               <div className="text-xl font-light">{t("lugar")}</div>
@@ -165,7 +165,7 @@ export function Footer() {
                 <div>Santa Fe.</div>
               </div>
 
-              <div className="pl-3 text-lg font-light leading-[1.30rem] tracking-widest text-white">
+              <div className="pl-3 text-lg font-light leading-[1.30rem] tracking-widest text-white mb-4 md:mb-0">
                 <div>{t("aapresid_comunidad1")}</div>
                 <div>{t("aapresid_comunidad2")}</div>
                 <div className="font-normal">{t("aapresid_comunidad3")}</div>
@@ -256,7 +256,7 @@ function SocialIcon({ icon, href }: { icon: React.ReactNode; href: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-10 w-10 items-center justify-center rounded-full tracking-wider text-[#2D3D34] transition-colors"
+      className="flex h-10 w-10 items-center justify-center rounded-full tracking-wider text-primary transition-colors"
     >
       {icon}
     </a>

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { heroui } from "@heroui/theme";
 
 const config: Config = {
   darkMode: ["class"],
@@ -7,6 +8,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@heroui/theme/dist/components/modal.js",
   ],
   theme: {
     extend: {
@@ -15,6 +17,7 @@ const config: Config = {
         accent: "#64B33D",
         secondary: "#ED7F00",
         background: "#fff",
+        paragraph: "#736D6D",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
@@ -82,6 +85,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Owners', 'Arial', 'Helvetica', 'sans-serif'],
+        gotham: ['Gotham', 'Arial', 'Helvetica', 'sans-serif'],
       },
       screens: {
         "2xs" : '350px',
@@ -89,6 +93,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [heroui()],
 }
 export default config

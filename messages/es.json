@@ -1,7 +1,15 @@
 {
   "navbar": {
     "inscripciones": "Inscripciones",
+    "inicio": "Inicio",
     "acerca_de": "Acerca de",
+    "edicion_33": "Edición N° 33",
+    "nos_acompanian": "Nos acompañan",
+    "FAQs": "Preguntas frecuentes",
+    "prensa": "Prensa",
+    "gacetilla": "Gacetillas",
+    "comercial": "Comercial",
+    "informacion_turistica": "Información turística",
     "que_es_el_congreso": "¿Qué es el Congreso?",
     "historia": "Historia",
     "ediciones_anteriores": "Ediciones anteriores",
@@ -9,10 +17,8 @@
     "programa": "Programa",
     "oradores": "Oradores",
     "ejes_tematicos": "Ejes temáticos",
-    "prensa": "Prensa",
     "noticias": "Noticias",
     "contacto": "Contacto",
-    "comercial": "Comercial",
     "espanol": "ES",
     "english": "EN"
   },
@@ -52,53 +58,112 @@
       {
         "titulo": "Aprender Produciendo",
         "descripcion": "Una sinergia entre la ciencia, los organismos de investigación y los productores, quienes participan activamente de los ensayos llevados a cabo en escenarios reales. \n Pensado para dar respuestas a las demandas del productor a través del desarrollo de tecnologías sustentables.",
-        "clase": "aprender"
+        "clase": "aprender",
+        "color": "#EF7B80"
       },
       {
         "titulo": "Desafíos Globales",
         "descripcion": "Fortalecer la participación del país en el ámbito global con la responsabilidad y oportunidad de compartir nuestra experiencia en el desarrollo de un modelo de producción que permite cuidar, regenerar los recursos y tener un menor impacto negativo en el ambiente.",
-        "clase": "desafios"
+        "clase": "desafios",
+        "color": "#147DBE"
       },
       {
         "titulo": "Innovación y Agtech",
         "descripcion": "Promover un ecosistema tecnológico accesible e integrado, explorando la adopción de herramientas digitales que puedan ofrecer soluciones al productor. Busca integrar la digitalización y la evolución tecnológica en el agro, abordando el ecosistema AgTech y la maquinaria agrícola.",
-        "clase": "innovacion"
+        "clase": "innovacion",
+        "color": "#E84615"
       },
       {
         "titulo": "Manejo de Plagas",
         "descripcion": "Conjunto de prácticas y técnicas llevadas a cabo para controlar a aquellos organismos que pueden llegar a perjudicar los sistemas de producción. Se abordarán distintos tipos de estrategias sustentables que busquen minimizar el impacto ambiental y aseguren el control de las plagas.",
-        "clase": "manejo"
+        "clase": "manejo",
+        "color": "#D34240"
       },
       {
         "titulo": "Sistemas Integrados",
         "descripcion": "Ampliar la mirada en la diversidad de producciones, mostrando casos reales y experiencias de productores que apuestan por otros sistemas de producción impulsando la diversificación y la integración mostrando sus múltiples beneficios, productivos y sustentables.",
-        "clase": "sistemas"
+        "clase": "sistemas",
+        "color": "#EAAB21"
       },
       {
         "titulo": "Sistemas Productivos Sustentables",
         "descripcion": "Estos sistemas se caracterizan por ser agroecológicamente responsables y económicamente viables. Esto implica el uso eficiente de los recursos naturales, la minimización de los impactos ambientales negativos, el fomento de la biodiversidad y la economía circular. Además, buscan la resiliencia frente a los cambios climáticos y otros desafíos globales.",
-        "clase": "sustentables"
+        "clase": "sustentables",
+        "color": "#15A884"
       },
       {
         "titulo": "Perspectivas Sociopolíticas",
         "descripcion": "Una mirada integral al contexto político y social del productor que le permita  poner en agenda las necesidades para llevar adelante una producción sustentable y rentable en el tiempo. Poder acercar la toma de decisiones a los productores y viceversa.",
-        "clase": "prospectiva"
+        "clase": "prospectiva",
+        "color": "#99529B"
       }
     ]
   },
+  "speakers": {
+    "title1": "Disertantes ",
+    "title2": "destacados",
+    "conoce_los_oradores": "Ver todos los disertantes",
+    "ver-cronograma": "Cronograma"
+  },
+  "charlas": {
+    "title1": "Charlas ",
+    "title2": "destacadas",
+    "ver-cronograma": "Ver cronograma completo"
+  },
   "commercial": {
-    "titulo": "Formá parte de la",
-    "congreso": "33° edición del Congreso",
+    "forma-parte": "Formá parte de la",
+    "de-la-33": "33° edición del Congreso",
+    "congreso": "Congreso",
+    "descripcion1": "Descargá el brochure comercial y conocé",
+    "descripcion2": "las oportunidades que ofrecemos.",
     "descarga": "Descargar carpeta comercial"
   },
+    "contacto": {
+    "contacto": "Contacto",
+    "area-comercial": "Área comercial"
+  },
+  "gacetilla": {
+    "titulo1": "Gacetillas",
+    "ver-todas": "Ver todas las gacetillas "
+  },
   "faq": {
-    "titulo1": "Preguntas",
-    "titulo2": "Frecuentes",
+    "preguntas": "Preguntas",
+    "frecuentes": "Frecuentes",
     "items": [
+      {
+        "pregunta": "¿Qué es Aapresid?",
+        "respuesta": [
+          "La Asociación Argentina de Productores en Siembra Directa (Aapresid) es una organización no gubernamental sin fines de lucro. Integrada por una red de productores agropecuarios que, a partir del interés en la conservación de su principal recurso, el suelo, adoptaron e impulsaron la difusión de un nuevo paradigma agrícola, basado en la Siembra Directa.",
+          "Más información: [www.aapresid.org.ar](https://www.aapresid.org.ar/es)"
+        ]
+      },
       {
         "pregunta": "¿Qué es el Congreso Aapresid?",
         "respuesta": [
           "Es un evento de 3 días vinculado al agro. Consolidado como el evento de conocimiento agropecuario más destacado en nuestro país y un referente a nivel mundial. El mismo es un congreso multitemático y cuenta con diversas salas que funcionan en simultáneo."
+        ]
+      },
+      {
+        "pregunta": "¿Cuáles son las principales temáticas?",
+        "respuesta": [
+          "Esta edición del Congreso tendrá 7 ejes temáticos: bajo los cuales estarán ordenadas más de 160 charlas y paneles:",
+          "- Aprender Produciendo",
+          "- Sistemas Integrados",
+          "- Sistemas Productivos Sustentables",
+          "- Manejo de Plagas",
+          "- Innovación y Agtech",
+          "- Desafíos Globales",
+          "- Perspectivas Sociopolíticas"
+        ]
+      },
+      {
+        "pregunta": "¿Cómo me inscribo para asistir?",
+        "respuesta": ["Próximamente dentro de esta misma página."]
+      },
+      {
+        "pregunta": "¿Quiénes pueden participar del congreso?",
+        "respuesta": [
+          "Cualquier persona puede sumarse al congreso. Está abierto a toda la comunidad."
         ]
       },
       {
@@ -108,13 +173,23 @@
         ]
       },
       {
-        "pregunta": "¿Cómo me inscribo para asistir?",
-        "respuesta": ["Próximamente dentro de esta misma página."]
+        "pregunta": "¿Cuál es el lema de este Congreso?",
+        "respuesta": [
+          "El lema del trigésimo tercer Congreso Aapresid es “Código Abierto”,",
+          "Código Abierto sintetiza el espíritu colaborativo, innovador y transformador que define al XXXIII Congreso Aapresid. Este lema une tres conceptos esenciales: la apertura al conocimiento colectivo, la capacidad de programar soluciones para el futuro y el respeto por los valores fundamentales que sustentan nuestras decisiones como comunidad agroalimentaria"
+        ]
       },
       {
-        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "pregunta": "¿Qué costo tiene la entrada?",
         "respuesta": [
-          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+          "Los precios de las entradas serán publicados en esté mismo sitio cuando se lance el sistema de inscripciones, ahí podrá elegir entre distintos tipos de entradas con importantes descuentos y promociones."
+        ]
+      },
+      {
+        "pregunta": "¿Existen descuentos para estudiantes ?",
+        "respuesta": [
+          "Aapresid tiene convenios de vinculación con muchas universidades, y los estudiantes de las mismas podrán obtener descuentos en las entradas. Se deberá consultar con las áreas de vinculación de las facultades en cuestión.",
+          "Por otro lado, los estudiantes universitarios que adjunten su certificado de alumno regular accederán a un importante descuento en el precio de todos los tipos de tickets."
         ]
       },
       {
@@ -123,8 +198,70 @@
           "El socio Aapresid podrá inscribirse de manera gratuita siempre y cuando tenga la cuota abonada a la fecha.",
           "La fecha límite de inscripción del socio Aapresid para asistir de forma gratuita al congreso es el **5 de agosto de 2025**. Una vez pasada esa fecha el socio deberá inscribirse pagando el costo de la entrada."
         ]
+      },
+      {
+        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "respuesta": [
+          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+        ]
+      },
+      {
+        "pregunta": "¿Hasta cuándo tengo tiempo para inscribirme al Congreso?",
+        "respuesta": [
+          "Hay tiempo de inscripción online hasta el último día del evento, Viernes 8 de Agosto. Le recomendamos igualmente inscribirse hasta el **Lunes 4 de Agosto** por cuestiones operativas del sistema de inscripciones que facilitarán su ingreso al evento.  "
+        ]
+      },
+      {
+        "pregunta": "¿Se entregarán certificados de asistencia?",
+        "respuesta": [
+          "Sí, se entregarán constancias de participación al finalizar el evento, y la misma se hará de manera digital."
+        ]
+      },
+      {
+        "pregunta": "¿Dónde puedo ver el programa del Congreso?",
+        "respuesta": [
+          "El cronograma estará disponible en la sección Congreso de la web de Aapresid y usted podrá descargarlo, el mismo se irá actualizando periódicamente con disertantes y títulos."
+        ]
+      },
+      {
+        "pregunta": "¿Las charlas de oradores extranjeros cuentan con traducción?",
+        "respuesta": [
+          "Si, contamos con traducción en simultáneo de inglés-español en tres salas de conferencias."
+        ]
+      },
+      {
+        "pregunta": "¿Este año se transmitirán las charlas en la web en vivo y en directo?",
+        "respuesta": [
+          "Sólo una sala transmitirá sus charlas en vivo y en directo por la página web del Congreso Aapresid, dichas charlas serán de acceso gratuito y abiertas para todo público.",
+          "También, se transmitirá en vivo durante los 3 días el streaming “Levantando La Perdiz” donde participarán disertantes e invitados dentro del Congreso, a través del canal de Youtube de Aapresid."
+        ]
+      },
+      {
+        "pregunta": "¿Se podrá acceder a la filmación de otras salas y charlas?",
+        "respuesta": [
+          "Sí, se podrá tener acceso a la filmación de otras salas y charlas. Las mismas serán habilitadas post - congreso."
+        ]
+      },
+      {
+        "pregunta": "¿Cómo puedo obtener información para ser sponsor del congreso?",
+        "respuesta": [
+          "Comunicarse con los responsables comerciales de Aapresid troiano@aapresid.org.ar o Aquí podrá encontrar más datos de contacto: [www.aapresid.org.ar/es/quienes-somos](https://aapresid.org.ar/es/quienes-somos)"
+        ]
+      },
+      {
+        "pregunta": "¿Al abonar la inscripción como se tramita la facturación?",
+        "respuesta": [
+          "Sí, una vez efectuado el pago desde Aapresid estaremos enviando la factura correspondiente. Se deberá enviar previamente a la casilla de correo electrónico lopez@aapresid.org.ar el comprobante de pago."
+        ]
+      },
+      {
+        "pregunta": "¿Su pregunta no está en el listado?",
+        "respuesta": [
+          "Puede comunicarse con nosotros a través del siguiente mail: colalongo@aapresid.org.ar O en caso de hablar en inglés, comunicarse a prospectiva@aapresid.org.ar"
+        ]
       }
-    ]
+    ],
+    "mas-preguntas": "Ver todas las gacetillas"
   },
   "sponsors": {
     "title": "Nos acompañan",
@@ -136,6 +273,72 @@
     "medios": "MEDIOS",
     "apoyan": "Apoyan",
     "organizan": "Organizan"
+  },
+  "edicion-33": {
+    "hero": {
+      "acerca": "Acerca del",
+      "congreso": "Congreso"
+    },
+    "intro-text": {
+      "p1": "El Congreso Aapresid lleva más de tres décadas conectando innovación, tecnología y conocimiento con el propósito de impulsar sistemas productivos cada vez más sustentables, siendo hoy en día un evento de referencia internacional para técnicos, investigadores, decisores, productores y referentes de toda la cadena agroindustrial de la región.",
+      "p2": "Durante cada edición, el Congreso Aapresid congrega a los más importantes referentes nacionales e internacionales para discutir y poner en agenda los temas del futuro, vinculando ciencia y producción y así transformar nuestra agricultura, ayudando a la mitigación del cambio climático e iluminando los escenarios de la innovación."
+    },
+    "stats": {
+      "conferencias": "Conferencias",
+      "dias": "Días",
+      "disertantes": "Disertantes",
+      "asistentes": "Asistentes"
+    },
+    "contenido": {
+      "p1": "El contenido del Congreso Aapresid es elaborado y pensado por grupos interdisciplinarios conformados por referentes académicos, institucionales, socios Aapresid y productores que a través de una metodología específica logran posicionar contenido prospectivo y que este año se reunirán en 7 ejes de: Aprender Produciendo, Desafíos Globales, Innovación y Agtech, Manejo de Plagas, Sistemas Integrados, Sistemas Productivos Sustentables, Perspectivas Sociopolíticas.",
+      "p2": "Luego del gran éxito de la última edición, el Congreso Aapresid se llevará a cabo nuevamente en la Ciudad Autónoma de Buenos Aires."
+    },
+    "programamos": "Programamos",
+    "el-futuro": "el futuro del agro",
+    "open-code": {
+      "titulo": "Código Abierto",
+      "p1": "Estamos escribiendo el diálogo con el futuro.",
+      "p2": "Cada idea, cada avance, cada conversación en el Congreso Aapresid es una línea de código en un programa colectivo. Uno que no solo resuelve los problemas de hoy, sino que anticipa los desafíos de mañana.",
+      "p3": "Vivimos en un mundo que no deja de cambiar. Y frente a esa transformación, entendemos que no basta con adaptarse: hay que crear. Crear nuevas sintaxis, nuevas conexiones, nuevas respuestas. Porque el conocimiento crece cuando se comparte y se multiplica cuando se conecta.",
+      "p4": "En el XXXIII Congreso Aapresid, abrimos las puertas de la innovación. Aquí, los límites se diluyen y las especializaciones se encuentran. ",
+      "p5": "Cada productor, técnico, investigador y visionario que participa no trae solo preguntas o respuestas: trae piezas que encajan en un sistema mayor.",
+      "p6": "Somos más que testigos del cambio: somos programadores del futuro. Cada año, este Congreso compila y actualiza en un solo cuerpo los saberes de una comunidad que hace de la innovación su modo de vida. No se trata solo de mejorar lo que ya existe, sino de imaginar y rediseñar a cada momento para acompañar las transformaciones del mundo. Porque el futuro no se predice: se programa. Y el código que escribimos juntos está abierto para todos."
+    },
+    "texto-final": "Este es el **Congreso Aapresid.** Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades."
+  },
+  "nos-acompanian": {
+    "nos": "Nos",
+    "acompanian": "acompañan"
+  },
+  "gacetilla-page": {
+    "hero-title": "Gacetillas",
+    "title": "Gacetillas",
+    "palabras": "Palabras claves",
+    "dia": "Día",
+    "buscar": "Buscar",
+    "medios": "Medios",
+    "descargar-gacetilla": "Descargar gacetilla",
+    "compartir": "Compartir",
+    "copiar": "Copiar",
+    "copiado": "Copiado!",
+    "similares": "Últimas Gacetillas"
+  },
+  "informacion-turistica": {
+    "informacion": "Información",
+    "turistica": "Turística",
+    "la-ciudad": "La ciudad, un ",
+    "un-codigo": "código abierto",
+    "conecta-bs-as": "Conectá con la Ciudad de Buenos Aires.",
+    "p1": "Un espacio dónde se cruza la cultura Argentina, la ciudad de Buenos Aires es una ciudad llena espacios turísticos, que además de alojar el Congreso, ofrece la mejor calidad y diversidad de restaurantes, teatros, cines, parques naturales y monumentos históricos. ",
+    "p2": "Dentro de la ciudad podés encontrar: el Teatro Colón; uno de los teatros más prestigiosos del mundo, el Museo Nacional de Bellas Artes, con una vasta colección de arte argentino e internacional, el Jardín Japonés y el Jardín Botánico, lugares para disfrutar de un ambiente natural.",
+    "p3": "En el centro, el distinguido Obelisco, símbolo de la ciudad, hasta la famosa Plaza de Mayo, donde se pueden observar importantes edificios históricos como la Casa Rosada. ",
+    "p4": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio.",
+    "p5": "Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
+    "como-llegar": "¿Cómo llegar al",
+    "evento": "Congreso Aapresid?",
+    "transporte-publico": "En transporte público, la Línea D del subte es la mejor opción. La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a pocas cuadras del lugar. (Se necesita la tarjeta SUBE).",
+    "colectivo": "Las líneas de **colectivo** que te acercan al predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
+    "tren": "**En tren:** El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."
   },
   "footer": {
     "fecha": "6 al 8 de agosto",

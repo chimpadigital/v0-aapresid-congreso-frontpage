@@ -1,7 +1,15 @@
 {
   "navbar": {
     "inscripciones": "Registration",
+    "inicio": "Home",
     "acerca_de": "About",
+    "edicion_33": "33rd edition",
+    "nos_acompanian": "Our partners",
+    "FAQs": "Frequently asked questions",
+    "prensa": "Press releases",
+    "gacetilla": "Press releases",
+    "comercial": "Commercial",
+    "informacion_turistica": "Turist information",
     "que_es_el_congreso": "What is the Aapresid Congress?",
     "historia": "History",
     "ediciones_anteriores": "Previous Editions",
@@ -9,10 +17,8 @@
     "programa": "Program",
     "oradores": "Speakers",
     "ejes_tematicos": "Thematic axes",
-    "prensa": "Press",
     "noticias": "News",
     "contacto": "Contact",
-    "comercial": "Commercial",
     "espanol": "ES",
     "english": "EN"
   },
@@ -52,53 +58,112 @@
       {
         "titulo": "Learning by Producing",
         "descripcion": "A synergy among science, research organizations, and farmers, who are actively involved in conducting tests in real-world settings, is designed to provide answers to farmers’ demands through the development of sustainable technology.",
-        "clase": "aprender"
+        "clase": "aprender",
+        "color": "#EF7B80"
       },
       {
         "titulo": "Global Challenges",
         "descripcion": "Strengthen Argentina’s presence on the global stage, embracing the responsibility and opportunity to share our experience in developing a production model that enables resource protection and restoration, while reducing negative environmental impact.",
-        "clase": "desafios"
+        "clase": "desafios",
+        "color": "#147DBE"
       },
       {
         "titulo": " Innovation and Agtech",
         "descripcion": "The section seeks to promote an accessible and integrated technological ecosystem by exploring the adoption of digital tools to provide solutions for farmers; and to integrate agriculture’s digitization and technological evolution by engaging with the Agtech ecosystem and agriculture machinery.",
-        "clase": "innovacion"
+        "clase": "innovacion",
+        "color": "#E84615"
       },
       {
         "titulo": "Pest Management",
         "descripcion": "A group of practices and methods employed for controlling living organisms that may damage production systems. Different sustainable strategies will be addressed to minimize environmental impact and ensure effective pest control.",
-        "clase": "manejo"
+        "clase": "manejo",
+        "color": "#D34240"
       },
       {
         "titulo": "Integrated Systems",
         "descripcion": "Broaden the panorama of production diversity by conveying real cases and farmers’ experiences, who rely on different production systems while promoting diversification and integration, and demonstrating the multiple productive and sustainable benefits.",
-        "clase": "sistemas"
+        "clase": "sistemas",
+        "color": "#EAAB21"
       },
       {
         "titulo": "Sustainable Production Systems",
         "descripcion": "These systems are characterized by being agroecologically responsible and economically viable. This entails the efficient use of natural resources, the reduction of negative environmental impact, and the promotion of biodiversity and a circular economy. Additionally, they seek resilience against climate change and other global challenges.",
-        "clase": "sustentables"
+        "clase": "sustentables",
+        "color": "#15A884"
       },
       {
         "titulo": "Socio-political Perspectives",
         "descripcion": "An integral approach to farmers’ political and social context that enables them to meet the needs for achieving sustainable production profitable over time. The goal is to bring decision-making closer to farmers, and vice versa.",
-        "clase": "prospectiva"
+        "clase": "prospectiva",
+        "color": "#99529B"
       }
     ]
   },
+  "speakers": {
+    "title1": "Noteworthy",
+    "title2": "speakers",
+    "conoce_los_oradores": "See the entire list of speakers ",
+    "ver-cronograma": "Schedule"
+  },
+  "charlas": {
+    "title1": "Notable ",
+    "title2": "lectures",
+    "ver-cronograma": "See full schedule"
+  },
   "commercial": {
-    "titulo": "Join the",
-    "congreso": "33° edition of the Congress",
+    "forma-parte": "Join the",
+    "de-la-33": "33° edition of the Congress",
+    "congreso": "Congress",
+    "descripcion1": "Download the commercial brochure and explore",
+    "descripcion2": " the options we are offering.",
     "descarga": "Download commercial folder"
   },
+  "contacto": {
+    "contacto": "Contact",
+    "area-comercial": " Commercial Area"
+  },
+  "gacetilla": {
+    "titulo1": "Newsletters",
+    "ver-todas": "See all newsletters"
+  },
   "faq": {
-    "titulo1": "Frequently",
-    "titulo2": "Asked Questions",
+    "preguntas": "Frequently",
+    "frecuentes": "Asked Questions",
     "items": [
+      {
+        "pregunta": "What is Aapresid?",
+        "respuesta": [
+          "The Argentine No-Till Farmers Association (Aapresid) is a non-governmental, non-profit organization. It is a network of agricultural producers interested in the conservation of their essential resource, the soil, by adopting and promoting a new farming paradigm based on No Tillage.",
+          "More information at: [www.aapresid.org.ar](https://www.aapresid.org.ar/es)"
+        ]
+      },
       {
         "pregunta": "What is the Aapresid Congress?",
         "respuesta": [
           "Aapresid is a three-day, agriculture-related event. Consolidated as the most notable event regarding agricultural knowledge in Argentina, and a model worldwide. It is a multi-thematic congress with various rooms functioning simultaneously. "
+        ]
+      },
+      {
+        "pregunta": "Which are the main themes?",
+        "respuesta": [
+          "This edition of the Congress will include over 160 lectures and panels arranged under 7 thematic axes:",
+          "- Learning by Producing",
+          "- Integrated Systems",
+          "- Sustainable Productive Systems",
+          "- Pest Management",
+          "- Innovation and Agtech",
+          "- Global Challenges",
+          "- Socio-political Perspectives"
+        ]
+      },
+      {
+        "pregunta": "How do I sign up?",
+        "respuesta": ["Coming soon on this page."]
+      },
+      {
+        "pregunta": "Who can be part of the congress?",
+        "respuesta": [
+          "Everyone can be part of the congress. It is open to the entire community."
         ]
       },
       {
@@ -108,13 +173,23 @@
         ]
       },
       {
-        "pregunta": "How do I sign up?",
-        "respuesta": ["Coming soon on this page."]
+        "pregunta": "What is the motto of this year’s Congress?",
+        "respuesta": [
+          "The motto of this thirty-third Aapresid Congress is “Open Code”.",
+          "Open Code synthesizes the collaborative and groundbreaking spirit that defines the XXXIII Aapresid Congress. This motto connects three crucial concepts: embracing collective knowledge, programming solutions for the future, and respecting the essential values supporting our decisions as an agri-food community."
+        ]
       },
       {
-        "pregunta": "Where can I see the program of the Congress?",
+        "pregunta": "What is the cost of admission?",
         "respuesta": [
-          "The schedule will be available for download in the Congress section at the Aapresid web, and will be regularly updated with speaker names and lecture titles."
+          "Ticket prices will be made available on this site once the registration section is added. There, you will be able to choose between a variety of ticket options with important discounts and special offers."
+        ]
+      },
+      {
+        "pregunta": "Is there any discount for students?",
+        "respuesta": [
+          "Aapresid maintains collaboration agreements with many universities, whose students will have access to ticket discounts. For information, consult the outreach department at your university.",
+          "Moreover, university students will have access to important discounts for every type of ticket by presenting their Student Status Certificate."
         ]
       },
       {
@@ -123,8 +198,65 @@
           "An Aapresid member will be able to register for free as long as their fees are paid to date.",
           "The registration deadline for the Aapresid member to be able to attend the Congress free of charge is **August 5th, 2025**. Once that date has passed, the member must register paying the total cost of the ticket."
         ]
+      },
+      {
+        "pregunta": "Where can I see the program of the Congress?",
+        "respuesta": [
+          "The schedule will be available for download in the Congress section at the Aapresid web, and will be regularly updated with speaker names and lecture titles."
+        ]
+      },
+      {
+        "pregunta": "What is the registration deadline for the Congress?",
+        "respuesta": [
+          "You can enroll online until the last day of the event, Friday, August 8th.",
+          "However, to ensure smooth registration and facilitate your entry to the event, we recommend completing enrollment by **Monday, August 4th.**"
+        ]
+      },
+      {
+        "pregunta": "Will attendance certificates be provided?",
+        "respuesta": [
+          "Yes, participation certificates will be digitally delivered at the end of the event."
+        ]
+      },
+      {
+        "pregunta": "Will this year’s congress’ lectures be streamed live?",
+        "respuesta": [
+          "Yes, we offer simultaneous English-Spanish translation in three conference rooms."
+        ]
+      },
+      {
+        "pregunta": "Will this year’s congress’ lectures be streamed live?",
+        "respuesta": [
+          "Only one of the rooms will stream lectures live on the Aapresid Congress website, which will be free and open to the public.",
+          "Additionally, “Levantando La Perdiz” program will host a three-day live stream featuring Congress speakers and invitees on Aapresid’s YouTube channel."
+        ]
+      },
+      {
+        "pregunta": "Will recordings of other lectures or rooms be made accessible afterwards?",
+        "respuesta": [
+          "Yes, recordings of other lectures and rooms will be available after the congress."
+        ]
+      },
+      {
+        "pregunta": "How to obtain information on becoming a Congress sponsor?",
+        "respuesta": [
+          "You can contact Aapresid’s marketing team via troiano@aapresid.org.ar or visit [www.aapresid.org.ar/es/quienes-somos](https://aapresid.org.ar/es/quienes-somos)"
+        ]
+      },
+      {
+        "pregunta": "What about invoicing after purchasing the ticket?",
+        "respuesta": [
+          "Once the payment is completed and the receipt is emailed to lopez@aapresid.org.ar, Aapresid will issue the corresponding invoice"
+        ]
+      },
+      {
+        "pregunta": "Is your question not on the list?",
+        "respuesta": [
+          "You can contact us through colalongo@aapresid.org.ar If you are an English-speaker, please contact prospectiva@aapresid.org.ar"
+        ]
       }
-    ]
+    ],
+    "mas-preguntas": "View all FAQs"
   },
   "sponsors": {
     "title": "Our Partners",
@@ -136,6 +268,72 @@
     "medios": "MEDIA",
     "apoyan": "Support",
     "organizan": "Organize"
+  },
+  "edicion-33": {
+    "hero": {
+      "acerca": "About the",
+      "congreso": "Congress"
+    },
+    "intro-text": {
+      "p1": "About the Congress The Aapresid Congress has been connecting innovation, technology, and knowledge for over three decades, aiming to boost increasingly sustainable productive systems. Nowadays, it is an international benchmark event for technicians, researchers, decision-makers, farmers, and leaders from the entire agroindustrial chain in the region.",
+      "p2": "Each edition of the Aapresid Congress assembles the most prominent domestic and international figures to discuss and assess future topics by linking science and production; thus, transforming agriculture, helping mitigate climate change, and supporting innovation."
+    },
+    "stats": {
+      "conferencias": "Lectures ",
+      "dias": "Days",
+      "disertantes": "Speakers",
+      "asistentes": "Attendees"
+    },
+    "contenido": {
+      "p1": "All content conveyed at the Aapresid Congress is thoughtfully curated and produced by interdisciplinary groups consisting of academic and institutional leaders, Aapresid members, and farmers. Using a specific methodology, these groups present the prospective content, organized this year into 7 thematic axes: Learning by Producing, Global Challenges, Innovation & Agtech, Pest Management, Integrated Systems, Sustainable Production Systems, Socio-political Perspectives.",
+      "p2": "Following the great success of last year’s edition, the Aapresid Congress will once again be held in the Autonomous City of Buenos Aires."
+    },
+    "programamos": "We program",
+    "el-futuro": "the future of agriculture",
+    "open-code": {
+      "titulo": "Open Code",
+      "p1": "We are writing the dialog with the future.",
+      "p2": "Each idea, each advance, each conversation occurring at the Aapresid Congress is a line of code in a collective program, which not only solves the problems of today but also foresees the challenges of tomorrow.",
+      "p3": "We live in a world of continuous change. To face such transformation, we realized that it is not enough with just adapt—we need to create. Create new syntaxes, new connections, new answers; because knowledge expands when it is shared, and multiplies when combined.",
+      "p4": "The XXXIII Aapresid Congress opens the doors to innovation. Here, the limits become blurred, and specializations blend together. ",
+      "p5": "Each farmer, technician, and visionary involved not only provides questions or answers but also pieces that fit within a bigger system. We are more than witnesses of change; we are the programmers of the future. Every year, the Congress collects and updates, in a single body, the knowledge of a community that makes innovation its lifestyle.",
+      "p6": "It is not only about improving what already exists, but also about consistently imagining and redesigning in order to accompany transformations in the world. Because the future cannot be predicted—it is programmed. And the code we write together is open to everybody. This is the Aapresid Congress. This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+    },
+    "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+  },
+  "informacion-turistica": {
+    "informacion": "Tourist ",
+    "turistica": "Information",
+    "la-ciudad": "The City, an ",
+    "un-codigo": "Open Code",
+    "conecta-bs-as": "Get connected with Buenos Aires.",
+    "p1": "A space where Argentine culture converges, the city of Buenos Aires is full of tourist attractions. In addition to housing the National Congress, it offers top-quality and diverse restaurants, theaters, cinemas, natural parks, and historic monuments.",
+    "p2": "Within the city, you can visit the Teatro Colón, one of the most prestigious opera houses in the world; the National Museum of Fine Arts, which boasts a vast collection of Argentine and international art; and the Japanese Garden and Botanical Garden, perfect spots to enjoy a natural setting.",
+    "p3": "In the downtown area, you'll find the iconic Obelisk, a symbol of the city, and the famous Plaza de Mayo, home to important historic buildings such as the Casa Rosada.",
+    "p4": "Along Corrientes Avenue, you can savor the country's best pizza at places like Guerrin, or enjoy a traditional asado at the famous grill Don Julio.",
+    "p5": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
+    "como-llegar": "How to get to",
+    "evento": " Congreso Aapresid?",
+    "transporte-publico": "By public transport, the subway D Line is the best option. Plaza Italia station (Santa Fe Ave. and Thames) is a few blocks away from the place. (SUBE card is needed)",
+    "colectivo": "**Bus lines** that can get you close to the site are: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
+    "tren": "**By train:** The San Martín train takes you to Palermo station (Santa Fe Ave. and Juan B. Justo Ave.), located 5 blocks away from the site."
+  },
+  "nos-acompanian": {
+    "nos": "Our ",
+    "acompanian": "partners"
+  },
+  "gacetilla-page": {
+    "hero-title": "Press releases",
+    "title": "Newsletters",
+    "palabras": "Keywords",
+    "dia": "Day",
+    "buscar": "Search",
+    "medios": "Media",
+    "descargar-gacetilla": "Download press release",
+    "compartir": "Share",
+    "copiar": "Copy",
+    "copiado": "Copied!",
+    "similares": "Latest press releases"
   },
   "footer": {
     "fecha": "August 6th to 8th, 2025",

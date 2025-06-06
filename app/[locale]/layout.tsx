@@ -4,11 +4,19 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import "lenis/dist/lenis.css";
 import Providers from "@/components/providers";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar/index";
 import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Congreso Aapresid",
   description: "Congreso Aapresid",
+  openGraph: {
+    images: ["/images/bandera-aapre.webp"],
+  },
+  twitter: {
+    images: ["/images/bandera-aapre.webp"],
+  },
 };
 
 export default async function RootLayout({
@@ -46,6 +54,7 @@ export default async function RootLayout({
       <body>
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
+            <Navbar />
             {children}
             {/* <a
               href="/inscripciones"
@@ -55,6 +64,7 @@ export default async function RootLayout({
             >
               <span>Inscripciones</span>
             </a> */}
+            <Footer />
           </NextIntlClientProvider>
         </Providers>
       </body>

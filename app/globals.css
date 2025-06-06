@@ -4,18 +4,12 @@
 
 @font-face {
   font-family: 'Owners';
-  src: url('/fonts/Owners-Regular.ttf') format('truetype');
-  font-weight: 400;
+  src: url('/fonts/Owners-XLight.ttf') format('truetype');
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Owners';
-  src: url('/fonts/Owners-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+
 @font-face {
   font-family: 'Owners';
   src: url('/fonts/Owners-Light.ttf') format('truetype');
@@ -23,6 +17,15 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Owners';
+  src: url('/fonts/Owners-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Owners';
   src: url('/fonts/Owners-Medium.ttf') format('truetype');
@@ -30,13 +33,7 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Owners';
-  src: url('/fonts/Owners-XLight.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
+
 @font-face {
   font-family: 'Owners Narrow';
   src: url('/fonts/OwnersNarrow-Bold.ttf') format('truetype');
@@ -44,6 +41,15 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Owners';
+  src: url('/fonts/Owners-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Owners Narrow';
   src: url('/fonts/OwnersNarrow-Black.ttf') format('truetype');
@@ -51,6 +57,23 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/GothamOffice-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 body {
   font-family: 'Owners', Arial, Helvetica, sans-serif;
@@ -98,6 +121,7 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -138,7 +162,117 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.react-datepicker-wrapper {
+  width: min(100%, 304px);
+  display: flex !important;
+
+  .react-datepicker__input-container {
+    margin-top: auto;
+  }
+}
+
+.truncate-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+
+.gacetilla-detalle,
+.gacetilla-detalle p {
+  @apply font-sans;
+}
+
+.gacetilla-detalle,
+.gacetilla-detalle p,
+.gacetilla-detalle i,
+.gacetilla-detalle span {
+  font-family: Owners, Arial, Helvetica, sans-serif !important;
+  color: #736D6D !important;
+  letter-spacing: .05em;
+}
+
+.gacetilla-detalle a {
+  text-decoration: underline;
+}
+
+.gacetilla-detalle h1,
+.gacetilla-detalle h2,
+.gacetilla-detalle h3,
+.gacetilla-detalle h4,
+.gacetilla-detalle h5,
+.gacetilla-detalle h6 {
+  /* Tailwind: text-primary */
+  font-family: Owners, Arial, Helvetica, sans-serif !important;
+  color: #736D6D !important;
+}
+
+.gacetilla-detalle h1 {
+  color: rgb(45 61 52 / var(--tw-text-opacity, 1));
+  @apply text-3xl mb-4 text-primary;
+}
+
+.gacetilla-detalle h2 {
+  @apply text-2xl mb-4 text-primary;
+}
+
+.gacetilla-detalle h3 {
+  @apply text-xl mb-4 text-primary;
+}
+
+.gacetilla-detalle h4 {
+  @apply text-lg mb-4 text-primary;
+}
+
+.gacetilla-detalle h5 {
+  @apply text-base mb-4 text-primary;
+}
+
+.gacetilla-detalle h6 {
+  @apply text-sm mb-4 text-primary;
+}
+
+.gacetilla-detalle ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.gacetilla-detalle ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.gacetilla-detalle img {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gacetilla-detalle span:has(> img),
+.gacetilla-detalle div:has(> img) {
+  width: 100% !important;
+  display: block;
+  height: auto !important;
+  margin-bottom: 70px;
+  margin-top: 70px;
+}
+
+@media screen and (max-width: 500px) {
+  .gacetilla-detalle span:has(> img),
+.gacetilla-detalle div:has(> img) {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+}
+
+.gacetilla-detalle img {
+  width: 100%;
 }

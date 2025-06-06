@@ -3,6 +3,8 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
+const API_BASE_URL = process.env.API_BASE_URL || 'https://api.congreso.v1.franco.in.net';
+const apiHost = new URL(API_BASE_URL).hostname;
 
 const nextConfig = {
   eslint: {
@@ -13,11 +15,17 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    domains: ['v0.blob.com'],
+    domains: ['v0.blob.com', apiHost],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'v0.blob.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: apiHost,
         port: '',
         pathname: '/**',
       },

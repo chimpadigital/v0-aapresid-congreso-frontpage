@@ -15,10 +15,10 @@
   color: #fff;
   border-radius: 20px;
   width: min(100%, 446px);
-  padding: 38px 58px 58px 58px;
+  padding: 58px 58px 10px 58px;
 }
 
-.swiper.ejes-tematicos-swiper .swiper-slide.aprender {
+/* .swiper.ejes-tematicos-swiper .swiper-slide.aprender {
   background-color: #EF7B80;
 }
 
@@ -44,7 +44,7 @@
 
 .swiper.ejes-tematicos-swiper .swiper-slide.prospectiva {
   background-color: #99529B;
-}
+} */
 
 @media screen and (max-width: 1024px) {
   .swiper.ejes-tematicos-swiper {
@@ -58,13 +58,17 @@
 }
 
 
-/* CARDS EJES TEMATICOS TEXTOSCAR */
-
-
+/* CARDS EJES TEMATICOS TEXTOS */
 .swiper.ejes-tematicos-texto-swiper {
   width: min(100%, 53ch);
   height: fit-content;
-  margin: 0;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper.ejes-tematicos-texto-swiper {
+    margin: 0;
+  }
 }
 
 .swiper.ejes-tematicos-texto-swiper .swiper-wrapper {
@@ -75,12 +79,66 @@
   height: fit-content;
 }
 
-  .swiper.ejes-tematicos-texto-swiper .swiper-slide {
-    margin-top: auto;
-  }
 
-  @media screen and (max-width: 1024px) {
-    .swiper.ejes-tematicos-texto-swiper .swiper-slide {
-      margin-top: 0;
-    }
+@media screen and (max-width: 1024px) {
+  .swiper.ejes-tematicos-texto-swiper .swiper-slide {
+    margin-top: 0;
   }
+}
+
+/* CARDS CHARLAS DESTACADAS */
+.swiper-charlas-destacadas .swiper-slide {
+  height: auto;
+}
+
+.swiper-charlas-destacadas .swiper-pagination-bullet,
+.swiper-fotos-bsas .swiper-pagination-bullet {
+  background-color: #64b33d !important;
+  opacity: 0.7;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-charlas-destacadas .swiper-pagination-bullet-active,
+.swiper-fotos-bsas .swiper-pagination-bullet-active {
+  background-color: #ed7f00 !important;
+  opacity: 1;
+}
+
+
+/* DISERTANTES DESTACADOS */
+.disertantes-thumbs .swiper-slide {
+  /* height: 150px; */
+  aspect-ratio: 90/115;
+}
+
+@media screen and (min-width: 550px) {
+  .disertantes-thumbs .swiper-slide {
+    height: 200px;
+  }
+}
+
+
+/* DISERTANTES MAIN */
+
+.disertantes-main .swiper-slide {
+  height: 400px;
+}
+
+@media screen and (min-width: 550px) {
+  .disertantes-main .swiper-slide {
+    height: 500px;
+  }
+}
+
+/* BUENOS AIRES */
+
+.swiper-fotos-bsas {
+  height: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper-fotos-bsas {
+    height: 550px;
+  }
+}
