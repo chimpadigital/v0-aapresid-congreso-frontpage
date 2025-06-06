@@ -256,12 +256,23 @@ body {
   overflow: hidden;
 }
 
-.gacetilla-detalle span:has(> img) {
+.gacetilla-detalle span:has(> img),
+.gacetilla-detalle div:has(> img) {
   width: 100% !important;
   display: block;
   height: auto !important;
-  margin-bottom: 1rem;
+  margin-bottom: 70px;
+  margin-top: 70px;
 }
+
+@media screen and (max-width: 500px) {
+  .gacetilla-detalle span:has(> img),
+.gacetilla-detalle div:has(> img) {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+}
+
 .gacetilla-detalle img {
   width: 100%;
 }

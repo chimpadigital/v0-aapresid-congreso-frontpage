@@ -117,7 +117,7 @@ export function Footer() {
           {/* Right - Date and button */}
           <div className="flex flex-1 flex-col items-start gap-6 tracking-wider">
             <div className="text-white">
-              <div className="text-xl font-medium leading-[1.30rem]">
+              <div className="text-xl font-medium leading-[1.30rem] mb-1">
                 {t("fecha")}
               </div>
               <div className="text-xl font-light">{t("lugar")}</div>
