@@ -4,14 +4,17 @@ import { GacetillaCard } from "../gacetilla-card";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
-
-export default function GacetillasSimilares() {
+export default function GacetillasSimilares({
+  currentId,
+}: {
+  currentId: string;
+}) {
   const [gacetillas, setGacetillas] = useState<GacetillaApiItem[]>([]);
   const [loading, setLoading] = useState(true);
   const locale = useLocale();
 
   useEffect(() => {
-    fetch(`/api/gacetilla3?lang=${locale}`)
+    fetch(`/api/gacetilla3?lang=${locale}&exclude=${currentId}`)
       .then((res) => res.json())
       .then((data) => {
         setGacetillas(data.data || []);
