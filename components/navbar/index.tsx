@@ -52,7 +52,7 @@ export function Navbar() {
       ],
     },
     {
-      label: "Comercial",
+      label: t("comercial"),
       href: `/${locale}/comercial`,
     },
   ];

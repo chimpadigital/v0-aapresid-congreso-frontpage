@@ -47,8 +47,8 @@ export function DelCampoCiudadSection() {
             <div className="max-w-[62ch] text-lg tracking-wider text-paragraph">
               <p className="mb-8">{t("p1")}</p>
               <p className="mb-8">{t("p2")}</p>
-              <p>{t("p3")}</p>
-              <p>{t("p4")}</p>
+              <p className="mb-8">{t("p3")}</p>
+              <p className="mb-8">{t("p4")}</p>
               <p>{t("p5")}</p>
             </div>
           </div>

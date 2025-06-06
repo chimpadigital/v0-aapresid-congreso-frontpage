@@ -70,7 +70,7 @@ export default async function DetalleGacetilla({ params }: Props) {
       <Suspense fallback={<div className="py-10 text-center">Cargando...</div>}>
         <DetalleGacetillaContent id={id} locale={locale} detalle={detalle} />
       </Suspense>
-      <GacetillasSimilares params={params} />
+      <GacetillasSimilares />
     </>
   );
 }

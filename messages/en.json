@@ -6,8 +6,9 @@
     "edicion_33": "33rd edition",
     "nos_acompanian": "Our partners",
     "FAQs": "Frequently asked questions",
-    "prensa": "Media",
+    "prensa": "Press releases",
     "gacetilla": "Newsletters",
+    "comercial": "Commercial",
     "informacion_turistica": "Turist information",
     "que_es_el_congreso": "What is the Aapresid Congress?",
     "historia": "History",
@@ -18,7 +19,6 @@
     "ejes_tematicos": "Thematic axes",
     "noticias": "News",
     "contacto": "Contact",
-    "comercial": "Commercial",
     "espanol": "ES",
     "english": "EN"
   },
@@ -323,9 +323,9 @@
     "acompanian": "partners"
   },
   "gacetilla-page": {
-    "hero-title": "Newsletters",
+    "hero-title": "Press releases",
     "title": "Newsletters",
-    "palabras": "Key Words",
+    "palabras": "Keywords",
     "dia": "Day",
     "buscar": "Search",
     "medios": "Media",

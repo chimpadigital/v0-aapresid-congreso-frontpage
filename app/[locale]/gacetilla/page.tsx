@@ -8,7 +8,8 @@ const Gacetilla = () => {
     <section>
       <HeroGacetilla />
       <ListaGacetilla />
-      <MediosGacetilla />
+      {/* <MediosGacetilla /> */}
+      <div className=" mb-20 "></div>
     </section>
   );
 };
