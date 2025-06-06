@@ -3,7 +3,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
-const API_BASE_URL = process.env.API_BASE_URL || 'https://api.congreso.v1.franco.in.net';
+const API_BASE_URL = process.env.API_BASE_URL || 'https://api-congreso.aapresid.org.ar';
 const apiHost = new URL(API_BASE_URL).hostname;
 
 const nextConfig = {

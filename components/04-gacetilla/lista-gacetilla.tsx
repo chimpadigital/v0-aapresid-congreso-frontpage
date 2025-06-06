@@ -4,7 +4,7 @@ import { GacetillaCard } from "../gacetilla-card";
 import LupaIcon from "../icons/LupaIcon";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
- import { Paginacion } from "./paginacion";
+import { Paginacion } from "./paginacion";
 import { GacetillaApiResponse } from "@/lib/types";
 import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -15,6 +15,8 @@ registerLocale("en", enUS);
 
 const ListaGacetilla = () => {
   const searchParams = useSearchParams();
+  const API_BASE_URL =
+    process.env.API_BASE_URL || "https://api-congreso.aapresid.org.ar";
 
   // Leer página desde la URL (query param)
   const initialPage = parseInt(searchParams.get("page") || "1", 10);
@@ -52,9 +54,7 @@ const ListaGacetilla = () => {
     if (locale) {
       params.append("lang", locale);
     }
-    fetch(
-      `https://api.congreso.v1.franco.in.net/api/press-release?${params.toString()}`,
-    )
+    fetch(`${API_BASE_URL}/api/press-release?${params.toString()}`)
       .then((res) => res.json())
       .then((data) => {
         setGacetillas(data);

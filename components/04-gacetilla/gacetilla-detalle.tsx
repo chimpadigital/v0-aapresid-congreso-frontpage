@@ -10,19 +10,23 @@ interface Props {
   detalle: GacetillaDetalle | null;
 }
 
-export function getField(jsonStr: string, lang: string, fallback = "") {
-  try {
-    const obj = JSON.parse(jsonStr);
-    // Si el idioma pedido existe y no está vacío, lo devolvemos
-    if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
-    // Si no, devolvemos el otro idioma si existe y no está vacío
-    const otherLang = lang === "en" ? "es" : "en";
-    if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
-    // Si no, devolvemos el fallback
+export function getField(jsonOrObj: any, lang: string, fallback = "") {
+  let obj: any = {};
+  if (typeof jsonOrObj === "string") {
+    try {
+      obj = JSON.parse(jsonOrObj);
+    } catch {
+      return jsonOrObj || fallback;
+    }
+  } else if (typeof jsonOrObj === "object" && jsonOrObj !== null) {
+    obj = jsonOrObj;
+  } else {
     return fallback;
-  } catch {
-    return jsonStr || fallback;
   }
+  if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+  const otherLang = lang === "en" ? "es" : "en";
+  if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+  return fallback;
 }
 
 function formatDate(dateStr: string, locale: string) {
