@@ -45,59 +45,75 @@ const Anfitriones = () => {
                 <h3 className="mb-12 w-full border-b border-b-primary pb-[20px] text-left text-3xl text-primary md:mb-[109px]">
                   {getField(cat.name, locale)}
                 </h3>
-                {cat.Logos.map((logo) => (
-                  <div
-                    className="mb-16 flex flex-col md:flex-row"
-                    key={logo.id}
-                  >
-                    <div className="flex-1 pb-10 md:pb-0">
-                      <figure className="relative inline-block h-24 w-full md:h-full">
-                        <Image
-                          src={logo.imagePath}
-                          fill
-                          alt={getField(logo.title, locale)}
-                          className="object-contain xs:pr-20 md:pl-7"
-                        />
-                      </figure>
+                {cat.Logos.map((logo) => {
+                  let descEs = getField(logo.description || "", "es");
+                  let descEn = getField(logo.description || "", "en");
+                  const hasDesc =
+                    (descEs && descEs.trim().length > 2) ||
+                    (descEn && descEn.trim().length > 2);
+                  if (!hasDesc) return null;
+
+                  return (
+                    <div
+                      className="mb-16 flex flex-col md:flex-row"
+                      key={logo.id}
+                    >
+                      <div className="flex-1 pb-10 md:pb-0">
+                        <figure className="relative inline-block h-24 w-full md:h-full">
+                          <Image
+                            src={logo.imagePath}
+                            fill
+                            alt={getField(logo.title, locale)}
+                            className="object-contain xs:pr-20 md:pl-7"
+                          />
+                        </figure>
+                      </div>
+                      <article className="flex flex-[1.2] flex-col">
+                        <h3 className="w-full pb-[20px] text-left text-3xl font-medium text-primary">
+                          {getField(logo.title, locale)}
+                        </h3>
+                        {/* DESCRIPTION: solo mostrar si hay info en algún idioma */}
+                        {(() => {
+                          let desc = getField(logo.description || "", locale);
+                          if (
+                            desc.length < 2 &&
+                            locale.toLocaleLowerCase() !== "es"
+                          ) {
+                            desc = getField(logo.description || "", "es");
+                          }
+                          if (desc) {
+                            return (
+                              <p className="leading-tight tracking-wider text-paragraph">
+                                {desc}
+                              </p>
+                            );
+                          }
+                          return null;
+                        })()}
+                        {/* LINK: solo mostrar si hay info en algún idioma */}
+                        {(() => {
+                          let link = getField(logo.link || "", locale);
+                          if (link.length < 2 && locale !== "es") {
+                            link = getField(logo.link || "", "es");
+                          }
+                          if (link) {
+                            return (
+                              <a
+                                href={link}
+                                className="relative ml-auto mt-[41px] inline-block w-full min-w-[225px] rounded-full border border-primary px-4 py-1 text-center text-lg text-primary md:w-auto"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {link}
+                              </a>
+                            );
+                          }
+                          return null;
+                        })()}
+                      </article>
                     </div>
-                    <article className="flex flex-[1.2] flex-col">
-                      <h3 className="w-full pb-[20px] text-left text-3xl font-medium text-primary">
-                        {getField(logo.title, locale)}
-                      </h3>
-                      {/* DESCRIPTION: solo mostrar si hay info en algún idioma */}
-                      {(() => {
-                        const descEs = getField(logo.description || "", "es");
-                        const descEn = getField(logo.description || "", "en");
-                        if (descEs || descEn) {
-                          return (
-                            <p className="leading-tight tracking-wider text-paragraph">
-                              {getField(logo.description || "", locale)}
-                            </p>
-                          );
-                        }
-                        return null;
-                      })()}
-                      {/* LINK: solo mostrar si hay info en algún idioma */}
-                      {(() => {
-                        const linkEs = getField(logo.link || "", "es");
-                        const linkEn = getField(logo.link || "", "en");
-                        if (linkEs || linkEn) {
-                          return (
-                            <a
-                              href={getField(logo.link, locale)}
-                              className="relative ml-auto mt-[41px] inline-block w-full min-w-[225px] rounded-full border border-primary px-4 py-1 text-center text-lg text-primary md:w-auto"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {getField(logo.link, locale)}
-                            </a>
-                          );
-                        }
-                        return null;
-                      })()}
-                    </article>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ),
         )}
