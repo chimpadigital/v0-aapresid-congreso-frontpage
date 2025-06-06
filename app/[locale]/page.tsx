@@ -66,6 +66,7 @@ export default function Home({ params }: { params: { locale: string } }) {
 
       {/* Featured talks section */}
       {/* <FeaturedTalksSection /> */}
+      <div className="mb-10"/>
 
       {/* Descarga comercial */}
       <DescargaComercial />

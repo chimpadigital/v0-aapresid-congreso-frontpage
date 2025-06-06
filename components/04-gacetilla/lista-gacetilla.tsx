@@ -231,14 +231,33 @@ const ListaGacetilla = () => {
           {currentGacetillas.map((gacetilla) => {
             let title = "";
             let description = "";
-            try {
-              title = JSON.parse(gacetilla.title).es || gacetilla.title;
-              description =
-                JSON.parse(gacetilla.excerpt).es || gacetilla.excerpt;
-            } catch {
-              title = gacetilla.title;
-              description = gacetilla.excerpt;
-            }
+
+            // Permite que title/excerpt sean string JSON o ya objeto
+            let titleObj =
+              typeof gacetilla.title === "string"
+                ? (() => {
+                    try {
+                      return JSON.parse(gacetilla.title);
+                    } catch {
+                      return {};
+                    }
+                  })()
+                : gacetilla.title || {};
+
+            let descObj =
+              typeof gacetilla.excerpt === "string"
+                ? (() => {
+                    try {
+                      return JSON.parse(gacetilla.excerpt);
+                    } catch {
+                      return {};
+                    }
+                  })()
+                : gacetilla.excerpt || {};
+
+            title = titleObj.es || titleObj.en || gacetilla.title;
+            description = descObj.es || descObj.en || gacetilla.excerpt;
+
             return (
               <GacetillaCard
                 key={gacetilla.id}
