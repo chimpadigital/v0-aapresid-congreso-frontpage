@@ -53,7 +53,10 @@ export function SponsorsSection() {
 
   // Ejemplo: filtrar por nombre de categoría (ajusta según tus necesidades)
   const getCategoryByName = (name: string) =>
-    categories.find((cat) => getField(cat.name, "es").toLowerCase().includes(name));
+  categories.find((cat) => {
+    const catName = getField(cat.name, "es");
+    return typeof catName === "string" && catName.toLowerCase().includes(name);
+  });
 
   const patA = getCategoryByName("patrocinios a");
   const patB = getCategoryByName("patrocinios b");
