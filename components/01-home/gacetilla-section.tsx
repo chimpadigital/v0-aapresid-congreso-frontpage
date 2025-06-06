@@ -38,36 +38,54 @@ export function GacetillasSection() {
             </div>
           ) : (
             gacetillas.map((gacetilla) => {
-              let title = "";
-              let description = "";
-              try {
-                const titleObj = JSON.parse(gacetilla.title);
-                const descObj = JSON.parse(gacetilla.excerpt);
-                // Mostrar el otro idioma si el campo está vacío
-                title =
-                  titleObj[locale] && titleObj[locale].trim() !== ""
-                    ? titleObj[locale]
-                    : (locale === "en" ? titleObj.es : titleObj.en) || "";
-                description =
-                  descObj[locale] && descObj[locale].trim() !== ""
-                    ? descObj[locale]
-                    : (locale === "en" ? descObj.es : descObj.en) || "";
-              } catch {
-                title = gacetilla.title;
-                description = gacetilla.excerpt;
-              }
-              return (
-                <GacetillaCard
-                  key={gacetilla.id}
-                  date={gacetilla.date}
-                  title={title}
-                  description={description}
-                  imageUrl={gacetilla.image}
-                  href={`${locale}/gacetilla/` + gacetilla.id}
-                />
-              );
-            })
-          )}
+  let title = "";
+  let description = "";
+
+  // Permite que title/excerpt sean string JSON o ya objeto
+  let titleObj =
+    typeof gacetilla.title === "string"
+      ? (() => {
+          try {
+            return JSON.parse(gacetilla.title);
+          } catch {
+            return {};
+          }
+        })()
+      : gacetilla.title || {};
+
+  let descObj =
+    typeof gacetilla.excerpt === "string"
+      ? (() => {
+          try {
+            return JSON.parse(gacetilla.excerpt);
+          } catch {
+            return {};
+          }
+        })()
+      : gacetilla.excerpt || {};
+
+  // Mostrar el otro idioma si el campo está vacío
+  title =
+    titleObj[locale] && titleObj[locale].trim() !== ""
+      ? titleObj[locale]
+      : (locale === "en" ? titleObj.es : titleObj.en) || "";
+
+  description =
+    descObj[locale] && descObj[locale].trim() !== ""
+      ? descObj[locale]
+      : (locale === "en" ? descObj.es : descObj.en) || "";
+
+  return (
+    <GacetillaCard
+      key={gacetilla.id}
+      date={gacetilla.date}
+      title={title}
+      description={description}
+      imageUrl={gacetilla.image}
+      href={`${locale}/gacetilla/` + gacetilla.id}
+    />
+  );
+}))}
         </div>
         {/* Botón centrado */}
         <div className="flex justify-center">

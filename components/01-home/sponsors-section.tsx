@@ -13,15 +13,6 @@ import * as motion from "motion/react-client";
 import { SponsorLogo } from "../sponsor-logo";
 import { SponsorPropsItem, LogoCategory } from "@/lib/types";
 
-interface categoryProps {
-  category1: SponsorPropsItem[];
-  category2: SponsorPropsItem[];
-  category3: SponsorPropsItem[];
-  category4: SponsorPropsItem[];
-  institucion: SponsorPropsItem[];
-  medios: SponsorPropsItem[];
-}
-
 export function SponsorsSection() {
   const t = useTranslations("sponsors");
   const [categories, setCategories] = useState<LogoCategory[]>([]);
@@ -39,24 +30,33 @@ export function SponsorsSection() {
   }, []);
 
   // Utilidad para obtener campo multilenguaje
-  function getField(jsonStr: string, lang: string, fallback = "") {
-    try {
-      const obj = JSON.parse(jsonStr);
-      if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
-      const otherLang = lang === "en" ? "es" : "en";
-      if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+  function getField(jsonOrObj: any, lang: string, fallback = "") {
+    let obj: any = {};
+    if (typeof jsonOrObj === "string") {
+      try {
+        obj = JSON.parse(jsonOrObj);
+      } catch {
+        return jsonOrObj || fallback;
+      }
+    } else if (typeof jsonOrObj === "object" && jsonOrObj !== null) {
+      obj = jsonOrObj;
+    } else {
       return fallback;
-    } catch {
-      return jsonStr || fallback;
     }
+    if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+    const otherLang = lang === "en" ? "es" : "en";
+    if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+    return fallback;
   }
 
   // Ejemplo: filtrar por nombre de categoría (ajusta según tus necesidades)
   const getCategoryByName = (name: string) =>
-  categories.find((cat) => {
-    const catName = getField(cat.name, "es");
-    return typeof catName === "string" && catName.toLowerCase().includes(name);
-  });
+    categories.find((cat) => {
+      const catName = getField(cat.name, "es");
+      return (
+        typeof catName === "string" && catName.toLowerCase().includes(name)
+      );
+    });
 
   const patA = getCategoryByName("patrocinios a");
   const patB = getCategoryByName("patrocinios b");
@@ -285,4 +285,3 @@ export function SponsorsSection() {
     </>
   );
 }
-
