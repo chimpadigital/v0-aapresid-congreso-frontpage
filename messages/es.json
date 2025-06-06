@@ -8,6 +8,7 @@
     "FAQs": "Preguntas frecuentes",
     "prensa": "Prensa",
     "gacetilla": "Gacetillas",
+    "comercial": "Comercial",
     "informacion_turistica": "Información turística",
     "que_es_el_congreso": "¿Qué es el Congreso?",
     "historia": "Historia",
@@ -18,7 +19,6 @@
     "ejes_tematicos": "Ejes temáticos",
     "noticias": "Noticias",
     "contacto": "Contacto",
-    "comercial": "Comercial",
     "espanol": "ES",
     "english": "EN"
   },
@@ -321,7 +321,7 @@
     "compartir": "Compartir",
     "copiar": "Copiar",
     "copiado": "Copiado!",
-    "similares": "Gacetillas similares!"
+    "similares": "Gacetillas similares"
   },
   "informacion-turistica": {
     "informacion": "Información",
@@ -338,7 +338,7 @@
     "evento": "Congreso Aapresid?",
     "transporte-publico": "En transporte público, la Línea D del subte es la mejor opción. La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a pocas cuadras del lugar. (Se necesita la tarjeta SUBE).",
     "colectivo": "Las líneas de **colectivo** que te acercan al predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
-    "tren": "En tren: El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."
+    "tren": "**En tren:** El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."
   },
   "footer": {
     "fecha": "6 al 8 de agosto",

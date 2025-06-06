@@ -1,24 +1,26 @@
+"use client";
 import { GacetillaApiItem } from "@/lib/types";
 import { GacetillaCard } from "../gacetilla-card";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-interface Props {
-  params: { locale: string };
-}
 
-export default async function GacetillasSimilares({ params }: Props) {
-  const locale = params.locale;
-  // Fetch desde el server
-  const res = await fetch(
-    `${process.env.API_BASE_URL || "https://api.congreso.v1.franco.in.net"}/api/press-release?page=1&limit=3&lang=${locale}`,
-    { cache: "no-store" },
-  );
-  const data = await res.json();
-  const gacetillas: GacetillaApiItem[] = data.data || [];
+export default function GacetillasSimilares() {
+  const [gacetillas, setGacetillas] = useState<GacetillaApiItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const locale = useLocale();
 
-  const t = await getTranslations("gacetilla-page");
+  useEffect(() => {
+    fetch(`/api/gacetilla3?lang=${locale}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setGacetillas(data.data || []);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [locale]);
+
+  const t = useTranslations("gacetilla-page");
 
   return (
     <section className="mx-auto max-w-[1415px] bg-white px-4 pb-12 pt-[86px] md:px-8">

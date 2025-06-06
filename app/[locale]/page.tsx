@@ -62,7 +62,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       <ThemesSection />
 
       {/* Disertantes destacados section */}
-      <DisertantesDestacados />
+      {/* <DisertantesDestacados /> */}
 
       {/* Featured talks section */}
       <FeaturedTalksSection />

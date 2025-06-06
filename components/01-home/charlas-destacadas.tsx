@@ -25,7 +25,21 @@ export function FeaturedTalksSection() {
       })
       .catch(() => setLoading(false));
   }, [locale]);
+
   const t = useTranslations("charlas");
+
+  function getField(jsonStr: string, lang: string, fallback = "") {
+    try {
+      const obj = JSON.parse(jsonStr);
+      if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+      const otherLang = lang === "en" ? "es" : "en";
+      if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+      return fallback;
+    } catch {
+      return jsonStr || fallback;
+    }
+  }
+
   return (
     <section className="relative m-4 mb-9 overflow-hidden rounded-[20px] bg-[#F0F0F1] px-4 py-16 xs:px-8 md:mx-[33px] md:mt-[100px] md:px-16">
       <div className="mx-auto max-w-7xl">
@@ -54,21 +68,17 @@ export function FeaturedTalksSection() {
                 </div>
               ) : (
                 charlas.map((charla) => {
-                  let title = "";
-                  let section = "";
+                  let title = getField(charla.multilingual_title, locale);
+                  let section = getField(charla.multilingual_talk, locale);
+
                   let theme = "";
                   let speakers =
                     charla.Speakers?.map((s) => s.name).join(", ") || "";
                   let dateTime = "";
                   let location = charla.Room?.name || "";
                   try {
-                    title = JSON.parse(charla.multilingual_title)[locale] || "";
-                    section =
-                      JSON.parse(charla.multilingual_talk)[locale] || "";
-                    theme = charla.Theme?.name || "";
+                      theme = charla.Theme?.name || "";
                   } catch {
-                    title = charla.multilingual_title;
-                    section = charla.multilingual_talk;
                     theme = charla.Theme?.name || "";
                   }
                   // Formato fecha y hora
@@ -105,9 +115,9 @@ export function FeaturedTalksSection() {
           )}
         </div>
         <div className="mx-auto mt-12 max-w-[400px] text-center">
-          <button className="relative z-[1] mx-auto flex items-center justify-center gap-[9px] overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg font-normal tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]">
+          {/* <button className="relative z-[1] mx-auto flex items-center justify-center gap-[9px] overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg font-normal tracking-wider text-white transition-colors duration-500 before:absolute before:-left-[145%] before:top-[190%] before:z-[-1] before:h-[350%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-[3]">
             {t("ver-cronograma")} <CalendarDense />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

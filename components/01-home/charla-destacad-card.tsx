@@ -62,12 +62,12 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
       </h3>
 
       <div className="space-y-4">
-        <div className="flex items-center gap-4">
+       {speakers.length > 0 && <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
             <DisertanteIcon />
           </div>
           <span className="text-[18px] text-[#736D6D]">{speakers}</span>
-        </div>
+        </div>}
 
         <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
