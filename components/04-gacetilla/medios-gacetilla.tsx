@@ -28,8 +28,11 @@ const MediosGacetilla = () => {
 
   const t = useTranslations("gacetilla-page");
 
+  if (!sponsors || !sponsors.medios || sponsors.medios.length === 0)
+    return null;
+
   return (
-    <div className="mx-4 mb-16 mt-10 max-w-[1204px] md:mt-16 xl:mx-auto">
+    <div className="mx-4 mb-16 mt-10 max-w-[1204px] md:mx-auto md:mt-16">
       <h3 className="mb-4 text-2xl text-primary">{t("medios")}</h3>
       <div className="mb-12 h-px w-full bg-[#2C2C2C]"></div>
 
