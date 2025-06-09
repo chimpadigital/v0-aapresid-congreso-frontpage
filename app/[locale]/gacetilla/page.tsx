@@ -9,7 +9,7 @@ const Gacetilla = () => {
       <HeroGacetilla />
       <ListaGacetilla />
       <MediosGacetilla />
-      <div className=""></div>
+      <div className="mb-20"></div>
     </section>
   );
 };

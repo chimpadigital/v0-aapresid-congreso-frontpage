@@ -28,16 +28,23 @@ export function FeaturedTalksSection() {
 
   const t = useTranslations("charlas");
 
-  function getField(jsonStr: string, lang: string, fallback = "") {
-    try {
-      const obj = JSON.parse(jsonStr);
-      if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
-      const otherLang = lang === "en" ? "es" : "en";
-      if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+  function getField(jsonOrObj: any, lang: string, fallback = "") {
+    let obj: any = {};
+    if (typeof jsonOrObj === "string") {
+      try {
+        obj = JSON.parse(jsonOrObj);
+      } catch {
+        return jsonOrObj || fallback;
+      }
+    } else if (typeof jsonOrObj === "object" && jsonOrObj !== null) {
+      obj = jsonOrObj;
+    } else {
       return fallback;
-    } catch {
-      return jsonStr || fallback;
     }
+    if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+    const otherLang = lang === "en" ? "es" : "en";
+    if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+    return fallback;
   }
 
   return (
@@ -77,7 +84,7 @@ export function FeaturedTalksSection() {
                   let dateTime = "";
                   let location = charla.Room?.name || "";
                   try {
-                      theme = charla.Theme?.name || "";
+                    theme = charla.Theme?.name || "";
                   } catch {
                     theme = charla.Theme?.name || "";
                   }

@@ -20,7 +20,7 @@ interface PropsMeta {
 
 async function getDetalle(id: string): Promise<GacetillaDetalle | null> {
   const res = await fetch(
-    `${process.env.API_BASE_URL || "https://api.congreso.v1.franco.in.net"}/api/press-release/${id}`,
+    `${process.env.API_BASE_URL || "https://api-congreso.aapresid.org.ar"}/api/press-release/${id}`,
   );
   if (!res.ok) return null;
   return res.json();
@@ -38,7 +38,7 @@ export async function generateMetadata({
   const title = getField(detalle.title, locale);
   const description = getField(detalle.excerpt, locale);
   const image = detalle.image || "/images/bandera-aapre.webp";
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || " https://congreso.aapresid.org.ar";
   const url = `${baseUrl}/${locale}/gacetilla/${id}`;
 
   return {

@@ -4,7 +4,7 @@ import { GacetillaCard } from "../gacetilla-card";
 import LupaIcon from "../icons/LupaIcon";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
- import { Paginacion } from "./paginacion";
+import { Paginacion } from "./paginacion";
 import { GacetillaApiResponse } from "@/lib/types";
 import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -15,6 +15,8 @@ registerLocale("en", enUS);
 
 const ListaGacetilla = () => {
   const searchParams = useSearchParams();
+  const API_BASE_URL =
+    process.env.API_BASE_URL || "https://api-congreso.aapresid.org.ar";
 
   // Leer página desde la URL (query param)
   const initialPage = parseInt(searchParams.get("page") || "1", 10);
@@ -52,9 +54,7 @@ const ListaGacetilla = () => {
     if (locale) {
       params.append("lang", locale);
     }
-    fetch(
-      `https://api.congreso.v1.franco.in.net/api/press-release?${params.toString()}`,
-    )
+    fetch(`${API_BASE_URL}/api/press-release?${params.toString()}`)
       .then((res) => res.json())
       .then((data) => {
         setGacetillas(data);
@@ -231,14 +231,33 @@ const ListaGacetilla = () => {
           {currentGacetillas.map((gacetilla) => {
             let title = "";
             let description = "";
-            try {
-              title = JSON.parse(gacetilla.title).es || gacetilla.title;
-              description =
-                JSON.parse(gacetilla.excerpt).es || gacetilla.excerpt;
-            } catch {
-              title = gacetilla.title;
-              description = gacetilla.excerpt;
-            }
+
+            // Permite que title/excerpt sean string JSON o ya objeto
+            let titleObj =
+              typeof gacetilla.title === "string"
+                ? (() => {
+                    try {
+                      return JSON.parse(gacetilla.title);
+                    } catch {
+                      return {};
+                    }
+                  })()
+                : gacetilla.title || {};
+
+            let descObj =
+              typeof gacetilla.excerpt === "string"
+                ? (() => {
+                    try {
+                      return JSON.parse(gacetilla.excerpt);
+                    } catch {
+                      return {};
+                    }
+                  })()
+                : gacetilla.excerpt || {};
+
+            title = titleObj.es || titleObj.en || gacetilla.title;
+            description = descObj.es || descObj.en || gacetilla.excerpt;
+
             return (
               <GacetillaCard
                 key={gacetilla.id}
