@@ -96,7 +96,7 @@ const Anfitriones = () => {
                           if (link.length < 2 && locale !== "es") {
                             link = getField(logo.link || "", "es");
                           }
-                          if (link) {
+                          if (link.length > 2) {
                             return (
                               <a
                                 href={link}
