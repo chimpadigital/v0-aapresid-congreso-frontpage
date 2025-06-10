@@ -51,6 +51,8 @@ export default function Home({ params }: { params: { locale: string } }) {
           <Countdown />
         </div>
       </header>
+      {/* Descarga comercial */}
+      <DescargaComercial />
 
       {/* Inscriptions section */}
       <InscriptionsSection />
@@ -68,8 +70,6 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* <FeaturedTalksSection /> */}
       <div className="mb-10"/>
 
-      {/* Descarga comercial */}
-      <DescargaComercial />
 
       {/* Gacetillas section */}
       <GacetillasSection />
