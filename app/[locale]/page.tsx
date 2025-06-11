@@ -67,8 +67,8 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* <DisertantesDestacados /> */}
 
       {/* Featured talks section */}
-      {/* <FeaturedTalksSection /> */}
-      <div className="mb-10"/>
+      <FeaturedTalksSection />
+      {/* <div className="mb-10"/> */}
 
 
       {/* Gacetillas section */}
