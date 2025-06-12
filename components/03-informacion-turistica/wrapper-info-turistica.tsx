@@ -3,8 +3,8 @@ import React from "react";
 import { HeroSection } from "../hero-section";
 import { DelCampoCiudadSection } from "./del-campo";
 import SliderBsAs from "./slider-bsas";
-import { ComoLlegarSection } from "./como-llegar";
 import { useTranslations } from "next-intl";
+import { ComoLlegarSection } from "./como-llegar";
 
 const WrapperInfoTuristica = () => {
   const t = useTranslations("informacion-turistica");
