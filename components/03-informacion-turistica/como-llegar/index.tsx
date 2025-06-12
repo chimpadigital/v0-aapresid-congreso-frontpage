@@ -12,6 +12,8 @@ import { useState, useEffect } from "react";
 import { AutocompleteCustom } from "./autocomplete-custom";
 import { RouteAlternatives } from "./route-alternatives";
 import { Directions } from "./directions";
+import AutoIcon from "@/components/icons/AutoIcon";
+import TransportePublicoIcon from "@/components/icons/TransportePublicoicon";
 
 export type AutocompleteMode = { id: string; label: string };
 
@@ -71,7 +73,7 @@ export function ComoLlegarSection() {
         <div className="mx-auto max-w-[1415px]">
           <div className="flex min-h-[500px] flex-col shadow-lg lg:flex-row">
             {/* Panel verde izquierdo */}
-            <div className="min-h-[750px] rounded-l-[20px] bg-accent bg-cover bg-center bg-no-repeat p-8 text-white lg:w-max lg:px-14 lg:py-[50px]">
+            <div className="rounded-b-none rounded-t-[10px] bg-accent bg-cover bg-center bg-no-repeat p-8 text-white lg:min-h-[750px] lg:w-max lg:rounded-l-[20px] lg:rounded-r-none lg:px-14 lg:py-[50px]">
               <h2 className="mb-8 text-3xl font-normal leading-none md:text-[40px]">
                 {t("como-llegar")}
                 <span className="font-bold"> {t("evento")}</span>
@@ -85,18 +87,19 @@ export function ComoLlegarSection() {
                   </h1>
                   <div className="flex w-full">
                     <button
-                      className={`flex-1 ${activeTab === "transporte" ? "bg-white text-primary" : "bg-primary text-white"} rounded-t-[10px] py-2 transition-colors`}
+                      className={`flex flex-1 items-center justify-center gap-4 ${activeTab === "transporte" ? "bg-white text-primary" : "bg-primary text-white"} rounded-t-[10px] pb-2 pt-[10px] transition-colors`}
                       onClick={() => setActiveTab("transporte")}
                       type="button"
                     >
+                      <TransportePublicoIcon />
                       En transporte
                     </button>
                     <button
-                      className={`flex-1 ${activeTab === "auto" ? "bg-white text-primary" : "bg-primary text-white"} rounded-t-[10px] py-2 transition-colors`}
+                      className={`flex flex-1 items-center justify-center gap-4 ${activeTab === "auto" ? "bg-white text-primary" : "bg-primary text-white"} rounded-t-[10px] pb-2 pt-[10px] transition-colors`}
                       onClick={() => setActiveTab("auto")}
                       type="button"
                     >
-                      En auto
+                      <AutoIcon /> En auto
                     </button>
                   </div>
                   <div className="bg-white">
@@ -122,7 +125,7 @@ export function ComoLlegarSection() {
             </div>
 
             {/* Mapa derecho */}
-            <div className="relative h-72 w-full overflow-hidden rounded-r-[20px] bg-gray-100 lg:h-auto">
+            <div className="relative h-72 md:h-96 w-full overflow-hidden rounded-b-[10px] rounded-t-none bg-gray-100 lg:h-auto lg:rounded-l-none lg:rounded-r-[10px]">
               <Map
                 defaultCenter={{
                   lat: -34.57957730343763,
