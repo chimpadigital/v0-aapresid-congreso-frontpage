@@ -14,6 +14,7 @@ import { RouteAlternatives } from "./route-alternatives";
 import { Directions } from "./directions";
 import AutoIcon from "@/components/icons/AutoIcon";
 import TransportePublicoIcon from "@/components/icons/TransportePublicoicon";
+import ModalCompartir from "./modal-compartir";
 
 export type AutocompleteMode = { id: string; label: string };
 
@@ -65,6 +66,24 @@ export function ComoLlegarSection() {
         : window.google.maps.TravelMode.TRANSIT,
     );
   }, [activeTab]);
+
+  // Utilidad para obtener el string de origen para Google Maps
+  function getOriginString(place: google.maps.places.Place | null) {
+    if (!place) return "";
+    if (place.formattedAddress) return place.formattedAddress;
+    // Algunos objetos Place pueden tener .displayName?.text
+    if ((place as any).displayName?.text)
+      return (place as any).displayName.text;
+    // Si tiene location, usar lat,lng
+    if (
+      place.location &&
+      typeof place.location.lat === "function" &&
+      typeof place.location.lng === "function"
+    ) {
+      return `${place.location.lat()},${place.location.lng()}`;
+    }
+    return "";
+  }
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_MAP ?? ""}>
@@ -121,10 +140,32 @@ export function ComoLlegarSection() {
                   </div>
                 </div>
               </div>
+              <div className="mt-11 flex w-full flex-col gap-3 md:flex-row">
+                <ModalCompartir
+                  disabled={!selectedPlace || route.length === 0}
+                  link={
+                    selectedPlace && route.length > 0
+                      ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(getOriginString(selectedPlace))}&destination=${encodeURIComponent("La rural, buenos aires, argentina")}&travelmode=${encodeURIComponent(activeTab === "auto" ? "driving" : "transit")}`
+                      : "#"
+                  }
+                />
+                <a
+                  href={
+                    selectedPlace && route.length > 0
+                      ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(getOriginString(selectedPlace))}&destination=La rural, buenos aires, argentina&travelmode=${activeTab === "auto" ? "driving" : "transit"}`
+                      : "#"
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`relative z-[1] flex w-full flex-1 items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-fit md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3] ${!selectedPlace || route.length === 0 ? "pointer-events-none opacity-50" : ""}`}
+                >
+                  Ver en el mapa
+                </a>
+              </div>
             </div>
 
             {/* Mapa derecho */}
-            <div className="relative h-72 md:h-96 w-full overflow-hidden rounded-b-[10px] rounded-t-none bg-gray-100 lg:h-auto lg:rounded-l-none lg:rounded-r-[10px]">
+            <div className="relative h-96 w-full overflow-hidden rounded-b-[10px] rounded-t-none bg-gray-100 lg:h-auto lg:rounded-l-none lg:rounded-r-[10px]">
               <Map
                 defaultCenter={{
                   lat: -34.57957730343763,

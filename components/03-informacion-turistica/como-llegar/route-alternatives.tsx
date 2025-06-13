@@ -29,7 +29,7 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
   }
   return (
     <div className="space-y-4">
-      {route.map((r, idx) => {
+      {route.slice(0, 4).map((r, idx) => {
         // Buscar el número de colectivo, subte o duración
         let busNumber = null;
         let isSubte = false;
@@ -132,6 +132,7 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
                       const isSubteStep =
                         step.travel_mode === "TRANSIT" &&
                         step.transit?.line?.vehicle?.type === "SUBWAY";
+                      const lineName = step.transit?.line?.short_name || step.transit?.line?.name;
                       return (
                         <li key={sidx} className="flex min-h-[40px]">
                           {/* Icono */}
@@ -169,7 +170,7 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
                                 height: "40px",
                               }}
                               dangerouslySetInnerHTML={{
-                                __html: step.instructions,
+                                __html: step.instructions + (lineName ? ` <span class='font-bold'>(${lineName})</span>` : ""),
                               }}
                             ></p>
                           </span>
