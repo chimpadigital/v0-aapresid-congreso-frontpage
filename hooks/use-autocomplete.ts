@@ -1,6 +1,6 @@
 import { useMapsLibrary } from '@vis.gl/react-google-maps';
-import {useEffect, useRef, useState} from 'react';
- 
+import { useEffect, useRef, useState } from 'react';
+
 export type UseAutocompleteSuggestionsReturn = {
   suggestions: google.maps.places.AutocompleteSuggestion[];
   isLoading: boolean;
@@ -63,7 +63,7 @@ export function useAutocompleteSuggestions(
   useEffect(() => {
     if (!placesLib) return;
 
-    const {AutocompleteSessionToken, AutocompleteSuggestion} = placesLib;
+    const { AutocompleteSessionToken, AutocompleteSuggestion } = placesLib;
 
     // Create a new session if one doesn't already exist. This has to be reset
     // after `fetchFields` for one of the returned places is called by calling
@@ -75,7 +75,8 @@ export function useAutocompleteSuggestions(
     const request: google.maps.places.AutocompleteRequest = {
       ...requestOptions,
       input: inputString,
-      sessionToken: sessionTokenRef.current
+      sessionToken: sessionTokenRef.current,
+
     };
 
     if (inputString === '') {

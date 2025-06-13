@@ -33,6 +33,7 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
         // Buscar el número de colectivo, subte o duración
         let busNumber = null;
         let isSubte = false;
+        let subteLine = null;
         let duration = r.legs[0]?.duration?.text || "";
         let steps = r.legs[0]?.steps || [];
         // Buscar el primer step que sea BUS o SUBWAY
@@ -49,6 +50,7 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
             step.transit?.line?.vehicle?.type === "SUBWAY"
           ) {
             isSubte = true;
+            subteLine = step.transit.line.short_name || step.transit.line.name;
             break;
           }
         }
@@ -68,12 +70,15 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
                   </span>
                 )}
                 {isSubte && mode === "transporte" && (
-                  <span className="inline-block rounded px-2 py-2">
+                  <span className="flex items-center gap-2 rounded px-2 py-2">
                     <img
                       src="/images/informacion-turistica/logo-subte.webp"
                       alt="Subte"
                       className="h-7 w-7 object-contain"
                     />
+                    {subteLine && (
+                      <span className="text-lg font-semibold text-secondary">{subteLine}</span>
+                    )}
                   </span>
                 )}
                 {mode === "auto" && (
@@ -116,6 +121,7 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
                   }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="border-t border-gray-200 bg-white px-4 overflow-hidden"
+                  style={{ maxHeight: 260, overflowY: "auto" }}
                 >
                   <ol className="space-y-2">
                     {steps.map((step, sidx) => {

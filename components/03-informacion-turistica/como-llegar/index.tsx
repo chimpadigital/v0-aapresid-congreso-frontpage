@@ -30,7 +30,6 @@ export function ComoLlegarSection() {
     null,
   );
 
-  console.log(route);
   // Mover la lógica de incompatibilidad a un useEffect
   useEffect(() => {
     const incompatible =
