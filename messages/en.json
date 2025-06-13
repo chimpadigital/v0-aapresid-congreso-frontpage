@@ -4,12 +4,12 @@
     "inicio": "Home",
     "acerca_de": "About",
     "edicion_33": "33rd edition",
+    "informacion_turistica": "Turist information",
     "nos_acompanian": "Our partners",
     "FAQs": "Frequently asked questions",
-    "prensa": "Press releases",
+    "prensa": "Press",
     "gacetilla": "Press releases",
     "comercial": "Commercial",
-    "informacion_turistica": "Turist information",
     "que_es_el_congreso": "What is the Aapresid Congress?",
     "historia": "History",
     "ediciones_anteriores": "Previous Editions",
@@ -169,7 +169,7 @@
       {
         "pregunta": "When and where is the Congress taking place?",
         "respuesta": [
-          "For the first time, the Congress will be held at La Rural venue, in Palermo (Autonomous City of Buenos Aires), on **August 6ht, 7th, and 8th, 2025.**"
+          "For the second time, the Congress will be held at La Rural venue, in Palermo (Autonomous City of Buenos Aires), on **August 6ht, 7th, and 8th, 2025.**"
         ]
       },
       {

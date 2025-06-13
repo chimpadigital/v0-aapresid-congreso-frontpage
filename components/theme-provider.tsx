@@ -6,7 +6,7 @@ import {
   ThemeProvider as NextThemesProvider,
   type ThemeProviderProps,
 } from "next-themes";
-import { LenisRef, ReactLenis, useLenis } from "lenis/react";
+import { LenisRef, ReactLenis } from "lenis/react";
 import "lenis/dist/lenis.css";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {

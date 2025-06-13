@@ -6,6 +6,7 @@ import SliderBsAs from "./slider-bsas";
 import { useTranslations } from "next-intl";
 import { ComoLlegarSection } from "./como-llegar";
 
+
 const WrapperInfoTuristica = () => {
   const t = useTranslations("informacion-turistica");
 

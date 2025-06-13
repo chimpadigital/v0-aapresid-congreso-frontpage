@@ -84,7 +84,7 @@ export function FeaturedTalksSection() {
                   let dateTime = "";
                   let location = charla.Room?.name || "";
                   try {
-                      theme = charla.Theme?.name || "";
+                    theme = charla.Theme?.name || "";
                   } catch {
                     theme = charla.Theme?.name || "";
                   }

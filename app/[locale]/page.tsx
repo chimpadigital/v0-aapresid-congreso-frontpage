@@ -51,6 +51,8 @@ export default function Home({ params }: { params: { locale: string } }) {
           <Countdown />
         </div>
       </header>
+      {/* Descarga comercial */}
+      <DescargaComercial />
 
       {/* Inscriptions section */}
       <InscriptionsSection />
@@ -65,10 +67,9 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* <DisertantesDestacados /> */}
 
       {/* Featured talks section */}
-      <FeaturedTalksSection />
+      {/* <FeaturedTalksSection /> */}
+      <div className="mb-10"/>
 
-      {/* Descarga comercial */}
-      <DescargaComercial />
 
       {/* Gacetillas section */}
       <GacetillasSection />
