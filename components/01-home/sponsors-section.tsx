@@ -49,21 +49,13 @@ export function SponsorsSection() {
     return fallback;
   }
 
-  // Ejemplo: filtrar por nombre de categoría (ajusta según tus necesidades)
-  const getCategoryByName = (name: string) =>
-    categories.find((cat) => {
-      const catName = getField(cat.name, "es");
-      return (
-        typeof catName === "string" && catName.toLowerCase().includes(name)
-      );
-    });
-
-  const patA = getCategoryByName("patrocinios a");
-  const patB = getCategoryByName("patrocinios b");
-  const patC = getCategoryByName("patrocinios c");
-  const patD = getCategoryByName("patrocinios d");
-  const instit = getCategoryByName("institucional");
-  const medios = getCategoryByName("medios");
+  // Buscar categorías por order en vez de por nombre
+  const patA = categories.find((cat) => cat.order === 1);
+  const patB = categories.find((cat) => cat.order === 2);
+  const patC = categories.find((cat) => cat.order === 3);
+  const patD = categories.find((cat) => cat.order === 4);
+  const instit = categories.find((cat) => cat.order === 5);
+  const medios = categories.find((cat) => cat.order === 6);
 
   return (
     <>

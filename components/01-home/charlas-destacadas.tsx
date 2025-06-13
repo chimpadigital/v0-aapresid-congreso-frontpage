@@ -41,9 +41,9 @@ export function FeaturedTalksSection() {
     } else {
       return fallback;
     }
-    if (obj[lang] && obj[lang].trim() !== "") return obj[lang];
+    if (typeof obj[lang] === "string" && obj[lang].trim() !== "") return obj[lang];
     const otherLang = lang === "en" ? "es" : "en";
-    if (obj[otherLang] && obj[otherLang].trim() !== "") return obj[otherLang];
+    if (typeof obj[otherLang] === "string" && obj[otherLang].trim() !== "") return obj[otherLang];
     return fallback;
   }
 
