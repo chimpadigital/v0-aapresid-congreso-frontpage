@@ -5,6 +5,7 @@ import { DelCampoCiudadSection } from "./del-campo";
 import SliderBsAs from "./slider-bsas";
 import { useTranslations } from "next-intl";
 import { ComoLlegarSection } from "./como-llegar/index";
+import ReservaEstadia from "./reserva-estadia";
   
 
 const WrapperInfoTuristica = () => {
@@ -19,6 +20,7 @@ const WrapperInfoTuristica = () => {
       />
       <DelCampoCiudadSection />
       <SliderBsAs />
+      <ReservaEstadia/>
       <ComoLlegarSection />
     </>
   );

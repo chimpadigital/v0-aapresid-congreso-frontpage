@@ -69,7 +69,7 @@ const DescubraElCampo = () => {
           </h2>
 
           {/* Event dates */}
-          <div className="mb-11 flex w-fit gap-8">
+          <div className="mb-11 flex flex-wrap w-fit gap-8">
             <div>
               <div className="text-xl font-medium text-secondary">
                 5 de agosto
