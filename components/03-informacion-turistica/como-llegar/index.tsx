@@ -91,13 +91,13 @@ export function ComoLlegarSection() {
         <div className="mx-auto max-w-[1415px]">
           <div className="flex min-h-[500px] flex-col shadow-lg lg:flex-row">
             {/* Panel verde izquierdo */}
-            <div className="rounded-b-none rounded-t-[10px] bg-accent bg-cover bg-center bg-no-repeat p-8 text-white lg:min-h-[750px] lg:w-max lg:rounded-l-[20px] lg:rounded-r-none lg:px-14 lg:py-[50px]">
+            <div className="rounded-b-none rounded-t-[10px] bg-accent flex flex-col w-full bg-cover bg-center bg-no-repeat p-8 text-white lg:min-h-[750px] lg:w-max lg:rounded-l-[20px] lg:rounded-r-none lg:px-14 lg:py-[50px]">
               <h2 className="mb-8 text-3xl font-normal leading-none md:text-[40px]">
                 {t("como-llegar")}
                 <span className="font-bold"> {t("evento")}</span>
               </h2>
 
-              <div className="w-full space-y-6 tracking-wider text-white">
+              <div className="w-full space-y-6 tracking-wider text-white mb-11">
                 <AutocompleteCustom onPlaceSelect={setSelectedPlace} />
                 <div className="w-full">
                   <h1 className="mb-4 text-xl font-medium tracking-wider">
@@ -140,7 +140,7 @@ export function ComoLlegarSection() {
                   </div>
                 </div>
               </div>
-              <div className="mt-11 flex w-full flex-col gap-3 md:flex-row">
+              <div className="mt-auto flex w-full flex-col gap-3 md:flex-row">
                 <ModalCompartir
                   disabled={!selectedPlace || route.length === 0}
                   link={

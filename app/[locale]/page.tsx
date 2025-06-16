@@ -11,6 +11,7 @@ import DescargaComercial from "@/components/01-home/descarga-comercial";
 import { DisertantesDestacados } from "@/components/01-home/disertantes-destacados";
 import { FeaturedTalksSection } from "@/components/01-home/charlas-destacadas";
 import { GacetillasSection } from "@/components/01-home/gacetilla-section";
+import ConoceElCampo from "@/components/01-home/descubra-el-campo";
 
 export default function Home({ params }: { params: { locale: string } }) {
   return (
@@ -67,9 +68,10 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* <DisertantesDestacados /> */}
 
       {/* Featured talks section */}
-      {/* <FeaturedTalksSection /> */}
-      <div className="mb-10"/>
+      <FeaturedTalksSection />
 
+      {/* Descubra el campo - banner */}
+      <ConoceElCampo />
 
       {/* Gacetillas section */}
       <GacetillasSection />
@@ -79,7 +81,6 @@ export default function Home({ params }: { params: { locale: string } }) {
 
       {/* Sponsors section */}
       <SponsorsSection />
-
     </main>
   );
 }

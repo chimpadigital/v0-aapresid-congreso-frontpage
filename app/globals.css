@@ -266,13 +266,56 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+
   .gacetilla-detalle span:has(> img),
-.gacetilla-detalle div:has(> img) {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
+  .gacetilla-detalle div:has(> img) {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
 }
 
 .gacetilla-detalle img {
   width: 100%;
+}
+
+
+.container-inscripciones {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  gap: 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "banner banner"
+    "precios invitacion"
+    "precios consulta";
+}
+
+.banner-inscripciones {
+  grid-area: banner;
+}
+
+.precios-inscripciones {
+  grid-area: precios;
+}
+
+.invitaciones {
+  grid-area: invitacion;
+}
+
+.consultas-inscripciones {
+  grid-area: consulta;
+}
+
+@media (max-width: 1200px) {
+  .container-inscripciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "banner"
+      "precios"
+      "invitacion"
+      "consulta";
+  }
 }
