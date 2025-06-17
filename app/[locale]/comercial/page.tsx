@@ -1,4 +1,4 @@
-import WrapperComercial from "@/components/05-comercial/werapper-comercial";
+import WrapperComercial from "@/components/comercial/werapper-comercial";
 import React from "react";
 
 const Comercial = () => {

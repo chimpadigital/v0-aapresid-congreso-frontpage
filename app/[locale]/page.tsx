@@ -1,17 +1,17 @@
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/01-home/hero";
-import { Countdown } from "@/components/01-home/countdown";
-import { InscriptionsSection } from "@/components/01-home/inscriptions-section";
-import { AboutSection } from "@/components/01-home/about-section";
-import { ThemesSection } from "@/components/01-home/themes-section";
-import { FaqSection } from "@/components/01-home/faq-section";
-import { SponsorsSection } from "@/components/01-home/sponsors-section";
+import { Hero } from "@/components/home/hero";
+import { Countdown } from "@/components/home/countdown";
+import { InscriptionsSection } from "@/components/home/inscriptions-section";
+import { AboutSection } from "@/components/home/about-section";
+import { ThemesSection } from "@/components/home/themes-section";
+import { FaqSection } from "@/components/home/faq-section";
+import { SponsorsSection } from "@/components/home/sponsors-section";
 import { Footer } from "@/components/footer";
-import DescargaComercial from "@/components/01-home/descarga-comercial";
-import { DisertantesDestacados } from "@/components/01-home/disertantes-destacados";
-import { FeaturedTalksSection } from "@/components/01-home/charlas-destacadas";
-import { GacetillasSection } from "@/components/01-home/gacetilla-section";
-import ConoceElCampo from "@/components/01-home/descubra-el-campo";
+import DescargaComercial from "@/components/home/descarga-comercial";
+import { DisertantesDestacados } from "@/components/home/disertantes-destacados";
+import { FeaturedTalksSection } from "@/components/home/charlas-destacadas";
+import { GacetillasSection } from "@/components/home/gacetilla-section";
+import ConoceElCampo from "@/components/home/descubra-el-campo";
 
 export default function Home({ params }: { params: { locale: string } }) {
   return (

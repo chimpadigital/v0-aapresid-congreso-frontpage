@@ -48,14 +48,19 @@ export interface Speaker {
   updatedAt: string;
 }
 
+export interface MultilingualField {
+  en: string;
+  es: string;
+}
+
 export interface EventSpeaker {
   id: number;
   name: string;
-  company: string;
+  company: string | null;
   featured: boolean | null;
-  description: string; // JSON string, se parsea en runtime
-  link: string;
-  image: string;
+  description: string | null;
+  link: string | null;
+  image: string | null;
   status: string;
   createdAt: string;
   updatedAt: string;
@@ -67,53 +72,62 @@ export interface EventSpeaker {
   };
 }
 
-export interface EventRoom {
+export interface Room {
+  id: number;
+  name: string;
+  image: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Theme {
   id: number;
   name: string;
   createdAt: string;
   updatedAt: string;
 }
 
-export interface EventTheme {
+export interface Moderator {
   id: number;
   name: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export interface EventModerator {
-  id: number;
-  name: string;
-  company: string;
+  company: string | null;
   featured: boolean | null;
-  description: string; // JSON string, se parsea en runtime
-  link: string;
-  image: string;
+  description: string | null;
+  link: string | null;
+  image: string | null;
   status: string;
   createdAt: string;
   updatedAt: string;
 }
 
-export interface CharlaEvent {
+export interface Event {
   id: number;
   code: string;
   date: string;
   start_time: string;
   end_time: string;
-  multilingual_video_link: string; // JSON string
-  multilingual_talk: string; // JSON string
-  multilingual_title: string; // JSON string
-  multilingual_description: string; // JSON string
-  languages: string | null;
+  multilingual_video_link: MultilingualField;
+  multilingual_talk: MultilingualField;
+  multilingual_title: MultilingualField;
+  multilingual_description: MultilingualField;
+  languages: string;
+  featured: boolean;
   createdAt: string;
   updatedAt: string;
   roomId: number;
   themeId: number;
   moderatorId: number;
   Speakers: EventSpeaker[];
-  Room: EventRoom;
-  Theme: EventTheme;
-  Moderator: EventModerator;
+  Room: Room;
+  Theme: Theme;
+  Moderator: Moderator;
+}
+
+export interface EventsApiResponse {
+  data: Event[];
+  total: number;
+  page: number;
+  totalPages: number;
 }
 
 export interface GacetillaApiItem {
