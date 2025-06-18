@@ -1,16 +1,17 @@
 "use client";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { RichText } from "../rich-text";
 import * as motion from "motion/react-client";
+import Link from "next/link";
 
 export function AboutSection() {
   const t = useTranslations("about");
-
+  const locale = useLocale();
   return (
     <section className="relative mx-4 mt-0 overflow-hidden rounded-[20px] p-6 md:mx-[33px] md:mt-20 md:px-12 md:py-28 lg:px-24">
       {/* Background image */}
-      <div className="absolute inset-0 bg-[url('/images/home/campo-background-mobile.webp')] sm:bg-[url('/images/home/campo-background.webp')] bg-cover bg-fixed">
+      <div className="absolute inset-0 bg-[url('/images/home/campo-background-mobile.webp')] bg-cover bg-fixed sm:bg-[url('/images/home/campo-background.webp')]">
         <div className="absolute inset-0 bg-black/60 bg-blend-multiply" />
       </div>
 
@@ -44,12 +45,15 @@ export function AboutSection() {
             <div className="max-w-[25ch]">
               <RichText
                 text={t("conoce_el_programa")}
-                className="mb-6 max-w-[20ch] text-3xl leading-tight text-white md:text-4xl lg:text-5xl font-light"
+                className="mb-6 max-w-[20ch] text-3xl font-light leading-tight text-white md:text-4xl lg:text-5xl"
               />
             </div>
-            <button className="pointer-events-none relative overflow-hidden rounded-full border border-white bg-white/10 px-[30px] py-[12px] font-medium text-white transition-colors duration-500 before:absolute before:-left-[147%] before:top-[125%] before:z-[1] before:h-[290%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-[3]">
-              <span className="relative z-10 text-lg">{t("proximamente")}</span>
-            </button>
+            <Link
+              href={locale + "/cronograma"}
+              className="relative overflow-hidden rounded-full border border-white bg-white/10 px-[30px] py-[12px] font-medium text-white transition-colors duration-500 before:absolute before:-left-[147%] before:top-[125%] before:z-[1] before:h-[290%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-[3]"
+            >
+              <span className="relative z-10 text-lg">{t("cronograma")}</span>
+            </Link>
           </motion.div>
         </div>
       </div>

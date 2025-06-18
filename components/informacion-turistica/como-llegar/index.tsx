@@ -15,6 +15,7 @@ import { Directions } from "./directions";
 import AutoIcon from "@/components/icons/AutoIcon";
 import TransportePublicoIcon from "@/components/icons/TransportePublicoicon";
 import ModalCompartir from "./modal-compartir";
+import ArrowBack from "@/components/icons/ArrowBack";
 
 export type AutocompleteMode = { id: string; label: string };
 
@@ -91,13 +92,13 @@ export function ComoLlegarSection() {
         <div className="mx-auto max-w-[1415px]">
           <div className="flex min-h-[500px] flex-col shadow-lg lg:flex-row">
             {/* Panel verde izquierdo */}
-            <div className="rounded-b-none rounded-t-[10px] bg-accent flex flex-col w-full bg-cover bg-center bg-no-repeat p-8 text-white lg:min-h-[750px] lg:w-max lg:rounded-l-[20px] lg:rounded-r-none lg:px-14 lg:py-[50px]">
-              <h2 className="mb-8 text-3xl font-normal leading-none md:text-[40px]">
+            <div className="flex w-full flex-col rounded-b-none rounded-t-[10px] bg-accent bg-cover bg-center bg-no-repeat p-8 text-white lg:min-h-[750px] lg:w-[65%] lg:rounded-l-[20px] lg:rounded-r-none lg:px-14 lg:py-[50px]">
+              <h2 className="max-w-[18ch] text-3xl mb-8 font-normal leading-none md:text-[40px]">
                 {t("como-llegar")}
                 <span className="font-bold"> {t("evento")}</span>
               </h2>
 
-              <div className="w-full space-y-6 tracking-wider text-white mb-11">
+              <div className="mb-11 w-full space-y-6 tracking-wider text-white">
                 <AutocompleteCustom onPlaceSelect={setSelectedPlace} />
                 <div className="w-full">
                   <h1 className="mb-4 text-xl font-medium tracking-wider">
@@ -140,27 +141,35 @@ export function ComoLlegarSection() {
                   </div>
                 </div>
               </div>
-              <div className="mt-auto flex w-full flex-col gap-3 md:flex-row">
-                <ModalCompartir
-                  disabled={!selectedPlace || route.length === 0}
-                  link={
-                    selectedPlace && route.length > 0
-                      ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(getOriginString(selectedPlace))}&destination=${encodeURIComponent("La rural, buenos aires, argentina")}&travelmode=${encodeURIComponent(activeTab === "auto" ? "driving" : "transit")}`
-                      : "#"
-                  }
-                />
-                <a
-                  href={
-                    selectedPlace && route.length > 0
-                      ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(getOriginString(selectedPlace))}&destination=La rural, buenos aires, argentina&travelmode=${activeTab === "auto" ? "driving" : "transit"}`
-                      : "#"
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`relative z-[1] flex w-full flex-1 items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-fit md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3] ${!selectedPlace || route.length === 0 ? "pointer-events-none opacity-50" : ""}`}
-                >
-                  Ver en el mapa
-                </a>
+              <div className="mt-auto flex w-full flex-col">
+                <span className="mb-6 text-center font-bold tracking-wider">
+                  ¡Explorá todos los recorridos posibles desde el mapa!
+                </span>
+                <div className="flex w-full flex-col gap-3 px-2 md:flex-row">
+                  <ModalCompartir
+                    disabled={!selectedPlace || route.length === 0}
+                    link={
+                      selectedPlace && route.length > 0
+                        ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(getOriginString(selectedPlace))}&destination=${encodeURIComponent("La rural, buenos aires, argentina")}&travelmode=${encodeURIComponent(activeTab === "auto" ? "driving" : "transit")}`
+                        : "#"
+                    }
+                  />
+                  <a
+                    href={
+                      selectedPlace && route.length > 0
+                        ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(getOriginString(selectedPlace))}&destination=La rural, buenos aires, argentina&travelmode=${activeTab === "auto" ? "driving" : "transit"}`
+                        : "#"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative z-[1] flex w-full flex-1 items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[15px] py-[15.5px] text-center text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-fit md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3] ${!selectedPlace || route.length === 0 ? "pointer-events-none opacity-50" : ""}`}
+                  >
+                    Ver más recorridos
+                    <span className="rotate-180">
+                      <ArrowBack />
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
 

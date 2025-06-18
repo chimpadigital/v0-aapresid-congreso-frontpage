@@ -186,3 +186,11 @@ export interface LogoCategory {
   updatedAt: string;
   Logos: LogoItem[];
 }
+
+
+export interface FiltrosData {
+  speakers: EventSpeaker[];
+  themes: Theme[];
+  rooms: Room[];
+  days: string[];
+}

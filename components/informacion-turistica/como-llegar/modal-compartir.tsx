@@ -36,9 +36,9 @@ const ModalCompartir = ({ link = "", disabled = true }) => {
       <button
         disabled={disabled}
         onClick={onOpen}
-        className="flexitems-center relative z-[1] w-full flex-1 justify-center gap-3 overflow-hidden rounded-full border border-white bg-transparent px-[30px] py-[13px] text-center text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-[6] disabled:pointer-events-none disabled:cursor-default disabled:opacity-50 md:w-fit md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3]"
+        className="flexi tems-center relative z-[1] w-full flex-1 justify-center gap-3 overflow-hidden rounded-full border border-white bg-transparent px-[15px] py-[13px] text-center text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-[6] disabled:pointer-events-none disabled:cursor-default disabled:opacity-50 md:w-fit md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3]"
       >
-        <span>{t("compartir")}</span>
+        <span>Compartir recorrido</span>
       </button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
