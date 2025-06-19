@@ -51,6 +51,7 @@ export interface Speaker {
 export interface MultilingualField {
   en: string;
   es: string;
+  [key: string]: string | undefined;
 }
 
 export interface EventSpeaker {
@@ -193,4 +194,5 @@ export interface FiltrosData {
   themes: Theme[];
   rooms: Room[];
   days: string[];
+  events: Event[];
 }

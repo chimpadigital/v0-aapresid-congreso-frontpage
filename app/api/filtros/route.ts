@@ -4,22 +4,24 @@ const API_BASE_URL = process.env.API_BASE_URL || '';
 
 export async function GET() {
     try {
-        const [speakersRes, themesRes, roomsRes, daysRes] = await Promise.all([
+        const [speakersRes, themesRes, roomsRes, daysRes, eventsRes] = await Promise.all([
             fetch(`${API_BASE_URL}/api/speakers?limit=1000`),
             fetch(`${API_BASE_URL}/api/themes`),
             fetch(`${API_BASE_URL}/api/rooms?limit=1000`),
             fetch(`${API_BASE_URL}/api/events/filters`),
+            fetch(`${API_BASE_URL}/api/events`),
         ]);
 
         if (!speakersRes.ok || !themesRes.ok || !roomsRes.ok || !daysRes.ok) {
             return NextResponse.json({ error: "Error fetching filters" }, { status: 500 });
         }
 
-        const [speakers, themes, rooms, days] = await Promise.all([
+        const [speakers, themes, rooms, days, events] = await Promise.all([
             speakersRes.json(),
             themesRes.json(),
             roomsRes.json(),
             daysRes.json(),
+            eventsRes.json(),
         ]);
 
         return NextResponse.json({
@@ -27,6 +29,7 @@ export async function GET() {
             themes,
             rooms,
             days,
+            events
         });
     } catch (error) {
         return NextResponse.json({ error: "Unexpected error" }, { status: 500 });

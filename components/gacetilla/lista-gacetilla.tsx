@@ -4,7 +4,7 @@ import { GacetillaCard } from "../gacetilla-card";
 import LupaIcon from "../icons/LupaIcon";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Paginacion } from "./paginacion";
+import { Paginacion } from "../paginacion";
 import { GacetillaApiResponse } from "@/lib/types";
 import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";

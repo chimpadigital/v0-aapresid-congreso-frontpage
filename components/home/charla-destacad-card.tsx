@@ -1,7 +1,5 @@
 import type React from "react";
 import DisertanteIcon from "../icons/DisertanteIcon";
-import Calendar from "../icons/Calendar";
-import MapPin from "../icons/MapPin";
 import Eje1Aprender from "../icons/Eje1Aprender";
 import Eje1Desafios from "../icons/Eje2Desafios";
 import EjeInnovacion from "../icons/Eje3Innovacion";
@@ -62,12 +60,14 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
       </h3>
 
       <div className="space-y-4">
-       {speakers.length > 0 && <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
-            <DisertanteIcon />
+        {speakers.length > 0 && (
+          <div className="flex items-center gap-4">
+            <div className="flex-shrink-0 text-primary">
+              <DisertanteIcon />
+            </div>
+            <span className="text-[18px] text-[#736D6D]">{speakers}</span>
           </div>
-          <span className="text-[18px] text-[#736D6D]">{speakers}</span>
-        </div>}
+        )}
 
         <div className="flex items-center gap-4">
           <div className="flex-shrink-0">

@@ -6,12 +6,10 @@ import "swiper/css/pagination";
 import CharlaDestacadaCard from "./charla-destacad-card";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { CharlaEvent } from "@/lib/types";
-import Calendar from "../icons/Calendar";
-import CalendarDense from "../icons/CalendarDense";
+import { Event, EventSpeaker } from "@/lib/types";
 
 export function FeaturedTalksSection() {
-  const [charlas, setCharlas] = useState<CharlaEvent[]>([]);
+  const [charlas, setCharlas] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 
   const locale = useLocale();
@@ -80,7 +78,7 @@ export function FeaturedTalksSection() {
 
                   let theme = "";
                   let speakers =
-                    charla.Speakers?.map((s) => s.name).join(", ") || "";
+                    charla.Speakers?.map((s: EventSpeaker) => s.name).join(", ") || "";
                   let dateTime = "";
                   let location = charla.Room?.name || "";
                   try {

@@ -3,8 +3,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Download, ChevronLeft, ChevronRight } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,38 +10,22 @@ import "swiper/css/navigation";
 import { SelectFilter } from "./CharlasFilterSelect";
 import { FiltrosData } from "@/lib/types";
 import SliderRooms from "./SliderRooms";
+import { useLocale } from "next-intl";
+import { getMultilingualField } from "@/lib/utils";
 
-export interface ColourOption {
-  readonly value: string;
-  readonly label: string;
-  readonly color: string;
-  readonly isFixed?: boolean;
-  readonly isDisabled?: boolean;
-}
-export const colourOptions: ColourOption[] = [
-  { value: "ocean", label: "Ocean", color: "#00B8D9", isFixed: true },
-  { value: "blue", label: "Blue", color: "#0052CC", isDisabled: true },
-  { value: "purple", label: "Purple", color: "#5243AA" },
-  { value: "red", label: "Red", color: "#FF5630", isFixed: true },
-  { value: "orange", label: "Orange", color: "#FF8B00" },
-  { value: "yellow", label: "Yellow", color: "#FFC400" },
-  { value: "green", label: "Green", color: "#36B37E" },
-  { value: "forest", label: "Forest", color: "#00875A" },
-  { value: "slate", label: "Slate", color: "#253858" },
-  { value: "silver", label: "Silver", color: "#666666" },
-];
 
 export default function Filtros() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const locale = useLocale();
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedDay, setSelectedDay] = useState("06/08");
+  const [selectedDay, setSelectedDay] = useState("");
   const [selectedRoom, setSelectedRoom] = useState("1");
   const [filters, setFilters] = useState({
     charla: "",
     speakers: "",
-    themes: "",
+    theme_id: "",
   });
 
   const [data, setData] = useState<FiltrosData | null>(null);
@@ -57,7 +39,8 @@ export default function Filtros() {
           speakers: data.speakers.data,
           themes: data.themes,
           rooms: data.rooms.data,
-          days: data.days, // <-- solo guarda el array original
+          days: data.days,
+          events: data.events.data,
         });
         setLoading(false);
       })
@@ -74,14 +57,19 @@ export default function Filtros() {
     label: theme.name,
   }));
 
+  const talkOptions = data?.events.map((event) => ({
+    value: String(event.id),
+    label: getMultilingualField(event.multilingual_title, locale),
+  }));
+
   const formattedDays = (data?.days as string[])?.map(
     (date: string, idx: number) => {
       const [year, month, day] = date?.split("-");
       const id = `${day}/${month}`;
       return {
-        id: date,
+        id: date + " 00:00:00",
         label: `${id} Día ${idx + 1}`,
-        isSelected: selectedDay === date,
+        isSelected: selectedDay === date + " 00:00:00",
       };
     },
   );
@@ -92,11 +80,11 @@ export default function Filtros() {
   useEffect(() => {
     if (!isInitialized) {
       const search = searchParams.get("search") || "";
-      const date = searchParams.get("date") || "06/08";
-      const room_id = searchParams.get("room_id") || "1";
+      const date = searchParams.get("date") || "";
+      const room_id = searchParams.get("room_id") || "";
       const charla = searchParams.get("charla") || "";
       const speakers = searchParams.get("speakers") || "";
-      const themes = searchParams.get("themes") || "";
+      const theme_id = searchParams.get("theme_id") || "";
 
       setSearchTerm(search);
       setSelectedDay(date);
@@ -104,7 +92,7 @@ export default function Filtros() {
       setFilters({
         charla,
         speakers,
-        themes,
+        theme_id: theme_id,
       });
       setIsInitialized(true);
     }
@@ -169,7 +157,7 @@ export default function Filtros() {
   const formattedRooms = (data?.rooms || []).map((room) => ({
     id: String(room.id),
     name: room.name,
-    image: room.image || null, 
+    image: room.image || null,
     sponsor: room.name,
     isSelected: selectedRoom === String(room.id),
   }));
@@ -215,13 +203,13 @@ export default function Filtros() {
         {/* Search by filters */}
         <div className="mb-8" data-lenis-prevent>
           <h3 className="mb-4 text-lg font-medium text-primary">Filtrar por</h3>
-          <div className="flex gap-[74px]">
+          <div className="flex flex-wrap gap-10 md:gap-[74px]">
             {/* CHARLA */}
             <div className="flex w-[min(100%,325px)] flex-col">
               <span className="mb-2 block text-primary">Charla</span>
               <SelectFilter
                 onChange={(e) => handleFilterChange("charla", e?.value || "")}
-                options={colourOptions}
+                options={talkOptions || []}
                 name="charla"
               />
             </div>
@@ -240,9 +228,9 @@ export default function Filtros() {
             <div className="flex w-[min(100%,325px)] flex-col">
               <span className="mb-2 block text-primary">Eje temático</span>
               <SelectFilter
-                onChange={(e) => handleFilterChange("themes", e?.value || "")}
+                onChange={(e) => handleFilterChange("theme_id", e?.value || "")}
                 options={themeOptions || []}
-                name="themes"
+                name="theme_id"
               />
             </div>
           </div>

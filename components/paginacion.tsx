@@ -1,7 +1,7 @@
 "use client";
 
-import ChevronLeft from "../icons/ChevronLeft";
-import DoubleChevronLeft from "../icons/DoubleChevronLeft";
+import ChevronLeft from "./icons/ChevronLeft";
+import DoubleChevronLeft from "./icons/DoubleChevronLeft";
 
 interface PaginationProps {
   currentPage: number;
