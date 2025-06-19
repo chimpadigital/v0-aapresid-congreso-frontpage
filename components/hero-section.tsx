@@ -6,6 +6,7 @@ interface HeroSectionProps {
   title2?: string;
   showBackButton?: boolean;
   className?: string;
+  compact?: boolean;
 }
 
 export function HeroSection({
@@ -14,13 +15,14 @@ export function HeroSection({
   title2,
   showBackButton = true,
   className = "",
+  compact = false,
 }: HeroSectionProps) {
   return (
     <section
-      className={`relative mx-4 mt-4 h-[400px] flex xs:h-[500px] flex-col justify-center md:justify-normal  rounded-[20px] bg-cover bg-center px-8 md:m-[33px] md:p-[70px] md:pt-[114px] ${className}`}
+      className={`relative mx-4 mt-4 ${compact ? "h-[378px]" : "h-[400px] xs:h-[500px]"} flex flex-col justify-center rounded-[20px] bg-cover bg-center px-8 md:m-[33px] md:justify-normal md:p-[70px] md:pt-[114px] ${className}`}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-      <div className="mx-auto max-w-7xl w-full">
+      <div className="mx-auto w-full max-w-7xl">
         {showBackButton && <BackButton />}
 
         {/* Título */}

@@ -2,9 +2,9 @@ import { Suspense } from "react";
 import { BackButton } from "@/components/GoBackHero";
 import DetalleGacetillaContent, {
   getField,
-} from "@/components/04-gacetilla/gacetilla-detalle";
-import GacetillasSimilares from "@/components/04-gacetilla/gacetillas-similares";
-import HeroGacetilla from "@/components/04-gacetilla/hero-gacetilla";
+} from "@/components/gacetilla/gacetilla-detalle";
+import GacetillasSimilares from "@/components/gacetilla/gacetillas-similares";
+import HeroGacetilla from "@/components/gacetilla/hero-gacetilla";
 import { GacetillaDetalle } from "@/lib/types";
 import { Metadata } from "next";
 

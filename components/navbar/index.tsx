@@ -37,13 +37,13 @@ export function Navbar() {
         },
       ],
     },
-    // {
-    //   label: "Contenido",
-    //   children: [
-    //     { label: "Cronograma", href: "/${locale}/cronograma" },
-    //     { label: "Disertantes", href: "/${locale}/disertantes" },
-    //   ],
-    // },
+    {
+      label: t("contenidos"),
+      children: [
+        { label: t("cronograma"), href: `/${locale}/cronograma` },
+        // { label: "Disertantes", href: "/${locale}/disertantes" },
+      ],
+    },
     {
       label: t("prensa"),
       children: [

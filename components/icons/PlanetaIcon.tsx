@@ -1,11 +1,11 @@
 import React from "react";
 
-const PlanetaIcon = () => {
+const PlanetaIcon = ({ size = "31" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="31"
-      height="31"
+      width={size}
+      height={size}
       viewBox="0 0 31 31"
       fill="none"
     >

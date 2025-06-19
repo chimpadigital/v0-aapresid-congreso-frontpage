@@ -3,7 +3,7 @@ import React from "react";
 
 const Eje6SistemasSustentables = ({ size = 87 }: EjeIconSize) => {
   return (
-    <svg width={size} height={size} viewBox="0 0 83 87" fill="none">
+    <svg width={size} height={"auto"} viewBox="0 0 83 87" fill="none">
       <g clipPath="url(#clip0_6263_2894)">
         <path
           d="M41.5062 0C18.5803 0 0 19.4728 0 43.5C0 67.5272 18.5803 87 41.5062 87C64.4322 87 83.0125 67.5272 83.0125 43.5C83.0125 19.4728 64.4322 0 41.5062 0ZM41.5062 7.43507C60.4858 7.43507 75.9336 23.6088 75.9336 43.5C75.9336 63.3912 60.4858 79.581 41.5062 79.581C22.5267 79.581 7.0943 63.3912 7.0943 43.5C7.0943 23.6088 22.5267 7.43507 41.5062 7.43507Z"
