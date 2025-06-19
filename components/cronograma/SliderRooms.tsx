@@ -35,8 +35,8 @@ export function SliderRooms({
             nextEl: ".swiper-button-next-custom",
           }}
           breakpoints={{
-            640: { slidesPerView: "auto" },
-            768: { slidesPerView: "auto" },
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
             1024: { slidesPerView: 4 },
             1280: { slidesPerView: 5 },
           }}
