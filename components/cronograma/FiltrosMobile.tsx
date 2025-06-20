@@ -5,29 +5,31 @@ import DrawerFiltrosMobile from "./DrawerFiltrosMobile";
 import { Download } from "lucide-react";
 
 const FiltrosMobile = ({
-  searchTerm,
   handleSearchTermChange,
   handleSearch,
+  handleFilterChange,
+  handleDaySelect,
+  handleRoomSelect,
+  searchTerm,
   talkOptions,
   speakerOptions,
   themeOptions,
-  handleFilterChange,
   formattedDays,
-  handleDaySelect,
   formattedRooms,
   selectedRoom,
-  handleRoomSelect,
 }: {
-  searchTerm: string;
   handleSearchTermChange: (value: string) => void;
   handleSearch: () => void;
-  talkOptions?: { value: string; label: string }[];
-  speakerOptions?: { value: string; label: string }[];
-  themeOptions?: { value: string; label: string }[];
   handleFilterChange: (
     filterName: "id" | "speakers" | "theme_id",
     value: string,
   ) => void;
+  handleDaySelect: (dayId: string) => void;
+  handleRoomSelect: (roomId: string) => void;
+  searchTerm: string;
+  talkOptions?: { value: string; label: string }[];
+  speakerOptions?: { value: string; label: string }[];
+  themeOptions?: { value: string; label: string }[];
   formattedDays?: {
     id: string;
     label: string;
@@ -35,13 +37,11 @@ const FiltrosMobile = ({
     fecha: string;
     numDia: number;
   }[];
-  handleDaySelect: (dayId: string) => void;
   formattedRooms: formatedRooms[];
   selectedRoom?: string;
-  handleRoomSelect: (roomId: string) => void;
 }) => {
   return (
-    <div className="mb-10 px-2 tracking-widest">
+    <div data-lenis-prevent className="mb-10 px-2 tracking-widest">
       <h4 className="my-3 text-xs font-medium">Búsqueda por palabra clave</h4>
       <div className="flex h-full w-full gap-3">
         <label
@@ -56,7 +56,12 @@ const FiltrosMobile = ({
             className="w-full outline-none"
           />
         </label>
-        <DrawerFiltrosMobile />
+        <DrawerFiltrosMobile
+          handleFilterChange={handleFilterChange}
+          talkOptions={talkOptions}
+          speakerOptions={speakerOptions}
+          themeOptions={themeOptions}
+        />
       </div>
 
       <button className="mb-6 mt-10 flex w-full justify-center gap-[10px] rounded-full bg-accent px-3 py-3 text-lg text-white">
@@ -100,7 +105,7 @@ const FiltrosMobile = ({
         </div>
 
         <div className="relative -left-5 mt-10 w-screen overflow-hidden bg-[#F0F0F1] pl-2">
-          <div className="salas-scroll flex snap-mandatory snap-x overflow-x-auto whitespace-nowrap">
+          <div className="salas-scroll flex snap-x snap-mandatory overflow-x-auto whitespace-nowrap">
             {formattedRooms.map((room) => (
               <button
                 key={room.id}
@@ -109,7 +114,9 @@ const FiltrosMobile = ({
                   selectedRoom === room.id ? "text-primary" : "text-accent"
                 }`}
               >
-                <p className="w-full text-center min-w-[10ch] whitespace-normal">{room.name}</p>
+                <p className="w-full min-w-[10ch] whitespace-normal text-center">
+                  {room.name}
+                </p>
                 <div
                   className={`absolute ${selectedRoom === room.id ? "opacity-100" : "opacity-0"} -bottom-1 left-0 right-0 mx-auto h-2 w-[90%] rounded-full bg-primary`}
                 ></div>

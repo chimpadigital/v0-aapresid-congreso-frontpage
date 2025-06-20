@@ -7,12 +7,16 @@ interface CronogramaSelectProps {
   options: OptionType[];
   onChange: (option: OptionType | null) => void;
   name: string;
+  menuPlacement?: "top" | "bottom" | "auto";
+  menuPosition?: "absolute" | "fixed";
 }
 
 export function SelectFilter({
   options,
   onChange,
   name,
+  menuPlacement = "auto",
+  menuPosition = "absolute",
 }: CronogramaSelectProps) {
   const [defaultValue, setDefaultValue] = useState<OptionType | null>(null);
 
@@ -30,6 +34,8 @@ export function SelectFilter({
 
   return (
     <Select
+      menuPlacement={menuPlacement}
+      menuPosition={menuPosition}
       options={options}
       onChange={(
         newValue: SingleValue<OptionType>,

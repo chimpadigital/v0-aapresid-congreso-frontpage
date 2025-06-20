@@ -8,12 +8,41 @@ import {
   DrawerFooter,
 } from "@heroui/drawer";
 import { useDisclosure } from "@heroui/modal";
+import { SelectFilter } from "./CharlasFilterSelect";
+import { useRouter, useSearchParams } from "next/navigation";
 
-const DrawerFiltrosMobile = () => {
+const DrawerFiltrosMobile = ({
+  handleFilterChange,
+  talkOptions,
+  speakerOptions,
+  themeOptions,
+}: {
+  handleFilterChange: (
+    filterName: "id" | "speakers" | "theme_id",
+    value: string,
+  ) => void;
+  talkOptions?: { value: string; label: string }[];
+  speakerOptions?: { value: string; label: string }[];
+  themeOptions?: { value: string; label: string }[];
+}) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handleClearFilters = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("id");
+    params.delete("speakers");
+    params.delete("theme_id");
+    router.replace(`?${params.toString()}`);
+  //   // Opcional: notificar a los selects para que se reseteen visualmente
+  //   handleFilterChange("theme_id", "");
+  //   handleFilterChange("id", "");
+  //   handleFilterChange("speakers", "");
+  };
 
   return (
-    <>
+    <div data-lenis-prevent>
       <button
         onClick={onOpen}
         className="grid aspect-square h-[40px] place-items-center rounded-full bg-secondary"
@@ -31,38 +60,85 @@ const DrawerFiltrosMobile = () => {
           />
         </svg>
       </button>
-      <Drawer isOpen={isOpen} onOpenChange={onOpenChange} placement="bottom">
-        <DrawerContent>
+      <Drawer
+        data-lenis-prevent
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        placement="bottom"
+        hideCloseButton
+      >
+        <DrawerContent className="rounded-none">
           {(onClose) => (
             <>
-              <DrawerHeader className="flex flex-col gap-1">
-                Drawer Title
+              <DrawerHeader className="flex w-full flex-col items-center gap-3 font-medium tracking-wider text-primary">
+                <button
+                  onClick={onClose}
+                  className="h-[3px] w-10 rounded-full bg-primary"
+                />
+                <div className="flex w-full justify-between text-lg">
+                  <h4>Filtrar por</h4>
+                  <button aria-label="delete filter" onClick={handleClearFilters}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.2143 9.33333V18.2222H8.78571V9.33333H16.2143ZM14.8214 4H10.1786L9.25 4.88889H6V6.66667H19V4.88889H15.75L14.8214 4ZM18.0714 7.55556H6.92857V18.2222C6.92857 19.2 7.76429 20 8.78571 20H16.2143C17.2357 20 18.0714 19.2 18.0714 18.2222V7.55556Z"
+                        fill="#ED7F00"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </DrawerHeader>
-              <DrawerBody>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Magna exercitation reprehenderit magna aute tempor cupidatat
-                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                  aliqua enim laboris do dolor eiusmod. Et mollit incididunt
-                  nisi consectetur esse laborum eiusmod pariatur proident Lorem
-                  eiusmod et. Culpa deserunt nostrud ad veniam.
-                </p>
+              <DrawerBody className="gap-[15px]">
+                <div className="flex w-full flex-col md:w-[min(100%,325px)]">
+                  <span className="block text-primary">Charla</span>
+                  <SelectFilter
+                    onChange={(e) => handleFilterChange("id", e?.value || "")}
+                    options={talkOptions || []}
+                    name="id"
+                    menuPosition="fixed"
+                  />
+                </div>
+
+                <div className="flex w-full flex-col md:w-[min(100%,325px)]">
+                  <span className="block text-primary">Disertantes</span>
+                  <SelectFilter
+                    onChange={(e) =>
+                      handleFilterChange("speakers", e?.value || "")
+                    }
+                    options={speakerOptions || []}
+                    name="speakers"
+                    menuPosition="fixed"
+                  />
+                </div>
+
+                <div className="flex w-full flex-col md:w-[min(100%,325px)]">
+                  <span className="block text-primary">Eje temático</span>
+                  <SelectFilter
+                    onChange={(e) =>
+                      handleFilterChange("theme_id", e?.value || "")
+                    }
+                    options={themeOptions || []}
+                    name="theme_id"
+                    menuPosition="fixed"
+                  />
+                </div>
+                <button
+                  onClick={onClose}
+                  className="mt-6 flex w-full justify-center gap-[10px] rounded-full bg-accent px-3 py-3 text-lg tracking-widest text-white"
+                >
+                  Aplicar filtros
+                </button>
               </DrawerBody>
             </>
           )}
         </DrawerContent>
       </Drawer>
-    </>
+    </div>
   );
 };
 
