@@ -12,7 +12,7 @@ const WrapperCronograma = () => {
         backgroundImage="/images/cronograma/hero.webp"
         title1="Cronograma"
       />
-      <div className="px-3 md:px-[33px]">
+      <div className="px-4 md:px-[33px]">
         <Filtros />
         <Charlas />
         <div className="mx-auto mt-20 flex max-w-[1163px] flex-wrap justify-evenly gap-6">

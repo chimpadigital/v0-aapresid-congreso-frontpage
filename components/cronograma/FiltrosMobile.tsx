@@ -1,8 +1,9 @@
 import { formatedRooms } from "@/lib/types";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LupaIcon from "../icons/LupaIcon";
 import DrawerFiltrosMobile from "./DrawerFiltrosMobile";
 import { Download } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const FiltrosMobile = ({
   handleSearchTermChange,
@@ -40,9 +41,27 @@ const FiltrosMobile = ({
   formattedRooms: formatedRooms[];
   selectedRoom?: string;
 }) => {
+  const [inputValue, setInputValue] = useState("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Debounce para actualizar search param 'search'
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (inputValue) {
+        params.set("search", inputValue);
+      } else {
+        params.delete("search");
+      }
+      router.replace(`?${params.toString()}`);
+    }, 400);
+    return () => clearTimeout(handler);
+  }, [inputValue]);
+
   return (
-    <div data-lenis-prevent className="mb-10 px-2 tracking-widest">
-      <h4 className="my-3 text-xs font-medium">Búsqueda por palabra clave</h4>
+    <div data-lenis-prevent className="mb-6 px-2 tracking-widest">
+      <h4 className="mb-3 mt-4 text-xs font-medium">Búsqueda por palabra clave</h4>
       <div className="flex h-full w-full gap-3">
         <label
           aria-label="buscar palabra clave"
@@ -54,6 +73,8 @@ const FiltrosMobile = ({
           <input
             placeholder="Escriba aquí..."
             className="w-full outline-none"
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
           />
         </label>
         <DrawerFiltrosMobile
@@ -104,7 +125,7 @@ const FiltrosMobile = ({
           ))}
         </div>
 
-        <div className="relative -left-5 mt-10 w-screen overflow-hidden bg-[#F0F0F1] pl-2">
+        <div className="relative -left-5 mt-6 w-screen overflow-hidden bg-[#F0F0F1] pl-2">
           <div className="salas-scroll flex snap-x snap-mandatory overflow-x-auto whitespace-nowrap">
             {formattedRooms.map((room) => (
               <button

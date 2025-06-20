@@ -2,14 +2,11 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Download, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import { SelectFilter } from "./CharlasFilterSelect";
 import { FiltrosData } from "@/lib/types";
-import SliderRooms from "./SliderRooms";
 import { useLocale } from "next-intl";
 import { getMultilingualField } from "@/lib/utils";
 import FiltrosDesk from "./FiltrosDesk";

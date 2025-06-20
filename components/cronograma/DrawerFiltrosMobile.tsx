@@ -35,10 +35,6 @@ const DrawerFiltrosMobile = ({
     params.delete("speakers");
     params.delete("theme_id");
     router.replace(`?${params.toString()}`);
-  //   // Opcional: notificar a los selects para que se reseteen visualmente
-  //   handleFilterChange("theme_id", "");
-  //   handleFilterChange("id", "");
-  //   handleFilterChange("speakers", "");
   };
 
   return (
@@ -77,7 +73,10 @@ const DrawerFiltrosMobile = ({
                 />
                 <div className="flex w-full justify-between text-lg">
                   <h4>Filtrar por</h4>
-                  <button aria-label="delete filter" onClick={handleClearFilters}>
+                  <button
+                    aria-label="delete filter"
+                    onClick={handleClearFilters}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"

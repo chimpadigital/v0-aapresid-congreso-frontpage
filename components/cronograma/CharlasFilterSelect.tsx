@@ -1,3 +1,5 @@
+" use client";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Select, { SingleValue, ActionMeta } from "react-select";
 
@@ -19,18 +21,18 @@ export function SelectFilter({
   menuPosition = "absolute",
 }: CronogramaSelectProps) {
   const [defaultValue, setDefaultValue] = useState<OptionType | null>(null);
+  const searchParams = useSearchParams();
 
   // Obtener el valor del search param al montar el componente
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      const paramValue = params.get(name);
-      if (paramValue) {
-        const found = options.find((opt) => opt.value === paramValue);
-        if (found) setDefaultValue(found);
-      }
+    const paramValue = searchParams.get(name);
+    if (paramValue) {
+      const found = options.find((opt) => opt.value === paramValue);
+      setDefaultValue(found ?? null);
+    } else {
+      setDefaultValue(null); // Muy importante: resetear si se borra el filtro
     }
-  }, [name, options]);
+  }, [searchParams, name, options]);
 
   return (
     <Select
