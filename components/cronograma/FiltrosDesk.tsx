@@ -42,8 +42,8 @@ const FiltrosDesk = ({
           <h3 className="mb-4 text-lg font-medium text-primary">
             Búsqueda por palabra clave
           </h3>
-          <div className="flex w-full flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-            <div className="flex flex-1 flex-col gap-[22px] sm:flex-row">
+          <div className="flex w-full flex-col items-start justify-between gap-4 sm:flex-row md:items-center">
+            <div className="flex flex-1 flex-col gap-[22px] xs:flex-row">
               <input
                 type="text"
                 placeholder="Escriba aquí..."
@@ -75,9 +75,9 @@ const FiltrosDesk = ({
         {/* Search by filters */}
         <div className="mb-8" data-lenis-prevent>
           <h3 className="mb-4 text-lg font-medium text-primary">Filtrar por</h3>
-          <div className="flex flex-wrap gap-10 md:gap-[74px]">
+          <div className="flex flex-wrap gap-5 md:gap-[74px]">
             {/* CHARLA */}
-            <div className="flex w-[min(100%,325px)] flex-col">
+            <div className="flex w-full md:w-[min(100%,325px)] flex-col">
               <span className="mb-2 block text-primary">Charla</span>
               <SelectFilter
                 onChange={(e) => handleFilterChange("id", e?.value || "")}
@@ -87,7 +87,7 @@ const FiltrosDesk = ({
             </div>
 
             {/* DISERTANTE */}
-            <div className="flex w-[min(100%,325px)] flex-col">
+            <div className="flex w-full md:w-[min(100%,325px)] flex-col">
               <span className="mb-2 block text-primary">Disertantes</span>
               <SelectFilter
                 onChange={(e) => handleFilterChange("speakers", e?.value || "")}
@@ -97,7 +97,7 @@ const FiltrosDesk = ({
             </div>
 
             {/* EJE TEMÁTICO */}
-            <div className="flex w-[min(100%,325px)] flex-col">
+            <div className="flex w-full md:w-[min(100%,325px)] flex-col">
               <span className="mb-2 block text-primary">Eje temático</span>
               <SelectFilter
                 onChange={(e) => handleFilterChange("theme_id", e?.value || "")}

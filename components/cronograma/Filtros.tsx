@@ -71,6 +71,8 @@ export default function Filtros() {
       return {
         id: date + " 00:00:00",
         label: `${id} Día ${idx + 1}`,
+        fecha: id,
+        numDia: idx + 1,
         isSelected: selectedDay === date + " 00:00:00",
       };
     },
