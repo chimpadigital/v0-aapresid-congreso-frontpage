@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/home/hero";
 import { Countdown } from "@/components/home/countdown";
-import { InscriptionsSection } from "@/components/home/inscriptions-section";
+import { InscriptionsSection } from "@/components/inscriptions-section";
 import { AboutSection } from "@/components/home/about-section";
 import { ThemesSection } from "@/components/home/themes-section";
 import { FaqSection } from "@/components/home/faq-section";

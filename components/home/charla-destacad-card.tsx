@@ -36,42 +36,42 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
             <div className="flex-shrink-0 text-primary">
               <DisertanteIcon />
             </div>
-            <span className="text-[18px] text-[#736D6D]">{speakers}</span>
+            <span className="text-[18px] text-paragraph">{speakers}</span>
           </div>
         )}
 
         <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 text-primary">
             <CalendarLineal />
           </div>
-          <span className="text-[18px] text-[#736D6D]">{dateTime}</span>
+          <span className="text-[18px] text-paragraph">{dateTime}</span>
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 text-primary">
             <MapPinLineal />
           </div>
-          <span className="text-[18px] text-[#736D6D]">{location}</span>
+          <span className="text-[18px] text-paragraph">{location}</span>
         </div>
 
         <div className="flex items-center gap-4">
           {(() => {
             const { icon, color } = getThemeIcon(theme);
             return (
-              <div className="flex-shrink-0" style={{ color }}>
+              <div className="flex-shrink-0 text-primary h-[33px] aspect-square grid place-items-center" style={{ color }}>
                 {icon}
               </div>
             );
           })()}
-          <span className="text-[18px] text-[#736D6D]">{theme}</span>
+          <span className="text-[18px] text-paragraph">{theme}</span>
         </div>
 
         {section.length > 1 && (
           <div className="flex items-center gap-4">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 text-primary">
               <PlanetaIcon />
             </div>
-            <span className="text-[18px] text-[#736D6D]">{section}</span>
+            <span className="text-[18px] text-paragraph">{section}</span>
           </div>
         )}
       </div>
