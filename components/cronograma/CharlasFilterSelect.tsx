@@ -1,4 +1,4 @@
-" use client";
+"use client";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Select, { SingleValue, ActionMeta } from "react-select";
@@ -33,6 +33,14 @@ export function SelectFilter({
       setDefaultValue(null); // Muy importante: resetear si se borra el filtro
     }
   }, [searchParams, name, options]);
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
 
   return (
     <Select
