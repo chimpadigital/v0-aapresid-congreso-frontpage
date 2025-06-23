@@ -39,9 +39,11 @@ export function FeaturedTalksSection() {
     } else {
       return fallback;
     }
-    if (typeof obj[lang] === "string" && obj[lang].trim() !== "") return obj[lang];
+    if (typeof obj[lang] === "string" && obj[lang].trim() !== "")
+      return obj[lang];
     const otherLang = lang === "en" ? "es" : "en";
-    if (typeof obj[otherLang] === "string" && obj[otherLang].trim() !== "") return obj[otherLang];
+    if (typeof obj[otherLang] === "string" && obj[otherLang].trim() !== "")
+      return obj[otherLang];
     return fallback;
   }
 
@@ -72,13 +74,15 @@ export function FeaturedTalksSection() {
                   Cargando...
                 </div>
               ) : (
-                charlas.map((charla) => {
+                charlas?.map((charla) => {
                   let title = getField(charla.multilingual_title, locale);
                   let section = getField(charla.multilingual_talk, locale);
 
                   let theme = "";
                   let speakers =
-                    charla.Speakers?.map((s: EventSpeaker) => s.name).join(", ") || "";
+                    charla.Speakers?.map((s: EventSpeaker) => s.name).join(
+                      ", ",
+                    ) || "";
                   let dateTime = "";
                   let location = charla.Room?.name || "";
                   try {
