@@ -42,6 +42,32 @@ export default function Filtros() {
           events: data.events.data,
         });
         setLoading(false);
+        console.log("Filtros data:", data);
+      })
+      .catch(() => setLoading(false));
+
+    fetch("/api/filtro-spakers")
+      .then((res) => res.json())
+      .then((dataSpeakers) => {
+        setData((prev) =>
+          prev
+            ? {
+                speakers: dataSpeakers.speakers.data,
+                themes: prev.themes,
+                rooms: prev.rooms,
+                days: prev.days,
+                events: prev.events,
+              }
+            : {
+                speakers: dataSpeakers.speakers.data,
+                themes: [],
+                rooms: [],
+                days: [],
+                events: [],
+              }
+        );
+        setLoading(false);
+        console.log("Speakers data:", dataSpeakers);
       })
       .catch(() => setLoading(false));
   }, []); // <-- solo al montar
