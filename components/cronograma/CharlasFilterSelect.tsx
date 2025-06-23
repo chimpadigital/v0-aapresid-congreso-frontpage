@@ -40,13 +40,16 @@ export function SelectFilter({
     setIsClient(true);
   }, []);
 
+  // Agregar opción "Ver todos" al principio
+  const optionsWithAll = [{ value: "", label: "Ver todos" }, ...options];
+
   if (!isClient) return null;
 
   return (
     <Select
       menuPlacement={menuPlacement}
       menuPosition={menuPosition}
-      options={options}
+      options={optionsWithAll}
       onChange={(
         newValue: SingleValue<OptionType>,
         _action: ActionMeta<OptionType>,

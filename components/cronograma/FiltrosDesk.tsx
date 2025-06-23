@@ -1,8 +1,9 @@
 import React from "react";
 import { SelectFilter } from "./CharlasFilterSelect";
 import SliderRooms from "./SliderRooms";
-import { Download } from "lucide-react";
+import { Download, X } from "lucide-react";
 import { formatedRooms, Room } from "@/lib/types";
+import CloseIcon from "../icons/CloseIcon";
 
 const FiltrosDesk = ({
   searchTerm,
@@ -34,7 +35,7 @@ const FiltrosDesk = ({
   selectedRoom?: string;
   handleRoomSelect: (roomId: string) => void;
 }) => {
-  console.log(formattedRooms)
+  console.log(formattedRooms);
   return (
     <section className="w-full bg-white px-4 py-16">
       <div className="mx-auto max-w-[1163px]">
@@ -45,18 +46,28 @@ const FiltrosDesk = ({
           </h3>
           <div className="flex w-full flex-col items-start justify-between gap-4 sm:flex-row md:items-center">
             <div className="flex flex-1 flex-col gap-[22px] xs:flex-row">
-              <input
-                type="text"
-                placeholder="Escriba aquí..."
-                value={searchTerm}
-                onChange={(e) => handleSearchTermChange(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    handleSearch();
-                  }
-                }}
-                className="w-[min(100%,325px)] rounded-full border border-primary px-5 py-[17.5px] placeholder:text-paragraph focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+              <label className="relative w-[min(100%,325px)] rounded-full border border-primary px-5 py-[17.5px] placeholder:text-paragraph focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary">
+                <input
+                  type="text"
+                  placeholder="Escriba aquí..."
+                  className="w-full outline-none"
+                  value={searchTerm}
+                  onChange={(e) => handleSearchTermChange(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleSearch();
+                    }
+                  }}
+                />
+                {searchTerm && (
+                  <button
+                    onClick={() => handleSearchTermChange("")}
+                    className="absolute right-5 top-1/2 -translate-y-1/2 text-paragraph"
+                  >
+                    <X />
+                  </button>
+                )}
+              </label>
               <button
                 onClick={handleSearch}
                 className="relative z-[1] flex w-fit items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-accent before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
@@ -78,7 +89,7 @@ const FiltrosDesk = ({
           <h3 className="mb-4 text-lg font-medium text-primary">Filtrar por</h3>
           <div className="flex flex-wrap gap-5 md:gap-[74px]">
             {/* CHARLA */}
-            <div className="flex w-full md:w-[min(100%,325px)] flex-col">
+            <div className="flex w-full flex-col md:w-[min(100%,325px)]">
               <span className="mb-2 block text-primary">Charla</span>
               <SelectFilter
                 onChange={(e) => handleFilterChange("id", e?.value || "")}
@@ -88,7 +99,7 @@ const FiltrosDesk = ({
             </div>
 
             {/* DISERTANTE */}
-            <div className="flex w-full md:w-[min(100%,325px)] flex-col">
+            <div className="flex w-full flex-col md:w-[min(100%,325px)]">
               <span className="mb-2 block text-primary">Disertantes</span>
               <SelectFilter
                 onChange={(e) => handleFilterChange("speakers", e?.value || "")}
@@ -98,7 +109,7 @@ const FiltrosDesk = ({
             </div>
 
             {/* EJE TEMÁTICO */}
-            <div className="flex w-full md:w-[min(100%,325px)] flex-col">
+            <div className="flex w-full flex-col md:w-[min(100%,325px)]">
               <span className="mb-2 block text-primary">Eje temático</span>
               <SelectFilter
                 onChange={(e) => handleFilterChange("theme_id", e?.value || "")}
