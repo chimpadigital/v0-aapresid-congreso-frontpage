@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ArrowRounded from "./icons/ArrowRounded";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ import ArrowBack from "./icons/ArrowBack";
 
 export function InscriptionsSection() {
   const t = useTranslations("inscriptions");
+  const locale = useLocale();
   const isMobile = useIsMobile();
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
@@ -123,7 +124,7 @@ export function InscriptionsSection() {
         </div>
 
         {/* Help desk panel */}
-        <div className="consultas-inscripciones flex flex-col items-start justify-between rounded-3xl bg-primary bg-[url('/images/circuit-pattern-v2.png')] bg-cover bg-center pl-6 pr-6 py-8 text-white md:flex-row md:items-center md:pl-[60px] md:pr-[45px]">
+        <div className="consultas-inscripciones flex flex-col items-start justify-between rounded-3xl bg-primary bg-[url('/images/circuit-pattern-v2.png')] bg-cover bg-center py-8 pl-6 pr-6 text-white md:flex-row md:items-center md:pl-[60px] md:pr-[45px]">
           <div>
             <h2 className="mb-2 max-w-[15ch] text-4xl font-medium tracking-wider">
               ¿Tenés consultas?
@@ -133,7 +134,7 @@ export function InscriptionsSection() {
             </p>
           </div>
           <Link
-            href="/codigo-invitacion"
+            href={`${locale}/preguntas-prefuentes`}
             className="mt-4 flex items-center gap-3 border-b-2 border-white text-lg transition-opacity hover:border-opacity-70 hover:font-medium md:mt-0"
           >
             <p>Ingresá</p>

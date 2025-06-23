@@ -209,7 +209,6 @@ export default function Filtros() {
   return isMobile ? (
     <FiltrosMobile
       searchTerm={searchTerm}
-      handleSearchTermChange={handleSearchTermChange}
       handleSearch={handleSearch}
       talkOptions={talkOptions}
       speakerOptions={speakerOptions}

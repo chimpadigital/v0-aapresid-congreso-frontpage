@@ -65,19 +65,19 @@ const DescubraElCampo = () => {
           <h2 className="mb-8 text-4xl lg:text-[40px]">
             Descubra el
             <br />
-            <span className="font-medium">campo argentino</span>
+            <span className="font-bold">campo argentino</span>
           </h2>
 
           {/* Event dates */}
           <div className="mb-11 flex flex-wrap w-fit gap-8">
             <div>
-              <div className="text-xl font-medium text-secondary">
+              <div className="text-xl font-bold text-secondary">
                 5 de agosto
               </div>
               <div className="text-lg text-white">Día técnico</div>
             </div>
             <div>
-              <div className="text-xl font-medium text-secondary">
+              <div className="text-xl font-bold text-secondary">
                 3 al 9 de agosto
               </div>
               <div className="text-lg text-white">Gira técnica</div>

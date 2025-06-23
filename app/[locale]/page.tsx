@@ -37,7 +37,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             className="absolute inset-0 h-full w-full object-cover"
             poster="/images/home/poster-hero.webp" // Fallback image while video loads
           >
-            <source src="/videos/congreso-background.mp4" type="video/mp4" />
+            <source src="/videos/video_home_nuevov3.mp4" type="video/mp4" />
             <source
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Fondo%20web%20de%20Congreso%20%281%29-DqCiHxKtI6kwse5662CnUAeFFb51Ui.mp4"
               type="video/mp4"

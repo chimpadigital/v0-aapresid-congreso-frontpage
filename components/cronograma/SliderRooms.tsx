@@ -45,7 +45,9 @@ export function SliderRooms({
           {rooms.map((room) => (
             <SwiperSlide key={room.id} className="w-full">
               <button
-                onClick={() => onRoomSelect(room.id)}
+                onClick={() =>
+                  onRoomSelect(selectedRoom === room.id ? "" : room.id)
+                }
                 className={`flex min-h-[71px] min-w-[200px] items-center gap-3 rounded-[20px] border-2 px-6 py-4 transition-all ${
                   selectedRoom === room.id
                     ? "border-accent bg-primary/5 text-primary"

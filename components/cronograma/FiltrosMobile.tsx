@@ -2,11 +2,10 @@ import { formatedRooms } from "@/lib/types";
 import React, { useEffect, useState } from "react";
 import LupaIcon from "../icons/LupaIcon";
 import DrawerFiltrosMobile from "./DrawerFiltrosMobile";
-import { Download } from "lucide-react";
+import { Download, X } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const FiltrosMobile = ({
-  handleSearchTermChange,
   handleSearch,
   handleFilterChange,
   handleDaySelect,
@@ -19,7 +18,6 @@ const FiltrosMobile = ({
   formattedRooms,
   selectedRoom,
 }: {
-  handleSearchTermChange: (value: string) => void;
   handleSearch: () => void;
   handleFilterChange: (
     filterName: "id" | "speakers" | "theme_id",
@@ -61,11 +59,13 @@ const FiltrosMobile = ({
 
   return (
     <div data-lenis-prevent className="mb-6 px-2 tracking-widest">
-      <h4 className="mb-3 mt-4 text-xs font-medium">Búsqueda por palabra clave</h4>
+      <h4 className="mb-3 mt-4 text-xs font-medium">
+        Búsqueda por palabra clave
+      </h4>
       <div className="flex h-full w-full gap-3">
         <label
           aria-label="buscar palabra clave"
-          className="flex w-full overflow-hidden rounded-full border-[0.5px] border-primary focus-within:border-accent"
+          className="relative flex w-full overflow-hidden rounded-full border-[0.5px] border-primary focus-within:border-accent"
         >
           <span className="py-2 pl-3 pr-2">
             <LupaIcon />
@@ -74,8 +74,16 @@ const FiltrosMobile = ({
             placeholder="Escriba aquí..."
             className="w-full outline-none"
             value={inputValue}
-            onChange={e => setInputValue(e.target.value)}
+            onChange={(e) => setInputValue(e.target.value)}
           />
+          {inputValue && (
+            <button
+              onClick={() => setInputValue("")}
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-paragraph"
+            >
+              <X />
+            </button>
+          )}
         </label>
         <DrawerFiltrosMobile
           handleFilterChange={handleFilterChange}
