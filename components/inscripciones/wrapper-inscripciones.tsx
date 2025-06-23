@@ -27,7 +27,7 @@ const WrapperInscripciones = () => {
           </div>
 
           <Link
-            href={`${locale}/cronocrama`}
+            href={`${locale}/cronograma`}
             className="mt-4 flex h-fit border-spacing-5 items-center gap-3 border-b-2 border-white text-lg transition-opacity hover:border-opacity-70 hover:font-medium md:mt-0"
           >
             <p>Ver más</p>

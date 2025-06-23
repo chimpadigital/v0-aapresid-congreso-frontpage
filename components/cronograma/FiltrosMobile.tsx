@@ -139,11 +139,11 @@ const FiltrosMobile = ({
               <button
                 key={room.id}
                 onClick={() => handleRoomSelect(room.id)}
-                className={`relative flex w-full snap-center items-center justify-between rounded-full px-4 py-3 text-sm font-medium ${
-                  selectedRoom === room.id ? "text-primary" : "text-accent"
+                className={`relative flex w-full snap-center items-center justify-between rounded-full px-4 py-4 text-sm  ${
+                  selectedRoom === room.id ? "text-primary font-medium" : "text-accent"
                 }`}
               >
-                <p className="w-full min-w-[10ch] whitespace-normal text-center">
+                <p className="w-full whitespace-nowrap text-center">
                   {room.name}
                 </p>
                 <div
