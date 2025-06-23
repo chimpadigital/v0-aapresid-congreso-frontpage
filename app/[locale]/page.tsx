@@ -36,7 +36,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             className="absolute inset-0 h-full w-full object-cover"
             poster="/images/home/poster-hero.webp" // Fallback image while video loads
           >
-            <source src="/videos/video_home_nuevo.mp4" type="video/mp4" />
+            <source src="/videos/video_home_nuevov3.mp4" type="video/mp4" />
             Tu navegador no soporta videos HTML5.
           </video>
           <div className="absolute inset-0 bg-black/40" />
