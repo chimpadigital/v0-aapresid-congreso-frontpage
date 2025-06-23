@@ -35,7 +35,16 @@ const FiltrosDesk = ({
   selectedRoom?: string;
   handleRoomSelect: (roomId: string) => void;
 }) => {
-  console.log(formattedRooms);
+  const handleClearSearch = () => {
+    handleSearchTermChange("");
+    // Eliminar el parámetro 'search' de la URL
+    const current = new URLSearchParams(window.location.search);
+    current.delete("search");
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+    window.history.replaceState(null, "", `${window.location.pathname}${query}`);
+  };
+
   return (
     <section className="w-full bg-white px-4 py-16">
       <div className="mx-auto max-w-[1163px]">
@@ -59,9 +68,10 @@ const FiltrosDesk = ({
                     }
                   }}
                 />
-                {searchTerm && (
+                {searchTerm?.length > 1 && (
                   <button
-                    onClick={() => handleSearchTermChange("")}
+                    aria-label="Limpiar búsqueda"
+                    onClick={handleClearSearch}
                     className="absolute right-5 top-1/2 -translate-y-1/2 text-paragraph"
                   >
                     <X />

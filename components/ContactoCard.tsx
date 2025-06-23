@@ -1,6 +1,6 @@
 import React from "react";
-import WhatsappIcon from "../icons/WhatsappIcon";
-import Emailicon from "../icons/Emailicon";
+import WhatsappIcon from "./icons/WhatsappIcon";
+import Emailicon from "./icons/Emailicon";
 
 interface ContactInfo {
   name?: string;

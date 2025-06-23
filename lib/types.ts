@@ -205,3 +205,15 @@ export interface formatedRooms {
   sponsor: string;
   isSelected: boolean;
 }
+
+
+export interface ContactInfo {
+  name?: string;
+  email: string;
+  whatsapp?: string;
+}
+
+ export interface ContactCategory {
+  title: string;
+  contacts: ContactInfo[];
+}

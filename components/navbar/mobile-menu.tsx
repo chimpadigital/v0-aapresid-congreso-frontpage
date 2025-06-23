@@ -8,6 +8,7 @@ import { MenuItem } from "@/lib/types";
 import ChevronArrow from "../icons/ChevronArrow";
 import CloseIcon from "../icons/CloseIcon";
 import ArrowBack from "../icons/ArrowBack";
+import { useLocale } from "next-intl";
 
 interface MobileMenuProps {
   menuRef: React.RefObject<HTMLDivElement | null>;
@@ -25,6 +26,7 @@ export function MobileMenu({
   const [currentMenu, setCurrentMenu] = useState<MenuItem[]>(menuItems);
   const [menuHistory, setMenuHistory] = useState<MenuItem[][]>([]);
   const [currentTitle, setCurrentTitle] = useState<string>("");
+  const locale = useLocale()
 
   const handleMenuItemClick = (item: MenuItem) => {
     if (item.children) {
@@ -164,15 +166,15 @@ export function MobileMenu({
           </AnimatePresence>
 
           {/* Botón de Inscripciones */}
-          {/* <div className="mt-auto pt-8">
+          <div className="mt-auto pt-8">
             <Link
-              href="/inscripciones"
+              href={`/${locale}/inscripciones`}
               className="block w-full rounded-full bg-[#ED7F00] px-6 py-3 text-center font-medium text-white transition-colors hover:bg-[#ED7F00]/90"
               onClick={handleClose}
             >
               Inscripciones
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
