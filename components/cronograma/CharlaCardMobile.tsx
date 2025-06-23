@@ -89,7 +89,7 @@ const CharlaCardMobile = ({
             className="p-2 text-gray-600 transition-colors hover:text-gray-800"
             aria-label={isExpanded ? "Colapsar detalles" : "Expandir detalles"}
           >
-            {!isExpanded ? (
+            {isExpanded ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
