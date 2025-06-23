@@ -73,7 +73,7 @@ const Charlas = () => {
   return (
     <div className="mx-auto flex w-full max-w-[1163px] flex-col gap-[50px]">
       {charlas?.data?.length === 0 ? (
-        <div className="col-span-full py-8 text-center text-gray-500">
+        <div className="w-full py-8 text-center text-gray-500">
           No hay charlas disponibles para los filtros seleccionados.
         </div>
       ) : (
