@@ -41,6 +41,7 @@ export function Navbar() {
       label: t("contenidos"),
       children: [
         { label: t("cronograma"), href: `/${locale}/cronograma` },
+        { label: "Gira/visita técnica", href: `/${locale}/visita-tecnica` },
         // { label: "Disertantes", href: "/${locale}/disertantes" },
       ],
     },
