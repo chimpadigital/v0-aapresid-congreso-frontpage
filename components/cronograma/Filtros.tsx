@@ -173,7 +173,6 @@ export default function Filtros() {
 
   const handleSearch = useCallback(() => {
     updateURL({ search: searchTerm });
-    console.log("Searching for:", searchTerm);
   }, [searchTerm, updateURL]);
 
   const handleSearchTermChange = useCallback((value: string) => {

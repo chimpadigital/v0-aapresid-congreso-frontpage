@@ -134,7 +134,7 @@ export function InscriptionsSection() {
             </p>
           </div>
           <Link
-            href={`${locale}/preguntas-prefuentes`}
+            href={`/${locale}/preguntas-prefuentes`}
             className="mt-4 flex items-center gap-3 border-b-2 border-white text-lg transition-opacity hover:border-opacity-70 hover:font-medium md:mt-0"
           >
             <p>Ingresá</p>
