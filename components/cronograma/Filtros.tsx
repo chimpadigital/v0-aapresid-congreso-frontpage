@@ -26,6 +26,7 @@ export default function Filtros() {
     speakers: "",
     theme_id: "",
   });
+const API_BASE_URL = process.env.API_BASE_URL || '';
 
   // Estados individuales para cada filtro
   const [speakers, setSpeakers] = useState<any[]>([]);
@@ -47,16 +48,24 @@ export default function Filtros() {
       .then((res) => res.json())
       .then((dataSpeakers) => {
         setSpeakers(dataSpeakers.speakers.data);
-        console.log("Speakers data:", dataSpeakers.speakers.data);
         finish();
       })
       .catch(finish);
 
-    fetch("/api/filtro-days")
+    // fetch("/api/filtro-days")
+    //   .then((res) => res.json())
+    //   .then((dataDays) => {
+    //     setDays(dataDays.days);
+    //     console.log("Days data:", dataDays.days);
+    //     finish();
+    //   })
+    //   .catch(finish);
+
+    fetch("https://api-congreso.aapresid.org.ar/api/events/filters")
       .then((res) => res.json())
       .then((dataDays) => {
-        setDays(dataDays.days);
-        console.log("Days data:", dataDays.days);
+        setDays(dataDays);
+        console.log("Days data:", dataDays);
         finish();
       })
       .catch(finish);
@@ -74,7 +83,6 @@ export default function Filtros() {
       .then((res) => res.json())
       .then((dataThemes) => {
         setThemes(dataThemes.themes);
-        console.log("Themes data:", dataThemes.themes);
         finish();
       })
       .catch(finish);
@@ -83,7 +91,6 @@ export default function Filtros() {
       .then((res) => res.json())
       .then((dataCharlas) => {
         setEvents(dataCharlas.data);
-        console.log("Charlas data:", dataCharlas.data);
         finish();
       })
       .catch(finish);

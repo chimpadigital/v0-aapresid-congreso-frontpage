@@ -34,6 +34,7 @@ const FiltrosDesk = ({
   selectedRoom?: string;
   handleRoomSelect: (roomId: string) => void;
 }) => {
+  console.log(formattedRooms)
   return (
     <section className="w-full bg-white px-4 py-16">
       <div className="mx-auto max-w-[1163px]">
