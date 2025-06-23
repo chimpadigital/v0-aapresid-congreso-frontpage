@@ -46,7 +46,7 @@ export default function Filtros() {
       })
       .catch(() => setLoading(false));
 
-    fetch("/api/filtro-spakers")
+    fetch("/api/filtro-speakers")
       .then((res) => res.json())
       .then((dataSpeakers) => {
         setData((prev) =>
