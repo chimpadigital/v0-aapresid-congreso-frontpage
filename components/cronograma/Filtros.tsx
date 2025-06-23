@@ -27,67 +27,84 @@ export default function Filtros() {
     theme_id: "",
   });
 
-  const [data, setData] = useState<FiltrosData | null>(null);
+  // Estados individuales para cada filtro
+  const [speakers, setSpeakers] = useState<any[]>([]);
+  const [themes, setThemes] = useState<any[]>([]);
+  const [rooms, setRooms] = useState<any[]>([]);
+  const [days, setDays] = useState<any[]>([]);
+  const [events, setEvents] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/filtros")
-      .then((res) => res.json())
-      .then((data) => {
-        setData({
-          speakers: data.speakers.data,
-          themes: data.themes,
-          rooms: data.rooms.data,
-          days: data.days,
-          events: data.events.data,
-        });
-        setLoading(false);
-        console.log("Filtros data:", data);
-      })
-      .catch(() => setLoading(false));
+    let completed = 0;
+    const total = 5;
+    const finish = () => {
+      completed++;
+      if (completed === total) setLoading(false);
+    };
 
     fetch("/api/filtro-speakers")
       .then((res) => res.json())
       .then((dataSpeakers) => {
-        setData((prev) =>
-          prev
-            ? {
-                speakers: dataSpeakers.speakers.data,
-                themes: prev.themes,
-                rooms: prev.rooms,
-                days: prev.days,
-                events: prev.events,
-              }
-            : {
-                speakers: dataSpeakers.speakers.data,
-                themes: [],
-                rooms: [],
-                days: [],
-                events: [],
-              }
-        );
-        setLoading(false);
-        console.log("Speakers data:", dataSpeakers);
+        setSpeakers(dataSpeakers.speakers.data);
+        console.log("Speakers data:", dataSpeakers.speakers.data);
+        finish();
       })
-      .catch(() => setLoading(false));
+      .catch(finish);
+
+    fetch("/api/filtro-days")
+      .then((res) => res.json())
+      .then((dataDays) => {
+        setDays(dataDays.days);
+        console.log("Days data:", dataDays.days);
+        finish();
+      })
+      .catch(finish);
+
+    fetch("/api/filtro-rooms")
+      .then((res) => res.json())
+      .then((dataRooms) => {
+        setRooms(dataRooms.rooms.data);
+        console.log("Rooms data:", dataRooms.rooms.data);
+        finish();
+      })
+      .catch(finish);
+
+    fetch("/api/filtro-themes")
+      .then((res) => res.json())
+      .then((dataThemes) => {
+        setThemes(dataThemes.themes);
+        console.log("Themes data:", dataThemes.themes);
+        finish();
+      })
+      .catch(finish);
+
+    fetch("/api/charlas")
+      .then((res) => res.json())
+      .then((dataCharlas) => {
+        setEvents(dataCharlas.data);
+        console.log("Charlas data:", dataCharlas.data);
+        finish();
+      })
+      .catch(finish);
   }, []); // <-- solo al montar
 
-  const speakerOptions = data?.speakers.map((speaker) => ({
+  const speakerOptions = speakers.map((speaker) => ({
     value: String(speaker.id),
     label: speaker.name,
   }));
 
-  const themeOptions = data?.themes.map((theme) => ({
+  const themeOptions = themes.map((theme) => ({
     value: String(theme.id),
     label: theme.name,
   }));
 
-  const talkOptions = data?.events.map((event) => ({
+  const talkOptions = events.map((event) => ({
     value: String(event.id),
     label: getMultilingualField(event.multilingual_title, locale),
   }));
 
-  const formattedDays = (data?.days as string[])?.map(
+  const formattedDays = (days as string[])?.map(
     (date: string, idx: number) => {
       const [year, month, day] = date?.split("-");
       const id = `${day}/${month}`;
@@ -100,6 +117,15 @@ export default function Filtros() {
       };
     },
   );
+
+  // Formatear rooms para que tengan la estructura de mockRooms
+  const formattedRooms = (rooms || []).map((room) => ({
+    id: String(room.id),
+    name: room.name,
+    image: room.image || null,
+    sponsor: room.name,
+    isSelected: selectedRoom === String(room.id),
+  }));
 
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -179,15 +205,6 @@ export default function Filtros() {
     },
     [updateURL],
   );
-
-  // Formatear rooms para que tengan la estructura de mockRooms
-  const formattedRooms = (data?.rooms || []).map((room) => ({
-    id: String(room.id),
-    name: room.name,
-    image: room.image || null,
-    sponsor: room.name,
-    isSelected: selectedRoom === String(room.id),
-  }));
 
   const isMobile = useIsMobile(500);
 
