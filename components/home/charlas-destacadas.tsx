@@ -55,7 +55,7 @@ export function FeaturedTalksSection() {
         </h2>
         {/* Slider de tarjetas */}
         <div className="relative">
-          {!loading && charlas.length === 0 ? (
+          {!loading && charlas?.length === 0 ? (
             <div className="col-span-full py-12 text-center">
               No hay charlas destacadas.
             </div>
