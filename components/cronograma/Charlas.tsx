@@ -1,25 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Event, EventsApiResponse } from "@/lib/types";
+import { EventsApiResponse } from "@/lib/types";
 import { useSearchParams } from "next/navigation";
-import { Code, Globe, Languages, Mic, Target, Users2 } from "lucide-react";
-
-import MapPinLineal from "../icons/MapPinLineal";
-import CodeIcon from "../icons/CodeIcon";
-import Eje1Aprender from "../icons/Eje1Aprender";
-import Eje2Desafios from "../icons/Eje2Desafios";
-import Eje3Innovacion from "../icons/Eje3Innovacion";
-import Eje4Manejo from "../icons/Eje4Manejo";
-import Eje5Sistemas from "../icons/Eje5Sistemas";
-import Eje6Sustentable from "../icons/Eje6SistemasSustentables";
-import Eje7Perspectiva from "../icons/Eje7Prospectiva";
-import PlanetaIcon from "../icons/PlanetaIcon";
-import IdiomasIcon from "../icons/IdiomasIcon";
 import { useLocale } from "next-intl";
-import DisertanteIconV2 from "../icons/DisertanteIconV2";
-import MicrofonoIcon from "../icons/MicrofonoIcon";
-import ModalCharlaDesc from "./ModalCharlaDesc";
-import { getMultilingualField } from "@/lib/utils";
 import SkeletonCharlaCard from "./SkeletonCharlaCard";
 import CharlaCardMobile from "./CharlaCardMobile";
 import CharlaCardDesk from "./CharlaCardDesk";
