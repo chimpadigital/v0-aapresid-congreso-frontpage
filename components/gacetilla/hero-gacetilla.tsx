@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { BackButton } from "../GoBackHero";
-import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
 const HeroGacetilla = () => {

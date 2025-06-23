@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import ArrowRounded from "../icons/ArrowRounded";
+import ArrowRounded from "./icons/ArrowRounded";
 import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect, useState } from "react";
-import ArrowBack from "../icons/ArrowBack";
+import ArrowBack from "./icons/ArrowBack";
 
 export function InscriptionsSection() {
   const t = useTranslations("inscriptions");
@@ -15,7 +15,7 @@ export function InscriptionsSection() {
   useEffect(() => setIsClient(true), []);
   return (
     <div className="px-4 md:px-8">
-      <section className="container-inscripciones mx-auto my-8 max-w-[1266px]">
+      <section className="container-inscripciones mx-auto my-8 max-w-7xl">
         {/* Member banner */}
         <div className="banner-inscripciones relative w-full overflow-hidden rounded-3xl bg-[url('/images/home/registrate.webp')] bg-cover bg-center bg-no-repeat">
           <div className="relative z-10 flex flex-col items-start justify-between gap-10 p-8 md:items-center md:px-[80px] md:py-[70px] lg:flex-row">
@@ -107,7 +107,7 @@ export function InscriptionsSection() {
         </div>
 
         {/* Invitation code panel */}
-        <div className="invitaciones flex flex-col items-start justify-between rounded-3xl bg-[#8CC63F] bg-[url('/images/circuit-pattern.png')] bg-cover bg-center px-6 py-8 md:flex-row md:items-center md:pl-[60px] md:pr-[45px]">
+        <div className="invitaciones flex flex-col items-start justify-between rounded-3xl bg-accent bg-[url('/images/circuit-pattern-v2.png')] bg-cover bg-center px-6 py-8 md:flex-row md:items-center md:pl-[60px] md:pr-[45px]">
           <div>
             <h2 className="mb-2 max-w-[15ch] text-4xl font-medium tracking-wider text-white">
               ¿Tenés un código de invitación?
@@ -123,7 +123,7 @@ export function InscriptionsSection() {
         </div>
 
         {/* Help desk panel */}
-        <div className="consultas-inscripciones flex flex-col items-start justify-between rounded-3xl bg-primary bg-[url('/images/circuit-pattern.png')] bg-cover bg-center pl-6 pr-6 py-8 text-white md:flex-row md:items-center md:pl-[60px] md:pr-[45px]">
+        <div className="consultas-inscripciones flex flex-col items-start justify-between rounded-3xl bg-primary bg-[url('/images/circuit-pattern-v2.png')] bg-cover bg-center pl-6 pr-6 py-8 text-white md:flex-row md:items-center md:pl-[60px] md:pr-[45px]">
           <div>
             <h2 className="mb-2 max-w-[15ch] text-4xl font-medium tracking-wider">
               ¿Tenés consultas?

@@ -84,7 +84,7 @@ export function CodigoAbiertoSection() {
               >
                 <figure className="relative h-full w-full">
                   <Image
-                    src="/images/edicion-33/hexagono-verde-oscuro.svg"
+                    src="/images/hexagono-verde-oscuro.svg"
                     alt="Hexágono decorativo"
                     fill
                   />

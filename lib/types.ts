@@ -196,3 +196,12 @@ export interface FiltrosData {
   days: string[];
   events: Event[];
 }
+
+
+export interface formatedRooms {
+  id: string;
+  name: string;
+  image: string | null;
+  sponsor: string;
+  isSelected: boolean;
+}

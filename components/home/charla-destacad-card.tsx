@@ -1,15 +1,9 @@
 import type React from "react";
 import DisertanteIcon from "../icons/DisertanteIcon";
-import Eje1Aprender from "../icons/Eje1Aprender";
-import Eje1Desafios from "../icons/Eje2Desafios";
-import EjeInnovacion from "../icons/Eje3Innovacion";
-import Eje1Manejo from "../icons/Eje4Manejo";
-import Eje1Sistemas from "../icons/Eje5Sistemas";
-import Eje1Sustentable from "../icons/Eje6SistemasSustentables";
-import Eje1Perspectiva from "../icons/Eje7Prospectiva";
 import PlanetaIcon from "../icons/PlanetaIcon";
 import CalendarLineal from "../icons/CalendarLineal";
 import MapPinLineal from "../icons/MapPinLineal";
+import { getThemeIcon } from "@/lib/getThemeIcon";
 
 interface CharlaDestacadaCardProps {
   title: string;
@@ -29,29 +23,6 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
   section,
 }) => {
   // Función para elegir el icono y color según el eje temático
-  function getThemeIconAndColor(theme: string) {
-    if (!theme) return { icon: null, color: "" };
-    const normalized = theme.toLowerCase();
-    if (normalized.includes("aprender"))
-      return { icon: <Eje1Aprender size={30} />, color: "#EF7B80" };
-    if (normalized.includes("desaf"))
-      return { icon: <Eje1Desafios size={30} />, color: "#147DBE" };
-    if (
-      normalized.includes("agtech") ||
-      normalized.includes("innovación") ||
-      normalized.includes("innovacion")
-    )
-      return { icon: <EjeInnovacion size={30} />, color: "#E84615" };
-    if (normalized.includes("plaga"))
-      return { icon: <Eje1Manejo size={30} />, color: "#D34240" };
-    if (normalized.includes("integrad"))
-      return { icon: <Eje1Sistemas size={30} />, color: "#EAAB21" };
-    if (normalized.includes("sustentable") || normalized.includes("productivo"))
-      return { icon: <Eje1Sustentable size={30} />, color: "#15A884" };
-    if (normalized.includes("sociopol"))
-      return { icon: <Eje1Perspectiva size={30} />, color: "#99529B" };
-    return { icon: null, color: "" };
-  }
 
   return (
     <div className="h-full w-fit rounded-[20px] bg-white px-6 py-[46px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.10)] md:w-[381px] md:px-[41px]">
@@ -65,42 +36,42 @@ const CharlaDestacadaCard: React.FC<CharlaDestacadaCardProps> = ({
             <div className="flex-shrink-0 text-primary">
               <DisertanteIcon />
             </div>
-            <span className="text-[18px] text-[#736D6D]">{speakers}</span>
+            <span className="text-[18px] text-paragraph">{speakers}</span>
           </div>
         )}
 
         <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 text-primary">
             <CalendarLineal />
           </div>
-          <span className="text-[18px] text-[#736D6D]">{dateTime}</span>
+          <span className="text-[18px] text-paragraph">{dateTime}</span>
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 text-primary">
             <MapPinLineal />
           </div>
-          <span className="text-[18px] text-[#736D6D]">{location}</span>
+          <span className="text-[18px] text-paragraph">{location}</span>
         </div>
 
         <div className="flex items-center gap-4">
           {(() => {
-            const { icon, color } = getThemeIconAndColor(theme);
+            const { icon, color } = getThemeIcon(theme);
             return (
-              <div className="flex-shrink-0" style={{ color }}>
+              <div className="flex-shrink-0 text-primary h-[33px] aspect-square grid place-items-center" style={{ color }}>
                 {icon}
               </div>
             );
           })()}
-          <span className="text-[18px] text-[#736D6D]">{theme}</span>
+          <span className="text-[18px] text-paragraph">{theme}</span>
         </div>
 
         {section.length > 1 && (
           <div className="flex items-center gap-4">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 text-primary">
               <PlanetaIcon />
             </div>
-            <span className="text-[18px] text-[#736D6D]">{section}</span>
+            <span className="text-[18px] text-paragraph">{section}</span>
           </div>
         )}
       </div>
