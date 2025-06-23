@@ -11,19 +11,22 @@ export async function GET() {
             { name: "days", url: `${API_BASE_URL}/api/events/filters` },
             { name: "events", url: `${API_BASE_URL}/api/events` },
         ];
-        const responses = await Promise.all(endpoints.map(e => fetch(e.url)));
-        const failed = responses.findIndex((res) => !res.ok);
-        if (failed !== -1) {
-            return NextResponse.json({ error: `Error fetching ${endpoints[failed].name}` }, { status: 500 });
+        const results = await Promise.allSettled(endpoints.map(e => fetch(e.url)));
+        const data: Record<string, any> = {};
+        const errors: string[] = [];
+        for (let i = 0; i < results.length; i++) {
+            const endpoint = endpoints[i];
+            const result = results[i];
+            if (result.status === "fulfilled" && result.value.ok) {
+                data[endpoint.name] = await result.value.json();
+            } else {
+                errors.push(endpoint.name);
+            }
         }
-        const [speakers, themes, rooms, days, events] = await Promise.all(responses.map(res => res.json()));
-        return NextResponse.json({
-            speakers,
-            themes,
-            rooms,
-            days,
-            events
-        });
+        if (errors.length > 0) {
+            return NextResponse.json({ ...data, errors }, { status: 207 }); // 207: Multi-Status
+        }
+        return NextResponse.json(data);
     } catch (error) {
         return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
     }
