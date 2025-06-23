@@ -26,7 +26,7 @@ export default function Filtros() {
     speakers: "",
     theme_id: "",
   });
-const API_BASE_URL = process.env.API_BASE_URL || '';
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
 
   // Estados individuales para cada filtro
   const [speakers, setSpeakers] = useState<any[]>([]);
@@ -52,16 +52,7 @@ const API_BASE_URL = process.env.API_BASE_URL || '';
       })
       .catch(finish);
 
-    // fetch("/api/filtro-days")
-    //   .then((res) => res.json())
-    //   .then((dataDays) => {
-    //     setDays(dataDays.days);
-    //     console.log("Days data:", dataDays.days);
-    //     finish();
-    //   })
-    //   .catch(finish);
-
-    fetch("https://api-congreso.aapresid.org.ar/api/events/filters")
+    fetch(`${API_BASE_URL}/api/events/filters`)
       .then((res) => res.json())
       .then((dataDays) => {
         setDays(dataDays);
@@ -69,12 +60,14 @@ const API_BASE_URL = process.env.API_BASE_URL || '';
         finish();
       })
       .catch(finish);
-
-    fetch("/api/filtro-rooms")
-      .then((res) => res.json())
+ 
+    fetch(`${API_BASE_URL}/api/rooms?limit=1000`)
+      .then((res) => res.json().then(json => {
+        return json;
+      }))
       .then((dataRooms) => {
-        setRooms(dataRooms.rooms.data);
-        console.log("Rooms data:", dataRooms.rooms.data);
+        console.log("Rooms data:", dataRooms);
+        setRooms(dataRooms.data || []);
         finish();
       })
       .catch(finish);
@@ -111,19 +104,17 @@ const API_BASE_URL = process.env.API_BASE_URL || '';
     label: getMultilingualField(event.multilingual_title, locale),
   }));
 
-  const formattedDays = (days as string[])?.map(
-    (date: string, idx: number) => {
-      const [year, month, day] = date?.split("-");
-      const id = `${day}/${month}`;
-      return {
-        id: date + " 00:00:00",
-        label: `${id} Día ${idx + 1}`,
-        fecha: id,
-        numDia: idx + 1,
-        isSelected: selectedDay === date + " 00:00:00",
-      };
-    },
-  );
+  const formattedDays = (days as string[])?.map((date: string, idx: number) => {
+    const [year, month, day] = date?.split("-");
+    const id = `${day}/${month}`;
+    return {
+      id: date + " 00:00:00",
+      label: `${id} Día ${idx + 1}`,
+      fecha: id,
+      numDia: idx + 1,
+      isSelected: selectedDay === date + " 00:00:00",
+    };
+  });
 
   // Formatear rooms para que tengan la estructura de mockRooms
   const formattedRooms = (rooms || []).map((room) => ({
