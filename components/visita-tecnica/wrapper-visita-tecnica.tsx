@@ -3,6 +3,7 @@ import { HeroSection } from "../hero-section";
 import AapreInvita from "./AapreInvita";
 import DiaTecnico from "./DiaTecnico";
 import QuienesParticipan from "./QuienesParticipan";
+import TourAgronomico from "./tour-agronomico";
 
 const WrapperVisitaTecnica = () => {
   return (
@@ -26,6 +27,7 @@ const WrapperVisitaTecnica = () => {
       </div>
       <DiaTecnico />
       <QuienesParticipan/>
+      <TourAgronomico/>
     </section>
   );
 };

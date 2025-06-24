@@ -9,7 +9,7 @@ const CierreSection = () => {
     <>
       <RichText
         text={t("texto-final")}
-        className="mx-auto max-w-[40ch] px-4 py-[100px] text-center text-[40px] leading-none text-primary"
+        className="mx-auto max-w-[40ch] px-4 py-16 md:py-[100px] text-center text-[40px] leading-none text-primary"
       />
     </>
   );
