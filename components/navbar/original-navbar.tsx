@@ -36,7 +36,7 @@ export function OriginalNavbar({
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex items-center justify-between gap-3 rounded-full bg-[#A6A6A6]/50 px-[19px] py-[14px] backdrop-blur-[10px] md:gap-4">
-          <div className="flex h-full w-full items-center">
+          <div className="flex h-full items-center">
             <Link href="/" className="flex h-full items-center">
               <div className="relative flex h-10 w-full items-center">
                 <Image
