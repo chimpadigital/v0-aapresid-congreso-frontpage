@@ -35,6 +35,10 @@ export function Navbar() {
           label: t("FAQs"),
           href: `/${locale}/preguntas-frecuentes`,
         },
+        {
+          label: "Edición anterior",
+          href: `/${locale}/edicion-anterior`,
+        },
       ],
     },
     {
