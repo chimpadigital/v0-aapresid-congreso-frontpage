@@ -37,7 +37,7 @@ export function Navbar() {
         },
         {
           label: "Edición anterior",
-          href: `/${locale}/edicion-anterior`,
+          href: `https://congreso-2024.aapresid.org.ar/`,
         },
       ],
     },
@@ -46,6 +46,10 @@ export function Navbar() {
       children: [
         { label: t("cronograma"), href: `/${locale}/cronograma` },
         { label: "Gira/visita técnica", href: `/${locale}/visita-tecnica` },
+        {
+          label: "Charlas",
+          href: `https://congreso-2024.aapresid.org.ar/charlas-congreso/`,
+        },
         // { label: "Disertantes", href: "/${locale}/disertantes" },
       ],
     },

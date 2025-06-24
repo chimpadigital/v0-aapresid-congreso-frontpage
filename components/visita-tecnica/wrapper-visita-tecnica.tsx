@@ -2,6 +2,7 @@ import React from "react";
 import { HeroSection } from "../hero-section";
 import AapreInvita from "./AapreInvita";
 import DiaTecnico from "./DiaTecnico";
+import QuienesParticipan from "./QuienesParticipan";
 
 const WrapperVisitaTecnica = () => {
   return (
@@ -24,6 +25,7 @@ const WrapperVisitaTecnica = () => {
         </div>
       </div>
       <DiaTecnico />
+      <QuienesParticipan/>
     </section>
   );
 };
