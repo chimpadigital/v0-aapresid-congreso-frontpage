@@ -25,11 +25,11 @@ export function GacetillasSection() {
   return (
     <section className="mx-auto max-w-[1415px] bg-white px-4 pb-12 pt-[86px] md:px-8">
       <div>
-        <h2 className="mb-10 text-center text-4xl text-primary md:text-5xl">
+        <h2 className="mb-3 md:mb-10 text-center text-4xl text-primary md:text-5xl">
           <span className="font-medium">{t("titulo1")}</span>
         </h2>
         {/* Grid de tarjetas */}
-        <div className="mb-16 mt-16 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-16 md:mt-16 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
           {loading ? (
             <div className="col-span-full text-center">Cargando...</div>
           ) : gacetillas.length === 0 ? (

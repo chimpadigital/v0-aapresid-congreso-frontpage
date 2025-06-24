@@ -48,10 +48,10 @@ export function FeaturedTalksSection() {
   }
 
   return (
-    <section className="relative m-4 mb-9 overflow-hidden rounded-[20px] bg-[#F0F0F1] px-4 py-16 xs:px-8 md:mx-[33px] md:mt-[100px] md:px-16">
+    <section className="relative mx-4 mt-4 md:mb-9 overflow-hidden rounded-[20px] bg-[#F0F0F1] px-4 pt-8 md:py-16 xs:px-8 md:mx-[33px] md:mt-[100px] md:px-16">
       <div className="mx-auto max-w-7xl">
         {/* Título */}
-        <h2 className="mb-20 text-center text-4xl font-medium text-primary lg:text-5xl">
+        <h2 className="mb-5 md:mb-20 text-center text-4xl font-medium text-primary lg:text-5xl">
           {t("title1")}
           <span className="font-normal"> {t("title2")}</span>
         </h2>

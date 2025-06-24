@@ -45,12 +45,15 @@ export function Navbar() {
       label: t("contenidos"),
       children: [
         { label: t("cronograma"), href: `/${locale}/cronograma` },
-        { label: "Gira/visita técnica", href: `/${locale}/visita-tecnica` },
+        { label: "Disertantes", href: `/` },
+        { label: "Visita técnica", href: `/${locale}/visita-tecnica` },
+        { label: "15 años de REM", href: `/` },
+        { label: "Acta sesión posters", href: `/` },
+        { label: "Ofertas", href: `/` },
         {
-          label: "Charlas",
+          label: "Charlas Edición N°32",
           href: `https://congreso-2024.aapresid.org.ar/charlas-congreso/`,
         },
-        // { label: "Disertantes", href: "/${locale}/disertantes" },
       ],
     },
     {
