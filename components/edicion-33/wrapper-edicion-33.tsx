@@ -8,6 +8,7 @@ import { SloganSection } from "./slogan-section";
 import { CodigoAbiertoSection } from "./codigo-abierto-section";
 import CierreSection from "./cierre-section";
 import { useTranslations } from "next-intl";
+import BannerCongreso from "./banner-congreso";
 
 const WrapperEdicion33 = () => {
   const t = useTranslations("edicion-33.hero");
@@ -24,6 +25,7 @@ const WrapperEdicion33 = () => {
       <SloganSection />
       <CodigoAbiertoSection />
       <CierreSection />
+      <BannerCongreso/>
     </>
   );
 };
