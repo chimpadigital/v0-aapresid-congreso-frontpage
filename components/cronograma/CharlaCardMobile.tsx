@@ -147,7 +147,7 @@ const CharlaCardMobile = ({
 
                 <div className="flex items-center gap-3">
                   {(() => {
-                    const { icon, color } = getThemeIcon(charla.Theme.name);
+                    const { icon, color } = getThemeIcon(charla.Theme.name, 21);
                     return (
                       <div
                         className="grid aspect-square h-[21px] place-items-center"

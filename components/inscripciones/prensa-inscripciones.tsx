@@ -51,7 +51,7 @@ const PensaInscripciones = () => {
         </div>
 
         {/* Press Accreditation Section */}
-        <div className="mb-[84px]">
+        <div className="mb-[84px] relative z-40">
           <h2 className="mb-2 text-4xl text-primary">
             ¿Necesitas acreditarte como prensa?
           </h2>

@@ -62,7 +62,7 @@ const CharlaCardDesk = ({
 
           <div className="flex items-center gap-[25px]">
             {(() => {
-              const { icon, color } = getThemeIcon(charla.Theme.name);
+              const { icon, color } = getThemeIcon(charla.Theme.name, 21);
               return (
                 <div
                   className="grid aspect-square h-[21px] place-items-center"
