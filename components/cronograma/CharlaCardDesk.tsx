@@ -122,7 +122,7 @@ const CharlaCardDesk = ({
           </div>
 
           <div className="flex items-center gap-[14px]">
-            <span className="grid aspect-square h-[29px] place-items-center">
+            <span className="grid aspect-square h-[29px] place-items-center text-white">
               <MicrofonoIcon />
             </span>
             <div>

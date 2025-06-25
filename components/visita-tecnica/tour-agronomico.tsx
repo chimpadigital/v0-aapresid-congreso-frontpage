@@ -4,6 +4,10 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import Card1Mano from "../icons/Card1Mano";
+import Card2Manos from "../icons/Card2Manos";
+import PlanetaIcon from "../icons/PlanetaIcon";
+import Card4tiempo from "../icons/Card4tiempo";
+import { useLocale } from "next-intl";
 
 const TourAgronomico = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -35,12 +39,12 @@ const TourAgronomico = () => {
     const scale = useTransform(
       scrollYProgress,
       [start, center, 1],
-      [0.9, 1, 1]
+      [0.9, 1, 1],
     );
     const opacity = useTransform(
       scrollYProgress,
       [start, center, 1],
-      [0.9, 1, 1]
+      [0.9, 1, 1],
     );
     return { scale, opacity };
   };
@@ -48,24 +52,33 @@ const TourAgronomico = () => {
   const cards = [
     {
       bg: "bg-accent",
+      icon: <Card1Mano />,
       text: "Explore modelos productivos de vanguardia, reconocidos por la innovación, el cuidado del suelo y la sustentabilidad.",
     },
     {
       bg: "bg-[#4D9A28]",
+      icon: <Card2Manos />,
       text: "Participe en interesantes intercambios técnicos con agricultores y expertos locales, mientras explora el corazón de la agricultura argentina con visitas a destacados establecimientos agrícolas.",
     },
     {
       bg: "bg-[#458B23]",
+      icon: <PlanetaIcon size="49" />,
       text: "Descubra el pulso de la industria conectándose con las principales empresas e instituciones de Argentina.",
     },
     {
       bg: "bg-primary",
+      icon: <Card4tiempo />,
       text: "Participe en el 33° Congreso Aapresid, el evento de agricultura más destacado en Argentina y la región, momento clave de actualización, debate y exhibición de los últimos avances tecnológicos del sector.",
     },
   ];
 
+  const locale = useLocale();
+
   return (
-    <section className="mx-4 mt-10 h-[230vh] rounded-[20px] bg-[#F0F0F1] px-24 pb-28 pt-[70px] md:mx-[33px]">
+    <section
+      id="gira-tecnica"
+      className="mx-4 mt-10 rounded-[20px] bg-[#F0F0F1] px-8 pb-10 md:pb-28 pt-[70px] sm:px-14 md:mx-[33px] lg:px-24"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Content - Hexagonal Image */}
@@ -73,7 +86,7 @@ const TourAgronomico = () => {
             {/* Main hexagonal image container */}
             <div className="relative">
               {/* Hexagonal image */}
-              <div className="relative h-96 w-96 lg:h-[450px] lg:w-[450px]">
+              <div className="relative aspect-square h-60 md:h-96 md:w-96 lg:h-[450px] lg:w-[450px]">
                 <div className="relative h-full w-full overflow-hidden">
                   <Image
                     src="/images/visita-tecnica/tour-hexa.webp"
@@ -89,60 +102,72 @@ const TourAgronomico = () => {
 
           {/* Right Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl font-bold leading-tight text-primary lg:text-5xl">
+            <div>
+              <h2 className="text-3xl font-bold leading-none tracking-wide text-primary md:text-[40px]">
                 Tour técnico agronómico
-              </h1>
-              <p className="text-2xl font-medium text-gray-600 lg:text-3xl">
+              </h2>
+              <p className="text-[40px] leading-none text-primary">
                 3 al 9 de agosto
               </p>
             </div>
 
-            <p className="text-xl leading-relaxed text-gray-600 lg:text-2xl">
+            <p className="max-w-[23ch] text-xl leading-none tracking-wide text-paragraph md:text-4xl">
               Descubrá el campo argentino en la previa del 33° Congreso Aapresid
             </p>
 
             {/* Download Button */}
             <div className="pt-4">
-              <button
-                // onClick={onDownloadBrochure}
-                className="group flex rounded-full bg-[#ED7F00] px-8 py-4 text-lg font-medium text-white transition-colors hover:bg-[#d67200]"
+              <a
+                href={
+                  locale === "en"
+                    ? "https://drive.google.com/file/d/1T1yQ4UyFQf3_ynzBTeXyRd9E4TpgTw43/view?usp=sharing"
+                    : "https://drive.google.com/file/d/1Jb2mM2OLuKLJtX8OgQpbPXKqvpNeWS42/view?usp=sharing"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-[1] flex w-fit items-center justify-center gap-1 overflow-hidden rounded-full bg-secondary px-[30px] py-[15.5px] md:text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
               >
                 Descargá el brochure oficial
                 <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
       <div
         id="main-container-embarquese"
-        className="mx-auto mt-36 flex max-w-7xl justify-between min-h-[1200px]"
+        className="mx-auto mt-10 flex min-h-[1200px] max-w-7xl flex-col justify-between gap-3 md:mt-36 md:flex-row"
       >
         {/* Sticky headline: queda fija mientras las cards suben */}
-        <div className="sticky top-1/2  flex-1 h-fit self-start flex items-center">
-          <h3 id="title-embarquese" className="max-w-[10ch] text-[60px] leading-none text-primary">
+        <div className="top-1/2 flex h-fit flex-1 items-center self-start md:sticky">
+          <h3
+            id="title-embarquese"
+            className="max-w-[10ch] text-3xl leading-[1.15] text-primary lg:text-[60px]"
+          >
             <span className="font-medium">Embárquese </span>
             en un viaje extraordinario
           </h3>
         </div>
         <div className="flex-1">
-          <div className="relative ">
+          <div className="relative">
             <motion.div
               id="container-cards"
               ref={cardsRef}
-              className="flex flex-col gap-10"
+              className="flex flex-col gap-5 md::gap-10"
             >
               {cards.map((card, i) => {
-                const { scale, opacity } = getCardTransforms(i , cards.length + 0.8);
+                const { scale, opacity } = getCardTransforms(
+                  i,
+                  cards.length + 0.8,
+                );
                 return (
                   <motion.div
                     key={i}
-                    className={`min-h-[280px] max-w-[544px] rounded-[20px] p-8 ${card.bg}`}
+                    className={`min-h-[280px] max-w-[544px] rounded-[20px] p-8 text-white ${card.bg}`}
                     style={{ scale, opacity }}
                   >
-                    <Card1Mano />
-                    <p className="mt-5 text-2xl tracking-wider text-white">
+                    {card.icon}
+                    <p className="mt-5 text-lg tracking-wider md:text-2xl">
                       {card.text}
                     </p>
                   </motion.div>

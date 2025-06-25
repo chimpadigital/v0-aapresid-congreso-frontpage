@@ -19,12 +19,12 @@ export function getThemeIcon(theme: string): {
     [
       {
         match: (s) => s.includes("aprender"),
-        icon: <Eje1Aprender size={21} />,
+        icon: <Eje1Aprender size={30} />,
         color: "#EF7B80",
       },
       {
         match: (s) => s.includes("desaf"),
-        icon: <Eje2Desafios size={21} />,
+        icon: <Eje2Desafios size={30} />,
         color: "#147DBE",
       },
       {
@@ -32,27 +32,27 @@ export function getThemeIcon(theme: string): {
           s.includes("agtech") ||
           s.includes("innovación") ||
           s.includes("innovacion"),
-        icon: <Eje3Innovacion size={21} />,
+        icon: <Eje3Innovacion size={30} />,
         color: "#E84615",
       },
       {
         match: (s) => s.includes("plaga"),
-        icon: <Eje4Manejo size={21} />,
+        icon: <Eje4Manejo size={30} />,
         color: "#D34240",
       },
       {
         match: (s) => s.includes("integrad"),
-        icon: <Eje5Sistemas size={21} />,
+        icon: <Eje5Sistemas size={30} />,
         color: "#EAAB21",
       },
       {
         match: (s) => s.includes("sustentable") || s.includes("productivo"),
-        icon: <Eje6SistemasSustentables size={21} />,
+        icon: <Eje6SistemasSustentables size={30} />,
         color: "#15A884",
       },
       {
         match: (s) => s.includes("sociopol"),
-        icon: <Eje7Perspectiva size={21} />,
+        icon: <Eje7Perspectiva size={30} />,
         color: "#99529B",
       },
     ];

@@ -4,6 +4,7 @@ import { Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 interface Room {
   id: string;
@@ -48,23 +49,25 @@ export function SliderRooms({
                 onClick={() =>
                   onRoomSelect(selectedRoom === room.id ? "" : room.id)
                 }
-                className={`flex min-h-[71px] min-w-[200px] items-center gap-3 rounded-[20px] border-2 px-6 py-4 transition-all ${
+                className={`relative flex h-full max-h-[71px] min-w-[190px] items-center gap-3 rounded-[20px] border-2 px-4 py-2 transition-all ${
                   selectedRoom === room.id
                     ? "border-accent bg-primary/5 text-primary"
                     : "border-primary bg-white text-gray-700 hover:border-primary/50"
                 }`}
               >
                 {room.image ? (
-                  <img
-                    src={room.image}
-                    alt={room.name}
-                    className="h-8 w-8 flex-shrink-0 object-cover"
-                    style={{ width: 32, height: 32, borderRadius: 8 }}
-                  />
+                  <figure className="gris relative mx-auto h-full min-h-[71px] w-[70%] place-items-end">
+                    <Image
+                      src={room.image}
+                      alt={room.name}
+                      fill
+                      className="flex-shrink-0 object-contain"
+                    />
+                  </figure>
                 ) : (
-                  <>
+                  <div className="grid min-h-[71px] place-items-center">
                     <span className="font-medium">{room.name}</span>
-                  </>
+                  </div>
                 )}
               </button>
             </SwiperSlide>
