@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const API_BASE_URL = process.env.API_BASE_URL || "";
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
 
   // Construir la URL de la API externa con los mismos search params
-  const apiUrl = new URL("https://api-congreso.aapresid.org.ar/api/events");
+  const apiUrl = new URL("/api/events", API_BASE_URL);
   searchParams.forEach((value, key) => {
     apiUrl.searchParams.append(key, value);
   });

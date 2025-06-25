@@ -94,7 +94,7 @@ const CharlaCardDesk = ({
               <IdiomasIcon />
             </span>
             <span className="text-slg leading-none text-paragraph">
-              {charla.languages.length > 1 ? charla.languages : "Sin data"}
+              {charla?.languages?.length > 1 ? charla.languages : "Sin data"}
             </span>
           </div>
         </div>
