@@ -35,10 +35,29 @@
     "segundos": "Segundos"
   },
   "inscriptions": {
-    "inscripciones": "Inscripciones",
-    "sos_socio": "¿Sos socio Aapresid?",
-    "inscribite_aca": "Inscribite acá",
-    "proximamente": "Próximamente"
+    "card1": {
+      "titulo": "¿Sos Socio Aapresid?",
+      "subtitulo": "¡Accedé de manera gratuita al Congreso!",
+      "boton": "Inscribite acá"
+    },
+    "card2": {
+      "titulo": "¿No sos Socio Aapresid?",
+      "subtitulo": "Comprá tu ticket",
+      "no-socio": "NO SOCIO",
+      "estuciante": "ESTUDIANTE",
+      "adherente": "ADHERENTE",
+      "de-descuento": "de descuento",
+      "boton": "Comprá tu entrada"
+    },
+    "card3": {
+      "titulo": "¿Tenés un código de invitación?",
+      "ingresa": "Ingresá acá"
+    },
+    "card4": {
+      "titulo": "¿Tenés consultas?",
+      "subtitulo": "Ingresá a nuestra mesa de ayuda para resolverlas",
+      "ingresa": "Ingresá"
+    }
   },
   "about": {
     "que_es": "¿Qué es el ",
@@ -110,6 +129,16 @@
     "title2": "destacadas",
     "ver-cronograma": "Ver cronograma completo"
   },
+  "descubra-campo": {
+    "titulo1": "Descubra el",
+    "titulo2": "campo argentino",
+    "5-agosto": "5 de agosto",
+    "dia-tecnico": "Día técnico",
+    "3-9-agosto": "3 al 9 de agosto",
+    "gira-tecnica": "Gira técnica",
+    "descripcion1": "Explore el corazón de la agricultura argentina, sus modelos productivos de vanguardia, líderes en cuidado del suelo, tecnología y sustentabilidad. Intercambie con productores pioneros y expertos locales.",
+    "leer-mas": "Leer más"
+  },
   "commercial": {
     "forma-parte": "Formá parte de la",
     "de-la-33": "33° edición del Congreso",
@@ -118,13 +147,15 @@
     "descripcion2": "las oportunidades que ofrecemos.",
     "descarga": "Descargar carpeta comercial"
   },
-    "contacto": {
+  "contacto": {
     "contacto": "Contacto",
     "area-comercial": "Área comercial"
   },
   "gacetilla": {
     "titulo1": "Gacetillas",
-    "ver-todas": "Ver todas las gacetillas "
+    "ver-todas": "Ver todas las gacetillas ",
+    "no-gacetilla": "No hay gacetillas disponibles.",
+    "cargando": "Cargando..."
   },
   "faq": {
     "preguntas": "Preguntas",
@@ -334,11 +365,50 @@
     "p3": "En el centro, el distinguido Obelisco, símbolo de la ciudad, hasta la famosa Plaza de Mayo, donde se pueden observar importantes edificios históricos como la Casa Rosada. ",
     "p4": "Además, por la Avenida Corrientes, podes disfrutar de la gastronomía de las mejores pizzerías del país, como Guerrin o un buen asado en la parrilla de Don Julio.",
     "p5": "Para salir a pasear, los barrios La Boca y San Telmo, rica herencia cultural a través de sus calles empedradas, tango, arte y arquitectura colonial, son especiales para recorrer en una caminata.",
+    "reserva-estadia": {
+      "titulo1": "¡Reservá tu estadía para el",
+      "titulo2": "Congreso Aapresid 2025",
+      "p1": "El Congreso Aapresid es un evento de referencia internacional, que lleva más de tres décadas conectando innovación, tecnología y conocimientos con el propósito de impulsar sistemas productivos cada vez mas sustentables.",
+      "descarga": "Descargá el flyer",
+      "reserva-alojamiento": "Reservá tu alojamiento"
+    },
     "como-llegar": "¿Cómo llegar al",
     "evento": "Congreso Aapresid?",
-    "transporte-publico": "En transporte público, la Línea D del subte es la mejor opción. La estación Plaza Italia (Av. Santa Fe y Thames) se encuentra a pocas cuadras del lugar. (Se necesita la tarjeta SUBE).",
-    "colectivo": "Las líneas de **colectivo** que te acercan al predio son: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
-    "tren": "**En tren:** El tren San Martín te deja en la estación Palermo (Av. Santa Fe y Av. Juan B. Justo), ubicada a 5 cuadras del predio."
+    "de-donde-venis": "¿Desde dónde venís?",
+    "escribi-origen": "Escribí acá tu dirección de origen",
+    "recorrido-sugerido": "Recorrido sugerido",
+    "transporte": "En transporte",
+    "auto": "En auto",
+    "ingresa-direccion": "Ingrese su dirección de origen para ver las alternativas de colectivo",
+    "explora-todos": "¡Explorá todos los recorridos posibles desde el mapa!",
+    "compartir": "Compartir recorrido",
+    "ver-mas": "Ver más recorridos"
+  },
+  "cronograma": {
+    "cronograma": "Cronograma",
+    "busca-palabra": "Búsqueda por palabra clave",
+    "escriba-aqui": "Escriba aquí...",
+    "buscar": "Buscar",
+    "filtrar-por": "Filtrar por",
+    "charla": "Charla",
+    "disertantes": "Disertantes",
+    "eje-tamtico": "Eje temático",
+    "escriba-o-seleccion": "Escriba aquí o seleccione",
+    "dia": "Día",
+    "ver-todos": "Ver todos",
+    "sala": "Sala",
+    "ver-todas": "Ver todas las charlas",
+    "no-hay-charlas": "No hay charlas disponibles.",
+    "card": {
+      "disertante": "Disertantes",
+      "moderador": "Moderador",
+      "ver-video": "Ver video",
+      "ver-mas-detalles": "Ver más detalles"
+    },
+    "descarga-cronograma": "Descargar cronograma",
+    "descarga-dia1": "Descargá cronograma Día 1",
+    "descarga-dia2": "Descargá cronograma Día 2",
+    "descarga-dia3": "Descargá cronograma Día 3"
   },
   "footer": {
     "fecha": "6 al 8 de agosto",
@@ -355,5 +425,19 @@
     "expoagro_tel": "Tel: 011 5128 9800/05",
     "expoagro_dir1": "Av. Corrientes 1302 5 Piso",
     "expoagro_dir2": "(C1043ABN) CABA"
+  },
+  "Resources": {
+    "Stream": {
+      "Type": "AWS::Kinesis::Stream",
+      "Properties": {
+        "StreamEncryption": {
+          "EncryptionType": "KMS",
+          "KeyId": "alias/aws/kinesis"
+        },
+        "StreamModeDetails": {
+          "StreamMode": "ON_DEMAND"
+        }
+      }
+    }
   }
 }

@@ -4,7 +4,7 @@ import Emailicon from "../icons/Emailicon";
 import { ContactoCard } from "../ContactoCard";
 import Image from "next/image";
 import { ContactInfo } from "@/lib/types";
-import TenesDuddas from "../TenesDuddas";
+import TenesDuddas from "../TenesDudas";
 
 const pressContacts: ContactInfo[] = [
   {
