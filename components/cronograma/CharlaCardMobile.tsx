@@ -178,7 +178,7 @@ const CharlaCardMobile = ({
                 <div className="flex items-center gap-3">
                   <IdiomasIcon />
                   <span className="text-xs">
-                    {charla.languages.length > 1
+                    {charla?.languages?.length > 1
                       ? charla.languages
                       : "Sin data"}
                   </span>

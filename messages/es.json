@@ -410,6 +410,26 @@
     "descarga-dia2": "Descargá cronograma Día 2",
     "descarga-dia3": "Descargá cronograma Día 3"
   },
+  "page-inscripciones": {
+    "titulo1": "Inscripciones",
+    "titulo2": "Adquirí tu entrada",
+    "cronograma-completo": "Cronograma completo",
+    "ver-mas": "Ver más",
+    "prensa": "Prensa",
+    "necesitas-acreditarte": "¿Necesitás acreditarte como prensa?",
+    "datos-contacto": "Datos de contacto",
+    "prensa-aapresid": "Prensa Aapresid",
+    "eliana": "Eliana Esnaola"
+  },
+  "tenes-dudas": {
+    "titulo": "¿Tenés alguna duda?",
+    "subtitulo": "Te dejamos nuestros contactos",
+    "socio-aapre": "Socio Aapresid",
+    "mesa-expositores": "Mesa de ayuda al expositor",
+    "compra-entradas": "Compra de entradas",
+    "disertantes": "Disertantes",
+    "invitados": "Invitados"
+  },
   "footer": {
     "fecha": "6 al 8 de agosto",
     "lugar": "La Rural de Palermo, Buenos Aires",
