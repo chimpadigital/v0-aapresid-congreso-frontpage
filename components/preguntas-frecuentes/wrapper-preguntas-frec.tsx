@@ -4,7 +4,7 @@ import { HeroSection } from "../hero-section";
 import Accordion from "../faq-accordion";
 import { useTranslations } from "next-intl";
 import { FaqItem } from "@/lib/types";
-import TenesDuddas from "../TenesDuddas";
+import TenesDuddas from "../TenesDudas";
 
 const WrapperPreguntasFrecuentes = () => {
   const t = useTranslations("faq");

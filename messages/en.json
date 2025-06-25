@@ -35,10 +35,29 @@
     "segundos": "Seconds"
   },
   "inscriptions": {
-    "inscripciones": "Registration",
-    "sos_socio": "Are you a Aapresid member?",
-    "inscribite_aca": "Subscribe here",
-    "proximamente": "Available soon"
+    "card1": {
+      "titulo": "¿Sos Socio Aapresid?",
+      "subtitulo": "¡Accedé de manera gratuita al Congreso!",
+      "boton": "Inscribite acá"
+    },
+    "card2": {
+      "titulo": "¿No sos Socio Aapresid?",
+      "subtitulo": "Comprá tu ticket",
+      "no-socio": "NO SOCIO",
+      "estuciante": "ESTUDIANTE",
+      "adherente": "ADHERENTE",
+      "de-descuento": "de descuento",
+      "boton": "Comprá tu entrada"
+    },
+    "card3": {
+      "titulo": "¿Tenés un código de invitación?",
+      "ingresa": "Ingresá acá"
+    },
+    "card4": {
+      "titulo": "¿Tenés consultas?",
+      "subtitulo": "Ingresá a nuestra mesa de ayuda para resolverlas",
+      "ingresa": "Ingresá"
+    }
   },
   "about": {
     "que_es": "What is the",
@@ -110,6 +129,16 @@
     "title2": "lectures",
     "ver-cronograma": "See full schedule"
   },
+  "descubra-campo": {
+    "titulo1": "Descubra el",
+    "titulo2": "campo argentino",
+    "5-agosto": "5 de agosto",
+    "dia-tecnico": "Día técnico",
+    "3-9-agosto": "3 al 9 de agosto",
+    "gira-tecnica": "Gira técnica",
+    "descripcion1": "Explore el corazón de la agricultura argentina, sus modelos productivos de vanguardia, líderes en cuidado del suelo, tecnología y sustentabilidad. Intercambie con productores pioneros y expertos locales.",
+    "leer-mas": "Leer más"
+  },
   "commercial": {
     "forma-parte": "Join the",
     "de-la-33": "33° edition of the Congress",
@@ -124,7 +153,9 @@
   },
   "gacetilla": {
     "titulo1": "Newsletters",
-    "ver-todas": "See all newsletters"
+    "ver-todas": "See all newsletters",
+    "no-gacetilla": "No newsletters available",
+    "cargando": "Loading..."
   },
   "faq": {
     "preguntas": "Frequently",
@@ -312,15 +343,54 @@
     "p3": "In the downtown area, you'll find the iconic Obelisk, a symbol of the city, and the famous Plaza de Mayo, home to important historic buildings such as the Casa Rosada.",
     "p4": "Along Corrientes Avenue, you can savor the country's best pizza at places like Guerrin, or enjoy a traditional asado at the famous grill Don Julio.",
     "p5": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
+    "reserva-estadia": {
+      "titulo1": "¡Reservá tu estadía para el",
+      "titulo2": "Congreso Aapresid 2025",
+      "p1": "El Congreso Aapresid es un evento de referencia internacional, que lleva más de tres décadas conectando innovación, tecnología y conocimientos con el propósito de impulsar sistemas productivos cada vez mas sustentables.",
+      "descarga": "Descargá el flyer",
+      "reserva-alojamiento": "Reservá tu alojamiento"
+    },
     "como-llegar": "How to get to",
     "evento": " Congreso Aapresid?",
-    "transporte-publico": "By public transport, the subway D Line is the best option. Plaza Italia station (Santa Fe Ave. and Thames) is a few blocks away from the place. (SUBE card is needed)",
-    "colectivo": "**Bus lines** that can get you close to the site are: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
-    "tren": "**By train:** The San Martín train takes you to Palermo station (Santa Fe Ave. and Juan B. Justo Ave.), located 5 blocks away from the site."
+    "de-donde-venis": "¿Desde dónde venís?",
+    "escribi-origen": "Escribí acá tu dirección de origen",
+    "recorrido-sugerido": "Recorrido sugerido",
+    "transporte": "En transporte",
+    "auto": "En auto",
+    "ingresa-direccion": "Ingrese su dirección de origen para ver las alternativas de colectivo",
+    "explora-todos": "¡Explorá todos los recorridos posibles desde el mapa!",
+    "compartir": "Compartir recorrido",
+    "ver-mas": "Ver más recorridos"
   },
   "nos-acompanian": {
     "nos": "Our ",
     "acompanian": "partners"
+  },
+  "cronograma": {
+    "cronograma": "Cronograma",
+    "busca-palabra": "Búsqueda por palabra clave",
+    "escriba-aqui": "Escriba aquí...",
+    "buscar": "Buscar",
+    "filtrar-por": "Filtrar por",
+    "charla": "Charla",
+    "disertantes": "Disertantes",
+    "eje-tamtico": "Eje temático",
+    "escriba-o-seleccion": "Escriba aquí o seleccione",
+    "dia": "Día",
+    "ver-todos": "Ver todos",
+    "sala": "Sala",
+    "ver-todas": "Ver todas las charlas",
+    "no-hay-charlas": "No hay charlas disponibles.",
+    "card": {
+      "disertante": "Disertantes",
+      "moderador": "Moderador",
+      "ver-video": "Ver video",
+      "ver-mas-detalles": "Ver más detalles"
+    },
+    "descarga-cronograma": "Descargar cronograma",
+    "descarga-dia1": "Descargá cronograma Día 1",
+    "descarga-dia2": "Descargá cronograma Día 2",
+    "descarga-dia3": "Descargá cronograma Día 3"
   },
   "gacetilla-page": {
     "hero-title": "Press releases",

@@ -4,10 +4,12 @@ import React, { useEffect, useRef, useState } from "react";
 import ArrowRounded from "../icons/ArrowRounded";
 import Image from "next/image";
 import * as motion from "motion/react-client";
+import { useLocale } from "next-intl";
 
 const DescubraElCampo = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
+  const locale = useLocale()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +96,7 @@ const DescubraElCampo = () => {
 
           {/* Read more link */}
           <Link
-            href="/gira-tecnica"
+            href={`/${locale}/visita-tecnica`}
             className="group flex w-fit items-center gap-2 whitespace-nowrap border-b-2 border-white font-medium text-white transition-opacity hover:border-opacity-70"
           >
             <p className="flex">Leer más</p>

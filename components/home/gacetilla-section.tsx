@@ -25,17 +25,15 @@ export function GacetillasSection() {
   return (
     <section className="mx-auto max-w-[1415px] bg-white px-4 pb-12 pt-[86px] md:px-8">
       <div>
-        <h2 className="mb-3 md:mb-10 text-center text-4xl text-primary md:text-5xl">
+        <h2 className="mb-3 text-center text-4xl text-primary md:mb-10 md:text-5xl">
           <span className="font-medium">{t("titulo1")}</span>
         </h2>
         {/* Grid de tarjetas */}
-        <div className="mb-16 md:mt-16 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-16 grid grid-cols-1 justify-items-center gap-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {loading ? (
-            <div className="col-span-full text-center">Cargando...</div>
+            <div className="col-span-full text-center">{t("cargando")}</div>
           ) : gacetillas.length === 0 ? (
-            <div className="col-span-full text-center">
-              No hay gacetillas disponibles.
-            </div>
+            <div className="col-span-full text-center">{t("no-gacetilla")}</div>
           ) : (
             gacetillas.map((gacetilla) => {
               let title = "";

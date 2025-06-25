@@ -63,7 +63,7 @@ const TenesDuddas = () => {
     ],
   };
   return (
-    <div className="mb-12">
+    <div id="tenes-dudas" className="mb-12">
       <h2 className="mb-2 text-[40px] font-bold text-primary">
         ¿Tenés alguna duda?
       </h2>

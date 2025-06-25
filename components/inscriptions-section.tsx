@@ -28,15 +28,18 @@ export function InscriptionsSection() {
                 ¡Accedé de manera gratuita al Congreso!
               </p>
             </div>
-            <Link
-              href="/registro-socios"
+            <a
+              aria-label="Inscripción para socios Aapresid"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://soluciones.qreventos.com/aapresid/preacreditacion_socios_borde.asp"
               className="relative z-[1] flex w-fit items-center justify-center gap-3 overflow-hidden rounded-full bg-secondary px-[30px] py-[15.5px] text-2xl tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-x-[2] md:w-fit md:min-w-[374px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
             >
               Inscribite acá
               <div className="relative top-[2px]">
                 <ArrowRounded />
               </div>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -114,13 +117,16 @@ export function InscriptionsSection() {
               ¿Tenés un código de invitación?
             </h2>
           </div>
-          <Link
-            href="/codigo-invitacion"
+          <a
+            aria-label="Preacreditación invitados"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://soluciones.qreventos.com/aapresid/preacreditacion_invitados_borde.asp"
             className="mt-4 flex items-center gap-3 border-b-2 border-white text-lg text-white transition-opacity hover:border-opacity-70 hover:font-medium md:mt-0"
           >
             <p className="w-[8ch]">Ingresá acá</p>
             <ArrowRounded className="w-4" />
-          </Link>
+          </a>
         </div>
 
         {/* Help desk panel */}
@@ -134,7 +140,7 @@ export function InscriptionsSection() {
             </p>
           </div>
           <Link
-            href={`/${locale}/preguntas-prefuentes`}
+            href={`/${locale}/inscripciones#tenes-dudas`}
             className="mt-4 flex items-center gap-3 border-b-2 border-white text-lg transition-opacity hover:border-opacity-70 hover:font-medium md:mt-0"
           >
             <p>Ingresá</p>
