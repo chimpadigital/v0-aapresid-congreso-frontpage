@@ -47,9 +47,9 @@ export function Navbar() {
         { label: t("cronograma"), href: `/${locale}/cronograma` },
         { label: "Disertantes", href: `/` },
         { label: "Visita técnica", href: `/${locale}/visita-tecnica` },
-        { label: "15 años de REM", href: `/` },
-        { label: "Acta sesión posters", href: `/` },
-        { label: "Ofertas", href: `/` },
+        // { label: "15 años de REM", href: `/` },
+        // { label: "Acta sesión posters", href: `/` },
+        // { label: "Ofertas", href: `/` },
         {
           label: "Charlas Edición N°32",
           href: `https://congreso-2024.aapresid.org.ar/charlas-congreso/`,
