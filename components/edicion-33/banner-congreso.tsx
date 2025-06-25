@@ -5,7 +5,7 @@ import MapPinLineal from "../icons/MapPinLineal";
 const BannerCongreso = () => {
   return (
     <div
-      className="mx-4 rounded-[20px] bg-[#F0F0F1] px-20 py-[100px] md:mx-[33px] bg-[cover,_auto] xl:bg-[contain,_auto]"
+      className="mx-4 rounded-[20px] bg-[#F0F0F1] px-10 py-10 xs:px-20 xs:py-[100px] md:mx-[33px] bg-[cover,_auto] xl:bg-[contain,_auto]"
       style={{
         backgroundImage:
           "url('/images/edicion-33/bg-banner.png'), url('/images/edicion-33/bg-recurso-banner.png')",

@@ -15,7 +15,7 @@ const AapreInvita = () => {
               Congreso
             </h1>
 
-            <p className="mb-10 text-xl leading-relaxed text-gray-600">
+            <p className="mb-10 text-xl leading-tight text-gray-600">
               Participá en los impactantes side events que realizaremos con el
               objetivo de adentrarte en el corazón de la agricultura argentina y
               tomar contacto con destacados productores y expertos locales:
@@ -25,24 +25,28 @@ const AapreInvita = () => {
             <div className="flex flex-wrap gap-[50px]">
               <div className="space-y-3">
                 <p className="text-xl text-primary">5 de agosto</p>
-                <Link
+                <a
                   href={"#dia-tecnico"}
-                  className="relative z-[1] flex w-fit items-center justify-center gap-1 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-2xl tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-accent before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
+                  className="group flex items-center gap-3 scroll-smooth text-2xl text-accent"
                 >
-                  Día técnico
-                  <ArrowRounded className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+                  <span className="underline underline-offset-4">
+                    Día técnico
+                  </span>
+                  <ArrowRounded className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+                </a>
               </div>
 
               <div className="space-y-3">
                 <p className="text-xl text-primary">3 al 9 de agosto</p>
-                <Link
+                <a
                   href={"#gira-tecnica"}
-                  className="relative z-[1] flex w-fit items-center justify-center gap-1 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-2xl tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-accent before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
+                  className="group flex items-center gap-3 scroll-smooth text-2xl text-accent"
                 >
-                  Gira técnica
-                  <ArrowRounded className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+                  <span className="underline underline-offset-4">
+                    Gira técnica
+                  </span>
+                  <ArrowRounded className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+                </a>
               </div>
             </div>
           </div>

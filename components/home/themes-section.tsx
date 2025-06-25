@@ -341,7 +341,7 @@ export function ThemesSection() {
                     <div
                       className={`flex w-full flex-row flex-wrap items-center justify-center gap-4 rounded-[20px] md:gap-11 lg:w-[min(100%,446px)] lg:justify-start xl:flex-col xl:items-start`}
                     >
-                      <figure className="relative inline-block aspect-square h-[350px] lg:ml-auto">
+                      <figure className="relative inline-block aspect-square h-[250px] md:h-[350px] lg:ml-auto">
                         <Image
                           src={iconosEjesTematicos[index].path}
                           alt={ejesTematico.titulo}
@@ -360,7 +360,7 @@ export function ThemesSection() {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex flex-1 flex-col pl-4 lg:justify-between"
+            className="flex flex-1 flex-col lg:pl-4 lg:justify-between"
           >
             <div className="hidden w-fit lg:block">
               <h2 className="mb-2 w-fit text-4xl font-medium text-white md:text-5xl">

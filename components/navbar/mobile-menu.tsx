@@ -140,13 +140,25 @@ export function MobileMenu({
               {currentMenu.map((item, index) => (
                 <div key={index}>
                   {item.href ? (
-                    <Link
-                      href={item.href}
-                      className={`flex items-center justify-between tracking-wider ${isSubMenu ? "text-[28px] font-light" : "text-[40px]"} text-white transition-colors hover:text-white/70`}
-                      onClick={handleClose}
-                    >
-                      <span>{item.label}</span>
-                    </Link>
+                    item.href.includes("https") ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center justify-between tracking-wider ${isSubMenu ? "text-[28px] font-light" : "text-[40px]"} text-white transition-colors hover:text-white/70`}
+                        onClick={handleClose}
+                      >
+                        <span>{item.label}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`flex items-center justify-between tracking-wider ${isSubMenu ? "text-[28px] font-light" : "text-[40px]"} text-white transition-colors hover:text-white/70`}
+                        onClick={handleClose}
+                      >
+                        <span>{item.label}</span>
+                      </Link>
+                    )
                   ) : (
                     <button
                       onClick={() => handleMenuItemClick(item)}

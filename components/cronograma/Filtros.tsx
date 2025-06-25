@@ -87,7 +87,7 @@ export default function Filtros() {
         finish();
       })
       .catch(finish);
-  }, []); // <-- solo al montar
+  }, []);
 
   const speakerOptions = speakers.map((speaker) => ({
     value: String(speaker.id),

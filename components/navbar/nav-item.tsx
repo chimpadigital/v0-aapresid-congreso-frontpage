@@ -1,21 +1,25 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ChevronDown } from "lucide-react"
-import { usePathname } from "next/navigation"
-import { MenuItem, NavItemProps } from "@/lib/types"
-  
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { MenuItem, NavItemProps } from "@/lib/types";
+
 interface ExtendedNavItemProps extends NavItemProps {
-  menuItems?: MenuItem[]
+  menuItems?: MenuItem[];
 }
 
-export function NavItem({ label, hasDropdown = false, menuItems }: ExtendedNavItemProps) {
-  const pathname = usePathname()
+export function NavItem({
+  label,
+  hasDropdown = false,
+  menuItems,
+}: ExtendedNavItemProps) {
+  const pathname = usePathname();
   // Extrae el path sin el locale
-  const pathWithoutLocale = pathname.replace(/^\/(es|en)(\/|$)/, "/")
+  const pathWithoutLocale = pathname.replace(/^\/(es|en)(\/|$)/, "/");
 
   // Determinar si es un selector de idioma o un menú normal
-  const isLanguageSelector = label === "es" || label === "en"
+  const isLanguageSelector = label === "es" || label === "en";
 
   return (
     <div className="group relative">
@@ -45,17 +49,29 @@ export function NavItem({ label, hasDropdown = false, menuItems }: ExtendedNavIt
       {/* Dropdown para menús normales */}
       {hasDropdown && !isLanguageSelector && menuItems && (
         <div className="pointer-events-none absolute left-0 top-full z-50 min-w-[200px] rounded-lg bg-white py-2 opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
-          {menuItems.map((item, index) => (
-            <Link
-              key={index}
-              href={item.href || "#"}
-              className="block px-4 py-2 text-primary transition-colors hover:bg-accent/10 hover:text-accent"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {menuItems.map((item, index) =>
+            item.href && item.href.includes("https://") ? (
+              <a
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2 text-primary transition-colors hover:bg-accent/10 hover:text-accent"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={index}
+                href={item.href || "#"}
+                className="block px-4 py-2 text-primary transition-colors hover:bg-accent/10 hover:text-accent"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </div>
       )}
     </div>
-  )
+  );
 }

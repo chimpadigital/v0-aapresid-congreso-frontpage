@@ -3,10 +3,12 @@ import { HeroSection } from "../hero-section";
 import AapreInvita from "./AapreInvita";
 import DiaTecnico from "./DiaTecnico";
 import QuienesParticipan from "./QuienesParticipan";
+import TourAgronomico from "./tour-agronomico";
+import DescubraAprenda from "./descubra-aprenda";
 
 const WrapperVisitaTecnica = () => {
   return (
-    <section>
+    <section className="scroll-smooth">
       <HeroSection
         compact
         backgroundImage="/images/gacetilla/circuito-prensa.webp"
@@ -25,7 +27,9 @@ const WrapperVisitaTecnica = () => {
         </div>
       </div>
       <DiaTecnico />
-      <QuienesParticipan/>
+      <QuienesParticipan />
+      <TourAgronomico />
+      <DescubraAprenda />
     </section>
   );
 };

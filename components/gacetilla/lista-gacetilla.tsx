@@ -165,7 +165,7 @@ const ListaGacetilla = () => {
   return (
     <section className="mx-auto max-w-[1390px] px-4 pt-10 md:px-[33px] md:pt-0 2xl:px-0">
       <form
-        className="mb-[91px] flex flex-col gap-[30px] md:flex-row"
+        className="mb-7 md:mb-[91px] flex flex-col gap-[30px] md:flex-row pl-3 md:pl-0"
         onSubmit={handleSearchClick}
       >
         <label className="border-b-px mt-auto flex h-fit w-full max-w-[304px] items-center gap-2 border-b border-b-primary focus-within:border-b-accent">

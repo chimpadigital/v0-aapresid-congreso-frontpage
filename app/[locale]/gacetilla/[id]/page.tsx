@@ -38,7 +38,7 @@ export async function generateMetadata({
   const title = getField(detalle.title, locale);
   const description = getField(detalle.excerpt, locale);
   const image = detalle.image || "/images/bandera-aapre.webp";
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || " https://congreso.aapresid.org.ar";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://congreso.aapresid.org.ar";
   const url = `${baseUrl}/${locale}/gacetilla/${id}`;
 
   return {

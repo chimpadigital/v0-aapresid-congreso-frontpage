@@ -1,10 +1,14 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
+import RelojIcon from "../icons/RelojIcon";
 
 const DiaTecnico = () => {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <section
+      id="dia-tecnico"
+      className="mx-auto mt-14 max-w-7xl px-4 py-8 sm:px-6 md:mt-24 lg:px-8"
+    >
       <div className="tracking-wider">
         <h2 className="text-[40px] font-bold text-primary">Día técnico</h2>
         <h3 className="text-4xl text-paragraph">Itinerario 5 de agosto</h3>
@@ -35,7 +39,9 @@ const DiaTecnico = () => {
                 </div>
                 <div className="top-[130px] z-10 w-max max-w-[200px] rounded-[20px] border-2 border-primary bg-white p-[18px] md:max-w-[300px] lg:max-w-[369px]">
                   <article className="relative">
-                    <span className="font-bold text-primary">8:30 HS</span>
+                    <span className="font-bold text-primary flex gap-3 items-center">
+                      <RelojIcon /> 8:30 HS
+                    </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
                       Salida desde Ciudad Autónoma de Buenos Aires (CABA) hacia
                       Salto (Provincia de Buenos Aires) en bus.
@@ -60,7 +66,9 @@ const DiaTecnico = () => {
               <div className="relative flex flex-col items-center">
                 <div className="z-10 w-max max-w-[200px] rounded-[20px] border-2 border-primary bg-white p-[18px] md:max-w-[300px] lg:max-w-[369px]">
                   <article className="relative">
-                    <span className="font-bold text-primary">11:00 HS</span>
+                    <span className="font-bold text-primary flex gap-3 items-center">
+                      <RelojIcon /> 11:00 HS
+                    </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
                       Recepción de la delegación: Presentación sobre Aapresid,
                       introducción sobre sistemas de producción que regeneran
@@ -92,7 +100,9 @@ const DiaTecnico = () => {
                 </div>
                 <div className="top-[130px] z-10 w-max max-w-[369px] rounded-[20px] border-2 border-primary bg-white p-[18px]">
                   <article className="relative">
-                    <span className="font-bold text-primary">13:00 HS</span>
+                    <span className="font-bold text-primary flex gap-3 items-center">
+                      <RelojIcon /> 13:00 HS
+                    </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
                       Almuerzo en el campo
                     </p>
@@ -116,7 +126,9 @@ const DiaTecnico = () => {
               <div className="relative flex flex-col items-center">
                 <div className="z-10 w-max max-w-[200px] rounded-[20px] border-2 border-primary bg-white p-[18px] md:max-w-[300px] lg:max-w-[369px]">
                   <article className="relative">
-                    <span className="font-bold text-primary">15:00 HS</span>
+                    <span className="font-bold text-primary flex gap-3 items-center">
+                      <RelojIcon /> 15:00 HS
+                    </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
                       Recorrida a campo: sistemas de producción sustentables,
                       intensos y diversos. Indicadores de materia orgánica,
@@ -148,7 +160,9 @@ const DiaTecnico = () => {
                 </div>
                 <div className="top-[130px] z-10 w-max max-w-[369px] rounded-[20px] border-2 border-primary bg-white p-[18px]">
                   <article className="relative">
-                    <span className="font-bold text-primary">16:00 HS</span>
+                    <span className="font-bold text-primary flex gap-3 items-center">
+                      <RelojIcon /> 16:00 HS
+                    </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
                       Regreso a CABA
                     </p>
@@ -165,15 +179,15 @@ const DiaTecnico = () => {
       {/* VERSION MOBILE */}
       <div
         id="dia-tecnico-mobile"
-        className="mt-20 flex flex-col  gap-8 sm:hidden relative"
+        className="relative mt-20 flex flex-col gap-8 sm:hidden"
       >
-        <div className="h-full border-2 border-primary absolute left-[11px]" />
+        <div className="absolute left-[11px] h-full border-2 border-primary" />
 
         {/* HITO 1 */}
         <div className="flex items-center">
           <div className="z-10 aspect-square h-[27px] rounded-full bg-accent" />
           <div className="w-5 border-2 border-dotted border-primary" />
-          <div className="top-[130px] z-10 rounded-[20px] border-2 border-primary w-full bg-white p-[18px]">
+          <div className="top-[130px] z-10 w-full rounded-[20px] border-2 border-primary bg-white p-[18px]">
             <article className="relative">
               <span className="font-medium text-primary">8:30 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
@@ -189,7 +203,7 @@ const DiaTecnico = () => {
           <div className="z-10 aspect-square h-[27px] rounded-full bg-accent" />
           <div className="w-5 border-2 border-dotted border-primary" />
 
-          <div className="top-[130px] z-10 rounded-[20px] border-2 border-primary w-full bg-white p-[18px]">
+          <div className="top-[130px] z-10 w-full rounded-[20px] border-2 border-primary bg-white p-[18px]">
             <article className="relative">
               <span className="font-medium text-primary">11:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
@@ -206,7 +220,7 @@ const DiaTecnico = () => {
           <div className="z-10 aspect-square h-[27px] rounded-full bg-accent" />
           <div className="w-5 border-2 border-dotted border-primary" />
 
-          <div className="top-[130px] z-10 rounded-[20px] border-2 border-primary w-full bg-white p-[18px]">
+          <div className="top-[130px] z-10 w-full rounded-[20px] border-2 border-primary bg-white p-[18px]">
             <article className="relative">
               <span className="font-medium text-primary">13:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
@@ -221,7 +235,7 @@ const DiaTecnico = () => {
           <div className="z-10 aspect-square h-[27px] rounded-full bg-accent" />
           <div className="w-5 border-2 border-dotted border-primary" />
 
-          <div className="top-[130px] z-10 rounded-[20px] border-2 border-primary w-full bg-white p-[18px]">
+          <div className="top-[130px] z-10 w-full rounded-[20px] border-2 border-primary bg-white p-[18px]">
             <article className="relative">
               <span className="font-medium text-primary">15:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
@@ -238,7 +252,7 @@ const DiaTecnico = () => {
           <div className="z-10 aspect-square h-[27px] rounded-full bg-accent" />
           <div className="w-5 border-2 border-dotted border-primary" />
 
-          <div className="top-[130px] z-10 rounded-[20px] border-2 border-primary w-full bg-white p-[18px]">
+          <div className="top-[130px] z-10 w-full rounded-[20px] border-2 border-primary bg-white p-[18px]">
             <article className="relative">
               <span className="font-medium text-primary">16:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">

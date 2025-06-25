@@ -80,12 +80,23 @@ export function OriginalNavbar({
             {menuItems.map((item, index) => (
               <div key={index}>
                 {item.href ? (
-                  <Link
-                    href={item.href}
-                    className="text-lg tracking-wider text-white transition-colors hover:text-gray-200"
-                  >
-                    {item.label}
-                  </Link>
+                  item.href.includes("https") ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg tracking-wider text-white transition-colors hover:text-gray-200"
+                    >
+                     {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-lg tracking-wider text-white transition-colors hover:text-gray-200"
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ) : (
                   <NavItem
                     label={item.label}
