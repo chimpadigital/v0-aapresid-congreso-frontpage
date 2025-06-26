@@ -342,3 +342,8 @@ body {
     background-size: auto;
   }
 }
+
+
+.room-swiper {
+   padding-top: 10px !important;
+}

@@ -334,8 +334,15 @@
       "p4": "En el XXXIII Congreso Aapresid, abrimos las puertas de la innovación. Aquí, los límites se diluyen y las especializaciones se encuentran. ",
       "p5": "Cada productor, técnico, investigador y visionario que participa no trae solo preguntas o respuestas: trae piezas que encajan en un sistema mayor.",
       "p6": "Somos más que testigos del cambio: somos programadores del futuro. Cada año, este Congreso compila y actualiza en un solo cuerpo los saberes de una comunidad que hace de la innovación su modo de vida. No se trata solo de mejorar lo que ya existe, sino de imaginar y rediseñar a cada momento para acompañar las transformaciones del mundo. Porque el futuro no se predice: se programa. Y el código que escribimos juntos está abierto para todos."
-    },
-    "texto-final": "Este es el **Congreso Aapresid.** Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades."
+    },    
+    "texto-final": "Este es el **Congreso Aapresid.** Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades.",
+    "banner-congreso": {
+      "congreso": "Congreso",
+      "aapresid": "Aapresid",
+      "p": "El evento en el que buscamos conectar el conocimiento, la ciencia y los sistemas de producción sustentables.",
+      "fecha": "6, 7 y 8 de Agosto",
+      "lugar": "La Rural de Palermo, Buenos Aires"
+    }
   },
   "nos-acompanian": {
     "nos": "Nos",
@@ -446,18 +453,75 @@
     "expoagro_dir1": "Av. Corrientes 1302 5 Piso",
     "expoagro_dir2": "(C1043ABN) CABA"
   },
-  "Resources": {
-    "Stream": {
-      "Type": "AWS::Kinesis::Stream",
-      "Properties": {
-        "StreamEncryption": {
-          "EncryptionType": "KMS",
-          "KeyId": "alias/aws/kinesis"
+  "visita-tecnica-page" :{
+    "aapre-invita": {
+      "titulo": "Aapresid te invita a conocer el campo argentino en la previa del Congreso",
+      "descripcion": "Participá en los impactantes side events que realizaremos con el objetivo de adentrarte en el corazón de la agricultura argentina y tomar contacto con destacados productores y expertos locales:",
+      "evento1-fecha": "5 de agosto",
+      "evento1-titulo": "Día técnico",
+      "evento2-fecha": "3 al 9 de agosto",
+      "evento2-titulo": "Gira técnica"
+    },
+    "visita-tecnica": {
+      "descripcion": "Explore el corazón de la agricultura argentina, sus modelos productivos de vanguardia, líderes en cuidado del suelo, tecnología y sustentabilidad. Intercambie con productores pioneros y expertos locales."
+    },
+    "dia-tecnico": {
+      "titulo": "Día técnico",
+      "subtitulo": "Itinerario 5 de agosto",
+      "hitos": [
+         {
+          "hora": "8:30 HS",
+          "descripcion": "Salida desde Ciudad Autónoma de Buenos Aires (CABA) hacia Salto (Provincia de Buenos Aires) en bus."
         },
-        "StreamModeDetails": {
-          "StreamMode": "ON_DEMAND"
+        {
+          "hora": "11:00 HS",
+          "descripcion": "Recepción de la delegación: Presentación sobre Aapresid, introducción sobre sistemas de producción que regeneran suelos con menor impacto ambiental, innovación en redes."
+        },
+        {
+          "hora": "13:00 HS",
+          "descripcion": "Almuerzo en el campo"
+        },
+        {
+          "hora": "15:00 HS",
+          "descripcion": "Recorrida a campo: sistemas de producción sustentables, intensos y diversos. Indicadores de materia orgánica, carbono y biología del suelo. Integración ganadera."
+        },
+        {
+          "hora": "16:00 HS",
+          "descripcion": "Regreso a CABA"
         }
-      }
+      ]
+    },
+    "quienes-participan": {
+      "titulo": "¿Quiénes pueden participar?",
+      "lista": [
+        "Agricultores",
+        "Técnicos",
+        "Estudiantes universitarios",
+        "Organizaciones del agro",
+        "Decisores políticos",
+        "Delegaciones oficiales de Argentina y de cualquier parte del mundo."
+      ],
+      "nota": "*Con inscripción previa, sujeto a disponibilidad.",
+      "contacto-titulo": "Para más información comunicarse con:",
+      "contacto-email": "internacional@aapresid.org.ar"
+    },
+    "tour-agronomico": {
+      "titulo": "Tour técnico agronómico",
+      "fecha": "3 al 9 de agosto",
+      "descripcion": "Descubrá el campo argentino en la previa del 33° Congreso Aapresid",
+      "boton": "Descargá el brochure oficial",
+      "cards": [
+        "Explore modelos productivos de vanguardia, reconocidos por la innovación, el cuidado del suelo y la sustentabilidad.",
+        "Participe en interesantes intercambios técnicos con agricultores y expertos locales, mientras explora el corazón de la agricultura argentina con visitas a destacados establecimientos agrícolas.",
+        "Descubra el pulso de la industria conectándose con las principales empresas e instituciones de Argentina.",
+        "Participe en el 33° Congreso Aapresid, el evento de agricultura más destacado en Argentina y la región, momento clave de actualización, debate y exhibición de los últimos avances tecnológicos del sector."
+      ]
+    },
+    "descubra-aprenda": {
+      "titulo": "¡Descubra, aprenda y conecte en una experiencia inolvidable!",
+      "contacto-titulo": "Para más información comunicarse con:",
+      "contacto-email": "internacional@aapresid.org.ar",
+      "boton": "Descargá el brochure oficial"
     }
   }
 }

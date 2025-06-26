@@ -4,8 +4,10 @@ import Image from "next/image";
 import React from "react";
 import Emailicon from "../icons/Emailicon";
 import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 const DescubraAprenda = () => {
+  const t = useTranslations("visita-tecnica-page.descubra-aprenda");
   const locale = useLocale();
   return (
     <section className="relative mx-4 mt-10 overflow-hidden rounded-[20px] bg-primary px-0 py-6 md:mx-[33px] md:py-16 lg:px-8">
@@ -15,27 +17,24 @@ const DescubraAprenda = () => {
             {/* Left Content */}
             <div className="w-fit mx-auto">
               <h1 className="mb-11 max-w-[18ch] text-3xl font-bold leading-none text-white md:text-[40px]">
-                ¡Descubra, aprenda y conecte en una experiencia inolvidable!
+                {t("titulo")}
               </h1>
-
               <div className="space-y-4">
                 <p className="text-xl md:text-2xl tracking-wider text-white">
-                  Para más información comunicarse con:
+                  {t("contacto-titulo")}
                 </p>
-
                 <a
-                  href="mailto:internacional@aapresid.org.ar"
+                  href={`mailto:${t("contacto-email")}`}
                   className="flex items-center gap-2 text-white transition-all hover:text-accent md:gap-8"
                 >
                   <div className="">
                     <Emailicon />
                   </div>
                   <span className="text-lg tracking-wider md:text-2xl">
-                    internacional@aapresid.org.ar
+                    {t("contacto-email")}
                   </span>
                 </a>
               </div>
-
               {/* Download Button */}
               <div className="mt-7 pt-4">
                 <a
@@ -48,11 +47,10 @@ const DescubraAprenda = () => {
                   rel="noopener noreferrer"
                   className="relative z-[1] flex w-fit items-center justify-center gap-1 overflow-hidden rounded-full bg-secondary px-[30px] py-[15.5px] tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:text-lg md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
                 >
-                  Descargá el brochure oficial
+                  {t("boton", { default: "Descargá el brochure oficial" })}
                   <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
                 </a>
               </div>
-
               {/* Logos */}
               <div className="flex flex-wrap items-center gap-4 pt-14 md:gap-8 md:pl-2">
                 <Image
@@ -71,7 +69,6 @@ const DescubraAprenda = () => {
                 />
               </div>
             </div>
-
             {/* Right Content - Hexagonal Image */}
             <div className="relative flex justify-center lg:justify-end">
               {/* Main hexagonal image container */}

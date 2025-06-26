@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
@@ -49,12 +49,17 @@ export function SliderRooms({
                 onClick={() =>
                   onRoomSelect(selectedRoom === room.id ? "" : room.id)
                 }
-                className={`relative flex h-full max-h-[71px] min-w-[190px] items-center gap-3 rounded-[20px] border-2 px-4 py-2 transition-all ${
+                className={`relative flex h-full max-h-[71px] min-w-[190px] items-center gap-3 rounded-[20px] border-3 px-4 py-2 transition-all ${
                   selectedRoom === room.id
                     ? "border-accent bg-primary/5 text-primary"
                     : "border-primary bg-white text-gray-700 hover:border-primary/50"
                 }`}
               >
+                {selectedRoom === room.id && (
+                  <div className="absolute -right-3 -top-[10px] grid aspect-auto h-6 place-items-center rounded-full bg-primary">
+                    <X className="h-4 text-white" />
+                  </div>
+                )}
                 {room.image ? (
                   <figure className="gris relative mx-auto h-full min-h-[71px] w-[70%] place-items-end">
                     <Image
@@ -75,7 +80,7 @@ export function SliderRooms({
         </Swiper>
       </div>
       {/* Custom navigation buttons */}
-      <button className="swiper-button-prev-custom absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full border border-primary bg-white transition-colors hover:bg-gray-50 disabled:opacity-50">
+      <button className="swiper-button-prev-custom absolute left-0 top-[59%] z-10 flex h-10 w-10 -translate-x-4 -translate-y-1/2 transform items-center justify-center rounded-full border border-primary bg-white transition-colors hover:bg-gray-50 disabled:opacity-50">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="41"
@@ -89,7 +94,7 @@ export function SliderRooms({
           />
         </svg>
       </button>
-      <button className="swiper-button-next-custom absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full border border-primary bg-white transition-colors hover:bg-gray-50 disabled:opacity-50">
+      <button className="swiper-button-next-custom absolute right-0 top-[59%] z-10 flex h-10 w-10 -translate-y-1/2 translate-x-4 transform items-center justify-center rounded-full border border-primary bg-white transition-colors hover:bg-gray-50 disabled:opacity-50">
         <span className="rotate-180">
           <svg
             xmlns="http://www.w3.org/2000/svg"

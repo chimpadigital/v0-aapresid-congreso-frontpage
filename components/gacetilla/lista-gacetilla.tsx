@@ -16,7 +16,7 @@ registerLocale("en", enUS);
 const ListaGacetilla = () => {
   const searchParams = useSearchParams();
   const API_BASE_URL =
-    process.env.API_BASE_URL || "https://api-congreso.aapresid.org.ar";
+    process.env.NEXT_PUBLIC_API_BASE_URL|| "https://api-congreso.aapresid.org.ar";
 
   // Leer página desde la URL (query param)
   const initialPage = parseInt(searchParams.get("page") || "1", 10);
