@@ -21,7 +21,7 @@ const DiaTecnico = () => {
           <div
             className="absolute h-1 bg-primary"
             style={{
-              width: "calc(100dvw - 2rem)",
+              width: "min(95dvw, 1280px) ",
             }}
           />
           {/* PRIMER HITO */}

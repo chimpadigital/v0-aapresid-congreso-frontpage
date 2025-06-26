@@ -7,16 +7,29 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getMultilingualField(
-  multilingual: { es?: string; en?: string },
+  multilingual: { es?: string; en?: string } | string,
   locale: string,
 ): string {
-  if (locale === "en") {
-    return multilingual.en && multilingual.en.trim() !== ""
-      ? multilingual.en
-      : multilingual.es || "";
+  let value: { es?: string; en?: string } = { es: '', en: '' };
+
+  if (typeof multilingual === 'string') {
+    try {
+      value = JSON.parse(multilingual);
+    } catch {
+      // Si no es un JSON válido, devolvemos el string tal cual
+      return multilingual;
+    }
   } else {
-    return multilingual.es && multilingual.es.trim() !== ""
-      ? multilingual.es
-      : multilingual.en || "";
+    value = multilingual;
+  }
+
+  if (locale === "en") {
+    return value.en && value.en.trim() !== ""
+      ? value.en
+      : value.es || "";
+  } else {
+    return value.es && value.es.trim() !== ""
+      ? value.es
+      : value.en || "";
   }
 }

@@ -320,3 +320,25 @@ body {
       "consulta";
   }
 }
+
+.container-banne-edicion33 {
+  background-image: url('/images/edicion-33/bg-banner.png'), url('/images/edicion-33/bg-recurso-banner.png');
+  background-position: right top, left bottom;
+
+  background-size: contain, auto;
+}
+
+@media (max-width: 1400px) {
+  .container-banne-edicion33 {
+    background-size: cover, auto;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .container-banne-edicion33 {
+    background-image: url('/images/edicion-33/bg-recurso-banner.png');
+    background-position: left bottom;
+    background-size: auto;
+  }
+}

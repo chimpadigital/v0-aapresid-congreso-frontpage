@@ -36,6 +36,8 @@ const Charlas = () => {
       });
   }, [searchParams]);
 
+  console.log(charlas)
+
   const isMobile = useIsMobile(500);
 
   if (loading)
