@@ -49,7 +49,7 @@ export function OriginalNavbar({
           </div>
 
           {/* Menú de idioma en móvil */}
-          <div className="md:hidden flex items-center justify-end gap-3">
+          <div className="lg:hidden flex items-center justify-end gap-3">
             <NavItem label={locale} hasDropdown />
             <button
               className="bottom-4 right-4 z-[10001] text-white"
@@ -76,7 +76,7 @@ export function OriginalNavbar({
           </div>
 
           {/* Menú principal en desktop */}
-          <div className="hidden  items-center justify-end space-x-6 text-white md:flex">
+          <div className="hidden items-center justify-end space-x-6 text-white lg:flex">
             {menuItems.map((item, index) => (
               <div key={index}>
                 {item.href ? (
