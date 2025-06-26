@@ -1,3 +1,5 @@
+"use client";
+import { useTranslations } from "next-intl";
 import BusIcon from "@/components/icons/BusIcon";
 import CaminarIcon from "@/components/icons/CaminarIcon";
 import TransportePublicoIcon from "@/components/icons/TransportePublicoicon";
@@ -18,12 +20,13 @@ export const RouteAlternatives: React.FC<RouteAlternativesProps> = ({
   setSelectedRouteIndex,
   mode,
 }) => {
+  const t = useTranslations("informacion-turistica");
   if (route.length === 0) {
     return (
       <p className="p-4 text-center text-gray-500">
         {mode === "transporte"
-          ? "Ingrese su dirección de origen para ver las alternativas de colectivo"
-          : "Ingrese su dirección de origen para ver las alternativas en auto"}
+          ? t('ingresa-direccion-transporte')
+          : t('ingresa-direccion-auto')}
       </p>
     );
   }

@@ -25,7 +25,7 @@ export function HeroSection({
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       <div
-        className={`relative mx-auto w-full max-w-7xl ${compact && title2 ? "top-5" : ""} `}
+        className={`relative mx-auto w-full max-w-7xl top-5 ${compact && title2 ? "top-5" : ""} `}
       >
         {showBackButton && <BackButton />}
 

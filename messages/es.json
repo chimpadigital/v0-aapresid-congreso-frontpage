@@ -44,10 +44,12 @@
       "titulo": "¿No sos Socio Aapresid?",
       "subtitulo": "Comprá tu ticket",
       "no-socio": "NO SOCIO",
-      "estuciante": "ESTUDIANTE",
+      "estudiante": "ESTUDIANTE",
       "adherente": "ADHERENTE",
       "de-descuento": "de descuento",
-      "boton": "Comprá tu entrada"
+      "boton": "Comprá tu entrada",
+      "tooltip-estudiante" : "deberás adjuntar tu certificado de alumno regular",
+      "tooltip-adherente" : "deberás adjuntar el convenio vigente"
     },
     "card3": {
       "titulo": "¿Tenés un código de invitación?",
@@ -375,6 +377,7 @@
     "reserva-estadia": {
       "titulo1": "¡Reservá tu estadía para el",
       "titulo2": "Congreso Aapresid 2025",
+      "subtitulo": "Hospedate en Up America Plaza, Up Tribeca, Up Viamonte o Up Congreso",
       "p1": "El Congreso Aapresid es un evento de referencia internacional, que lleva más de tres décadas conectando innovación, tecnología y conocimientos con el propósito de impulsar sistemas productivos cada vez mas sustentables.",
       "descarga": "Descargá el flyer",
       "reserva-alojamiento": "Reservá tu alojamiento"
@@ -386,7 +389,8 @@
     "recorrido-sugerido": "Recorrido sugerido",
     "transporte": "En transporte",
     "auto": "En auto",
-    "ingresa-direccion": "Ingrese su dirección de origen para ver las alternativas de colectivo",
+    "ingresa-direccion-transporte": "Ingrese su dirección de origen para ver las alternativas de colectivo",
+    "ingresa-direccion-auto": "Ingrese su dirección de origen para ver las rutas alternativas en auto",
     "explora-todos": "¡Explorá todos los recorridos posibles desde el mapa!",
     "compartir": "Compartir recorrido",
     "ver-mas": "Ver más recorridos"

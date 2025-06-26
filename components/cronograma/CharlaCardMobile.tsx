@@ -162,9 +162,7 @@ const CharlaCardMobile = ({
                   </div>
                 </div>
 
-                {charla?.multilingual_talk &&
-                  charla.multilingual_talk[locale] &&
-                  charla.multilingual_talk[locale].length > 1 && (
+                {getMultilingualField(charla.multilingual_talk, locale) && (
                     <div className="flex items-center gap-[25px]">
                       <span className="grid aspect-square h-[21px] place-items-center">
                         <PlanetaIcon size="21" />

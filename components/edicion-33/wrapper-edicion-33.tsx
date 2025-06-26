@@ -18,7 +18,6 @@ const WrapperEdicion33 = () => {
         backgroundImage="/images/edicion-33/hero.webp"
         title1={t("acerca")}
         title2={t("congreso")}
-        titleIsInline={true}
       />
       <SeccionIntro />
       <StatsSection />
