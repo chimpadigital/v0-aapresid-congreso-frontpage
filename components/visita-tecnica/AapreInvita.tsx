@@ -56,7 +56,7 @@ const AapreInvita = () => {
             {/* Main hexagonal image container */}
             <div className="relative">
               {/* Hexagonal image */}
-              <div className="relative h-96 w-96 lg:top-5 lg:h-[450px] lg:w-[450px]">
+              <div className="relative aspect-square h-60 md:h-96 md:w-96 lg:h-[450px] lg:w-[450px]">
                 <div className="relative h-full w-full">
                   <Image
                     src="/images/visita-tecnica/gira-tecnica.webp"
@@ -66,7 +66,7 @@ const AapreInvita = () => {
                     sizes="(max-width: 768px) 384px, 450px"
                   />
 
-                  <div className="absolute -right-10 bottom-1 h-40 w-40">
+                  <div className="absolute -right-10 bottom-1 h-20 md:h-40 w-20 md:w-40">
                     <figure className="relative h-full w-full">
                       <Image
                         src="/images/hexagono-verde-oscuro.svg"

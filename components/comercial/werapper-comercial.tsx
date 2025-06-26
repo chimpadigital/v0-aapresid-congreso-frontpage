@@ -14,25 +14,25 @@ const WrapperComercial = () => {
         backgroundImage="/images/comercial/hero.webp"
       />
       <DescargaComercialV2 />
-      <div className="px-4">
+      <div className="px-4  md:px-[33px] mb-10">
         <div
-          className="mx-auto mt-10 max-w-7xl overflow-hidden rounded-[20px] px-4"
+          className="mx-auto mt-10 max-w-7xl overflow-hidden h-[40vh] md:pt-0 md:h-[80vh] rounded-[20px] px-4"
           style={{
             position: "relative",
-            paddingTop: "max(60%,326px)",
-            height: 0,
+            // paddingTop: "max(70%,226px)",
             width: "100%",
           }}
         >
           <iframe
             allow="clipboard-write"
-            sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms"
+            sandbox="allow-top-navigation  allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms"
             allowFullScreen={true}
+            className="h-[40vh] md:h-[80vh]"
             style={{
               position: "absolute",
               border: "none",
               width: "100%",
-              height: "100%",
+              // height: "90%",
               left: 0,
               right: 0,
               top: 0,
