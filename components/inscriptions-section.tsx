@@ -54,9 +54,7 @@ export function InscriptionsSection() {
             <div className="flex justify-between border-b border-primary pb-4">
               <p className="flex-1 text-lg font-bold">NO SOCIO</p>
               <p className="flex-1 text-lg">
-                2000 <span className="font-medium">ARS</span>{" "}
-                <span className="mx-2">|</span> 200{" "}
-                <span className="font-medium"> USD</span>
+                500.000  <span className="font-medium">ARS</span>
               </p>
             </div>
 
@@ -72,7 +70,7 @@ export function InscriptionsSection() {
               </div>
               <div className="flex flex-1 flex-col">
                 <p className="text-lg">
-                  400 <span className="font-medium">ARS</span>
+                  100.000 <span className="font-medium">ARS</span>
                 </p>
                 <p>80% de descuento</p>
               </div>
@@ -90,7 +88,7 @@ export function InscriptionsSection() {
               </div>
               <div className="flex flex-1 flex-col">
                 <p className="text-lg">
-                  800 <span className="font-medium">ARS</span>
+                  300.000 <span className="font-medium">ARS</span>
                 </p>
                 <p>40% de descuento</p>
               </div>

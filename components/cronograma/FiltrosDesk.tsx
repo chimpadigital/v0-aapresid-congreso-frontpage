@@ -132,6 +132,7 @@ const FiltrosDesk = ({
 
         {/* Day selection */}
         <div className="mb-8">
+          <h3 className="mb-4 text-lg text-primary">Día</h3>
           <div className="grid grid-cols-3 gap-[10px]">
             {formattedDays?.map((day) => (
               <button
@@ -151,7 +152,7 @@ const FiltrosDesk = ({
 
         {/* Room slider */}
         <div className="mb-8">
-          <h3 className="mb-4 text-lg font-medium text-primary">Sala</h3>
+          <h3 className="mb-4 text-lg text-primary">Sala</h3>
           <SliderRooms
             rooms={formattedRooms}
             selectedRoom={selectedRoom || ""}

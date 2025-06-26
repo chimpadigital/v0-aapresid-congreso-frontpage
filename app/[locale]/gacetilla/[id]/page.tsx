@@ -4,23 +4,18 @@ import DetalleGacetillaContent, {
   getField,
 } from "@/components/gacetilla/gacetilla-detalle";
 import GacetillasSimilares from "@/components/gacetilla/gacetillas-similares";
-import HeroGacetilla from "@/components/gacetilla/hero-gacetilla";
 import { GacetillaDetalle } from "@/lib/types";
 import { Metadata } from "next";
+import { HeroSection } from "@/components/hero-section";
 
 interface Props {
   params: { id: string; locale: string };
 }
 
-interface PropsMeta {
-  id: string;
-  locale: string;
-  detalle: GacetillaDetalle;
-}
-
 async function getDetalle(id: string): Promise<GacetillaDetalle | null> {
+  console.log(process.env.NEXT_PUBLIC_API_BASE_URL )
   const res = await fetch(
-    `${process.env.API_BASE_URL || "https://api-congreso.aapresid.org.ar"}/api/press-release/${id}`,
+    `${process.env.NEXT_PUBLIC_API_BASE_URL || "https://api-congreso.aapresid.org.ar"}/api/press-release/${id}`,
   );
   if (!res.ok) return null;
   return res.json();
@@ -38,7 +33,8 @@ export async function generateMetadata({
   const title = getField(detalle.title, locale);
   const description = getField(detalle.excerpt, locale);
   const image = detalle.image || "/images/bandera-aapre.webp";
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://congreso.aapresid.org.ar";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://congreso.aapresid.org.ar";
   const url = `${baseUrl}/${locale}/gacetilla/${id}`;
 
   return {
@@ -66,11 +62,15 @@ export default async function DetalleGacetilla({ params }: Props) {
   const detalle = await getDetalle(id);
   return (
     <>
-      <HeroGacetilla />
+      <HeroSection
+        backgroundImage="/images/gacetilla/circuito-prensa.webp"
+        title1={locale === "es" ? "Gacetillas" : "Press releases"}
+        compact
+      />
       <Suspense fallback={<div className="py-10 text-center">Cargando...</div>}>
         <DetalleGacetillaContent id={id} locale={locale} detalle={detalle} />
       </Suspense>
-      <GacetillasSimilares currentId={id}/>
+      <GacetillasSimilares currentId={id} />
     </>
   );
 }

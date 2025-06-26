@@ -29,13 +29,15 @@ const ReservaEstadia = () => {
               <p className="max-w-[58ch] leading-snug text-paragraph">
                 El Congreso Aapresid es un evento de referencia internacional, que lleva más de tres décadas conectando innovación, tecnología y conocimientos con el propósito de impulsar sistemas productivos cada vez mas sustentables.
               </p>
-              <Link
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative z-[1] mt-5 flex w-fit items-center justify-center gap-3 overflow-hidden rounded-full border border-primary bg-transparent px-[30px] py-[15.5px] text-lg tracking-wider text-primary transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:text-white hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
-                href={""}
+                href={"https://drive.google.com/file/d/1abdVIzEsotDx1er_uadb_UZ2ABCA0nBs/view"}
               >
                 Descargá el flyer
                 <Download />
-              </Link>
+              </a>
             </div>
 
             {/* Right Column - Contact Info */}

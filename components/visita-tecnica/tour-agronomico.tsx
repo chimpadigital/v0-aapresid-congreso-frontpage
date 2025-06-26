@@ -7,7 +7,7 @@ import Card1Mano from "../icons/Card1Mano";
 import Card2Manos from "../icons/Card2Manos";
 import PlanetaIcon from "../icons/PlanetaIcon";
 import Card4tiempo from "../icons/Card4tiempo";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const TourAgronomico = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -49,30 +49,23 @@ const TourAgronomico = () => {
     return { scale, opacity };
   };
 
-  const cards = [
-    {
-      bg: "bg-accent",
-      icon: <Card1Mano />,
-      text: "Explore modelos productivos de vanguardia, reconocidos por la innovación, el cuidado del suelo y la sustentabilidad.",
-    },
-    {
-      bg: "bg-[#4D9A28]",
-      icon: <Card2Manos />,
-      text: "Participe en interesantes intercambios técnicos con agricultores y expertos locales, mientras explora el corazón de la agricultura argentina con visitas a destacados establecimientos agrícolas.",
-    },
-    {
-      bg: "bg-[#458B23]",
-      icon: <PlanetaIcon size="49" />,
-      text: "Descubra el pulso de la industria conectándose con las principales empresas e instituciones de Argentina.",
-    },
-    {
-      bg: "bg-primary",
-      icon: <Card4tiempo />,
-      text: "Participe en el 33° Congreso Aapresid, el evento de agricultura más destacado en Argentina y la región, momento clave de actualización, debate y exhibición de los últimos avances tecnológicos del sector.",
-    },
+  const t = useTranslations("visita-tecnica-page.tour-agronomico");
+  const locale = useLocale();
+
+  // Card icons remain in the same order as the translation array
+  const cardIcons = [
+    <Card1Mano key="icon1" />, // 0
+    <Card2Manos key="icon2" />, // 1
+    <PlanetaIcon key="icon3" size="49" />, // 2
+    <Card4tiempo key="icon4" /> // 3
   ];
 
-  const locale = useLocale();
+  // Cards: texts from translation, icons and bg colors as before
+  const cards = t.raw("cards").map((text: string, i: number) => ({
+    bg: ["bg-accent", "bg-[#4D9A28]", "bg-[#458B23]", "bg-primary"][i],
+    icon: cardIcons[i],
+    text,
+  }));
 
   return (
     <section
@@ -82,7 +75,7 @@ const TourAgronomico = () => {
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Content - Hexagonal Image */}
-          <div className="relative flex justify-center lg:justify-start">
+          <div className="relative flex justify-center lg:justify-start gap-5">
             {/* Main hexagonal image container */}
             <div className="relative">
               {/* Hexagonal image */}
@@ -90,7 +83,7 @@ const TourAgronomico = () => {
                 <div className="relative h-full w-full overflow-hidden">
                   <Image
                     src="/images/visita-tecnica/tour-hexa.webp"
-                    alt="Tour técnico agronómico - Técnicos examinando cultivos en el campo"
+                    alt={t("titulo") + " - Técnicos examinando cultivos en el campo"}
                     fill
                     className="object-contain"
                     sizes="(max-width: 768px) 384px, 450px"
@@ -104,15 +97,15 @@ const TourAgronomico = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl font-bold leading-none tracking-wide text-primary md:text-[40px]">
-                Tour técnico agronómico
+                {t("titulo")}
               </h2>
               <p className="text-[40px] leading-none text-primary">
-                3 al 9 de agosto
+                {t("fecha")}
               </p>
             </div>
 
             <p className="max-w-[23ch] text-xl leading-none tracking-wide text-paragraph md:text-4xl">
-              Descubrá el campo argentino en la previa del 33° Congreso Aapresid
+              {t("descripcion")}
             </p>
 
             {/* Download Button */}
@@ -127,7 +120,7 @@ const TourAgronomico = () => {
                 rel="noopener noreferrer"
                 className="relative z-[1] flex w-fit items-center justify-center gap-1 overflow-hidden rounded-full bg-secondary px-[30px] py-[15.5px] md:text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-primary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
               >
-                Descargá el brochure oficial
+                {t("boton", { default: "Descargá el brochure oficial" })}
                 <Download className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
               </a>
             </div>
@@ -155,7 +148,7 @@ const TourAgronomico = () => {
               ref={cardsRef}
               className="flex flex-col gap-5 md::gap-10"
             >
-              {cards.map((card, i) => {
+              {cards.map((card: any, i: number) => {
                 const { scale, opacity } = getCardTransforms(
                   i,
                   cards.length + 0.8,

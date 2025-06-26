@@ -1,9 +1,15 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 import { motion } from "framer-motion";
 import RelojIcon from "../icons/RelojIcon";
+import { useTranslations } from "next-intl";
 
 const DiaTecnico = () => {
+  const t = useTranslations("visita-tecnica-page.dia-tecnico");
+
+  const schedule = t.raw("hitos");
+  console.log(schedule);
+
   return (
     <section
       id="dia-tecnico"
@@ -39,12 +45,11 @@ const DiaTecnico = () => {
                 </div>
                 <div className="top-[130px] z-10 w-max max-w-[200px] rounded-[20px] border-2 border-primary bg-white p-[18px] md:max-w-[300px] lg:max-w-[369px]">
                   <article className="relative">
-                    <span className="font-bold text-primary flex gap-3 items-center">
+                    <span className="flex items-center gap-3 font-bold text-primary">
                       <RelojIcon /> 8:30 HS
                     </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
-                      Salida desde Ciudad Autónoma de Buenos Aires (CABA) hacia
-                      Salto (Provincia de Buenos Aires) en bus.
+                      {schedule[0].descripcion}
                     </p>
                   </article>
                 </div>
@@ -66,13 +71,11 @@ const DiaTecnico = () => {
               <div className="relative flex flex-col items-center">
                 <div className="z-10 w-max max-w-[200px] rounded-[20px] border-2 border-primary bg-white p-[18px] md:max-w-[300px] lg:max-w-[369px]">
                   <article className="relative">
-                    <span className="font-bold text-primary flex gap-3 items-center">
+                    <span className="flex items-center gap-3 font-bold text-primary">
                       <RelojIcon /> 11:00 HS
                     </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
-                      Recepción de la delegación: Presentación sobre Aapresid,
-                      introducción sobre sistemas de producción que regeneran
-                      suelos con menor impacto ambiental, innovación en redes.
+                      {schedule[1].descripcion}
                     </p>
                   </article>
                 </div>
@@ -100,11 +103,11 @@ const DiaTecnico = () => {
                 </div>
                 <div className="top-[130px] z-10 w-max max-w-[369px] rounded-[20px] border-2 border-primary bg-white p-[18px]">
                   <article className="relative">
-                    <span className="font-bold text-primary flex gap-3 items-center">
+                    <span className="flex items-center gap-3 font-bold text-primary">
                       <RelojIcon /> 13:00 HS
                     </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
-                      Almuerzo en el campo
+                      {schedule[2].descripcion}
                     </p>
                   </article>
                 </div>
@@ -126,13 +129,11 @@ const DiaTecnico = () => {
               <div className="relative flex flex-col items-center">
                 <div className="z-10 w-max max-w-[200px] rounded-[20px] border-2 border-primary bg-white p-[18px] md:max-w-[300px] lg:max-w-[369px]">
                   <article className="relative">
-                    <span className="font-bold text-primary flex gap-3 items-center">
+                    <span className="flex items-center gap-3 font-bold text-primary">
                       <RelojIcon /> 15:00 HS
                     </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
-                      Recorrida a campo: sistemas de producción sustentables,
-                      intensos y diversos. Indicadores de materia orgánica,
-                      carbono y biología del suelo. Integración ganadera.
+                      {schedule[3].descripcion}
                     </p>
                   </article>
                 </div>
@@ -160,11 +161,11 @@ const DiaTecnico = () => {
                 </div>
                 <div className="top-[130px] z-10 w-max max-w-[369px] rounded-[20px] border-2 border-primary bg-white p-[18px]">
                   <article className="relative">
-                    <span className="font-bold text-primary flex gap-3 items-center">
+                    <span className="flex items-center gap-3 font-bold text-primary">
                       <RelojIcon /> 16:00 HS
                     </span>
                     <p className="pt-[13px] leading-tight tracking-wider text-paragraph">
-                      Regreso a CABA
+                      {schedule[4].descripcion}
                     </p>
                   </article>
                 </div>

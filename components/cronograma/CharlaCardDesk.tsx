@@ -18,6 +18,7 @@ const CharlaCardDesk = ({
   charla: Event;
   locale: string;
 }) => {
+  console.log(charla);
   return (
     <div
       className="mx-auto flex w-full flex-col rounded-[20px] bg-white tracking-wider lg:flex-row lg:gap-2.5"
@@ -76,25 +77,23 @@ const CharlaCardDesk = ({
               {charla.Theme.name}
             </span>
           </div>
-          {charla?.multilingual_talk &&
-            charla.multilingual_talk[locale] &&
-            charla.multilingual_talk[locale].length > 1 && (
-              <div className="flex items-center gap-[25px]">
-                <span className="grid aspect-square h-[21px] place-items-center">
-                  <PlanetaIcon size="21" />
-                </span>
-                <span className="text-slg leading-none text-paragraph">
-                  {getMultilingualField(charla.multilingual_talk, locale)}
-                </span>
-              </div>
-            )}
+          {getMultilingualField(charla.multilingual_talk, locale) && (
+            <div className="flex items-center gap-[25px]">
+              <span className="grid aspect-square h-[21px] place-items-center text-primary">
+                <PlanetaIcon size="21" />
+              </span>
+              <span className="text-slg leading-none text-paragraph">
+                {getMultilingualField(charla.multilingual_talk, locale)}
+              </span>
+            </div>
+          )}
 
           <div className="flex items-center gap-[25px]">
             <span className="grid aspect-square h-[21px] place-items-center">
               <IdiomasIcon />
             </span>
             <span className="text-slg leading-none text-paragraph">
-              {charla?.languages?.length > 1 ? charla.languages : "Sin data"}
+              {charla?.languages?.length > 1 ? charla.languages : "Español - Inglés"}
             </span>
           </div>
         </div>
