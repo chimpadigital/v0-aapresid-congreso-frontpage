@@ -49,9 +49,9 @@ export function SliderRooms({
                 onClick={() =>
                   onRoomSelect(selectedRoom === room.id ? "" : room.id)
                 }
-                className={`relative flex h-full max-h-[71px] min-w-[190px] items-center gap-3 rounded-[20px] border-3 px-4 py-2 transition-all ${
+                className={`relative flex h-full max-h-[71px] min-w-[190px] items-center gap-3 rounded-[20px] border-2 px-4 py-2 transition-all ${
                   selectedRoom === room.id
-                    ? "border-accent bg-primary/5 text-primary"
+                    ? "border-accent border-3 text-primary"
                     : "border-primary bg-white text-gray-700 hover:border-primary/50"
                 }`}
               >
