@@ -50,8 +50,8 @@
       "adherente": "ADHERENTE",
       "de-descuento": "de descuento",
       "boton": "Comprá tu entrada",
-      "tooltip-estudiante": "deberás adjuntar tu certificado de alumno regular",
-      "tooltip-adherente": "deberás adjuntar el convenio vigente"
+      "tooltip-estudiante": "Deberás adjuntar tu certificado de alumno regular",
+      "tooltip-adherente": "Deberás adjuntar el convenio vigente"
     },
     "card3": {
       "titulo": "¿Tenés un código de invitación?",
