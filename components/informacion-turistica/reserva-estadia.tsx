@@ -16,8 +16,8 @@ const ReservaEstadia = () => {
           {/* Header */}
           <div className="mb-[71px]">
             <h2 className="mb-4 text-3xl text-primary lg:text-4xl">
-              {t("titulo1")}
-              <br />
+              {t("titulo1")} {' '}
+              <br className="hidden xs:block"/>
               <span className="font-bold">{t("titulo2")}</span>!
             </h2>
             <p className="max-w-[33ch] text-2xl text-paragraph">

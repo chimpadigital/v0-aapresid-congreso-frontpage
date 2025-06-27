@@ -1,13 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { RichText } from "../rich-text";
 import * as motion from "motion/react-client";
-import Link from "next/link";
 
 export function AboutSection() {
   const t = useTranslations("about");
-  const locale = useLocale();
   return (
     <section className="relative mx-4 mt-0 overflow-hidden rounded-[20px] p-6 md:mx-[33px] md:mt-20 md:px-12 md:py-28 lg:px-24">
       {/* Background image */}
