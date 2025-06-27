@@ -34,6 +34,8 @@ const Anfitriones = () => {
       .catch(() => setCategories([]));
   }, []);
 
+  console.log(categories)
+
   return (
     <div className="mx-4 mt-[26px] rounded-[20px] px-4 py-16 md:mx-[33px]">
       <div className="mx-auto mb-16 max-w-[1049px]">

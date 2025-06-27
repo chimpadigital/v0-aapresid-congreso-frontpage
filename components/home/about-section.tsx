@@ -48,12 +48,18 @@ export function AboutSection() {
                 className="mb-6 max-w-[20ch] text-3xl font-light leading-tight text-white md:text-4xl lg:text-5xl"
               />
             </div>
-            <Link
+            {/* <Link
               href={locale + "/cronograma"}
               className="relative overflow-hidden rounded-full border border-white bg-white/10 px-[30px] py-[12px] font-medium text-white transition-colors duration-500 before:absolute before:-left-[147%] before:top-[125%] before:z-[1] before:h-[290%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-[3]"
             >
               <span className="relative z-10 text-lg">{t("cronograma")}</span>
-            </Link>
+            </Link> */}
+            <button
+              disabled
+              className="relative overflow-hidden rounded-full border pointer-events-none border-white bg-white/10 px-[30px] py-[12px] font-medium text-white transition-colors duration-500 before:absolute before:-left-[147%] before:top-[125%] before:z-[1] before:h-[290%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:text-primary hover:before:scale-[3]"
+            >
+              <span className="relative z-10 text-lg">{t("proximamente")}</span>
+            </button>
           </motion.div>
         </div>
       </div>
