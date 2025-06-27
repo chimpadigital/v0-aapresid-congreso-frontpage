@@ -36,7 +36,7 @@ export function Navbar() {
           href: `/${locale}/preguntas-frecuentes`,
         },
         {
-          label: "Edición anterior",
+          label: t("ediciones_anteriores"),
           href: `https://congreso-2024.aapresid.org.ar/`,
         },
       ],
@@ -45,13 +45,13 @@ export function Navbar() {
       label: t("contenidos"),
       children: [
         { label: t("cronograma"), href: `/${locale}/cronograma` },
-        { label: "Disertantes", href: `/` },
-        { label: "Visita técnica", href: `/${locale}/visita-tecnica` },
+        // { label: t("disertantes"), href: `/` },
+        { label: t("visita_tecnica"), href: `/${locale}/visita-tecnica` },
         // { label: "15 años de REM", href: `/` },
         // { label: "Acta sesión posters", href: `/` },
         // { label: "Ofertas", href: `/` },
         {
-          label: "Charlas Edición N°32",
+          label: t("charlas_anteriores"),
           href: `https://congreso-2024.aapresid.org.ar/charlas-congreso/`,
         },
       ],

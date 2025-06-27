@@ -8,7 +8,6 @@ const DiaTecnico = () => {
   const t = useTranslations("visita-tecnica-page.dia-tecnico");
 
   const schedule = t.raw("hitos");
-  console.log(schedule);
 
   return (
     <section
@@ -16,8 +15,8 @@ const DiaTecnico = () => {
       className="mx-auto mt-14 max-w-7xl px-4 py-8 sm:px-6 md:mt-24 lg:px-8"
     >
       <div className="tracking-wider">
-        <h2 className="text-[40px] font-bold text-primary">Día técnico</h2>
-        <h3 className="text-4xl text-paragraph">Itinerario 5 de agosto</h3>
+        <h2 className="text-[40px] font-bold text-primary">{t('titulo')}</h2>
+        <h3 className="text-4xl text-paragraph">{t('subtitulo')}</h3>
       </div>
       <div
         id="dia-tecnico-desktop"
@@ -192,8 +191,7 @@ const DiaTecnico = () => {
             <article className="relative">
               <span className="font-medium text-primary">8:30 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
-                Salida desde Ciudad Autónoma de Buenos Aires (CABA) hacia Salto
-                (Provincia de Buenos Aires) en bus.
+                {schedule[0].descripcion}
               </p>
             </article>
           </div>
@@ -208,9 +206,7 @@ const DiaTecnico = () => {
             <article className="relative">
               <span className="font-medium text-primary">11:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
-                Recepción de la delegación: Presentación sobre Aapresid,
-                introducción sobre sistemas de producción que regeneran suelos
-                con menor impacto ambiental, innovación en redes.
+                {schedule[1].descripcion}
               </p>
             </article>
           </div>
@@ -225,7 +221,7 @@ const DiaTecnico = () => {
             <article className="relative">
               <span className="font-medium text-primary">13:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
-                Almuerzo en el campo
+                {schedule[2].descripcion}
               </p>
             </article>
           </div>
@@ -240,15 +236,13 @@ const DiaTecnico = () => {
             <article className="relative">
               <span className="font-medium text-primary">15:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
-                Recorrida a campo: sistemas de producción sustentables, intensos
-                y diversos. Indicadores de materia orgánica, carbono y biología
-                del suelo. Integración ganadera.
+                {schedule[3].descripcion}
               </p>
             </article>
           </div>
         </div>
 
-        {/* HITO 4 */}
+        {/* HITO 5 */}
         <div className="flex items-center">
           <div className="z-10 aspect-square h-[27px] rounded-full bg-accent" />
           <div className="w-5 border-2 border-dotted border-primary" />
@@ -257,7 +251,7 @@ const DiaTecnico = () => {
             <article className="relative">
               <span className="font-medium text-primary">16:00 HS</span>
               <p className="pt-[13px] text-xs leading-tight tracking-wider text-paragraph">
-                Regreso a CABA
+                {schedule[4].descripcion}
               </p>
             </article>
           </div>

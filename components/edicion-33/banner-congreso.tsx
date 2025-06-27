@@ -17,7 +17,7 @@ const BannerCongreso = () => {
         <article className="text-primary">
           <h3 className="text-[40px] leading-none">{t("congreso")}</h3>
           <h3 className="text-[40px] font-bold leading-none">
-            {t("Aapresid")}
+            {t("aapresid")}
           </h3>
           <p className="mt-5 max-w-[35ch] text-xl tracking-wider">{t("p")}</p>
         </article>

@@ -4,13 +4,12 @@ import LupaIcon from "../icons/LupaIcon";
 import DrawerFiltrosMobile from "./DrawerFiltrosMobile";
 import { Download, X } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const FiltrosMobile = ({
-  handleSearch,
   handleFilterChange,
   handleDaySelect,
   handleRoomSelect,
-  searchTerm,
   talkOptions,
   speakerOptions,
   themeOptions,
@@ -57,10 +56,12 @@ const FiltrosMobile = ({
     return () => clearTimeout(handler);
   }, [inputValue]);
 
+  const t = useTranslations("cronograma");
+
   return (
     <div data-lenis-prevent className="mb-6 px-2 tracking-widest">
       <h4 className="mb-3 mt-4 text-xs font-medium">
-        Búsqueda por palabra clave
+        {t("busca-palabra")}
       </h4>
       <div className="flex h-full w-full gap-3">
         <label
@@ -71,7 +72,7 @@ const FiltrosMobile = ({
             <LupaIcon />
           </span>
           <input
-            placeholder="Escriba aquí..."
+            placeholder={t("escriba-aqui")}
             className="w-full outline-none"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
@@ -94,7 +95,7 @@ const FiltrosMobile = ({
       </div>
 
       <button className="mb-6 mt-10 flex w-full justify-center gap-[10px] rounded-full bg-accent px-3 py-3 text-lg text-white">
-        Descargar cronograma
+        {t("descarga-cronograma")}
         <Download />
       </button>
       <div className="relative">
@@ -108,7 +109,7 @@ const FiltrosMobile = ({
             >
               <div className="z-0 flex flex-col">
                 <span>{day.fecha}</span>
-                <span>Día {day.numDia}</span>
+                <span>{t("dia")} {day.numDia}</span>
               </div>
             </div>
           ))}
@@ -124,7 +125,7 @@ const FiltrosMobile = ({
             >
               <div className="z-0 flex flex-col">
                 <span>{day.fecha}</span>
-                <span>Día {day.numDia}</span>
+                <span>{t("dia")} {day.numDia}</span>
               </div>
               <div
                 className={`absolute ${day.isSelected ? "opacity-100" : "opacity-0"} -bottom-1 left-0 right-0 mx-auto h-2 w-[55%] rounded-full bg-primary`}

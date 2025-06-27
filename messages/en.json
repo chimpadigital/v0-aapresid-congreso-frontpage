@@ -9,11 +9,14 @@
     "FAQs": "Frequently asked questions",
     "prensa": "Press",
     "gacetilla": "Press releases",
+    "disertantes": "Speakers",
+    "visita_tecnica": "Technical tour",
     "comercial": "Commercial",
     "que_es_el_congreso": "What is the Aapresid Congress?",
     "historia": "History",
     "ediciones_anteriores": "Previous Editions",
     "contenidos": "Contents",
+    "charlas_anteriores": "Talks Edition No. 32",
     "cronograma": "Schedule",
     "oradores": "Speakers",
     "ejes_tematicos": "Thematic axes",
@@ -36,27 +39,29 @@
   },
   "inscriptions": {
     "card1": {
-      "titulo": "¿Sos Socio Aapresid?",
-      "subtitulo": "¡Accedé de manera gratuita al Congreso!",
-      "boton": "Inscribite acá"
+      "titulo": "Are you an Aapresid member?",
+      "subtitulo": "Get free access to the Congress!",
+      "boton": "Register here"
     },
     "card2": {
-      "titulo": "¿No sos Socio Aapresid?",
-      "subtitulo": "Comprá tu ticket",
-      "no-socio": "NO SOCIO",
-      "estuciante": "ESTUDIANTE",
-      "adherente": "ADHERENTE",
-      "de-descuento": "de descuento",
-      "boton": "Comprá tu entrada"
+      "titulo": "Not an Aapresid member?",
+      "subtitulo": "Buy your ticket",
+      "no-socio": "Non-member",
+      "estudiante": "Student",
+      "adherente": "Affiliate",
+      "de-descuento": "discount",
+      "boton": "Buy your ticket",
+      "tooltip-estudiante": "you will be required to submit your certificate of enrollment",
+      "tooltip-adherente": "you will be required to submit the current agreement"
     },
     "card3": {
-      "titulo": "¿Tenés un código de invitación?",
-      "ingresa": "Ingresá acá"
+      "titulo": "Do you have an invitation code?",
+      "ingresa": "Enter it here"
     },
     "card4": {
-      "titulo": "¿Tenés consultas?",
-      "subtitulo": "Ingresá a nuestra mesa de ayuda para resolverlas",
-      "ingresa": "Ingresá"
+      "titulo": "Do you have any questions?",
+      "subtitulo": "Visit our help desk to get support",
+      "ingresa": "Go to Help Desk"
     }
   },
   "about": {
@@ -130,14 +135,14 @@
     "ver-cronograma": "See full schedule"
   },
   "descubra-campo": {
-    "titulo1": "Descubra el",
-    "titulo2": "campo argentino",
-    "5-agosto": "5 de agosto",
-    "dia-tecnico": "Día técnico",
-    "3-9-agosto": "3 al 9 de agosto",
-    "gira-tecnica": "Gira técnica",
-    "descripcion1": "Explore el corazón de la agricultura argentina, sus modelos productivos de vanguardia, líderes en cuidado del suelo, tecnología y sustentabilidad. Intercambie con productores pioneros y expertos locales.",
-    "leer-mas": "Leer más"
+    "titulo1": "Discover the",
+    "titulo2": "Argentine farming systems",
+    "5-agosto": "August 5th",
+    "dia-tecnico": "Agronomic Technical Tour",
+    "3-9-agosto": "August 3rd to 9th ",
+    "gira-tecnica": "Technical Day",
+    "descripcion1": "Explore our advanced production models, recognized for innovation, soil care and sustainability. Participate in technical exchanges with farmers and local experts, learning about Argentine agriculture through field visits in the main productive regions.",
+    "leer-mas": "Read more"
   },
   "commercial": {
     "forma-parte": "Join the",
@@ -351,73 +356,75 @@
     "p4": "Along Corrientes Avenue, you can savor the country's best pizza at places like Guerrin, or enjoy a traditional asado at the famous grill Don Julio.",
     "p5": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
     "reserva-estadia": {
-      "titulo1": "¡Reservá tu estadía para el",
-      "titulo2": "Congreso Aapresid 2025",
-      "p1": "El Congreso Aapresid es un evento de referencia internacional, que lleva más de tres décadas conectando innovación, tecnología y conocimientos con el propósito de impulsar sistemas productivos cada vez mas sustentables.",
-      "descarga": "Descargá el flyer",
-      "reserva-alojamiento": "Reservá tu alojamiento"
+      "titulo1": "Book your stay for the ",
+      "titulo2": "2025 Aapresid Congress!",
+      "subtitulo": "Stay at Up America Plaza, Up Tribeca, Up Viamonte, or Up Congreso.",
+      "p1": "The Aapresid Congress is a globally renowned event that has been connecting innovation, technology, and knowledge for over three decades, with the goal of promoting increasingly sustainable production systems.",
+      "descarga": "Download the flyer",
+      "reserva-alojamiento": "Book your accommodation"
     },
     "como-llegar": "How to get to",
     "evento": " Congreso Aapresid?",
-    "de-donde-venis": "¿Desde dónde venís?",
-    "escribi-origen": "Escribí acá tu dirección de origen",
-    "recorrido-sugerido": "Recorrido sugerido",
-    "transporte": "En transporte",
-    "auto": "En auto",
-    "ingresa-direccion": "Ingrese su dirección de origen para ver las alternativas de colectivo",
-    "explora-todos": "¡Explorá todos los recorridos posibles desde el mapa!",
-    "compartir": "Compartir recorrido",
-    "ver-mas": "Ver más recorridos"
+    "de-donde-venis": "Where are you coming from?",
+    "escribi-origen": "Enter your starting address here",
+    "recorrido-sugerido": "Suggested route",
+    "transporte": "By public transport",
+    "auto": "By car",
+    "ingresa-direccion-transporte": "Enter your starting address to view available bus routes.",
+    "ingresa-direccion-auto": "Enter your starting address to view available driving routes.",
+    "explora-todos": "Explore all possible routes on the map!",
+    "compartir": "Share route",
+    "ver-mas": "See more routes"
   },
   "nos-acompanian": {
     "nos": "Our ",
     "acompanian": "partners"
   },
   "cronograma": {
-    "cronograma": "Cronograma",
-    "busca-palabra": "Búsqueda por palabra clave",
-    "escriba-aqui": "Escriba aquí...",
-    "buscar": "Buscar",
-    "filtrar-por": "Filtrar por",
-    "charla": "Charla",
-    "disertantes": "Disertantes",
-    "eje-tamtico": "Eje temático",
-    "escriba-o-seleccion": "Escriba aquí o seleccione",
-    "dia": "Día",
-    "ver-todos": "Ver todos",
-    "sala": "Sala",
-    "ver-todas": "Ver todas las charlas",
-    "no-hay-charlas": "No hay charlas disponibles.",
+    "cronograma": "Schedule",
+    "busca-palabra": "Keyword search",
+    "escriba-aqui": "Type here...",
+    "buscar": "Search",
+    "filtrar-por": "Filter search",
+    "charla": "Talk",
+    "disertantes": "Speaker",
+    "eje-tamtico": "Topic",
+    "escriba-o-seleccion": "Type here or select",
+    "dia": "Day",
+    "ver-todos": "See all",
+    "sala": "Room",
+    "ver-todas": "See all",
+    "no-hay-charlas": "No lectures available",
+    "aplicar-filtros": "Apply filters",
     "card": {
-      "disertante": "Disertantes",
-      "moderador": "Moderador",
-      "ver-video": "Ver video",
-      "ver-mas-detalles": "Ver más detalles"
+      "disertante": "Speakers",
+      "moderador": "Moderator",
+      "ver-video": "Watch video",
+      "ver-mas-detalles": "See more details"
     },
-    "descarga-cronograma": "Descargar cronograma",
-    "descarga-dia1": "Descargá cronograma Día 1",
-    "descarga-dia2": "Descargá cronograma Día 2",
-    "descarga-dia3": "Descargá cronograma Día 3"
+    "descarga-cronograma": "Download schedule",
+    "descarga-dia1": "Download schedule Day 1",
+    "descarga-dia2": "Download schedule Day 2",
+    "descarga-dia3": "Download schedule Day 3"
   },
   "page-inscripciones": {
-    "titulo1": "Inscripciones",
-    "titulo2": "Adquirí tu entrada",
-    "cronograma-completo": "Cronograma completo",
+    "titulo1": "Registration",
+    "titulo2": "Get your ticket",
+    "cronograma-completo": "Full agenda",
     "ver-mas": "Ver más",
-    "prensa": "Prensa",
-    "necesitas-acreditarte": "¿Necesitás acreditarte como prensa?",
-    "datos-contacto": "Datos de contacto",
-    "prensa-aapresid": "Prensa Aapresid",
-    "eliana": "Eliana Esnaola"
+    "prensa": "Press",
+    "necesitas-acreditarte": "Need to register as press?",
+    "datos-contacto": "Contact information",
+    "prensa-aapresid": "Aapresid Press"
   },
   "tenes-dudas": {
-    "titulo": "¿Tenés alguna duda?",
-    "subtitulo": "Te dejamos nuestros contactos",
-    "socio-aapre": "Socio Aapresid",
-    "mesa-expositores": "Mesa de ayuda al expositor",
-    "compra-entradas": "Compra de entradas",
-    "disertantes": "Disertantes",
-    "invitados": "Invitados"
+    "titulo": "Any questions?",
+    "subtitulo": "Here’s how to contact us",
+    "socio-aapre": "Aapresid Member",
+    "mesa-expositores": "Exhibitor help desk",
+    "compra-entradas": "Ticket purchase",
+    "disertantes": "Speakers",
+    "invitados": "Guests"
   },
   "gacetilla-page": {
     "hero-title": "Press releases",
@@ -449,74 +456,78 @@
     "expoagro_dir2": "(C1043ABN) CABA"
   },
   "visita-tecnica-page": {
+    "hero-title1": "Agronomic technical",
+    "hero-title2": "tour",
     "aapre-invita": {
-      "titulo": "Aapresid te invita a conocer el campo argentino en la previa del Congreso",
-      "descripcion": "Participá en los impactantes side events que realizaremos con el objetivo de adentrarte en el corazón de la agricultura argentina y tomar contacto con destacados productores y expertos locales:",
-      "evento1-fecha": "5 de agosto",
-      "evento1-titulo": "Día técnico",
-      "evento2-fecha": "3 al 9 de agosto",
-      "evento2-titulo": "Gira técnica"
+      "titulo": "Aapresid invites you to discover the heart of the Argentine farming systems in the run-up to the 2025 Congress",
+      "descripcion": "Take part in the impactful side events we’ll be hosting to immerse yourself in the heart of Argentine agriculture and connect with leading local producers and experts:",
+      "evento1-fecha": "August 5th",
+      "evento1-titulo": "Technical Day",
+      "evento2-fecha": "August 3rd to 9th",
+      "evento2-titulo": "Agronomic Technical Tour"
     },
     "visita-tecnica": {
-      "descripcion": "Explore el corazón de la agricultura argentina, sus modelos productivos de vanguardia, líderes en cuidado del suelo, tecnología y sustentabilidad. Intercambie con productores pioneros y expertos locales."
+      "descripcion": "Explore our advanced production models, recognized for innovation, soil care and sustainability. Participate in technical exchanges with farmers and local experts, learning about Argentine agriculture through field visits in the main productive regions."
     },
     "dia-tecnico": {
-      "titulo": "Día técnico",
-      "subtitulo": "Itinerario 5 de agosto",
+      "titulo": "Technical Day",
+      "subtitulo": "Itinerary on August 5th",
       "hitos": [
         {
           "hora": "8:30 HS",
-          "descripcion": "Salida desde Ciudad Autónoma de Buenos Aires (CABA) hacia Salto (Provincia de Buenos Aires) en bus."
+          "descripcion": "Departure from Ciudad Autónoma de Buenos Aires (CABA) to Salto by bus."
         },
         {
           "hora": "11:00 HS",
-          "descripcion": "Recepción de la delegación: Presentación sobre Aapresid, introducción sobre sistemas de producción que regeneran suelos con menor impacto ambiental, innovación en redes."
+          "descripcion": "Welcoming the delegation: presentation about Aapresid, introduction about production systems that regenerate soils with lower environmental impact, innovation in networks. "
         },
         {
           "hora": "13:00 HS",
-          "descripcion": "Almuerzo en el campo"
+          "descripcion": "Lunch in the field."
         },
         {
           "hora": "15:00 HS",
-          "descripcion": "Recorrida a campo: sistemas de producción sustentables, intensos y diversos. Indicadores de materia orgánica, carbono y biología del suelo. Integración ganadera."
+          "descripcion": "Field tour. Learn and get to know about sustainable production systems. No till, Intense and diverse landscapes. Organic matter, carbon and soil biology indicators. Livestock integration."
         },
         {
           "hora": "16:00 HS",
-          "descripcion": "Regreso a CABA"
+          "descripcion": "Return to CABA"
         }
       ]
     },
     "quienes-participan": {
-      "titulo": "¿Quiénes pueden participar?",
+      "titulo": "Who can participate?",
       "lista": [
-        "Agricultores",
-        "Técnicos",
-        "Estudiantes universitarios",
-        "Organizaciones del agro",
-        "Decisores políticos",
-        "Delegaciones oficiales de Argentina y de cualquier parte del mundo."
+        "Farmers",
+        "Specialists",
+        "University students",
+        "Farming institutions",
+        "Decision-making politicians",
+        "Official delegations from all over the world. "
       ],
-      "nota": "*Con inscripción previa, sujeto a disponibilidad.",
-      "contacto-titulo": "Para más información comunicarse con:",
+      "nota": "*Previous registration required. Spaces are limited.",
+      "contacto-titulo": "For more information write to:",
       "contacto-email": "internacional@aapresid.org.ar"
     },
     "tour-agronomico": {
-      "titulo": "Tour técnico agronómico",
-      "fecha": "3 al 9 de agosto",
-      "descripcion": "Descubrá el campo argentino en la previa del 33° Congreso Aapresid",
-      "boton": "Descargá el brochure oficial",
+      "titulo": "Agronomic Technical Tour",
+      "fecha": "August 3rd to 9th",
+      "descripcion": "Discover the Argentine farming systems in the run up to the XXXIII Aapresid Congress",
+      "boton": "Download brochure",
+      "embarquese": "Join this ",
+      "en-un-viaje": "extraordinary journey",
       "cards": [
-        "Explore modelos productivos de vanguardia, reconocidos por la innovación, el cuidado del suelo y la sustentabilidad.",
-        "Participe en interesantes intercambios técnicos con agricultores y expertos locales, mientras explora el corazón de la agricultura argentina con visitas a destacados establecimientos agrícolas.",
-        "Descubra el pulso de la industria conectándose con las principales empresas e instituciones de Argentina.",
-        "Participe en el 33° Congreso Aapresid, el evento de agricultura más destacado en Argentina y la región, momento clave de actualización, debate y exhibición de los últimos avances tecnológicos del sector."
+        "Explore our advanced production models, recognized for innovation, soil care and sustainability.",
+        "Participate in technical exchanges with farmers and local experts, learning about Argentine agriculture through field visits in the main productive regions.",
+        "Discover the pulse of the industry by making contact with the main agricultural companies and institutions.",
+        "Join the 33° Aapresid Congress, the agriculture-related event most distinguished in Argentina and the region, the key space to update, debate and exhibit state-of-the-art knowledge and technology."
       ]
     },
     "descubra-aprenda": {
-      "titulo": "¡Descubra, aprenda y conecte en una experiencia inolvidable!",
-      "contacto-titulo": "Para más información comunicarse con:",
+      "titulo": "Discover, Learn and Connect in an unforgettable experience!",
+      "contacto-titulo": "For more information write to: ",
       "contacto-email": "internacional@aapresid.org.ar",
-      "boton": "Descargá el brochure oficial"
+      "boton": "Download brochure"
     }
   }
 }

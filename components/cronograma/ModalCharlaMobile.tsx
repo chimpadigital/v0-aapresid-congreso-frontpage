@@ -13,6 +13,7 @@ import CloseIcon from "../icons/CloseIcon";
 const ModalCharlaMobile = ({
   title = "Detalles de la charla",
   description = "Descripción de la charla",
+  buttonText = "Ver más detalles",
 }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -23,7 +24,7 @@ const ModalCharlaMobile = ({
         type="button"
         className="mt-6 w-full rounded-full bg-accent px-3 py-4 text-[16px] text-white transition-colors hover:bg-[#61bc4f]"
       >
-        Ver más detalles
+       {buttonText}
       </button>
       <Modal
         size="2xl"

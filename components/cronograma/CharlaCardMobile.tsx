@@ -1,5 +1,5 @@
 "use client";
-import { Event, EventsApiResponse } from "@/lib/types";
+import { Event } from "@/lib/types";
 import { getMultilingualField } from "@/lib/utils";
 import React, { useState } from "react";
 import DisertanteIconV2 from "../icons/DisertanteIconV2";
@@ -11,6 +11,7 @@ import IdiomasIcon from "../icons/IdiomasIcon";
 import { getThemeIcon } from "@/lib/getThemeIcon";
 import { motion, AnimatePresence } from "framer-motion";
 import ModalCharlaMobile from "./ModalCharlaMobile";
+import { useTranslations } from "next-intl";
 
 const CharlaCardMobile = ({
   charla,
@@ -25,6 +26,7 @@ const CharlaCardMobile = ({
     setIsExpanded(!isExpanded);
   };
 
+  const t = useTranslations("cronograma.card");
   return (
     <div className="mx-auto max-w-md overflow-hidden rounded-[20px] bg-white tracking-widest shadow-lg">
       {/* Header */}
@@ -56,7 +58,7 @@ const CharlaCardMobile = ({
             <DisertanteIconV2 />
           </span>
           <p className="leading-none">
-            <span className="text-xs font-semibold">Disertantes: </span>
+            <span className="text-xs font-semibold">{t("disertante")}: </span>
             <span className="text-xs">
               {charla.Speakers.map((speaker) => speaker.name).join(", ")}
             </span>
@@ -69,8 +71,8 @@ const CharlaCardMobile = ({
             <MicrofonoIcon />
           </span>
           <div>
-            Moderador:
-            <span className="text-xs">{charla.Moderator.name}</span>
+            {t("moderador")}:
+            <span className="text-xs"> {charla.Moderator.name}</span>
           </div>
         </div>
 
@@ -80,7 +82,7 @@ const CharlaCardMobile = ({
             href=""
             className="relative z-[1] flex w-fit items-center justify-center gap-3 overflow-hidden rounded-full border bg-primary px-[30px] py-[13.5px] tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-accent before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
           >
-            Ver video
+            {t("ver-video")}
           </a>
 
           {/* Expand/Collapse Arrow */}
@@ -162,25 +164,23 @@ const CharlaCardMobile = ({
                   </div>
                 </div>
 
-                {charla?.multilingual_talk &&
-                  charla.multilingual_talk[locale] &&
-                  charla.multilingual_talk[locale].length > 1 && (
-                    <div className="flex items-center gap-[25px]">
-                      <span className="grid aspect-square h-[21px] place-items-center">
-                        <PlanetaIcon size="21" />
-                      </span>
-                      <span className="text-slg leading-none text-paragraph">
-                        {getMultilingualField(charla.multilingual_talk, locale)}
-                      </span>
-                    </div>
-                  )}
+                {getMultilingualField(charla.multilingual_talk, locale) && (
+                  <div className="flex items-center gap-3">
+                    <span className="grid aspect-square h-[21px] place-items-center">
+                      <PlanetaIcon size="21" />
+                    </span>
+                    <span className="text-xs leading-none text-primary">
+                      {getMultilingualField(charla.multilingual_talk, locale)}
+                    </span>
+                  </div>
+                )}
 
                 <div className="flex items-center gap-3">
                   <IdiomasIcon />
                   <span className="text-xs">
                     {charla?.languages?.length > 1
                       ? charla.languages
-                      : "Sin data"}
+                      : "Español - Inglés"}
                   </span>
                 </div>
               </div>
@@ -190,8 +190,9 @@ const CharlaCardMobile = ({
                   charla.multilingual_description,
                   locale,
                 )}
+                buttonText={t("ver-video")}
               />
-                         </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

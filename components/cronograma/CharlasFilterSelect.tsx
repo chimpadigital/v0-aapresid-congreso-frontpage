@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Select, { SingleValue, ActionMeta } from "react-select";
@@ -40,9 +41,10 @@ export function SelectFilter({
     setIsClient(true);
   }, []);
 
-  // Agregar opción "Ver todos" al principio
-  const optionsWithAll = [{ value: "", label: "Ver todos" }, ...options];
+  const t = useTranslations("cronograma");
 
+  // Agregar opción "Ver todos" al principio
+  const optionsWithAll = [{ value: "", label: t("ver-todos") }, ...options];
   if (!isClient) return null;
 
   return (
@@ -57,7 +59,7 @@ export function SelectFilter({
       className="basic-single"
       classNamePrefix="select"
       value={defaultValue}
-      placeholder="Escriba aquí o seleccione"
+      placeholder={t("escriba-o-seleccion")}
       isSearchable={true}
       styles={{
         container: (base) => ({

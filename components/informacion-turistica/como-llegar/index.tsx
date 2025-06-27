@@ -1,11 +1,5 @@
 "use client";
-import {
-  AdvancedMarker,
-  APIProvider,
-  Map,
-  useMap,
-  useMapsLibrary,
-} from "@vis.gl/react-google-maps";
+import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -93,7 +87,7 @@ export function ComoLlegarSection() {
           <div className="flex min-h-[500px] flex-col shadow-lg lg:flex-row">
             {/* Panel verde izquierdo */}
             <div className="flex w-full flex-col rounded-b-none rounded-t-[10px] bg-accent bg-cover bg-center bg-no-repeat p-8 text-white lg:min-h-[750px] lg:w-[65%] lg:rounded-l-[20px] lg:rounded-r-none lg:px-14 lg:py-[50px]">
-              <h2 className="max-w-[18ch] text-3xl mb-8 font-normal leading-none md:text-[40px]">
+              <h2 className="mb-8 max-w-[18ch] text-3xl font-normal leading-none md:text-[40px]">
                 {t("como-llegar")}
                 <span className="font-bold"> {t("evento")}</span>
               </h2>
@@ -102,7 +96,7 @@ export function ComoLlegarSection() {
                 <AutocompleteCustom onPlaceSelect={setSelectedPlace} />
                 <div className="w-full">
                   <h1 className="mb-4 text-xl font-medium tracking-wider">
-                    Recorrido sugerido
+                    {t("recorrido-sugerido")}
                   </h1>
                   <div className="flex w-full">
                     <button
@@ -111,14 +105,14 @@ export function ComoLlegarSection() {
                       type="button"
                     >
                       <TransportePublicoIcon />
-                      En transporte
+                      {t("transporte")}
                     </button>
                     <button
                       className={`flex flex-1 items-center justify-center gap-4 ${activeTab === "auto" ? "bg-white text-primary" : "bg-primary text-white"} rounded-t-[10px] pb-2 pt-[10px] transition-colors`}
                       onClick={() => setActiveTab("auto")}
                       type="button"
                     >
-                      <AutoIcon /> En auto
+                      <AutoIcon /> {t("auto")}
                     </button>
                   </div>
                   <div className="bg-white">
@@ -143,10 +137,11 @@ export function ComoLlegarSection() {
               </div>
               <div className="mt-auto flex w-full flex-col">
                 <span className="mb-6 text-center font-bold tracking-wider">
-                  ¡Explorá todos los recorridos posibles desde el mapa!
+                  {t("explora-todos")}
                 </span>
                 <div className="flex w-full flex-col gap-3 px-2 md:flex-row">
                   <ModalCompartir
+                    texto={t("compartir")}
                     disabled={!selectedPlace || route.length === 0}
                     link={
                       selectedPlace && route.length > 0
@@ -164,7 +159,7 @@ export function ComoLlegarSection() {
                     rel="noopener noreferrer"
                     className={`relative z-[1] flex w-full flex-1 items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[15px] py-[15.5px] text-center text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[300%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-[6] md:w-fit md:before:-left-[145%] md:before:top-[160%] md:hover:before:scale-[3] ${!selectedPlace || route.length === 0 ? "pointer-events-none opacity-50" : ""}`}
                   >
-                    Ver más recorridos
+                    {t("ver-mas")}
                     <span className="rotate-180">
                       <ArrowBack />
                     </span>

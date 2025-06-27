@@ -4,12 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 import ArrowRounded from "../icons/ArrowRounded";
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const DescubraElCampo = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
   const locale = useLocale()
+  const t = useTranslations("descubra-campo");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,33 +66,30 @@ const DescubraElCampo = () => {
         {/* Right side - Content */}
         <div className="tracking-wider text-white">
           <h2 className="mb-8 text-4xl lg:text-[40px]">
-            Descubra el
+            {t("titulo1")}
             <br />
-            <span className="font-bold">campo argentino</span>
+            <span className="font-bold">{t("titulo2")}</span>
           </h2>
 
           {/* Event dates */}
           <div className="mb-11 flex flex-wrap w-fit gap-8">
             <div>
               <div className="text-xl font-bold text-secondary">
-                5 de agosto
+                {t("5-agosto")}
               </div>
-              <div className="text-lg text-white">Día técnico</div>
+              <div className="text-lg text-white">{t("dia-tecnico")}</div>
             </div>
             <div>
               <div className="text-xl font-bold text-secondary">
-                3 al 9 de agosto
+                {t("3-9-agosto")}
               </div>
-              <div className="text-lg text-white">Gira técnica</div>
+              <div className="text-lg text-white">{t("gira-tecnica")}</div>
             </div>
           </div>
 
           {/* Description */}
           <p className="mb-8 max-w-[45ch] text-lg leading-relaxed text-white">
-            Explore el corazón de la agricultura argentina, sus modelos
-            productivos de vanguardia, líderes en cuidado del suelo, tecnología
-            y sustentabilidad. Intercambie con productores pioneros y expertos
-            locales.
+            {t("descripcion1")}
           </p>
 
           {/* Read more link */}
@@ -99,7 +97,7 @@ const DescubraElCampo = () => {
             href={`/${locale}/visita-tecnica`}
             className="group flex w-fit items-center gap-2 whitespace-nowrap border-b-2 border-white font-medium text-white transition-opacity hover:border-opacity-70"
           >
-            <p className="flex">Leer más</p>
+            <p className="flex">{t("leer-mas")}</p>
             <ArrowRounded className="h-4" />
           </Link>
         </div>
