@@ -10,6 +10,7 @@ import {
 import { useDisclosure } from "@heroui/modal";
 import { SelectFilter } from "./CharlasFilterSelect";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const DrawerFiltrosMobile = ({
   handleFilterChange,
@@ -36,6 +37,8 @@ const DrawerFiltrosMobile = ({
     params.delete("theme_id");
     router.replace(`?${params.toString()}`);
   };
+  
+  const t = useTranslations("cronograma");
 
   return (
     <div data-lenis-prevent>
@@ -72,7 +75,7 @@ const DrawerFiltrosMobile = ({
                   className="h-[3px] w-10 rounded-full bg-primary"
                 />
                 <div className="flex w-full justify-between text-lg">
-                  <h4>Filtrar por</h4>
+                  <h4>{t('filtrar-por')}</h4>
                   <button
                     aria-label="delete filter"
                     onClick={handleClearFilters}
@@ -94,7 +97,7 @@ const DrawerFiltrosMobile = ({
               </DrawerHeader>
               <DrawerBody className="gap-[15px]">
                 <div className="flex w-full flex-col md:w-[min(100%,325px)]">
-                  <span className="block text-primary">Charla</span>
+                  <span className="block text-primary">{t('charla')}</span>
                   <SelectFilter
                     onChange={(e) => handleFilterChange("id", e?.value || "")}
                     options={talkOptions || []}
@@ -104,7 +107,7 @@ const DrawerFiltrosMobile = ({
                 </div>
 
                 <div className="flex w-full flex-col md:w-[min(100%,325px)]">
-                  <span className="block text-primary">Disertantes</span>
+                  <span className="block text-primary">{t('disertantes')}</span>
                   <SelectFilter
                     onChange={(e) =>
                       handleFilterChange("speakers", e?.value || "")
@@ -116,7 +119,7 @@ const DrawerFiltrosMobile = ({
                 </div>
 
                 <div className="flex w-full flex-col md:w-[min(100%,325px)]">
-                  <span className="block text-primary">Eje temático</span>
+                  <span className="block text-primary">{t('eje-tamtico')}</span>
                   <SelectFilter
                     onChange={(e) =>
                       handleFilterChange("theme_id", e?.value || "")
@@ -130,7 +133,7 @@ const DrawerFiltrosMobile = ({
                   onClick={onClose}
                   className="mt-6 flex w-full justify-center gap-[10px] rounded-full bg-accent px-3 py-3 text-lg tracking-widest text-white"
                 >
-                  Aplicar filtros
+                  {t('aplicar-filtros')}
                 </button>
               </DrawerBody>
             </>

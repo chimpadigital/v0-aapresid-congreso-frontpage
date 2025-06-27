@@ -1,10 +1,9 @@
+"use client";
 import React from "react";
-import WhatsappIcon from "../icons/WhatsappIcon";
-import Emailicon from "../icons/Emailicon";
 import { ContactoCard } from "../ContactoCard";
-import Image from "next/image";
 import { ContactInfo } from "@/lib/types";
 import TenesDuddas from "../TenesDudas";
+import { useTranslations } from "next-intl";
 
 const pressContacts: ContactInfo[] = [
   {
@@ -20,12 +19,13 @@ const pressContacts: ContactInfo[] = [
 ];
 
 const PensaInscripciones = () => {
+  const t = useTranslations("page-inscripciones");
   return (
     <section className="mx-4 mt-[60px] rounded-[28px] bg-[#f0f0f1] px-4 pb-2 pt-[80px] md:mx-[33px] lg:px-8">
       <div className="mx-auto max-w-7xl tracking-wider text-primary md:px-5 lg:px-10">
         {/* Header with decorative elements */}
         <div className="relative mb-12">
-          <h1 className="mb-2 text-5xl font-medium text-primary">Prensa</h1>
+          <h1 className="mb-2 text-5xl font-medium text-primary">{t("prensa")}</h1>
 
           {/* Decorative hexagons */}
           <div className="m:top-0 absolute -top-5 right-0 md:-right-8">
@@ -53,9 +53,9 @@ const PensaInscripciones = () => {
         {/* Press Accreditation Section */}
         <div className="mb-[84px] relative z-40">
           <h2 className="mb-2 text-4xl text-primary">
-            ¿Necesitas acreditarte como prensa?
+            {t("necesitas-acreditarte")}
           </h2>
-          <p className="mb-6 text-2xl">Datos de contacto</p>
+          <p className="mb-6 text-2xl">{t("datos-contacto")}</p>
 
           <div className="flex flex-wrap gap-2 lg:gap-20">
             {pressContacts.map((contact, index) => (

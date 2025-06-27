@@ -60,11 +60,13 @@ export default function Filtros() {
         finish();
       })
       .catch(finish);
- 
+
     fetch(`${API_BASE_URL}/api/rooms?limit=1000`)
-      .then((res) => res.json().then(json => {
-        return json;
-      }))
+      .then((res) =>
+        res.json().then((json) => {
+          return json;
+        }),
+      )
       .then((dataRooms) => {
         console.log("Rooms data:", dataRooms);
         setRooms(dataRooms.data || []);
@@ -109,7 +111,7 @@ export default function Filtros() {
     const id = `${day}/${month}`;
     return {
       id: date + " 00:00:00",
-      label: `${id} Día ${idx + 1}`,
+      label: `${id} ${locale === "en" ? "Day" : "Día"} ${idx + 1}`,
       fecha: id,
       numDia: idx + 1,
       isSelected: selectedDay === date + " 00:00:00",

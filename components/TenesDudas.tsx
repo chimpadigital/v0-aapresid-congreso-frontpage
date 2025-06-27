@@ -1,11 +1,13 @@
 import React from "react";
 import { ContactoCard } from "./ContactoCard";
 import { ContactCategory } from "@/lib/types";
+import { useTranslations } from "next-intl";
 
 const TenesDuddas = () => {
+  const t = useTranslations("tenes-dudas");
   const supportCategories: ContactCategory[] = [
     {
-      title: "Socio Aapresid",
+      title: t("socio-aapre"),
       contacts: [
         {
           name: "Lucia Bejariel",
@@ -20,7 +22,7 @@ const TenesDuddas = () => {
       ],
     },
     {
-      title: "Mesa de ayuda al expositor",
+      title: t("mesa-expositores"),
       contacts: [
         {
           name: "Analia Franco",
@@ -35,7 +37,7 @@ const TenesDuddas = () => {
       ],
     },
     {
-      title: "Compra de entradas",
+      title: t("compra-entradas"),
       contacts: [
         {
           name: "Malena Pulzoni",
@@ -45,7 +47,7 @@ const TenesDuddas = () => {
       ],
     },
     {
-      title: "Disertantes",
+      title: t("disertantes"),
       contacts: [
         {
           email: "disertantes@aapresid.org.ar",
@@ -55,7 +57,7 @@ const TenesDuddas = () => {
   ];
 
   const invitedCategory: ContactCategory = {
-    title: "Invitados",
+    title: t("invitados"),
     contacts: [
       {
         email: "institucionales@aapresid.org.ar",
@@ -64,10 +66,8 @@ const TenesDuddas = () => {
   };
   return (
     <div id="tenes-dudas" className="mb-12">
-      <h2 className="mb-2 text-[40px] font-bold text-primary">
-        ¿Tenés alguna duda?
-      </h2>
-      <p className="mb-8 text-2xl">Te dejamos nuestros contactos</p>
+      <h2 className="mb-2 text-[40px] font-bold text-primary">{t("titulo")}</h2>
+      <p className="mb-8 text-2xl">{t("subtitulo")}</p>
 
       <div className="grid md:grid-cols-2 md:gap-10 lg:gap-[80px]">
         {/* Columna izquierda: Socio Aapresid, Compra de entradas, Invitados */}

@@ -10,6 +10,7 @@ import ModalCharlaDesc from "./ModalCharlaDesc";
 import IdiomasIcon from "../icons/IdiomasIcon";
 import PlanetaIcon from "../icons/PlanetaIcon";
 import { getThemeIcon } from "@/lib/getThemeIcon";
+import { useTranslations } from "next-intl";
 
 const CharlaCardDesk = ({
   charla,
@@ -18,7 +19,7 @@ const CharlaCardDesk = ({
   charla: Event;
   locale: string;
 }) => {
-  console.log(charla);
+  const t = useTranslations("cronograma.card");
   return (
     <div
       className="mx-auto flex w-full flex-col rounded-[20px] bg-white tracking-wider lg:flex-row lg:gap-2.5"
@@ -93,7 +94,9 @@ const CharlaCardDesk = ({
               <IdiomasIcon />
             </span>
             <span className="text-slg leading-none text-paragraph">
-              {charla?.languages?.length > 1 ? charla.languages : "Español - Inglés"}
+              {charla?.languages?.length > 1
+                ? charla.languages
+                : "Español - Inglés"}
             </span>
           </div>
         </div>
@@ -113,7 +116,7 @@ const CharlaCardDesk = ({
           <div className="flex items-center gap-[14px]">
             <DisertanteIconV2 />
             <div>
-              <span className="text-lg font-medium">Disertantes: </span>
+              <span className="text-lg font-medium">{t("disertante")}: </span>
               <span className="text-lg">
                 {charla.Speakers.map((speaker) => speaker.name).join(", ")}
               </span>
@@ -125,7 +128,7 @@ const CharlaCardDesk = ({
               <MicrofonoIcon />
             </span>
             <div>
-              <span className="text-lg font-medium">Moderador: </span>
+              <span className="text-lg font-medium">{t("moderador")}: </span>
               <span className="text-lg">{charla.Moderator.name}</span>
             </div>
           </div>
@@ -137,7 +140,7 @@ const CharlaCardDesk = ({
             href=""
             className="relative z-[1] flex w-fit items-center justify-center gap-3 overflow-hidden rounded-full border border-white bg-transparent px-[30px] py-[15.5px] text-lg tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-accent before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[177px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
           >
-            Ver video
+            {t("ver-video")}
           </a>
 
           <ModalCharlaDesc
@@ -146,6 +149,7 @@ const CharlaCardDesk = ({
               charla.multilingual_description,
               locale,
             )}
+            buttonText={t("ver-mas-detalles")}
           />
         </div>
       </div>

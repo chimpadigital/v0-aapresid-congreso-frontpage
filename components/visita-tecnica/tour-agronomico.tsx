@@ -137,8 +137,8 @@ const TourAgronomico = () => {
             id="title-embarquese"
             className="max-w-[10ch] text-3xl leading-[1.15] text-primary lg:text-[60px]"
           >
-            <span className="font-medium">Embárquese </span>
-            en un viaje extraordinario
+            <span className="font-medium">{t("embarquese")} </span>
+            {t("en-un-viaje")}
           </h3>
         </div>
         <div className="flex-1">

@@ -13,6 +13,7 @@
     "que_es_el_congreso": "¿Qué es el Congreso?",
     "historia": "Historia",
     "ediciones_anteriores": "Ediciones anteriores",
+    "charlas_anteriores": "Charlas edición n°32",
     "contenidos": "Contenidos",
     "cronograma": "Cronograma",
     "oradores": "Oradores",
@@ -48,8 +49,8 @@
       "adherente": "ADHERENTE",
       "de-descuento": "de descuento",
       "boton": "Comprá tu entrada",
-      "tooltip-estudiante" : "deberás adjuntar tu certificado de alumno regular",
-      "tooltip-adherente" : "deberás adjuntar el convenio vigente"
+      "tooltip-estudiante": "deberás adjuntar tu certificado de alumno regular",
+      "tooltip-adherente": "deberás adjuntar el convenio vigente"
     },
     "card3": {
       "titulo": "¿Tenés un código de invitación?",
@@ -336,7 +337,7 @@
       "p4": "En el XXXIII Congreso Aapresid, abrimos las puertas de la innovación. Aquí, los límites se diluyen y las especializaciones se encuentran. ",
       "p5": "Cada productor, técnico, investigador y visionario que participa no trae solo preguntas o respuestas: trae piezas que encajan en un sistema mayor.",
       "p6": "Somos más que testigos del cambio: somos programadores del futuro. Cada año, este Congreso compila y actualiza en un solo cuerpo los saberes de una comunidad que hace de la innovación su modo de vida. No se trata solo de mejorar lo que ya existe, sino de imaginar y rediseñar a cada momento para acompañar las transformaciones del mundo. Porque el futuro no se predice: se programa. Y el código que escribimos juntos está abierto para todos."
-    },    
+    },
     "texto-final": "Este es el **Congreso Aapresid.** Este es el lugar donde el conocimiento se libera, las soluciones se conectan y las ideas transforman realidades.",
     "banner-congreso": {
       "congreso": "Congreso",
@@ -383,6 +384,7 @@
       "reserva-alojamiento": "Reservá tu alojamiento"
     },
     "como-llegar": "¿Cómo llegar al",
+    "disertantes": "Speakers",
     "evento": "Congreso Aapresid?",
     "de-donde-venis": "¿Desde dónde venís?",
     "escribi-origen": "Escribí acá tu dirección de origen",
@@ -403,12 +405,14 @@
     "filtrar-por": "Filtrar por",
     "charla": "Charla",
     "disertantes": "Disertantes",
+    "charlas_anteriores": "Talks Edition No. 32",
     "eje-tamtico": "Eje temático",
     "escriba-o-seleccion": "Escriba aquí o seleccione",
     "dia": "Día",
     "ver-todos": "Ver todos",
     "sala": "Sala",
     "ver-todas": "Ver todas las charlas",
+    "aplicar-filtros": "Aplicar filtros",
     "no-hay-charlas": "No hay charlas disponibles.",
     "card": {
       "disertante": "Disertantes",
@@ -457,7 +461,9 @@
     "expoagro_dir1": "Av. Corrientes 1302 5 Piso",
     "expoagro_dir2": "(C1043ABN) CABA"
   },
-  "visita-tecnica-page" :{
+  "visita-tecnica-page": {
+    "hero-title1": "Visita",
+    "hero-title2": "técnica",
     "aapre-invita": {
       "titulo": "Aapresid te invita a conocer el campo argentino en la previa del Congreso",
       "descripcion": "Participá en los impactantes side events que realizaremos con el objetivo de adentrarte en el corazón de la agricultura argentina y tomar contacto con destacados productores y expertos locales:",
@@ -473,7 +479,7 @@
       "titulo": "Día técnico",
       "subtitulo": "Itinerario 5 de agosto",
       "hitos": [
-         {
+        {
           "hora": "8:30 HS",
           "descripcion": "Salida desde Ciudad Autónoma de Buenos Aires (CABA) hacia Salto (Provincia de Buenos Aires) en bus."
         },
@@ -512,8 +518,10 @@
     "tour-agronomico": {
       "titulo": "Tour técnico agronómico",
       "fecha": "3 al 9 de agosto",
-      "descripcion": "Descubrá el campo argentino en la previa del 33° Congreso Aapresid",
+      "descripcion": "Descubra el campo argentino en la previa del 33° Congreso Aapresid",
       "boton": "Descargá el brochure oficial",
+      "embarquese": "Embárquese ",
+      "en-un-viaje": "en un viaje extraordinario",
       "cards": [
         "Explore modelos productivos de vanguardia, reconocidos por la innovación, el cuidado del suelo y la sustentabilidad.",
         "Participe en interesantes intercambios técnicos con agricultores y expertos locales, mientras explora el corazón de la agricultura argentina con visitas a destacados establecimientos agrícolas.",
