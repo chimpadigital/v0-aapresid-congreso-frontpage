@@ -51,8 +51,8 @@
       "adherente": "Affiliate",
       "de-descuento": "discount",
       "boton": "Buy your ticket",
-      "tooltip-estudiante": "you will be required to submit your certificate of enrollment",
-      "tooltip-adherente": "you will be required to submit the current agreement"
+      "tooltip-estudiante": "You will be required to submit your certificate of enrollment",
+      "tooltip-adherente": "You will be required to submit the current agreement"
     },
     "card3": {
       "titulo": "Do you have an invitation code?",

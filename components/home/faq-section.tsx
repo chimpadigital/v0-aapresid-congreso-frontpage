@@ -79,7 +79,7 @@ export function FaqSection() {
     <section className="relative mx-4 mt-[44px] overflow-hidden rounded-[20px] bg-primary bg-cover bg-bottom md:mx-[33px]">
       {/* Content container */}
       <div className="relative flex flex-col items-center p-8 md:px-16 md:pt-24 md:pb-[70px]">
-        <h2 className="mb-10 max-w-[12ch] text-center text-[48px] leading-none text-white md:mb-10">
+        <h2 className={`mb-10 ${locale === "es" ? "max-w-[12ch]": "max-w-[16ch] "} text-center text-[48px] leading-none text-white md:mb-10`}>
           {t("preguntas")} <span className="font-medium">{t("frecuentes")}</span>
         </h2>
 
