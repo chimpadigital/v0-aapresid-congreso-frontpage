@@ -27,6 +27,8 @@ const CharlaCardMobile = ({
   };
 
   const t = useTranslations("cronograma.card");
+
+  console.log(charla)
   return (
     <div className="mx-auto max-w-md overflow-hidden rounded-[20px] bg-white tracking-widest shadow-lg">
       {/* Header */}
@@ -179,8 +181,8 @@ const CharlaCardMobile = ({
                   <IdiomasIcon />
                   <span className="text-xs">
                     {charla?.languages?.length > 1
-                      ? charla.languages
-                      : "Español - Inglés"}
+                      ? "Español - Inglés"
+                      : "Español"}
                   </span>
                 </div>
               </div>

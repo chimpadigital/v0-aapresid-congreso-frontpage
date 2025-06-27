@@ -56,7 +56,6 @@ export default function Filtros() {
       .then((res) => res.json())
       .then((dataDays) => {
         setDays(dataDays);
-        console.log("Days data:", dataDays);
         finish();
       })
       .catch(finish);
@@ -68,7 +67,6 @@ export default function Filtros() {
         }),
       )
       .then((dataRooms) => {
-        console.log("Rooms data:", dataRooms);
         setRooms(dataRooms.data || []);
         finish();
       })

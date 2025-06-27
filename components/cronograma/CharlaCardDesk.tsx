@@ -95,8 +95,8 @@ const CharlaCardDesk = ({
             </span>
             <span className="text-slg leading-none text-paragraph">
               {charla?.languages?.length > 1
-                ? charla.languages
-                : "Español - Inglés"}
+                      ? "Español - Inglés"
+                      : "Español"}
             </span>
           </div>
         </div>
