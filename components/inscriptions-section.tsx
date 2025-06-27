@@ -124,15 +124,17 @@ export function InscriptionsSection() {
           </div>
 
           <div className="mt-8">
-            <Link
-              href="/comprar-entrada"
+            <a
+              href="https://soluciones.qreventos.com/aapresid/preacreditacion_no_socios_borde.asp"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative z-[1] flex w-fit items-center justify-center gap-3 overflow-hidden rounded-full bg-primary px-[30px] py-[15.5px] text-2xl tracking-wider text-white transition-all duration-500 before:absolute before:-left-[180%] before:top-[560%] before:z-[-1] before:h-[400%] before:w-[160%] before:origin-left before:-rotate-[20deg] before:scale-x-[0.01] before:bg-accent before:transition-transform before:duration-500 hover:border-transparent hover:before:scale-x-[2] md:w-fit md:min-w-[374px] md:before:-left-[10%] md:before:top-[10%] md:hover:before:scale-x-[1]"
             >
               {t("card2.boton")}
               <div className="relative top-[2px]">
                 <ArrowRounded />
               </div>
-            </Link>
+            </a>
           </div>
         </div>
 
