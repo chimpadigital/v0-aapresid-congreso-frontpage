@@ -1,6 +1,6 @@
 "use client";
 import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { AutocompleteCustom } from "./autocomplete-custom";
@@ -15,6 +15,8 @@ export type AutocompleteMode = { id: string; label: string };
 
 export function ComoLlegarSection() {
   const t = useTranslations("informacion-turistica");
+  const locale = useLocale();
+
   const [activeTab, setActiveTab] = useState<"transporte" | "auto">(
     "transporte",
   );
@@ -81,7 +83,7 @@ export function ComoLlegarSection() {
   }
 
   return (
-    <APIProvider apiKey={process.env.NEXT_PUBLIC_MAP ?? ""}>
+    <APIProvider apiKey={process.env.NEXT_PUBLIC_MAP ?? ""} language={locale} region="AR">
       <section data-lenis-prevent className="bg-white px-4 pt-[50px] md:px-8">
         <div className="mx-auto max-w-[1415px]">
           <div className="flex min-h-[500px] flex-col shadow-lg lg:flex-row">
