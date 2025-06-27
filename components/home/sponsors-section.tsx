@@ -227,39 +227,8 @@ export function SponsorsSection() {
               </div>
             </div>
           )}
-          {/* institucionales */}
-          {instit && instit.Logos.length !== 0 && (
-            <div>
-              <h3 className="mb-4 text-2xl text-primary">
-                {t("institucionales")}
-              </h3>
-              <div className="mb-12 h-px w-full bg-[#2C2C2C]" />
-              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
-                {instit.Logos.map((sponsor, i) => (
-                  <motion.div
-                    key={sponsor.imagePath + "-" + i}
-                    className="flex w-fit justify-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: i * 0.1,
-                      duration: 0.5,
-                      easing: "ease-out",
-                    }}
-                  >
-                    <SponsorLogo
-                      imagePath={sponsor.imagePath}
-                      title={getField(sponsor.title, "es")}
-                      height={105}
-                      link={getField(sponsor.link, "es")}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          )}
-          {/* MEDIOS */}
+
+           {/* MEDIOS */}
           {medios && medios.Logos.length !== 0 && (
             <div>
               <h3 className="mb-4 text-2xl uppercase text-primary">
@@ -293,6 +262,40 @@ export function SponsorsSection() {
               </div>
             </div>
           )}
+          
+          {/* institucionales */}
+          {instit && instit.Logos.length !== 0 && (
+            <div>
+              <h3 className="mb-4 text-2xl text-primary">
+                {t("institucionales")}
+              </h3>
+              <div className="mb-12 h-px w-full bg-[#2C2C2C]" />
+              <div className="mb-12 flex flex-wrap justify-center gap-x-2 xs:gap-y-8">
+                {instit.Logos.map((sponsor, i) => (
+                  <motion.div
+                    key={sponsor.imagePath + "-" + i}
+                    className="flex w-fit justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 0.5,
+                      easing: "ease-out",
+                    }}
+                  >
+                    <SponsorLogo
+                      imagePath={sponsor.imagePath}
+                      title={getField(sponsor.title, "es")}
+                      height={105}
+                      link={getField(sponsor.link, "es")}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
+         
         </div>
       </section>
       <div className="mx-4 rounded-[20px] bg-[#3C3C3B] px-6 py-6 md:mx-[33px] xl:px-[58px] xl:py-[27.5px]">
