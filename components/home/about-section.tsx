@@ -9,7 +9,7 @@ export function AboutSection() {
   return (
     <section className="relative mx-4 mt-0 overflow-hidden rounded-[20px] p-6 md:mx-[33px] md:mt-20 md:px-12 md:py-28 lg:px-24">
       {/* Background image */}
-      <div className="absolute inset-0 bg-[url('/images/home/campo-background-mobile.webp')] bg-cover bg-fixed sm:bg-[url('/images/home/campo-background.webp')]">
+      <div className="absolute inset-0 bg-[url('/images/home/campo-background-mobile.webp')] sm:bg-[url('/images/home/campo-background.webp')] bg-cover bg-fixed">
         <div className="absolute inset-0 bg-black/30 bg-blend-multiply" />
       </div>
 
