@@ -1,7 +1,14 @@
 "use client";
 import { useAutocompleteSuggestions } from "@/hooks/use-autocomplete";
 import { useMapsLibrary } from "@vis.gl/react-google-maps";
-import React, { FormEvent, useCallback, useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import React, {
+  FormEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 interface Props {
   onPlaceSelect: (place: google.maps.places.Place | null) => void;
@@ -26,7 +33,8 @@ export const AutocompleteCustom = ({ onPlaceSelect }: Props) => {
     };
   }, [inputValue]);
 
-  const { suggestions, resetSession } = useAutocompleteSuggestions(debouncedInput);
+  const { suggestions, resetSession } =
+    useAutocompleteSuggestions(debouncedInput);
 
   const handleInput = useCallback((event: FormEvent<HTMLInputElement>) => {
     setInputValue((event.target as HTMLInputElement).value);
@@ -57,14 +65,16 @@ export const AutocompleteCustom = ({ onPlaceSelect }: Props) => {
     [places, onPlaceSelect],
   );
 
+  const t = useTranslations("informacion-turistica");
+
   return (
     <label className="relative">
-      <p className="mb-4 text-lg tracking-wider">¿Desde dónde venís?</p>
+      <p className="mb-4 text-lg tracking-wider">{t("de-donde-venis")}</p>
 
       <input
         value={inputValue}
         onInput={(event) => handleInput(event)}
-        placeholder="Escribí acá tu dirección de origen"
+        placeholder={t("escribi-origen")}
         className="w-full rounded-full py-[14.5px] pl-7 pr-5 text-primary focus-within:outline-primary"
         onFocus={() => setInputFocused(true)}
         onBlur={() => setInputFocused(false)}
@@ -72,14 +82,14 @@ export const AutocompleteCustom = ({ onPlaceSelect }: Props) => {
 
       {suggestions.length > 0 && showSuggestions && inputFocused && (
         <ul
-          className="absolute left-0 top-[120%] z-10 mt-2 w-full max-h-[300px] overflow-y-auto rounded-lg bg-white shadow-lg custom-list text-primary"
+          className="custom-list absolute left-0 top-[120%] z-10 mt-2 max-h-[300px] w-full overflow-y-auto rounded-lg bg-white text-primary shadow-lg"
           onMouseDown={(e) => e.preventDefault()}
         >
           {suggestions.map((suggestion, index) => {
             return (
               <li
                 key={index}
-                className="py-2 px-3 hover:bg-gray-100 cursor-pointer"
+                className="cursor-pointer px-3 py-2 hover:bg-gray-100"
                 onClick={() => handleSuggestionClick(suggestion)}
               >
                 {suggestion.placePrediction?.text.text}
