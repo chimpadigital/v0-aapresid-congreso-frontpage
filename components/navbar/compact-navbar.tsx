@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { NavItem } from "./nav-item";
+import { useTranslations } from "next-intl";
 
 interface CompactNavbarProps {
   scrolled: boolean;
@@ -18,6 +19,7 @@ export function CompactNavbar({
   toggleMenu,
   locale,
 }: CompactNavbarProps) {
+  const t = useTranslations("navbar");
   return (
     <nav
       className={`fixed left-0 right-0 top-0 z-[9999] hidden transition-all duration-300 md:block ${
@@ -44,7 +46,7 @@ export function CompactNavbar({
               style={{
                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.10)",
               }}
-              className="grid h-[56px] place-items-center rounded-full bg-[#7D7777B2] px-5 text-white backdrop-blur-sm z-40"
+              className="z-40 grid h-[56px] place-items-center rounded-full bg-[#7D7777B2] px-5 text-white backdrop-blur-sm"
             >
               <NavItem label={locale} hasDropdown />
             </div>
@@ -54,7 +56,7 @@ export function CompactNavbar({
               href={`/${locale}/inscripciones`}
               className="relative z-[1] ml-4 overflow-hidden rounded-full bg-secondary px-[30px] py-[15.5px] font-medium text-[#fff] transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3]"
             >
-              Inscripciones
+              {t("inscripciones")}
             </Link>
 
             <button

@@ -8,7 +8,7 @@ import { MenuItem } from "@/lib/types";
 import ChevronArrow from "../icons/ChevronArrow";
 import CloseIcon from "../icons/CloseIcon";
 import ArrowBack from "../icons/ArrowBack";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface MobileMenuProps {
   menuRef: React.RefObject<HTMLDivElement | null>;
@@ -27,6 +27,7 @@ export function MobileMenu({
   const [menuHistory, setMenuHistory] = useState<MenuItem[][]>([]);
   const [currentTitle, setCurrentTitle] = useState<string>("");
   const locale = useLocale()
+  const t = useTranslations("navbar");
 
   const handleMenuItemClick = (item: MenuItem) => {
     if (item.children) {
@@ -184,7 +185,7 @@ export function MobileMenu({
               className="block w-full rounded-full bg-[#ED7F00] px-6 py-3 text-center font-medium text-white transition-colors hover:bg-[#ED7F00]/90"
               onClick={handleClose}
             >
-              Inscripciones
+              {t('inscripciones')}
             </Link>
           </div>
         </div>
