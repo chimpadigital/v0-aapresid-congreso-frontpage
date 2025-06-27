@@ -135,8 +135,8 @@
     "ver-cronograma": "See full schedule"
   },
   "descubra-campo": {
-    "titulo1": "Discover the",
-    "titulo2": "Argentine farming systems",
+    "titulo1": "Discover the heart of ",
+    "titulo2": "the Argentine farming systems",
     "5-agosto": "August 5th",
     "dia-tecnico": "Agronomic Technical Tour",
     "3-9-agosto": "August 3rd to 9th ",
@@ -337,11 +337,11 @@
     },
     "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities.",
     "banner-congreso": {
-      "congreso": "Congreso",
-      "aapresid": "Aapresid",
-      "p": "El evento en el que buscamos conectar el conocimiento, la ciencia y los sistemas de producción sustentables.",
-      "fecha": "6, 7 y 8 de Agosto",
-      "lugar": "La Rural de Palermo, Buenos Aires"
+      "congreso": "Aapresid",
+      "aapresid": "Congress",
+      "p": "The event in which we seek to connect knowledge, science, and sustainable production systems.",
+      "fecha": "August 6th, 7th, and 8th, 2025",
+      "lugar": "La Rural, exhibition venue in Buenos Aires"
     }
   },
   "informacion-turistica": {
