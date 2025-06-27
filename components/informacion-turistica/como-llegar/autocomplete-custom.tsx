@@ -33,8 +33,17 @@ export const AutocompleteCustom = ({ onPlaceSelect }: Props) => {
     };
   }, [inputValue]);
 
-  const { suggestions, resetSession } =
-    useAutocompleteSuggestions(debouncedInput);
+  const { suggestions, resetSession } = useAutocompleteSuggestions(
+    debouncedInput,
+    {
+      locationRestriction: {
+        south: -35.05,
+        west: -58.53,
+        north: -34.36,
+        east: -57.94,
+      },
+    },
+  );
 
   const handleInput = useCallback((event: FormEvent<HTMLInputElement>) => {
     setInputValue((event.target as HTMLInputElement).value);
