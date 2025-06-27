@@ -59,7 +59,7 @@ export function SponsorsSection() {
   const instit = categories.find((cat) => cat.order === 9);
   const medios = categories.find((cat) => cat.order === 8);
   const agenciaPrensa = categories.find((cat) => cat.order === 7);
-  console.log(anfitriones);
+
   return (
     <>
       <section className="relative mx-4 overflow-hidden rounded-[20px] bg-white px-4 pb-6 pt-[88px] md:mx-[33px] md:px-16">
