@@ -10,14 +10,12 @@ const TenesDuddas = () => {
       title: t("socio-aapre"),
       contacts: [
         {
-          name: "Lucia Bejariel",
-          email: "inscripciones@aapresid.org.ar",
-          whatsapp: "+34 16017776",
-        },
-        {
           name: "Mariana Lopez",
           email: "lopez@aapresid.org.ar",
-          whatsapp: "+54 9 341 6046233",
+        },
+        {
+          name: "Inscripciones",
+          email: "inscripciones@aapresid.org.ar ",
         },
       ],
     },
@@ -25,14 +23,16 @@ const TenesDuddas = () => {
       title: t("mesa-expositores"),
       contacts: [
         {
-          name: "Analia Franco",
-          email: "mesadeayuda@exponenciar.com.ar",
-          whatsapp: "+11-2651-2801",
+          name: "Maite Hernandez Iraola",
+          desc: t("patrocinios-a-b-c-d"),
+          email: "mesadeayuda2@exponenciar.com.ar",
+          whatsapp: "+54 9 11-3413-6373",
         },
         {
-          name: "Maite Hernandez Iraola",
-          email: "mesadeayuda2@exponenciar.com.ar",
-          whatsapp: "+11-3413-6373",
+          name: "Malena Pulzoni",
+          desc: t("sin-patrocicio"),
+          email: "mesadeayuda3@exponenciar.com.ar",
+          whatsapp: "+54 9 11-3404-0510",
         },
       ],
     },
@@ -41,7 +41,6 @@ const TenesDuddas = () => {
       contacts: [
         {
           name: "Malena Pulzoni",
-          email: "mesadeayuda3@exponenciar.com.ar",
           whatsapp: "+11-3404-0510",
         },
       ],
@@ -50,7 +49,7 @@ const TenesDuddas = () => {
       title: t("disertantes"),
       contacts: [
         {
-          email: "disertantes@aapresid.org.ar",
+          email: "mesadeayuda3@exponenciar.com.ar",
         },
       ],
     },

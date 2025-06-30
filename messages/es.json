@@ -413,6 +413,7 @@
     "ver-todos": "Ver todos",
     "sala": "Sala",
     "ver-todas": "Ver todas las charlas",
+    "borrar-filtros": "Borrar filtros",
     "aplicar-filtros": "Aplicar filtros",
     "no-hay-charlas": "No hay charlas disponibles.",
     "card": {
@@ -444,7 +445,9 @@
     "mesa-expositores": "Mesa de ayuda al expositor",
     "compra-entradas": "Compra de entradas",
     "disertantes": "Disertantes",
-    "invitados": "Invitados"
+    "invitados": "Invitados",
+    "patrocinios-a-b-c-d": "(patrocinios A, B, C y D)",
+    "sin-patrocicio": "(Expositores sin Patrocinio)"
   },
   "footer": {
     "fecha": "6 al 8 de agosto",

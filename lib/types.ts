@@ -209,7 +209,8 @@ export interface formatedRooms {
 
 export interface ContactInfo {
   name?: string;
-  email: string;
+  desc?: string;
+  email?: string;
   whatsapp?: string;
 }
 

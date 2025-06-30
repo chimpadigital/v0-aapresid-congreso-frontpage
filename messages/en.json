@@ -392,6 +392,7 @@
     "escriba-o-seleccion": "Type here or select",
     "dia": "Day",
     "ver-todos": "See all",
+    "borrar-filtros": "Clear filters",
     "sala": "Room",
     "ver-todas": "See all",
     "no-hay-charlas": "No lectures available",
@@ -424,7 +425,9 @@
     "mesa-expositores": "Exhibitor help desk",
     "compra-entradas": "Ticket purchase",
     "disertantes": "Speakers",
-    "invitados": "Guests"
+    "invitados": "Guests",
+    "patrocinios-a-b-c-d": "(sponsors A, B, C y D)",
+    "sin-patrocicio": "(without sponsorship)"
   },
   "gacetilla-page": {
     "hero-title": "Press releases",

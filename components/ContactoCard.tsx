@@ -4,7 +4,8 @@ import Emailicon from "./icons/Emailicon";
 
 interface ContactInfo {
   name?: string;
-  email: string;
+  desc?: string;
+  email?: string;
   whatsapp?: string;
 }
 
@@ -23,33 +24,48 @@ export const ContactoCard = ({
 }) => {
   return (
     <div className={`${className} mb-9`}>
-      {contact.name &&
-        React.createElement(
-          nameAs,
-          {
-            className: `font-bold text-primary ${isSecondary ? "text-xl mb-[24px]" : "text-2xl mb-[30px] "}`,
-          },
-          contact.name,
-        )}
-      <a
-        href={`mailto:${contact.email}`}
-        className="mb-[14px] flex items-center gap-4 lg:gap-[28px] xs:text-lg lg:text-2xl text-primary hover:text-accent"
-      >
-        <div className="shrink-0">
-
-        <Emailicon />
+      {contact.name && (
+        <div className="mb-[24px] flex flex-wrap items-center gap-3">
+          {React.createElement(
+            nameAs,
+            {
+              className: `font-bold text-primary ${
+                isSecondary ? "text-xl " : "text-2xl mb-[30px] "
+              }`,
+            },
+            contact.name,
+          )}
+          {contact.desc && (
+            <span
+              className={`text-primary ${isSecondary ? "text-xl" : "text-2xl"}`}
+            >
+              {contact.desc}
+            </span>
+          )}
         </div>
-        {contact.email}
-      </a>
+      )}
+      {contact.email && (
+        <a
+          href={`mailto:${contact.email}`}
+          className="mb-[14px] flex items-center gap-4 text-primary hover:text-accent xs:text-lg lg:gap-[28px] lg:text-2xl"
+        >
+          <div className="shrink-0">
+            <Emailicon />
+          </div>
+          <span className="underline">{contact.email}</span>
+        </a>
+      )}
       {contact.whatsapp && (
         <a
           href={`https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-4 lg:gap-[28px] text-primary hover:text-accent"
+          className="flex items-center gap-4 text-primary hover:text-accent lg:gap-[28px]"
         >
           <WhatsappIcon />
-          <div className="xs:text-lg lg:text-2xl">WhatsApp/Tel: {contact.whatsapp}</div>
+          <div className="underline xs:text-lg lg:text-2xl">
+            WhatsApp/Tel: {contact.whatsapp}
+          </div>
         </a>
       )}
     </div>
