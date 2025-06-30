@@ -44,7 +44,7 @@ export function Navbar() {
     {
       label: t("contenidos"),
       children: [
-        { label: t("cronograma"), href: `/${locale}/cronograma` },
+        // { label: t("cronograma"), href: `/${locale}/cronograma` },
         // { label: t("disertantes"), href: `/` },
         { label: t("visita_tecnica"), href: `/${locale}/visita-tecnica` },
         // { label: "15 años de REM", href: `/` },

@@ -49,7 +49,7 @@ export function OriginalNavbar({
           </div>
 
           {/* Menú de idioma en móvil */}
-          <div className="lg:hidden flex items-center justify-end gap-3">
+          <div className="flex items-center justify-end gap-3 lg:hidden">
             <NavItem label={locale} hasDropdown />
             <button
               className="bottom-4 right-4 z-[10001] text-white"
@@ -87,7 +87,7 @@ export function OriginalNavbar({
                       rel="noopener noreferrer"
                       className="text-lg tracking-wider text-white transition-colors hover:text-gray-200"
                     >
-                     {item.label}
+                      {item.label}
                     </a>
                   ) : (
                     <Link
@@ -111,12 +111,12 @@ export function OriginalNavbar({
             <NavItem label={locale} hasDropdown />
 
             {/* INSCRIPCIONES - Comentado por ahora */}
-            <Link
+            {/* <Link
               href={`/${locale}/inscripciones`}
               className="relative z-[1] ml-4 overflow-hidden rounded-full bg-white px-[30px] py-[15.5px] font-medium text-primary transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-white hover:before:scale-[3]"
-              >
+            >
               {t("inscripciones")}
-              </Link>
+            </Link> */}
           </div>
 
           {/* DESACTIVADO ENTREGA 1 - Menu Hamburguesa */}
