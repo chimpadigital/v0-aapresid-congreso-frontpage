@@ -12,6 +12,7 @@ const TenesDuddas = () => {
         {
           name: "Mariana Lopez",
           email: "lopez@aapresid.org.ar",
+          whatsapp: "+54 9 341 6046233",
         },
         {
           name: "Inscripciones",
@@ -42,6 +43,7 @@ const TenesDuddas = () => {
         {
           name: "Malena Pulzoni",
           whatsapp: "+11-3404-0510",
+          email: "mesadeayuda3@exponenciar.com.ar"
         },
       ],
     },
