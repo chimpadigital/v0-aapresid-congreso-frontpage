@@ -189,10 +189,16 @@ export default function Filtros() {
 
   const handleDaySelect = useCallback(
     (dayId: string) => {
-      setSelectedDay(dayId);
-      updateURL({ date: dayId });
+      // Si el día ya está seleccionado, deselecciona (borra el filtro)
+      if (selectedDay === dayId) {
+        setSelectedDay("");
+        updateURL({ date: "" });
+      } else {
+        setSelectedDay(dayId);
+        updateURL({ date: dayId });
+      }
     },
-    [updateURL],
+    [selectedDay, updateURL],
   );
 
   const handleFilterChange = useCallback(
