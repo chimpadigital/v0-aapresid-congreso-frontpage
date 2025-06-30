@@ -54,10 +54,17 @@ const FiltrosDesk = ({
       `${window.location.pathname}${query}`,
     );
   };
+
   const searchParams = useSearchParams();
+
   const handleClearAllFilters = () => {
     router.push(pathname, { scroll: false });
     const params = new URLSearchParams(searchParams.toString());
+
+    handleDaySelect("");
+    handleRoomSelect("");
+    handleSearchTermChange("");
+
     params.delete("id");
     params.delete("speakers");
     params.delete("theme_id");
