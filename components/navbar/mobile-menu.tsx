@@ -179,7 +179,7 @@ export function MobileMenu({
           </AnimatePresence>
 
           {/* Botón de Inscripciones */}
-          <div className="mt-auto pt-8">
+          {/* <div className="mt-auto pt-8">
             <Link
               href={`/${locale}/inscripciones`}
               className="block w-full rounded-full bg-[#ED7F00] px-6 py-3 text-center font-medium text-white transition-colors hover:bg-[#ED7F00]/90"
@@ -187,7 +187,7 @@ export function MobileMenu({
             >
               {t('inscripciones')}
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
