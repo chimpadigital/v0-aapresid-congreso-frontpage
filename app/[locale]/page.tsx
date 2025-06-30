@@ -52,7 +52,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       <DescargaComercial />
 
       {/* Inscriptions section */}
-      <InscriptionsSection />
+      {/* <InscriptionsSection /> */}
 
       {/* About section */}
       <AboutSection />
