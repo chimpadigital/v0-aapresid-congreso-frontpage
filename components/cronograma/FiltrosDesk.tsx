@@ -4,6 +4,9 @@ import SliderRooms from "./SliderRooms";
 import { Download, X } from "lucide-react";
 import { formatedRooms } from "@/lib/types";
 import { useTranslations } from "next-intl";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import Link from "next/link";
+import path from "path";
 
 const FiltrosDesk = ({
   searchTerm,
@@ -35,6 +38,9 @@ const FiltrosDesk = ({
   selectedRoom?: string;
   handleRoomSelect: (roomId: string) => void;
 }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const handleClearSearch = () => {
     handleSearchTermChange("");
     // Eliminar el parámetro 'search' de la URL
@@ -47,6 +53,18 @@ const FiltrosDesk = ({
       "",
       `${window.location.pathname}${query}`,
     );
+  };
+  const searchParams = useSearchParams();
+  const handleClearAllFilters = () => {
+    router.push(pathname, { scroll: false });
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("id");
+    params.delete("speakers");
+    params.delete("theme_id");
+    params.delete("date");
+    params.delete("room_id");
+    params.delete("search");
+    router.replace(`?${params.toString()}`);
   };
 
   const t = useTranslations("cronograma");
@@ -102,9 +120,29 @@ const FiltrosDesk = ({
 
         {/* Search by filters */}
         <div className="mb-8" data-lenis-prevent>
-          <h3 className="mb-4 text-lg font-medium text-primary">
-            {t("filtrar-por")}
-          </h3>
+          <div className="flex w-full justify-between">
+            <h3 className="mb-4 text-lg font-medium text-primary">
+              {t("filtrar-por")}
+            </h3>
+            <button
+              onClick={handleClearAllFilters}
+              className="flex gap-px tracking-wider text-primary underline underline-offset-[3px] transition-colors hover:text-secondary"
+            >
+              {t("borrar-filtros")}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M16.2143 9.33333V18.2222H8.78571V9.33333H16.2143ZM14.8214 4H10.1786L9.25 4.88889H6V6.66667H19V4.88889H15.75L14.8214 4ZM18.0714 7.55556H6.92857V18.2222C6.92857 19.2 7.76429 20 8.78571 20H16.2143C17.2357 20 18.0714 19.2 18.0714 18.2222V7.55556Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
           <div className="flex flex-wrap gap-5 md:gap-[74px]">
             {/* CHARLA */}
             <div className="flex w-full flex-col md:w-[min(100%,325px)]">
