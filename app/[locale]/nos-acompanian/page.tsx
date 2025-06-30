@@ -1,7 +1,4 @@
-import Anfitriones from "@/components/06-nos-acompanian/anfitriones";
-import WrapperNosAcompanian from "@/components/06-nos-acompanian/wrapper-nos-acompanian";
-import { HeroSection } from "@/components/hero-section";
-import { getTranslations } from "next-intl/server";
+import WrapperNosAcompanian from "@/components/nos-acompanian/wrapper-nos-acompanian";
 import React from "react";
 
 const NosAcompanian = () => {

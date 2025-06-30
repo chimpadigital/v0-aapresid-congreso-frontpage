@@ -49,7 +49,7 @@ export function OriginalNavbar({
           </div>
 
           {/* Menú de idioma en móvil */}
-          <div className="md:hidden flex items-center justify-end gap-3">
+          <div className="flex items-center justify-end gap-3 lg:hidden">
             <NavItem label={locale} hasDropdown />
             <button
               className="bottom-4 right-4 z-[10001] text-white"
@@ -76,16 +76,27 @@ export function OriginalNavbar({
           </div>
 
           {/* Menú principal en desktop */}
-          <div className="hidden w-full items-center justify-end space-x-6 text-white md:flex">
+          <div className="hidden items-center justify-end space-x-6 text-white lg:flex">
             {menuItems.map((item, index) => (
               <div key={index}>
                 {item.href ? (
-                  <Link
-                    href={item.href}
-                    className="text-lg tracking-wider text-white transition-colors hover:text-gray-200"
-                  >
-                    {item.label}
-                  </Link>
+                  item.href.includes("https") ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg tracking-wider text-white transition-colors hover:text-gray-200"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-lg tracking-wider text-white transition-colors hover:text-gray-200"
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ) : (
                   <NavItem
                     label={item.label}
@@ -101,11 +112,11 @@ export function OriginalNavbar({
 
             {/* INSCRIPCIONES - Comentado por ahora */}
             {/* <Link
-              href="/inscripciones"
+              href={`/${locale}/inscripciones`}
               className="relative z-[1] ml-4 overflow-hidden rounded-full bg-white px-[30px] py-[15.5px] font-medium text-primary transition-colors duration-500 before:absolute before:-left-[145%] before:top-[120%] before:z-[-1] before:h-[190%] before:w-[160%] before:-rotate-[35deg] before:bg-secondary before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-white hover:before:scale-[3]"
-              >
+            >
               {t("inscripciones")}
-              </Link> */}
+            </Link> */}
           </div>
 
           {/* DESACTIVADO ENTREGA 1 - Menu Hamburguesa */}

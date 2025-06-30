@@ -9,12 +9,15 @@
     "FAQs": "Frequently asked questions",
     "prensa": "Press",
     "gacetilla": "Press releases",
+    "disertantes": "Speakers",
+    "visita_tecnica": "Technical tour",
     "comercial": "Commercial",
     "que_es_el_congreso": "What is the Aapresid Congress?",
     "historia": "History",
-    "ediciones_anteriores": "Previous Editions",
+    "ediciones_anteriores": "Previous edition",
     "contenidos": "Contents",
-    "programa": "Program",
+    "charlas_anteriores": "Talks Edition No. 32",
+    "cronograma": "Agenda",
     "oradores": "Speakers",
     "ejes_tematicos": "Thematic axes",
     "noticias": "News",
@@ -35,17 +38,38 @@
     "segundos": "Seconds"
   },
   "inscriptions": {
-    "inscripciones": "Registration",
-    "sos_socio": "Are you a Aapresid member?",
-    "inscribite_aca": "Subscribe here",
-    "proximamente": "Available soon"
+    "card1": {
+      "titulo": "Are you an Aapresid member?",
+      "subtitulo": "Get free access to the Congress!",
+      "boton": "Register here"
+    },
+    "card2": {
+      "titulo": "Not an Aapresid member?",
+      "subtitulo": "Buy your ticket",
+      "no-socio": "Non-member",
+      "estudiante": "Student",
+      "adherente": "Affiliate",
+      "de-descuento": "discount",
+      "boton": "Buy your ticket",
+      "tooltip-estudiante": "You will be required to submit your certificate of enrollment",
+      "tooltip-adherente": "You will be required to submit the current agreement"
+    },
+    "card3": {
+      "titulo": "Do you have an invitation code?",
+      "ingresa": "Enter it here"
+    },
+    "card4": {
+      "titulo": "Do you have any questions?",
+      "subtitulo": "Visit our help desk to get support",
+      "ingresa": "Go to Help Desk"
+    }
   },
   "about": {
     "que_es": "What is the",
     "congreso": "Aapresid Congress?",
     "descripcion": "The Aapresid Congress is an international benchmark event, with over three decades of connecting innovation, technology, and knowledge, aimed at promoting progressively sustainable productive systems. In each edition, the most notable domestic and international experts convene to discuss and provide prospective content relevant to the agricultural sector.",
     "conoce_el": "See the full",
-    "cronograma": "schedule",
+    "cronograma": "Schedule",
     "completo": "complete",
     "de_charlas": "of the lectures",
     "conoce_el_programa": "See the **full schedule** of the lectures",
@@ -110,6 +134,16 @@
     "title2": "lectures",
     "ver-cronograma": "See full schedule"
   },
+  "descubra-campo": {
+    "titulo1": "Discover the heart of ",
+    "titulo2": "the Argentine farming systems",
+    "5-agosto": "August 5th",
+    "dia-tecnico": "Agronomic Technical Tour",
+    "3-9-agosto": "August 3rd to 9th ",
+    "gira-tecnica": "Technical Day",
+    "descripcion1": "Explore our advanced production models, recognized for innovation, soil care and sustainability. Participate in technical exchanges with farmers and local experts, learning about Argentine agriculture through field visits in the main productive regions.",
+    "leer-mas": "Read more"
+  },
   "commercial": {
     "forma-parte": "Join the",
     "de-la-33": "33° edition of the Congress",
@@ -124,7 +158,9 @@
   },
   "gacetilla": {
     "titulo1": "Newsletters",
-    "ver-todas": "See all newsletters"
+    "ver-todas": "See all newsletters",
+    "no-gacetilla": "No newsletters available",
+    "cargando": "Loading..."
   },
   "faq": {
     "preguntas": "Frequently",
@@ -299,7 +335,14 @@
       "p5": "Each farmer, technician, and visionary involved not only provides questions or answers but also pieces that fit within a bigger system. We are more than witnesses of change; we are the programmers of the future. Every year, the Congress collects and updates, in a single body, the knowledge of a community that makes innovation its lifestyle.",
       "p6": "It is not only about improving what already exists, but also about consistently imagining and redesigning in order to accompany transformations in the world. Because the future cannot be predicted—it is programmed. And the code we write together is open to everybody. This is the Aapresid Congress. This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
     },
-    "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities."
+    "texto-final": "This is the **Aapresid Congress.** This is the place where knowledge is released, solutions are linked, and ideas are transformed into realities.",
+    "banner-congreso": {
+      "congreso": "Aapresid",
+      "aapresid": "Congress",
+      "p": "The event in which we seek to connect knowledge, science, and sustainable production systems.",
+      "fecha": "August 6th, 7th, and 8th, 2025",
+      "lugar": "La Rural, exhibition venue in Buenos Aires"
+    }
   },
   "informacion-turistica": {
     "informacion": "Tourist ",
@@ -312,15 +355,79 @@
     "p3": "In the downtown area, you'll find the iconic Obelisk, a symbol of the city, and the famous Plaza de Mayo, home to important historic buildings such as the Casa Rosada.",
     "p4": "Along Corrientes Avenue, you can savor the country's best pizza at places like Guerrin, or enjoy a traditional asado at the famous grill Don Julio.",
     "p5": "For a leisurely walk, explore the neighborhoods of La Boca and San Telmo, where cobblestone streets, tango, art, and colonial architecture reflect a rich cultural heritage.",
+    "reserva-estadia": {
+      "titulo1": "Book your stay for the ",
+      "titulo2": "2025 Aapresid Congress!",
+      "subtitulo": "Stay at Up America Plaza, Up Tribeca, Up Viamonte, or Up Congreso.",
+      "p1": "The Aapresid Congress is a globally renowned event that has been connecting innovation, technology, and knowledge for over three decades, with the goal of promoting increasingly sustainable production systems.",
+      "descarga": "Download the flyer",
+      "reserva-alojamiento": "Book your accommodation"
+    },
     "como-llegar": "How to get to",
     "evento": " Congreso Aapresid?",
-    "transporte-publico": "By public transport, the subway D Line is the best option. Plaza Italia station (Santa Fe Ave. and Thames) is a few blocks away from the place. (SUBE card is needed)",
-    "colectivo": "**Bus lines** that can get you close to the site are: 10, 12, 15, 21, 29, 34, 36, 37, 39, 41, 55, 57, 59, 60, 67, 68, 93, 95, 111, 118, 160, 161, 188, 197.",
-    "tren": "**By train:** The San Martín train takes you to Palermo station (Santa Fe Ave. and Juan B. Justo Ave.), located 5 blocks away from the site."
+    "de-donde-venis": "Where are you coming from?",
+    "escribi-origen": "Enter your starting address here",
+    "recorrido-sugerido": "Suggested route",
+    "transporte": "By public transport",
+    "auto": "By car",
+    "ingresa-direccion-transporte": "Enter your starting address to view available bus routes.",
+    "ingresa-direccion-auto": "Enter your starting address to view available driving routes.",
+    "explora-todos": "Explore all possible routes on the map!",
+    "compartir": "Share route",
+    "ver-mas": "See more routes"
   },
   "nos-acompanian": {
     "nos": "Our ",
     "acompanian": "partners"
+  },
+  "cronograma": {
+    "cronograma": "Schedule",
+    "busca-palabra": "Keyword search",
+    "escriba-aqui": "Type here...",
+    "buscar": "Search",
+    "filtrar-por": "Filter search",
+    "charla": "Talk",
+    "disertantes": "Speaker",
+    "eje-tamtico": "Topic",
+    "escriba-o-seleccion": "Type here or select",
+    "dia": "Day",
+    "ver-todos": "See all",
+    "borrar-filtros": "Clear filters",
+    "sala": "Room",
+    "ver-todas": "See all",
+    "no-hay-charlas": "No lectures available",
+    "aplicar-filtros": "Apply filters",
+    "card": {
+      "disertante": "Speakers",
+      "moderador": "Moderator",
+      "ver-video": "Watch video",
+      "ver-mas-detalles": "See more details"
+    },
+    "descarga-cronograma": "Download schedule",
+    "descarga-dia1": "Download schedule Day 1",
+    "descarga-dia2": "Download schedule Day 2",
+    "descarga-dia3": "Download schedule Day 3"
+  },
+  "page-inscripciones": {
+    "titulo1": "Registration",
+    "titulo2": "Get your ticket",
+    "cronograma-completo": "Full agenda",
+    "ver-mas": "Ver más",
+    "prensa": "Press",
+    "necesitas-acreditarte": "Need to register as press?",
+    "datos-contacto": "Contact information",
+    "prensa-aapresid": "Aapresid Press"
+  },
+  "tenes-dudas": {
+    "titulo": "Any questions?",
+    "subtitulo": "Here’s how to contact us",
+    "socio-aapre": "Aapresid Member",
+    "mesa-expositores": "Exhibitor help desk",
+    "compra-entradas": "Ticket purchase",
+    "disertantes": "Speakers",
+    "invitados": "Guests",
+    "patrocinios-a-b-c-d": "(sponsors A, B, C y D)",
+    "sin-patrocicio": "(without sponsorship)"
   },
   "gacetilla-page": {
     "hero-title": "Press releases",
@@ -350,5 +457,80 @@
     "expoagro_tel": "Tel: 011 5128 9800/05",
     "expoagro_dir1": "Av. Corrientes 1302 5 Piso",
     "expoagro_dir2": "(C1043ABN) CABA"
+  },
+  "visita-tecnica-page": {
+    "hero-title1": "Agronomic technical",
+    "hero-title2": "tour",
+    "aapre-invita": {
+      "titulo": "Aapresid invites you to discover the heart of the Argentine farming systems in the run-up to the 2025 Congress",
+      "descripcion": "Take part in the impactful side events we’ll be hosting to immerse yourself in the heart of Argentine agriculture and connect with leading local producers and experts:",
+      "evento1-fecha": "August 5th",
+      "evento1-titulo": "Technical Day",
+      "evento2-fecha": "August 3rd to 9th",
+      "evento2-titulo": "Agronomic Technical Tour"
+    },
+    "visita-tecnica": {
+      "descripcion": "Explore our advanced production models, recognized for innovation, soil care and sustainability. Participate in technical exchanges with farmers and local experts, learning about Argentine agriculture through field visits in the main productive regions."
+    },
+    "dia-tecnico": {
+      "titulo": "Technical Day",
+      "subtitulo": "Itinerary on August 5th",
+      "hitos": [
+        {
+          "hora": "8:30 HS",
+          "descripcion": "Departure from Ciudad Autónoma de Buenos Aires (CABA) to Salto by bus."
+        },
+        {
+          "hora": "11:00 HS",
+          "descripcion": "Welcoming the delegation: presentation about Aapresid, introduction about production systems that regenerate soils with lower environmental impact, innovation in networks. "
+        },
+        {
+          "hora": "13:00 HS",
+          "descripcion": "Lunch in the field."
+        },
+        {
+          "hora": "15:00 HS",
+          "descripcion": "Field tour. Learn and get to know about sustainable production systems. No till, Intense and diverse landscapes. Organic matter, carbon and soil biology indicators. Livestock integration."
+        },
+        {
+          "hora": "16:00 HS",
+          "descripcion": "Return to CABA"
+        }
+      ]
+    },
+    "quienes-participan": {
+      "titulo": "Who can participate?",
+      "lista": [
+        "Farmers",
+        "Specialists",
+        "University students",
+        "Farming institutions",
+        "Decision-making politicians",
+        "Official delegations from all over the world. "
+      ],
+      "nota": "*Previous registration required. Spaces are limited.",
+      "contacto-titulo": "For more information write to:",
+      "contacto-email": "internacional@aapresid.org.ar"
+    },
+    "tour-agronomico": {
+      "titulo": "Agronomic Technical Tour",
+      "fecha": "August 3rd to 9th",
+      "descripcion": "Discover the Argentine farming systems in the run up to the XXXIII Aapresid Congress",
+      "boton": "Download brochure",
+      "embarquese": "Join this ",
+      "en-un-viaje": "extraordinary journey",
+      "cards": [
+        "Explore our advanced production models, recognized for innovation, soil care and sustainability.",
+        "Participate in technical exchanges with farmers and local experts, learning about Argentine agriculture through field visits in the main productive regions.",
+        "Discover the pulse of the industry by making contact with the main agricultural companies and institutions.",
+        "Join the 33° Aapresid Congress, the agriculture-related event most distinguished in Argentina and the region, the key space to update, debate and exhibit state-of-the-art knowledge and technology."
+      ]
+    },
+    "descubra-aprenda": {
+      "titulo": "Discover, Learn and Connect in an unforgettable experience!",
+      "contacto-titulo": "For more information write to: ",
+      "contacto-email": "internacional@aapresid.org.ar",
+      "boton": "Download brochure"
+    }
   }
 }

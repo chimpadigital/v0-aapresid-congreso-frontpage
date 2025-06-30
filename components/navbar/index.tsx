@@ -35,15 +35,27 @@ export function Navbar() {
           label: t("FAQs"),
           href: `/${locale}/preguntas-frecuentes`,
         },
+        {
+          label: t("ediciones_anteriores"),
+          href: `https://congreso-2024.aapresid.org.ar/`,
+        },
       ],
     },
-    // {
-    //   label: "Contenido",
-    //   children: [
-    //     { label: "Cronograma", href: "/${locale}/cronograma" },
-    //     { label: "Disertantes", href: "/${locale}/disertantes" },
-    //   ],
-    // },
+    {
+      label: t("contenidos"),
+      children: [
+        // { label: t("cronograma"), href: `/${locale}/cronograma` },
+        // { label: t("disertantes"), href: `/` },
+        { label: t("visita_tecnica"), href: `/${locale}/visita-tecnica` },
+        // { label: "15 años de REM", href: `/` },
+        // { label: "Acta sesión posters", href: `/` },
+        // { label: "Ofertas", href: `/` },
+        {
+          label: t("charlas_anteriores"),
+          href: `https://congreso-2024.aapresid.org.ar/charlas-congreso/`,
+        },
+      ],
+    },
     {
       label: t("prensa"),
       children: [

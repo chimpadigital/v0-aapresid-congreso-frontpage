@@ -12,11 +12,11 @@ import LogoAapresid from "@/public/images/logo-congreso.svg";
 import LogoExpoagro from "@/public/images/logo-expoagro.svg";
 import LogoCodigo from "@/public/images/logo-codigo.svg";
 import RedInstagram from "./icons/RedInstagram";
-import { useTranslations } from "next-intl";
-import RedTikTok from "./icons/RedTikTok";
+import { useLocale, useTranslations } from "next-intl";
 
 export function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -125,7 +125,7 @@ export function Footer() {
 
             {/* INSCRIPCIONES */}
             {/* <Link
-              href="/inscripciones"
+              href={`/${locale}/inscripciones`}
               className="relative z-[1] overflow-hidden rounded-full bg-secondary px-[60.5px] py-[16px] text-lg font-light text-white transition-colors duration-500 before:absolute before:-left-[150%] before:top-[120%] before:z-[-1] before:h-[250%] before:w-[160%] before:-rotate-[35deg] before:bg-white before:transition-transform before:duration-500 hover:border-transparent hover:bg-gray-100 hover:text-primary hover:before:scale-[3] tracking-wider"
             >
               {t("inscripciones")}
