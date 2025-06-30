@@ -35,6 +35,9 @@ const DrawerFiltrosMobile = ({
     params.delete("id");
     params.delete("speakers");
     params.delete("theme_id");
+    params.delete("room_id");
+    params.delete("search");
+    params.delete("date");
     router.replace(`?${params.toString()}`);
   };
   
