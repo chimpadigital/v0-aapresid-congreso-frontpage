@@ -40,7 +40,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="scroll-smooth">
       {/* Google tag (gtag.js) */}
-      {/* <Script
+       <Script
         strategy="lazyOnload"
         src={"https://www.googletagmanager.com/gtag/js?id=G-8GYP49MZ9E"}
       />
@@ -51,7 +51,7 @@ export default async function RootLayout({
               gtag('js', new Date());
               gtag('config', 'G-8GYP49MZ9E');
           `}
-      </Script> */}
+      </Script>
       <body>
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
