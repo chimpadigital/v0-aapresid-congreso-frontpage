@@ -14,8 +14,8 @@ const WrapperInscripciones = () => {
   return (
     <section>
       <HeroSection
-        title1={t('titulo1')}
-        title2={t('titulo2')}
+        title1={t("titulo1")}
+        title2={t("titulo2")}
         compact
         backgroundImage="/images/gacetilla/circuito-prensa.webp"
       />
@@ -27,13 +27,18 @@ const WrapperInscripciones = () => {
             <h4 className="text-4xl font-medium">{t("cronograma-completo")}</h4>
           </div>
 
-          <Link
+          {/* <Link
             href={`/${locale}/cronograma`}
             className="mt-4 flex h-fit border-spacing-5 items-center gap-3 border-b-2 border-white text-lg transition-opacity hover:border-opacity-70 hover:font-medium md:mt-0"
           >
             <p>{t("ver-mas")}</p>
             <ArrowRounded className="w-4" />
-          </Link>
+          </Link> */}
+
+          <p className="mt-4 flex h-fit border-spacing-5 items-center gap-3 border-b-2 border-white text-lg transition-opacity  md:mt-0">
+            <p>{t("proximamente")}</p>
+            <ArrowRounded className="w-4" />
+          </p>
         </div>
       </div>
       <PensaInscripciones />
