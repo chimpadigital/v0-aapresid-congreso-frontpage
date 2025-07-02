@@ -52,9 +52,8 @@ export default function Home({ params }: { params: { locale: string } }) {
       <DescargaComercial />
 
       {/* Inscriptions section */}
-      {/* <InscriptionsSection /> */}
+      <InscriptionsSection />
 
-<div className="mt-5 md:mt-10"></div>
       {/* About section */}
       <AboutSection />
 
