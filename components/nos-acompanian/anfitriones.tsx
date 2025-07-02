@@ -38,9 +38,18 @@ const Anfitriones = () => {
     <div className="mx-4 mt-[26px] rounded-[20px] px-4 py-16 md:mx-[33px]">
       <div className="mx-auto mb-16 max-w-[1049px]">
         {categories.map(
-          (cat) =>
-            cat.Logos &&
-            cat.Logos.length > 0 && (
+          (cat) => {
+            // Solo mostrar la categoría si al menos un logo tiene descripción
+            const hasVisibleLogo = cat.Logos && cat.Logos.some((logo) => {
+              let descEs = getField(logo.description || "", "es");
+              let descEn = getField(logo.description || "", "en");
+              return (
+                (descEs && descEs.trim().length > 2) ||
+                (descEn && descEn.trim().length > 2)
+              );
+            });
+            if (!hasVisibleLogo) return null;
+            return (
               <div key={cat.id} className="mb-28">
                 <h3 className="mb-12 w-full border-b border-b-primary pb-[20px] text-left text-3xl text-primary md:mb-[109px]">
                   {getField(cat.name, locale)}
@@ -115,7 +124,8 @@ const Anfitriones = () => {
                   );
                 })}
               </div>
-            ),
+            );
+          },
         )}
       </div>
     </div>
