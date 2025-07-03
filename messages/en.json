@@ -12,6 +12,8 @@
     "disertantes": "Speakers",
     "visita_tecnica": "Technical tour",
     "comercial": "Commercial",
+    "carpeta_comercial": "Sponsorship Proposal",
+    "ronda_negocio": "Business round",
     "que_es_el_congreso": "What is the Aapresid Congress?",
     "historia": "History",
     "ediciones_anteriores": "Previous edition",
@@ -133,6 +135,13 @@
     "title1": "Notable ",
     "title2": "lectures",
     "ver-cronograma": "See full schedule"
+  },
+  "ronda_negocios": {
+    "ronda-de": "Business ",
+    "negocios": "round",
+    "pundo-de-encuentro": "The Congress’ strategic meeting point",
+    "descripcion": "For the first time in the history of the Aapresid Congress, we present the Business Round: a space designed to connect supply and demand through an exclusive, high-impact platform created to directly and efficiently link producers with leading companies in the sector.",
+    "inscribite-aca": "Register here"
   },
   "descubra-campo": {
     "titulo1": "Discover the heart of ",

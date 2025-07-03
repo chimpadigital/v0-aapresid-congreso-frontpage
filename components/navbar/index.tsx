@@ -65,7 +65,14 @@ export function Navbar() {
     },
     {
       label: t("comercial"),
-      href: `/${locale}/comercial`,
+      children: [
+        { label: t("carpeta_comercial"), href: `/${locale}/comercial` },
+        {
+          label: t("ronda_negocio"),
+          href: `https://mbmapp.com/forms/wizard/setup`,
+        },
+        // { label: "Fotos", href: "/${locale}/fotos" },
+      ],
     },
   ];
 

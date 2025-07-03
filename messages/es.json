@@ -10,6 +10,8 @@
     "prensa": "Prensa",
     "gacetilla": "Gacetillas",
     "comercial": "Comercial",
+    "carpeta_comercial": "Carpeta comercial",
+    "ronda_negocio": "Ronda de negocio",
     "que_es_el_congreso": "¿Qué es el Congreso?",
     "visita_tecnica": "Visita técnica",
     "historia": "Historia",
@@ -132,6 +134,13 @@
     "title1": "Charlas ",
     "title2": "destacadas",
     "ver-cronograma": "Ver cronograma completo"
+  },
+  "ronda_negocios": {
+    "ronda-de": "Ronda de ",
+    "negocios": "negocios",
+    "pundo-de-encuentro": "El Punto de encuentro estratégico del Congreso",
+    "descripcion": "Por primera vez en la historia del Congreso Aapresid, presentamos la Ronda de Negocios: espacio pensado para conectar Oferta y Demanda por medio de una plataforma exclusiva y de alto impacto diseñada para conectar de manera directa y eficiente a los productores con las empresas líderes del sector.",
+    "inscribite-aca": "Inscribite acá"
   },
   "descubra-campo": {
     "titulo1": "Descubra el",

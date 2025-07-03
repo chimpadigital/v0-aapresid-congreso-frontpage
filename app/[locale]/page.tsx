@@ -12,6 +12,7 @@ import { DisertantesDestacados } from "@/components/home/disertantes-destacados"
 import { FeaturedTalksSection } from "@/components/home/charlas-destacadas";
 import { GacetillasSection } from "@/components/home/gacetilla-section";
 import ConoceElCampo from "@/components/home/descubra-el-campo";
+import RondaDeNegocios from "@/components/home/ronda-de-negocios";
 
 export default function Home({ params }: { params: { locale: string } }) {
   return (
@@ -66,6 +67,8 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* Featured talks section */}
       <FeaturedTalksSection />
       {/* <div className="mb-10"/> */}
+
+      <RondaDeNegocios/>
 
       {/* Descubra el campo - banner */}
       <ConoceElCampo />
